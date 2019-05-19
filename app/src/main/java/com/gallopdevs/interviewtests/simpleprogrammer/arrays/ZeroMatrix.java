@@ -2,7 +2,7 @@ package com.gallopdevs.interviewtests.simpleprogrammer.arrays;
 
 public class ZeroMatrix {
 
-    public static int[][] zeroMatrix(int[][] matrix) {
+    public static void zeroMatrix(int[][] matrix) {
         boolean[] row = new boolean[matrix.length];
         boolean[] column = new boolean[matrix[0].length];
         for (int i = 0; i < matrix.length; i++) {
@@ -22,7 +22,6 @@ public class ZeroMatrix {
             if (column[j]) nullifyColumn(matrix, j);
         }
         print(matrix);
-        return matrix;
     }
 
     private static void nullifyRow(int[][] matrix, int row) {

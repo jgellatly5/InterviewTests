@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class MinMaxArray2 {
 
-    public static void findMaxAndMin(int[] numbers) {
+    public static void findMinAndMax(int[] numbers) {
         int max = numbers[0];
         int min = numbers[0];
         for (int num : numbers) {

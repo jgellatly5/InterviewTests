@@ -5,13 +5,11 @@ import java.util.Set;
 
 public class TwoNumArraySum2 {
 
-    public static void printPairs(int[] array, int sum) {
-        for (int i = 0; i < array.length; i++) {
-            int first = array[i];
-            for (int j = i + 1; j < array.length; j++) {
-                int second = array[j];
-                if (first + second == sum) {
-                    System.out.printf("(%d, %d) %n", first, second);
+    public static void printPairs(int[] numbers, int sum) {
+        for (int i = 0; i < numbers.length; i++) {
+            for (int j = i + 1; j < numbers.length; j++) {
+                if (numbers[i] + numbers[j] == sum) {
+                    System.out.printf("(%d, %d) %n", numbers[i], numbers[j]);
                 }
             }
         }
