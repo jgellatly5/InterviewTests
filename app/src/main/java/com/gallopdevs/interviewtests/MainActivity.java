@@ -9,6 +9,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -26,8 +27,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     private int minRange = 1;
     private int maxRange = 10;
     private String[] questions;
-    List<Integer> ints = new ArrayList<>();
-    List<Integer> removeList = new ArrayList<>();
+    ArrayList<Integer> removeList = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,23 +36,17 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
         questions = getResources().getStringArray(R.array.questions_array);
 
-        createRange();
-
         tvQuestion = findViewById(R.id.question);
         bQuestion = findViewById(R.id.btn_question);
         bQuestion.setOnClickListener(v -> {
-//            random = new Random().nextInt((maxRange - minRange) + 1) + minRange;
-            if (ints.size() == 0) {
+            if (removeList.size() == maxRange - minRange + 1) {
                 tvQuestion.setText("Completed Set!");
-
                 removeList.clear();
-
-                createRange();
             } else {
-                Random rand =  new Random();
-                int randomIndex = rand.nextInt(ints.size());
-                tvQuestion.setText(questions[randomIndex]);
-                ints.remove(randomIndex);
+                int random = generateRandom(minRange, maxRange, removeList);
+                Toast.makeText(this, String.valueOf(random), Toast.LENGTH_SHORT).show();
+                tvQuestion.setText(questions[random - 1]);
+                removeList.add(random);
             }
         });
 
@@ -64,30 +58,15 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         spinnerQuestion.setOnItemSelectedListener(this);
     }
 
-    private void createRange() {
-        int[] range = IntStream.rangeClosed(minRange, maxRange).toArray();
-        ints = Arrays.stream(range)		                // IntStream
-                .boxed()  		                        // Stream<Integer>
-                .collect(Collectors.toList());
-    }
-
-    private int generateRandom(int start, int end, ArrayList<Integer> excludeRows) {
+    public int generateRandom(int start, int end, ArrayList<Integer> excludeRows) {
         Random rand = new Random();
-        int range = end - start + 1;
-        int random = 0;
+        int range = ((end - start) + 1);
 
-        boolean success = false;
-        while(!success) {
-            random = rand.nextInt(range) + 1;
-            for(Integer i: excludeRows) {
-                if(i == random) {
-                    break;
-                } else if (i > random) {
-                    success = true;
-                    break;
-                }
-            }
+        int random = rand.nextInt(range) + start;
+        while(excludeRows.contains(random)) {
+            random = rand.nextInt(range) + start;
         }
+
         return random;
     }
 
@@ -117,7 +96,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             default:
                 break;
         }
-        createRange();
+        removeList.clear();
     }
 
     @Override
