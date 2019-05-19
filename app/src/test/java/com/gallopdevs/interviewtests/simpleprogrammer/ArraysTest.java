@@ -1,10 +1,11 @@
 package com.gallopdevs.interviewtests.simpleprogrammer;
 
+import com.gallopdevs.interviewtests.simpleprogrammer.arrays.FindMultipleDuplicates;
 import com.gallopdevs.interviewtests.simpleprogrammer.arrays.MinMaxArray;
 import com.gallopdevs.interviewtests.simpleprogrammer.arrays.MissingNumber;
-import com.gallopdevs.interviewtests.simpleprogrammer.arrays.FindMultipleDuplicates;
 import com.gallopdevs.interviewtests.simpleprogrammer.arrays.RemoveDuplicates;
 import com.gallopdevs.interviewtests.simpleprogrammer.arrays.ReverseArray;
+import com.gallopdevs.interviewtests.simpleprogrammer.arrays.RotateMatrix;
 import com.gallopdevs.interviewtests.simpleprogrammer.arrays.TwoNumArraySum;
 
 import org.junit.Test;
@@ -74,5 +75,18 @@ public class ArraysTest {
     @Test
     public void ReverseArray() {
         ReverseArray.reverseArray(new int[]{4, 3, 5, 6, 7, 2});
+    }
+
+    @Test
+    public void RotateMatrix() {
+        int matrix[][] = {
+            {1, 2, 3, 4},
+            {5, 6, 7, 8},
+            {9, 10, 11, 12},
+            {13, 14, 15, 16}
+        };
+        RotateMatrix.rotate(matrix);
+        System.out.println();
+        RotateMatrix.rotateMatrixCounterClockwise(matrix);
     }
 }

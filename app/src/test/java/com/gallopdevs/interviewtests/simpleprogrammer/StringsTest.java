@@ -7,7 +7,7 @@ import com.gallopdevs.interviewtests.simpleprogrammer.strings.IsUnique;
 import com.gallopdevs.interviewtests.simpleprogrammer.strings.OneEditAway;
 import com.gallopdevs.interviewtests.simpleprogrammer.strings.Rotation;
 import com.gallopdevs.interviewtests.simpleprogrammer.strings.Urlify;
-import com.gallopdevs.interviewtests.udemyinterviewclass.classic.strings.IsPalindrome;
+import com.gallopdevs.interviewtests.simpleprogrammer.strings.IsPalindrome;
 
 import org.junit.Before;
 import org.junit.Test;
