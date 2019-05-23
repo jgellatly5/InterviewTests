@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class ReverseArray2 {
 
-    public static void reverseArray(int[] numbers) {
+    public static void reverse(int[] numbers) {
         for (int i = 0; i < numbers.length / 2; i++) {
             int temp = numbers[i];
             numbers[i] = numbers[numbers.length - i - 1];

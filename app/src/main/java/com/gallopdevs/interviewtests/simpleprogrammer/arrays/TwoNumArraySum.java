@@ -19,16 +19,16 @@ public class TwoNumArraySum {
         }
     }
 
-    public static void printPairsUsingSet(int[] numbers, int n) {
+    public static void printPairsUsingSet(int[] numbers, int sum) {
         if (numbers.length < 2) return;
         Set set = new HashSet<>(numbers.length);
-        for (int value : numbers) {
-            int target = n - value;
+        for (int num : numbers) {
+            int target = sum - num;
 
             if (!set.contains(target)) {
-                set.add(value);
+                set.add(num);
             } else {
-                System.out.printf("(%d, %d) %n", value, target);
+                System.out.printf("(%d, %d) %n", num, target);
             }
         }
     }

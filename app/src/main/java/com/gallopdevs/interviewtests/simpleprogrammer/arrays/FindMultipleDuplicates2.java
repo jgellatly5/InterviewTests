@@ -7,21 +7,21 @@ import java.util.Set;
 
 public class FindMultipleDuplicates2 {
 
-    public static void findDuplicates(int[] array) {
-        for (int i = 0; i < array.length; i++) {
-            for (int j = i + 1; j < array.length; j++) {
-                if (array[i] == array[j]) {
-                    System.out.println(array[i] + " ");
+    public static void findDuplicates(int[] numbers) {
+        for (int i = 0; i < numbers.length; i++) {
+            for (int j = i + 1; j < numbers.length; j++) {
+                if (numbers[i] == numbers[j]) {
+                    System.out.println(numbers[i] + " ");
                 }
             }
         }
         System.out.println();
     }
 
-    public static void findDuplicatesWithSet(int[] numbers) {
+    public static void findDuplicatesSet(int[] numbers) {
         HashSet<Integer> set = new HashSet<>();
         for (int num : numbers) {
-            if (!set.add(num)) {
+            if (!set.add((num))) {
                 System.out.println(num + " ");
             }
         }
@@ -42,8 +42,7 @@ public class FindMultipleDuplicates2 {
         Set<Map.Entry<Integer, Integer>> entrySet = numAndCount.entrySet();
         for (Map.Entry<Integer, Integer> entry : entrySet) {
             if (entry.getValue() > 1) {
-                System.out.println("Duplicate element in array: " +
-                        entry.getKey() + ", count: " + entry.getValue());
+                System.out.println("Duplicate element: " + entry.getKey() +", count: " + entry.getValue());
             }
         }
     }

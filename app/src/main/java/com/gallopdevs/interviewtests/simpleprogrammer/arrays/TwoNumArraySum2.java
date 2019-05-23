@@ -21,7 +21,7 @@ public class TwoNumArraySum2 {
         for (int num : numbers) {
             int target = sum - num;
             if (!set.contains(target)) {
-                set.add(target);
+                set.add(num);
             } else {
                 System.out.printf("(%d, %d) %n", num, target);
             }
