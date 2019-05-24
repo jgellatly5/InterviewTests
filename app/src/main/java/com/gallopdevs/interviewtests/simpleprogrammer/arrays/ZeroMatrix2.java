@@ -21,6 +21,7 @@ public class ZeroMatrix2 {
         for (int j = 0; j < column.length; j++) {
             if (column[j]) nullifyColumn(matrix, j);
         }
+
         print(matrix);
     }
 

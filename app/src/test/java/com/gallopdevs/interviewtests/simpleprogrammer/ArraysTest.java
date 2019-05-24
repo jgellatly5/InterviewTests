@@ -27,11 +27,9 @@ public class ArraysTest {
 //        MissingNumber.printMissingNumber(new int[]{1, 2, 3, 4, 9, 8}, 10);
 //
         // Only one missing number in array
-        int[] numbers = new int[]{1, 2, 3, 5};
+        int[] numbers = new int[]{1, 2, 3, 4};
         int missing = MissingNumber2.getMissingNumber(numbers, 5);
         System.out.printf("Missing number in array %s is %d %n", Arrays.toString(numbers), missing);
-
-        MissingNumber2.printMissingNumber(new int[]{1, 2, 3, 4, 6, 7, 9, 10}, 10);
     }
 
     @Test
@@ -42,7 +40,7 @@ public class ArraysTest {
 
         FindMultipleDuplicates2.findDuplicates(new int[]{1, 2, 4, 1, 5, 6, 4});
         FindMultipleDuplicates2.findDuplicatesSet(new int[]{1, 2, 4, 1, 5, 6, 4});
-        FindMultipleDuplicates2.findDuplicatesAndCount(new int[]{1, 2, 4, 1, 5, 6, 4});
+        FindMultipleDuplicates2.findDuplicatesCount(new int[]{1, 2, 4, 1, 5, 6, 4});
     }
 
     @Test
@@ -78,13 +76,13 @@ public class ArraysTest {
 
         TwoNumArraySum2.printPairs(numbers, 7);
         System.out.println();
-        TwoNumArraySum2.printPairsUsingSet(numbers, 7);
+        TwoNumArraySum2.printPairsSet(numbers, 7);
     }
 
     @Test
     public void ReverseArray() {
 //        ReverseArray.reverseArray(new int[]{4, 3, 5, 6, 7, 2});
-        ReverseArray2.reverse(new int[]{4, 3, 5, 6, 7, 2});
+        ReverseArray2.reverseArray(new int[]{4, 3, 5, 6, 7, 2});
     }
 
     @Test
@@ -95,7 +93,7 @@ public class ArraysTest {
             {9, 10, 11, 12},
             {13, 14, 15, 16}
         };
-//        RotateMatrix2.rotateMatrixClockwise(matrix);
+        RotateMatrix2.rotateMatrixClockwise(matrix);
         System.out.println();
         RotateMatrix2.rotateMatrixCounterClockwise(matrix);
     }
@@ -103,7 +101,7 @@ public class ArraysTest {
     @Test
     public void ZeroMatrix() {
         int matrix[][] = {
-                {1, 0, 3, 4},
+                {0, 2, 3, 4},
                 {5, 6, 7, 8},
                 {9, 10, 11, 12},
                 {13, 14, 15, 16}

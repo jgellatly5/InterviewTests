@@ -15,7 +15,7 @@ public class TwoNumArraySum2 {
         }
     }
 
-    public static void printPairsUsingSet(int[] numbers, int sum) {
+    public static void printPairsSet(int[] numbers, int sum) {
         if (numbers.length < 2) return;
         Set set = new HashSet<>(numbers.length);
         for (int num : numbers) {
