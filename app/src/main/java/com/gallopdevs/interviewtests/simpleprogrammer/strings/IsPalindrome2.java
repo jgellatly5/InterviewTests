@@ -3,8 +3,10 @@ package com.gallopdevs.interviewtests.simpleprogrammer.strings;
 public class IsPalindrome2 {
 
     public static boolean isPalindrome(String text) {
-        for (int i = 0; i < text.length() / 2; i++) {
-            if (text.charAt(i) != text.charAt(text.length() - i - 1)) {
+        char[] chars = text.toCharArray();
+        int length = chars.length;
+        for (int i = 0; i < length / 2; i++) {
+            if (chars[i] != chars[length - 1 - i]) {
                 return false;
             }
         }

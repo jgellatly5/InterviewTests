@@ -17,17 +17,17 @@ public class ArraysTest {
 
     @Test
     public void MissingNumber() {
-//        // one missing number
-//        MissingNumber.printMissingNumber(new int[]{1, 2, 3, 4, 6}, 6);
-//        // two missing number
-//        MissingNumber.printMissingNumber(new int[]{1, 2, 3, 4, 6, 7, 9, 10}, 10);
-//        // three missing number
-//        MissingNumber.printMissingNumber(new int[]{1, 2, 3, 4, 6, 9, 8}, 10);
-//        // four missing number
-//        MissingNumber.printMissingNumber(new int[]{1, 2, 3, 4, 9, 8}, 10);
-//
+        // one missing number
+        MissingNumber2.printMissingNumbers(new int[]{1, 2, 3, 4, 6}, 6);
+        // two missing number
+        MissingNumber2.printMissingNumbers(new int[]{1, 2, 3, 4, 6, 7, 9, 10}, 10);
+        // three missing number
+        MissingNumber2.printMissingNumbers(new int[]{1, 2, 3, 4, 6, 9, 8}, 10);
+        // four missing number
+        MissingNumber2.printMissingNumbers(new int[]{1, 2, 3, 4, 9, 8}, 10);
+
         // Only one missing number in array
-        int[] numbers = new int[]{1, 2, 3, 4};
+        int[] numbers = new int[]{1, 2, 3, 5};
         int missing = MissingNumber2.getMissingNumber(numbers, 5);
         System.out.printf("Missing number in array %s is %d %n", Arrays.toString(numbers), missing);
     }
@@ -59,8 +59,7 @@ public class ArraysTest {
 
     @Test
     public void MinMaxArray() {
-        int[] test = new int[]{4, 3, 5, 6, 7, 2};
-//        MinMaxArray.minMaxArray(test);
+        int[] test = new int[]{10, 3, 5, 6, 7, 2};
         MinMaxArray2.findMinAndMax(test);
     }
 
@@ -95,7 +94,7 @@ public class ArraysTest {
         };
         RotateMatrix2.rotateMatrixClockwise(matrix);
         System.out.println();
-        RotateMatrix2.rotateMatrixCounterClockwise(matrix);
+//        RotateMatrix2.rotateMatrixCounterClockwise(matrix);
     }
 
     @Test

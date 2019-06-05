@@ -14,6 +14,6 @@ public class MiscTest {
 
     @Test
     public void Fibonacci() {
-        System.out.println(Fibonacci.fib(1));
+        System.out.println(Fibonacci.fib(5));
     }
 }

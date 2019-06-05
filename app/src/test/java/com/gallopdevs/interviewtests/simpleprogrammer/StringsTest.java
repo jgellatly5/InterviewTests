@@ -2,12 +2,11 @@ package com.gallopdevs.interviewtests.simpleprogrammer;
 
 import com.gallopdevs.interviewtests.simpleprogrammer.strings.Compress;
 import com.gallopdevs.interviewtests.simpleprogrammer.strings.IsPalindrome2;
-import com.gallopdevs.interviewtests.simpleprogrammer.strings.IsPermutationPalindrome;
+import com.gallopdevs.interviewtests.simpleprogrammer.strings.IsPermutationPalindrome2;
 import com.gallopdevs.interviewtests.simpleprogrammer.strings.IsUnique;
 import com.gallopdevs.interviewtests.simpleprogrammer.strings.OneEditAway;
 import com.gallopdevs.interviewtests.simpleprogrammer.strings.Rotation;
 import com.gallopdevs.interviewtests.simpleprogrammer.strings.Urlify;
-import com.gallopdevs.interviewtests.simpleprogrammer.strings.IsPalindrome;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -40,10 +39,8 @@ public class StringsTest {
 
     @Test
     public void IsPalindrome() {
-        System.out.println(IsPalindrome.isPalindrome(text3));
         System.out.println(IsPalindrome2.isPalindrome(text3));
         System.out.println(IsPalindrome2.isPalindrome(text4));
-        System.out.println(IsPalindrome.isPalindrome(text4));
     }
 
 
@@ -65,7 +62,7 @@ public class StringsTest {
 
     @Test
     public void IsPermutationPalindrome() {
-        System.out.println(IsPermutationPalindrome.isPermutationPalindrome("tact coa"));
+        System.out.println(IsPermutationPalindrome2.isPermutationPalindrome("tact coa"));
     }
 
     @Test

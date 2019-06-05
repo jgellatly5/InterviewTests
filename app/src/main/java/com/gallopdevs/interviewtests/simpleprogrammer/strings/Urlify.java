@@ -1,7 +1,5 @@
 package com.gallopdevs.interviewtests.simpleprogrammer.strings;
 
-import java.util.Arrays;
-
 public class Urlify {
 
     public static String urlify(char[] url, int trueLength) {
@@ -13,7 +11,7 @@ public class Urlify {
                 spaceCount++;
             }
         }
-        int index = trueLength + spaceCount * 2 - 1;
+        int index = trueLength + (spaceCount * 2) - 1;
         // second loop, replace spaces from the end
         for (int i = trueLength - 1; i >= 0; i--) {
             if (url[i] == ' ') {
