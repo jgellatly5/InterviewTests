@@ -40,7 +40,7 @@ public class ArraysTest {
 
         FindMultipleDuplicates2.findDuplicates(new int[]{1, 2, 4, 1, 5, 6, 4});
         FindMultipleDuplicates2.findDuplicatesSet(new int[]{1, 2, 4, 1, 5, 6, 4});
-        FindMultipleDuplicates2.findDuplicatesCount(new int[]{1, 2, 4, 1, 5, 6, 4});
+        FindMultipleDuplicates2.findMultipleDuplicatesAndCount(new int[]{1, 2, 4, 1, 5, 6, 4});
     }
 
     @Test

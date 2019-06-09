@@ -11,9 +11,7 @@ public class IsPermutationPalindrome2 {
         boolean foundOdd = false;
         for (int count : table) {
             if (count % 2 == 1) {
-                if (foundOdd) {
-                    return false;
-                }
+                if (foundOdd) return false;
                 foundOdd = true;
             }
         }
@@ -21,12 +19,12 @@ public class IsPermutationPalindrome2 {
     }
 
     private static int[] buildCharFrequencyTable(String phrase) {
-        int[] table = new int[
-                Character.getNumericValue('z') - Character.getNumericValue('a') + 1
-            ];
+        int[] table = new int[Character.getNumericValue('z') - Character.getNumericValue('a') + 1];
         for (char c : phrase.toCharArray()) {
             int index = getCharNumber(c);
-            if (index != -1) table[index]++;
+            if (index != -1) {
+                table[index]++;
+            }
         }
         return table;
     }
@@ -35,7 +33,9 @@ public class IsPermutationPalindrome2 {
         int a = Character.getNumericValue('a');
         int z = Character.getNumericValue('z');
         int value = Character.getNumericValue(c);
-        if (a <= value && value <= z) return value - a;
+        if (a <= value && value <= z) {
+            return value - a;
+        }
         return -1;
     }
 }

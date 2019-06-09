@@ -6,7 +6,7 @@ import com.gallopdevs.interviewtests.simpleprogrammer.strings.IsPermutationPalin
 import com.gallopdevs.interviewtests.simpleprogrammer.strings.IsUnique;
 import com.gallopdevs.interviewtests.simpleprogrammer.strings.OneEditAway;
 import com.gallopdevs.interviewtests.simpleprogrammer.strings.Rotation;
-import com.gallopdevs.interviewtests.simpleprogrammer.strings.Urlify;
+import com.gallopdevs.interviewtests.simpleprogrammer.strings.Urlify2;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -47,7 +47,7 @@ public class StringsTest {
     @Test
     public void Urlify() {
         char[] chars = text5.toCharArray();
-        System.out.println(Urlify.urlify(chars, 13));
+        System.out.println(Urlify2.urlify(chars, 13));
     }
 
     @Test

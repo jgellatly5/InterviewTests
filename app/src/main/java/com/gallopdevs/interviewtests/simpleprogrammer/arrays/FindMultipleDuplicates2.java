@@ -28,7 +28,7 @@ public class FindMultipleDuplicates2 {
         System.out.println();
     }
 
-    public static void findDuplicatesCount(int[] numbers) {
+    public static void findMultipleDuplicatesAndCount(int[] numbers) {
         HashMap<Integer, Integer> numAndCount = new HashMap<>();
         for (int num : numbers) {
             Integer count = numAndCount.get(num);

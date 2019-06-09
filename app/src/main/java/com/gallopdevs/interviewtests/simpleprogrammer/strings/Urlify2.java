@@ -4,13 +4,14 @@ public class Urlify2 {
 
     public static String urlify(char[] url, int trueLength) {
         if (url == null) return "";
-        int spaceCount = 0;
+        int countSpaces = 0;
         for (int i = 0; i < trueLength; i++) {
             if (url[i] == ' ') {
-                spaceCount++;
+                countSpaces++;
             }
         }
-        int index = trueLength + (spaceCount * 2) - 1;
+
+        int index = trueLength + (countSpaces * 2) - 1;
         for (int i = trueLength - 1; i >= 0; i--) {
             if (url[i] == ' ') {
                 url[index] = '0';
@@ -22,6 +23,7 @@ public class Urlify2 {
                 index--;
             }
         }
+
         return new String(url).trim();
     }
 }
