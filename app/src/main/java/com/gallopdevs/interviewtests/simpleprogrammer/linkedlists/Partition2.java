@@ -32,7 +32,6 @@ public class Partition2 {
             }
             node = next;
         }
-
         if (beforeStart == null) {
             return afterStart;
         }

@@ -1,8 +1,12 @@
 package com.gallopdevs.interviewtests.simpleprogrammer;
 
+import com.gallopdevs.interviewtests.simpleprogrammer.arrays.FindMultipleDuplicates;
 import com.gallopdevs.interviewtests.simpleprogrammer.arrays.FindMultipleDuplicates2;
+import com.gallopdevs.interviewtests.simpleprogrammer.arrays.MinMaxArray;
 import com.gallopdevs.interviewtests.simpleprogrammer.arrays.MinMaxArray2;
+import com.gallopdevs.interviewtests.simpleprogrammer.arrays.MissingNumber;
 import com.gallopdevs.interviewtests.simpleprogrammer.arrays.MissingNumber2;
+import com.gallopdevs.interviewtests.simpleprogrammer.arrays.RemoveDuplicates;
 import com.gallopdevs.interviewtests.simpleprogrammer.arrays.RemoveDuplicates2;
 import com.gallopdevs.interviewtests.simpleprogrammer.arrays.ReverseArray2;
 import com.gallopdevs.interviewtests.simpleprogrammer.arrays.RotateMatrix2;
@@ -17,6 +21,25 @@ public class ArraysTest {
 
     @Test
     public void MissingNumber() {
+        // Only one missing number in array
+        int[] numbers = new int[]{1, 2, 3, 5};
+        int missing = MissingNumber.getMissingNumber(numbers, 5);
+        System.out.printf("Missing number in array %s is %d %n", Arrays.toString(numbers), missing);
+
+        // Only one missing number in array
+        int[] numbers2 = new int[]{1, 2, 3, 5};
+        int missing2 = MissingNumber2.getMissingNumber(numbers, 5);
+        System.out.printf("Missing number in array %s is %d %n", Arrays.toString(numbers2), missing2);
+
+        // one missing number
+        MissingNumber.printMissingNumbers(new int[]{1, 2, 3, 4, 6}, 6);
+        // two missing number
+        MissingNumber.printMissingNumbers(new int[]{1, 2, 3, 4, 6, 7, 9, 10}, 10);
+        // three missing number
+        MissingNumber.printMissingNumbers(new int[]{1, 2, 3, 4, 6, 9, 8}, 10);
+        // four missing number
+        MissingNumber.printMissingNumbers(new int[]{1, 2, 3, 4, 9, 8}, 10);
+
         // one missing number
         MissingNumber2.printMissingNumbers(new int[]{1, 2, 3, 4, 6}, 6);
         // two missing number
@@ -25,22 +48,17 @@ public class ArraysTest {
         MissingNumber2.printMissingNumbers(new int[]{1, 2, 3, 4, 6, 9, 8}, 10);
         // four missing number
         MissingNumber2.printMissingNumbers(new int[]{1, 2, 3, 4, 9, 8}, 10);
-
-        // Only one missing number in array
-        int[] numbers = new int[]{1, 2, 3, 5};
-        int missing = MissingNumber2.getMissingNumber(numbers, 5);
-        System.out.printf("Missing number in array %s is %d %n", Arrays.toString(numbers), missing);
     }
 
     @Test
     public void MultipleDuplicates() {
-//        FindMultipleDuplicates.findMultipleDuplicate(new int[]{1, 2, 4, 1, 5, 6, 4});
-//        FindMultipleDuplicates.findMultipleDuplicateSet(new int[]{1, 2, 4, 1, 5, 6, 4});
-//        FindMultipleDuplicates.findMultipleDuplicatesAndCount(new int[]{1, 2, 4, 1, 5, 6, 4});
+        FindMultipleDuplicates.findDuplicates(new int[]{1, 2, 4, 1, 5, 6, 4});
+        FindMultipleDuplicates.findDuplicatesSet(new int[]{1, 2, 4, 1, 5, 6, 4});
+        FindMultipleDuplicates.findDuplicatesCount(new int[]{1, 2, 4, 1, 5, 6, 4});
 
         FindMultipleDuplicates2.findDuplicates(new int[]{1, 2, 4, 1, 5, 6, 4});
         FindMultipleDuplicates2.findDuplicatesSet(new int[]{1, 2, 4, 1, 5, 6, 4});
-        FindMultipleDuplicates2.findMultipleDuplicatesAndCount(new int[]{1, 2, 4, 1, 5, 6, 4});
+        FindMultipleDuplicates2.findDuplicatesCount(new int[]{1, 2, 4, 1, 5, 6, 4});
     }
 
     @Test
@@ -53,6 +71,7 @@ public class ArraysTest {
 
         for (int[] input : test) {
             System.out.println("Array with Duplicates       : " + Arrays.toString(input));
+            System.out.println("After removing duplicates   : " + Arrays.toString(RemoveDuplicates.removeDuplicates(input)));
             System.out.println("After removing duplicates   : " + Arrays.toString(RemoveDuplicates2.removeDuplicates(input)));
         }
     }
@@ -60,6 +79,7 @@ public class ArraysTest {
     @Test
     public void MinMaxArray() {
         int[] test = new int[]{10, 3, 5, 6, 7, 2};
+        MinMaxArray.findMinAndMax(test);
         MinMaxArray2.findMinAndMax(test);
     }
 

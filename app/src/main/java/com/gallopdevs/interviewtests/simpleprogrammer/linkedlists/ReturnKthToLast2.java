@@ -5,7 +5,7 @@ import com.gallopdevs.interviewtests.datastructures.LinkedListNode;
 public class ReturnKthToLast2 {
 
     public static int printKthToLast(LinkedListNode head, int k) {
-        if (head == null) return 0;
+        if (head == null) return -1;
         int index = printKthToLast(head.next, k) + 1;
         if (index == k) System.out.println(k + " elements from last node is: " + head.data);
         return index;

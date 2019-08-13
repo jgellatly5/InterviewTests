@@ -15,7 +15,7 @@ public class MissingNumber {
         return (int) (expectedSum - actualSum);
     }
     // more than one missing element
-    public static void printMissingNumber(int[] numbers, int count) {
+    public static void printMissingNumbers(int[] numbers, int count) {
         int missingCount = count - numbers.length;
         BitSet bitSet = new BitSet(count);
 

@@ -5,8 +5,10 @@ import com.gallopdevs.interviewtests.simpleprogrammer.linkedlists.DeleteMiddleNo
 import com.gallopdevs.interviewtests.simpleprogrammer.linkedlists.FindLength;
 import com.gallopdevs.interviewtests.simpleprogrammer.linkedlists.IsPalindrome;
 import com.gallopdevs.interviewtests.simpleprogrammer.linkedlists.Partition;
+import com.gallopdevs.interviewtests.simpleprogrammer.linkedlists.Partition2;
 import com.gallopdevs.interviewtests.simpleprogrammer.linkedlists.RemoveDuplicates;
 import com.gallopdevs.interviewtests.simpleprogrammer.linkedlists.ReturnKthToLast;
+import com.gallopdevs.interviewtests.simpleprogrammer.linkedlists.ReturnKthToLast2;
 import com.gallopdevs.interviewtests.simpleprogrammer.linkedlists.ReverseList;
 import com.gallopdevs.interviewtests.simpleprogrammer.linkedlists.SumLists;
 
@@ -80,12 +82,14 @@ public class LinkedListsTest {
     @Test
     public void PrintKthToLast() {
         ReturnKthToLast.printKthToLast(node, 3);
+        ReturnKthToLast2.printKthToLast(node, 3);
     }
 
     //TODO fix
     @Test
     public void Partition() {
-        prettyPrint(Partition.partition(node, 11));
+        prettyPrint(Partition.partition(node, 5));
+        prettyPrint(Partition2.partition(node, 5));
     }
 
     @Test

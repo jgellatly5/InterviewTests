@@ -10,11 +10,11 @@ public class FindMultipleDuplicates {
     // How do you find the duplicate number on a given integer array?
     // How do you find duplicate numbers in an array if it contains multiple duplicates?
     // Solution 1:
-    public static void findMultipleDuplicate(int[] array) {
-        for (int i = 0; i < array.length; i++) {
-            for (int j = i + 1; j < array.length; j++) {
-                if (array[i] == array[j]) {
-                    System.out.print(array[i] + " ");
+    public static void findDuplicates(int[] numbers) {
+        for (int i = 0; i < numbers.length; i++) {
+            for (int j = i + 1; j < numbers.length; j++) {
+                if (numbers[i] == numbers[j]) {
+                    System.out.print(numbers[i] + " ");
                 }
             }
         }
@@ -22,7 +22,7 @@ public class FindMultipleDuplicates {
     }
 
     // Solution 2:
-    public static void findMultipleDuplicateSet(int[] numbers) {
+    public static void findDuplicatesSet(int[] numbers) {
         HashSet<Integer> set = new HashSet<>();
         for (int num : numbers) {
             if (!set.add(num)) {
@@ -33,7 +33,7 @@ public class FindMultipleDuplicates {
     }
 
     // Solution 3:
-    public static void findMultipleDuplicatesAndCount(int[] numbers) {
+    public static void findDuplicatesCount(int[] numbers) {
         Map<Integer, Integer> numAndCount= new HashMap<>();
         for (int num : numbers) {
             Integer count = numAndCount.get(num);
