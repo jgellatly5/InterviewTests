@@ -8,8 +8,10 @@ import com.gallopdevs.interviewtests.simpleprogrammer.arrays.MissingNumber;
 import com.gallopdevs.interviewtests.simpleprogrammer.arrays.MissingNumber2;
 import com.gallopdevs.interviewtests.simpleprogrammer.arrays.RemoveDuplicates;
 import com.gallopdevs.interviewtests.simpleprogrammer.arrays.RemoveDuplicates2;
+import com.gallopdevs.interviewtests.simpleprogrammer.arrays.ReverseArray;
 import com.gallopdevs.interviewtests.simpleprogrammer.arrays.ReverseArray2;
 import com.gallopdevs.interviewtests.simpleprogrammer.arrays.RotateMatrix2;
+import com.gallopdevs.interviewtests.simpleprogrammer.arrays.TwoNumArraySum;
 import com.gallopdevs.interviewtests.simpleprogrammer.arrays.TwoNumArraySum2;
 import com.gallopdevs.interviewtests.simpleprogrammer.arrays.ZeroMatrix2;
 
@@ -87,11 +89,12 @@ public class ArraysTest {
     public void SumPairs() {
         int[] numbers = { 2, 4, 3, 5, 7, 8, 9 };
         int[] numbersWithDuplicates = { 2, 4, 3, 5, 6, -2, 4, 7, 8, 9 };
-//        TwoNumArraySum.prettyPrint(numbers, 7);
-//        TwoNumArraySum.prettyPrint(numbersWithDuplicates, 7);
-//
-//        TwoNumArraySum.prettyPrintSet(TwoNumArraySum.getRandomArray(9), 11);
-//        TwoNumArraySum.prettyPrintSet(TwoNumArraySum.getRandomArray(10), 12);
+
+        TwoNumArraySum.prettyPrint(numbers, 7);
+        TwoNumArraySum.prettyPrint(numbersWithDuplicates, 7);
+
+        TwoNumArraySum.prettyPrintSet(TwoNumArraySum.getRandomArray(9), 11);
+        TwoNumArraySum.prettyPrintSet(TwoNumArraySum.getRandomArray(10), 12);
 
         TwoNumArraySum2.printPairs(numbers, 7);
         System.out.println();
@@ -100,7 +103,7 @@ public class ArraysTest {
 
     @Test
     public void ReverseArray() {
-//        ReverseArray.reverseArray(new int[]{4, 3, 5, 6, 7, 2});
+        ReverseArray.reverseArray(new int[]{4, 3, 5, 6, 7, 2});
         ReverseArray2.reverseArray(new int[]{4, 3, 5, 6, 7, 2});
     }
 

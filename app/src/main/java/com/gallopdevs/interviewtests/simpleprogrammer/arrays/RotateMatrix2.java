@@ -1,7 +1,6 @@
 package com.gallopdevs.interviewtests.simpleprogrammer.arrays;
 
 public class RotateMatrix2 {
-
      public static void rotateMatrixClockwise(int[][] matrix) {
          if (matrix.length == 0 || matrix.length != matrix[0].length) return;
          int n = matrix.length;

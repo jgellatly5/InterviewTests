@@ -3,7 +3,6 @@ package com.gallopdevs.interviewtests.simpleprogrammer.arrays;
 import java.util.Arrays;
 
 public class ReverseArray2 {
-
     public static void reverseArray(int[] numbers) {
         for (int i = 0; i < numbers.length / 2; i++) {
             int temp = numbers[i];

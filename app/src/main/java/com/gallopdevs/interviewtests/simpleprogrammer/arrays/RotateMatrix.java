@@ -1,7 +1,6 @@
 package com.gallopdevs.interviewtests.simpleprogrammer.arrays;
 
 public class RotateMatrix {
-
     // Rotate a square matrix by 90 degrees clockwise
     public static void rotateMatrixClockwise(int[][] matrix) {
         if (matrix.length == 0 || matrix.length != matrix[0].length) return;
