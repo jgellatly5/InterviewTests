@@ -1,7 +1,6 @@
 package com.gallopdevs.interviewtests.simpleprogrammer.arrays;
 
 public class ZeroMatrix2 {
-
     public static void zeroMatrix(int[][] matrix) {
         boolean[] row = new boolean[matrix.length];
         boolean[] column = new boolean[matrix[0].length];
@@ -15,15 +14,11 @@ public class ZeroMatrix2 {
         }
 
         for (int i = 0; i < row.length; i++) {
-            if (row[i]) {
-                nullifyRow(matrix, i);
-            }
+            if (row[i]) nullifyRow(matrix, i);
         }
 
         for (int j = 0; j < column.length; j++) {
-            if (column[j]) {
-                nullifyColumn(matrix, j);
-            }
+            if (column[j]) nullifyColumn(matrix, j);
         }
 
         print(matrix);

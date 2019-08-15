@@ -1,7 +1,6 @@
 package com.gallopdevs.interviewtests.simpleprogrammer.arrays;
 
 public class ZeroMatrix {
-
     public static void zeroMatrix(int[][] matrix) {
         boolean[] row = new boolean[matrix.length];
         boolean[] column = new boolean[matrix[0].length];

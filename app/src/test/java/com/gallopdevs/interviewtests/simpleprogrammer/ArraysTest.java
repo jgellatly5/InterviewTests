@@ -14,6 +14,7 @@ import com.gallopdevs.interviewtests.simpleprogrammer.arrays.RotateMatrix;
 import com.gallopdevs.interviewtests.simpleprogrammer.arrays.RotateMatrix2;
 import com.gallopdevs.interviewtests.simpleprogrammer.arrays.TwoNumArraySum;
 import com.gallopdevs.interviewtests.simpleprogrammer.arrays.TwoNumArraySum2;
+import com.gallopdevs.interviewtests.simpleprogrammer.arrays.ZeroMatrix;
 import com.gallopdevs.interviewtests.simpleprogrammer.arrays.ZeroMatrix2;
 
 import org.junit.Test;
@@ -133,6 +134,14 @@ public class ArraysTest {
                 {9, 10, 11, 12},
                 {13, 14, 15, 16}
         };
-        ZeroMatrix2.zeroMatrix(matrix);
+        ZeroMatrix.zeroMatrix(matrix);
+        System.out.println();
+        int matrix2[][] = {
+                {1, 2, 3, 4},
+                {5, 6, 7, 0},
+                {9, 10, 11, 12},
+                {13, 14, 15, 16}
+        };
+        ZeroMatrix2.zeroMatrix(matrix2);
     }
 }
