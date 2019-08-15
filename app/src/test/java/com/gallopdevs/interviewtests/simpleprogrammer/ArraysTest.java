@@ -10,6 +10,7 @@ import com.gallopdevs.interviewtests.simpleprogrammer.arrays.RemoveDuplicates;
 import com.gallopdevs.interviewtests.simpleprogrammer.arrays.RemoveDuplicates2;
 import com.gallopdevs.interviewtests.simpleprogrammer.arrays.ReverseArray;
 import com.gallopdevs.interviewtests.simpleprogrammer.arrays.ReverseArray2;
+import com.gallopdevs.interviewtests.simpleprogrammer.arrays.RotateMatrix;
 import com.gallopdevs.interviewtests.simpleprogrammer.arrays.RotateMatrix2;
 import com.gallopdevs.interviewtests.simpleprogrammer.arrays.TwoNumArraySum;
 import com.gallopdevs.interviewtests.simpleprogrammer.arrays.TwoNumArraySum2;
@@ -115,9 +116,13 @@ public class ArraysTest {
             {9, 10, 11, 12},
             {13, 14, 15, 16}
         };
+        RotateMatrix.rotateMatrixClockwise(matrix);
+        System.out.println();
+        RotateMatrix.rotateMatrixCounterClockwise(matrix);
+        System.out.println();
         RotateMatrix2.rotateMatrixClockwise(matrix);
         System.out.println();
-//        RotateMatrix2.rotateMatrixCounterClockwise(matrix);
+        RotateMatrix2.rotateMatrixCounterClockwise(matrix);
     }
 
     @Test
