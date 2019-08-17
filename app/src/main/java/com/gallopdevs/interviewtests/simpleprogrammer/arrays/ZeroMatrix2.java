@@ -12,7 +12,6 @@ public class ZeroMatrix2 {
                 }
             }
         }
-
         for (int i = 0; i < row.length; i++) {
             if (row[i]) nullifyRow(matrix, i);
         }
@@ -20,7 +19,6 @@ public class ZeroMatrix2 {
         for (int j = 0; j < column.length; j++) {
             if (column[j]) nullifyColumn(matrix, j);
         }
-
         print(matrix);
     }
 

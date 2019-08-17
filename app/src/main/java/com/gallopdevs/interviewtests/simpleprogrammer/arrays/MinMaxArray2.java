@@ -15,6 +15,6 @@ public class MinMaxArray2 {
         }
         System.out.println("Array: " + Arrays.toString(numbers));
         System.out.println("Max: " + max);
-        System.out.println("Min " + min);
+        System.out.println("Min: " + min);
     }
 }

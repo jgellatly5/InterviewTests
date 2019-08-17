@@ -31,10 +31,10 @@ public class ArraysTest {
         System.out.printf("Missing number in array %s is %d %n", Arrays.toString(numbers), missing);
 
         // Only one missing number in array
-        int[] numbers2 = new int[]{1, 2, 3, 5};
-        int missing2 = MissingNumber2.getMissingNumber(numbers, 5);
-        System.out.printf("Missing number in array %s is %d %n", Arrays.toString(numbers2), missing2);
-
+//        int[] numbers2 = new int[]{1, 2, 3, 5};
+//        int missing2 = MissingNumber2.getMissingNumber(numbers, 5);
+//        System.out.printf("Missing number in array %s is %d %n", Arrays.toString(numbers2), missing2);
+        System.out.println("=========Test1=========");
         // one missing number
         MissingNumber.printMissingNumbers(new int[]{1, 2, 3, 4, 6}, 6);
         // two missing number
@@ -43,7 +43,8 @@ public class ArraysTest {
         MissingNumber.printMissingNumbers(new int[]{1, 2, 3, 4, 6, 9, 8}, 10);
         // four missing number
         MissingNumber.printMissingNumbers(new int[]{1, 2, 3, 4, 9, 8}, 10);
-
+        System.out.println();
+        System.out.println("=========Test2=========");
         // one missing number
         MissingNumber2.printMissingNumbers(new int[]{1, 2, 3, 4, 6}, 6);
         // two missing number
@@ -56,10 +57,12 @@ public class ArraysTest {
 
     @Test
     public void MultipleDuplicates() {
+        System.out.println("=========Test1=========");
         FindMultipleDuplicates.findDuplicates(new int[]{1, 2, 4, 1, 5, 6, 4});
         FindMultipleDuplicates.findDuplicatesSet(new int[]{1, 2, 4, 1, 5, 6, 4});
         FindMultipleDuplicates.findDuplicatesCount(new int[]{1, 2, 4, 1, 5, 6, 4});
-
+        System.out.println();
+        System.out.println("=========Test2=========");
         FindMultipleDuplicates2.findDuplicates(new int[]{1, 2, 4, 1, 5, 6, 4});
         FindMultipleDuplicates2.findDuplicatesSet(new int[]{1, 2, 4, 1, 5, 6, 4});
         FindMultipleDuplicates2.findDuplicatesCount(new int[]{1, 2, 4, 1, 5, 6, 4});
@@ -83,7 +86,10 @@ public class ArraysTest {
     @Test
     public void MinMaxArray() {
         int[] test = new int[]{10, 3, 5, 6, 7, 2};
+        System.out.println("=========Test1=========");
         MinMaxArray.findMinAndMax(test);
+        System.out.println();
+        System.out.println("=========Test2=========");
         MinMaxArray2.findMinAndMax(test);
     }
 
@@ -92,12 +98,14 @@ public class ArraysTest {
         int[] numbers = { 2, 4, 3, 5, 7, 8, 9 };
         int[] numbersWithDuplicates = { 2, 4, 3, 5, 6, -2, 4, 7, 8, 9 };
 
+        System.out.println("=========Test1=========");
         TwoNumArraySum.prettyPrint(numbers, 7);
         TwoNumArraySum.prettyPrint(numbersWithDuplicates, 7);
 
         TwoNumArraySum.prettyPrintSet(TwoNumArraySum.getRandomArray(9), 11);
         TwoNumArraySum.prettyPrintSet(TwoNumArraySum.getRandomArray(10), 12);
 
+        System.out.println("=========Test2=========");
         TwoNumArraySum2.printPairs(numbers, 7);
         System.out.println();
         TwoNumArraySum2.printPairsSet(numbers, 7);
@@ -123,11 +131,12 @@ public class ArraysTest {
         System.out.println();
         RotateMatrix2.rotateMatrixClockwise(matrix);
         System.out.println();
-        RotateMatrix2.rotateMatrixCounterClockwise(matrix);
+//        RotateMatrix2.rotateMatrixCounterClockwise(matrix);
     }
 
     @Test
     public void ZeroMatrix() {
+        System.out.println("=========Test1=========");
         int matrix[][] = {
                 {0, 2, 3, 4},
                 {5, 6, 7, 8},
@@ -136,6 +145,7 @@ public class ArraysTest {
         };
         ZeroMatrix.zeroMatrix(matrix);
         System.out.println();
+        System.out.println("=========Test2=========");
         int matrix2[][] = {
                 {1, 2, 3, 4},
                 {5, 6, 7, 0},
