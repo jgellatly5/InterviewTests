@@ -3,6 +3,8 @@ package com.gallopdevs.interviewtests.simpleprogrammer;
 import com.gallopdevs.interviewtests.datastructures.LinkedListNode;
 import com.gallopdevs.interviewtests.simpleprogrammer.linkedlists.DeleteMiddleNode;
 import com.gallopdevs.interviewtests.simpleprogrammer.linkedlists.DeleteMiddleNode2;
+import com.gallopdevs.interviewtests.simpleprogrammer.linkedlists.FindIntersection;
+import com.gallopdevs.interviewtests.simpleprogrammer.linkedlists.FindIntersection2;
 import com.gallopdevs.interviewtests.simpleprogrammer.linkedlists.FindLength;
 import com.gallopdevs.interviewtests.simpleprogrammer.linkedlists.FindLength2;
 import com.gallopdevs.interviewtests.simpleprogrammer.linkedlists.IsCyclic;
@@ -31,6 +33,8 @@ public class LinkedListsTest {
     private LinkedListNode l2;
     private LinkedListNode nodePalindrome;
     private LinkedListNode nodePalindrome2;
+    private LinkedListNode nodeIntersection;
+    private LinkedListNode nodeIntersection2;
 
     @Before
     public void setUp() throws Exception {
@@ -77,6 +81,14 @@ public class LinkedListsTest {
         nodePalindrome2.next.next = new LinkedListNode(2);
         nodePalindrome2.next.next.next = new LinkedListNode(1);
         nodePalindrome2.next.next.next.next = new LinkedListNode(6);
+
+        nodeIntersection = new LinkedListNode(7);
+        nodeIntersection.next = new LinkedListNode(6);
+        nodeIntersection.next.next = new LinkedListNode(1);
+        nodeIntersection.next.next.next = new LinkedListNode(4);
+
+        nodeIntersection2 = new LinkedListNode(5);
+        nodeIntersection2.next = nodeIntersection.next;
     }
 
     @Test
@@ -84,7 +96,7 @@ public class LinkedListsTest {
         System.out.println("=========Test1 FindLength=========");
         int length = FindLength.findLength(node);
         System.out.println("findLength: " + length);
-        System.out.println("=========Test2 FindLength=========");
+        System.out.println("\n=========Test2 FindLength=========");
         int length2 = FindLength2.findLength(node);
         System.out.println("findLength: " + length2);
     }
@@ -94,8 +106,7 @@ public class LinkedListsTest {
         System.out.println("=========Test1 IsCyclic=========");
         System.out.println("List is cyclic: " + IsCyclic.isCyclic(node));
         System.out.println("List is cyclic: " + IsCyclic.isCyclic(cyclicList));
-        System.out.println();
-        System.out.println("=========Test2 IsCyclic=========");
+        System.out.println("\n=========Test2 IsCyclic=========");
         System.out.println("List is cyclic: " + IsCyclic2.isCyclic(node));
         System.out.println("List is cyclic: " + IsCyclic2.isCyclic(cyclicList));
     }
@@ -121,8 +132,7 @@ public class LinkedListsTest {
         DeleteMiddleNode.deleteMiddleNode(node.next);
         System.out.println("findLength after: " + FindLength.findLength(node));
         prettyPrint(node);
-        System.out.println();
-        System.out.println("=========Test2 DeleteMiddleNode=========");
+        System.out.println("\n=========Test2 DeleteMiddleNode=========");
         System.out.println("findLength before: " + FindLength.findLength(node2));
         prettyPrint(node2);
         DeleteMiddleNode2.deleteMiddleNode(node2.next);
@@ -135,8 +145,7 @@ public class LinkedListsTest {
         System.out.println("=========Test1 ReverseList=========");
         prettyPrint(node);
         prettyPrint(ReverseList.reverseList(node));
-        System.out.println();
-        System.out.println("=========Test2 ReverseList=========");
+        System.out.println("\n=========Test2 ReverseList=========");
         prettyPrint(node2);
         prettyPrint(ReverseList2.reverseList(node2));
     }
@@ -146,8 +155,7 @@ public class LinkedListsTest {
         System.out.println("=========Test1 PrintKthToLast=========");
         prettyPrint(node);
         ReturnKthToLast.printKthToLast(node, 3);
-        System.out.println();
-        System.out.println("=========Test2 PrintKthToLast=========");
+        System.out.println("\n=========Test2 PrintKthToLast=========");
         prettyPrint(node2);
         ReturnKthToLast2.printKthToLast(node2, 3);
     }
@@ -157,8 +165,7 @@ public class LinkedListsTest {
         System.out.println("=========Test1 Partition=========");
         prettyPrint(node);
         prettyPrint(Partition.partition(node, 3));
-        System.out.println();
-        System.out.println("=========Test2 Partition=========");
+        System.out.println("\n=========Test2 Partition=========");
         prettyPrint(node2);
         prettyPrint(Partition2.partition(node2, 3));
     }
@@ -169,8 +176,7 @@ public class LinkedListsTest {
         prettyPrint(l1);
         prettyPrint(l2);
         prettyPrint(SumLists.sumLists(l1, l2, 0));
-        System.out.println();
-        System.out.println("=========Test2 SumLists=========");
+        System.out.println("\n=========Test2 SumLists=========");
         prettyPrint(l1);
         prettyPrint(l2);
         prettyPrint(SumLists2.sumLists(l1, l2, 0));
@@ -183,17 +189,25 @@ public class LinkedListsTest {
         System.out.println(IsPalindrome.isPalindrome(node));
         prettyPrint(nodePalindrome);
         System.out.println(IsPalindrome.isPalindrome(nodePalindrome));
-        System.out.println();
-        System.out.println("=========Test2 IsPalindrome=========");
+        System.out.println("\n=========Test2 IsPalindrome=========");
         prettyPrint(node2);
         System.out.println(IsPalindrome.isPalindrome(node2));
         prettyPrint(nodePalindrome2);
         System.out.println(IsPalindrome.isPalindrome(nodePalindrome2));
     }
 
-    //TODO create
     @Test
     public void FindIntersection() {
+        System.out.println("=========Test1 FindIntersection=========");
+        prettyPrint(nodeIntersection);
+        prettyPrint(nodeIntersection2);
+        LinkedListNode pointOfIntersection = FindIntersection.findIntersection(nodeIntersection, nodeIntersection2);
+        System.out.println(pointOfIntersection.data);
+        System.out.println("\n=========Test2 FindIntersection=========");
+        prettyPrint(nodeIntersection);
+        prettyPrint(nodeIntersection2);
+        LinkedListNode pointOfIntersection2 = FindIntersection2.findIntersection(nodeIntersection, nodeIntersection2);
+        System.out.println(pointOfIntersection2.data);
     }
 
     private void prettyPrint(LinkedListNode node) {
