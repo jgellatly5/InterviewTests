@@ -24,17 +24,23 @@ import java.util.Arrays;
 public class ArraysTest {
 
     @Test
-    public void MissingNumber() {
+    public void SingleMissingNumber() {
+        System.out.println("=========Test1 Single Number=========");
         // Only one missing number in array
         int[] numbers = new int[]{1, 2, 3, 5};
         int missing = MissingNumber.getMissingNumber(numbers, 5);
         System.out.printf("Missing number in array %s is %d %n", Arrays.toString(numbers), missing);
-
+        System.out.println();
+        System.out.println("=========Test2 Single Number=========");
         // Only one missing number in array
-//        int[] numbers2 = new int[]{1, 2, 3, 5};
-//        int missing2 = MissingNumber2.getMissingNumber(numbers, 5);
-//        System.out.printf("Missing number in array %s is %d %n", Arrays.toString(numbers2), missing2);
-        System.out.println("=========Test1=========");
+        int[] numbers2 = new int[]{1, 2, 3, 5};
+        int missing2 = MissingNumber2.getMissingNumber(numbers, 5);
+        System.out.printf("Missing number in array %s is %d %n", Arrays.toString(numbers2), missing2);
+    }
+
+    @Test
+    public void MultipleMissingNumbers() {
+        System.out.println("=========Test1 Multiple Numbers=========");
         // one missing number
         MissingNumber.printMissingNumbers(new int[]{1, 2, 3, 4, 6}, 6);
         // two missing number
@@ -44,7 +50,7 @@ public class ArraysTest {
         // four missing number
         MissingNumber.printMissingNumbers(new int[]{1, 2, 3, 4, 9, 8}, 10);
         System.out.println();
-        System.out.println("=========Test2=========");
+        System.out.println("=========Test2 Multiple Numbers=========");
         // one missing number
         MissingNumber2.printMissingNumbers(new int[]{1, 2, 3, 4, 6}, 6);
         // two missing number
@@ -70,6 +76,7 @@ public class ArraysTest {
 
     @Test
     public void RemoveDuplicates() {
+        System.out.println("=========Test1=========");
         int[][] test = new int[][]{
                 {1, 1, 2, 2, 3, 4, 5},
                 {1, 1, 1, 1, 1, 1, 1},
@@ -79,6 +86,17 @@ public class ArraysTest {
         for (int[] input : test) {
             System.out.println("Array with Duplicates       : " + Arrays.toString(input));
             System.out.println("After removing duplicates   : " + Arrays.toString(RemoveDuplicates.removeDuplicates(input)));
+        }
+        System.out.println();
+        System.out.println("=========Test2=========");
+        int[][] test2 = new int[][]{
+                {1, 1, 2, 2, 3, 4, 5},
+                {1, 1, 1, 1, 1, 1, 1},
+                {1, 2, 3, 4, 5, 6, 7},
+                {1, 2, 1, 1, 1, 1, 1},};
+
+        for (int[] input : test2) {
+            System.out.println("Array with Duplicates       : " + Arrays.toString(input));
             System.out.println("After removing duplicates   : " + Arrays.toString(RemoveDuplicates2.removeDuplicates(input)));
         }
     }
@@ -119,6 +137,7 @@ public class ArraysTest {
 
     @Test
     public void RotateMatrix() {
+        System.out.println("=========Test1=========");
         int matrix[][] = {
             {1, 2, 3, 4},
             {5, 6, 7, 8},
@@ -129,9 +148,16 @@ public class ArraysTest {
         System.out.println();
         RotateMatrix.rotateMatrixCounterClockwise(matrix);
         System.out.println();
-        RotateMatrix2.rotateMatrixClockwise(matrix);
+        System.out.println("=========Test2=========");
+        int matrix2[][] = {
+                {10, 20, 30, 40},
+                {50, 60, 70, 80},
+                {90, 100, 110, 120},
+                {130, 140, 150, 160}
+        };
+        RotateMatrix2.rotateMatrixClockwise(matrix2);
         System.out.println();
-//        RotateMatrix2.rotateMatrixCounterClockwise(matrix);
+//        RotateMatrix2.rotateMatrixCounterClockwise(matrix2);
     }
 
     @Test

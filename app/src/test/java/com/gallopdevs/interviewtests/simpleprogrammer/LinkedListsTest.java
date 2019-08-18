@@ -2,15 +2,20 @@ package com.gallopdevs.interviewtests.simpleprogrammer;
 
 import com.gallopdevs.interviewtests.datastructures.LinkedListNode;
 import com.gallopdevs.interviewtests.simpleprogrammer.linkedlists.DeleteMiddleNode;
+import com.gallopdevs.interviewtests.simpleprogrammer.linkedlists.DeleteMiddleNode2;
 import com.gallopdevs.interviewtests.simpleprogrammer.linkedlists.FindLength;
+import com.gallopdevs.interviewtests.simpleprogrammer.linkedlists.FindLength2;
+import com.gallopdevs.interviewtests.simpleprogrammer.linkedlists.IsCyclic;
 import com.gallopdevs.interviewtests.simpleprogrammer.linkedlists.IsPalindrome;
 import com.gallopdevs.interviewtests.simpleprogrammer.linkedlists.Partition;
 import com.gallopdevs.interviewtests.simpleprogrammer.linkedlists.Partition2;
 import com.gallopdevs.interviewtests.simpleprogrammer.linkedlists.RemoveDuplicates;
+import com.gallopdevs.interviewtests.simpleprogrammer.linkedlists.RemoveDuplicates2;
 import com.gallopdevs.interviewtests.simpleprogrammer.linkedlists.ReturnKthToLast;
 import com.gallopdevs.interviewtests.simpleprogrammer.linkedlists.ReturnKthToLast2;
 import com.gallopdevs.interviewtests.simpleprogrammer.linkedlists.ReverseList;
 import com.gallopdevs.interviewtests.simpleprogrammer.linkedlists.SumLists;
+import com.gallopdevs.interviewtests.simpleprogrammer.linkedlists.SumLists2;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -18,6 +23,8 @@ import org.junit.Test;
 public class LinkedListsTest {
 
     private LinkedListNode node;
+    private LinkedListNode node2;
+    private LinkedListNode cyclicList;
     private LinkedListNode l1;
     private LinkedListNode l2;
     private LinkedListNode nodePalindrome;
@@ -32,6 +39,21 @@ public class LinkedListsTest {
         node.next.next.next.next.next = new LinkedListNode(10);
         node.next.next.next.next.next.next = new LinkedListNode(11);
         node.next.next.next.next.next.next.next = new LinkedListNode(11);
+
+        node2 = new LinkedListNode(5);
+        node2.next = new LinkedListNode(1);
+        node2.next.next = new LinkedListNode(3);
+        node2.next.next.next = new LinkedListNode(7);
+        node2.next.next.next.next = new LinkedListNode(10);
+        node2.next.next.next.next.next = new LinkedListNode(10);
+        node2.next.next.next.next.next.next = new LinkedListNode(11);
+        node2.next.next.next.next.next.next.next = new LinkedListNode(11);
+
+        cyclicList = new LinkedListNode(4);
+        cyclicList.next = new LinkedListNode(1);
+        cyclicList.next.next = new LinkedListNode(3);
+        cyclicList.next.next.next = cyclicList;
+        cyclicList.next.next.next.next = new LinkedListNode(7);
 
         l1 = new LinkedListNode(6);
         l1.next = new LinkedListNode(7);
@@ -50,26 +72,46 @@ public class LinkedListsTest {
 
     @Test
     public void FindLength() {
+        System.out.println("=========Test1 FindLength=========");
         int length = FindLength.length(node);
         System.out.println("length: " + length);
+        System.out.println("=========Test2 FindLength=========");
+        int length2 = FindLength2.findLength(node);
+        System.out.println("length: " + length2);
     }
 
     //TODO create
     @Test
     public void IsCyclic() {
-
+        System.out.println("=========Test1 IsCyclic=========");
+        System.out.println("List is cyclic: " + IsCyclic.isCyclic(node));
+        System.out.println("List is cyclic: " + IsCyclic.isCyclic(cyclicList));
     }
 
     @Test
     public void RemoveDuplicates() {
+        System.out.println("=========Test1 RemoveDuplicates=========");
+        prettyPrint(node);
         RemoveDuplicates.removeDuplicates(node);
         prettyPrint(node);
+        System.out.println();
+        System.out.println("=========Test2 RemoveDuplicates=========");
+        prettyPrint(node2);
+        RemoveDuplicates2.removeDuplicates(node2);
+        prettyPrint(node2);
     }
 
     @Test
     public void DeleteMiddleNode() {
+        System.out.println("=========Test1 DeleteMiddleNode=========");
         System.out.println("length before: " + FindLength.length(node));
-        DeleteMiddleNode.deleteNode(node.next);
+        DeleteMiddleNode.deleteMiddleNode(node.next);
+        prettyPrint(node);
+        System.out.println("length after: " + FindLength.length(node));
+        System.out.println();
+        System.out.println("=========Test2 DeleteMiddleNode=========");
+        System.out.println("length before: " + FindLength.length(node));
+        DeleteMiddleNode2.deleteMiddleNode(node.next);
         prettyPrint(node);
         System.out.println("length after: " + FindLength.length(node));
     }
@@ -94,7 +136,11 @@ public class LinkedListsTest {
 
     @Test
     public void SumLists() {
+        System.out.println("=========Test1=========");
         prettyPrint(SumLists.sumLists(l1, l2, 0));
+        System.out.println();
+        System.out.println("=========Test2=========");
+        prettyPrint(SumLists2.sumLists(l1, l2, 0));
     }
 
     @Test
