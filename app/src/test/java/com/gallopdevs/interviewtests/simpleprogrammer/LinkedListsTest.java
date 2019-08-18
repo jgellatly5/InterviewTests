@@ -152,11 +152,15 @@ public class LinkedListsTest {
         ReturnKthToLast2.printKthToLast(node2, 3);
     }
 
-    //TODO fix
     @Test
     public void Partition() {
-        prettyPrint(Partition.partition(node, 5));
-        prettyPrint(Partition2.partition(node, 5));
+        System.out.println("=========Test1 Partition=========");
+        prettyPrint(node);
+        prettyPrint(Partition.partition(node, 3));
+        System.out.println();
+        System.out.println("=========Test2 Partition=========");
+        prettyPrint(node2);
+        prettyPrint(Partition2.partition(node2, 3));
     }
 
     @Test

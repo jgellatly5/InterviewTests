@@ -3,13 +3,11 @@ package com.gallopdevs.interviewtests.simpleprogrammer.linkedlists;
 import com.gallopdevs.interviewtests.datastructures.LinkedListNode;
 
 public class Partition2 {
-
     public static LinkedListNode partition(LinkedListNode node, int value) {
         LinkedListNode beforeStart = null;
         LinkedListNode beforeEnd = null;
         LinkedListNode afterStart = null;
         LinkedListNode afterEnd = null;
-
         while (node != null) {
             LinkedListNode next = node.next;
             node.next = null;
