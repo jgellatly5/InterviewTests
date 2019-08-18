@@ -3,7 +3,6 @@ package com.gallopdevs.interviewtests.simpleprogrammer.linkedlists;
 import com.gallopdevs.interviewtests.datastructures.LinkedListNode;
 
 public class ReturnKthToLast2 {
-
     public static int printKthToLast(LinkedListNode head, int k) {
         if (head == null) return -1;
         int index = printKthToLast(head.next, k) + 1;

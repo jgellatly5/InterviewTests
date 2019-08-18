@@ -3,14 +3,14 @@ package com.gallopdevs.interviewtests.simpleprogrammer.linkedlists;
 import com.gallopdevs.interviewtests.datastructures.LinkedListNode;
 
 public class FindLength {
-    // How do you find the length of a singly linked list?
-    public static int length(LinkedListNode head) {
-        int count = 0;
+    // How do you find the findLength of a singly linked list?
+    public static int findLength(LinkedListNode head) {
+        int length = 0;
         LinkedListNode current = head;
         while (current != null) {
-            count++;
+            length++;
             current = current.next;
         }
-        return count;
+        return length;
     }
 }

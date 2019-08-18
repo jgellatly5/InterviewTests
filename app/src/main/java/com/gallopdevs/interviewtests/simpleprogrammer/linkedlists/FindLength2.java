@@ -4,12 +4,12 @@ import com.gallopdevs.interviewtests.datastructures.LinkedListNode;
 
 public class FindLength2 {
     public static int findLength(LinkedListNode head) {
-        int count = 0;
+        int length = 0;
         LinkedListNode current = head;
         while (current != null) {
-            count++;
+            length++;
             current = current.next;
         }
-        return count;
+        return length;
     }
 }
