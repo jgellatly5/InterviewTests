@@ -10,6 +10,7 @@ import com.gallopdevs.interviewtests.simpleprogrammer.linkedlists.FindLength2;
 import com.gallopdevs.interviewtests.simpleprogrammer.linkedlists.IsCyclic;
 import com.gallopdevs.interviewtests.simpleprogrammer.linkedlists.IsCyclic2;
 import com.gallopdevs.interviewtests.simpleprogrammer.linkedlists.IsPalindrome;
+import com.gallopdevs.interviewtests.simpleprogrammer.linkedlists.IsPalindrome2;
 import com.gallopdevs.interviewtests.simpleprogrammer.linkedlists.Partition;
 import com.gallopdevs.interviewtests.simpleprogrammer.linkedlists.Partition2;
 import com.gallopdevs.interviewtests.simpleprogrammer.linkedlists.RemoveDuplicates;
@@ -191,9 +192,9 @@ public class LinkedListsTest {
         System.out.println(IsPalindrome.isPalindrome(nodePalindrome));
         System.out.println("\n=========Test2 IsPalindrome=========");
         prettyPrint(node2);
-        System.out.println(IsPalindrome.isPalindrome(node2));
+        System.out.println(IsPalindrome2.isPalindrome(node2));
         prettyPrint(nodePalindrome2);
-        System.out.println(IsPalindrome.isPalindrome(nodePalindrome2));
+        System.out.println(IsPalindrome2.isPalindrome(nodePalindrome2));
     }
 
     @Test
