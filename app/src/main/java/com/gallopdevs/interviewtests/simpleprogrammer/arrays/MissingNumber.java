@@ -29,7 +29,7 @@ public class MissingNumber {
         for (int i = 0; i < missingCount; i++) {
             // finds the first bit in the set that is set to false
             lastMissingIndex = bitSet.nextClearBit(lastMissingIndex);
-            System.out.print(++lastMissingIndex);
+            System.out.print(++lastMissingIndex + " ");
         }
         System.out.println();
     }

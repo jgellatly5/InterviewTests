@@ -21,7 +21,7 @@ public class MissingNumber2 {
         int lastMissingIndex = 0;
         for (int i = 0; i < missingCount; i++) {
             lastMissingIndex = bitSet.nextClearBit(lastMissingIndex);
-            System.out.print(++lastMissingIndex);
+            System.out.print(++lastMissingIndex + " ");
         }
         System.out.println();
     }
