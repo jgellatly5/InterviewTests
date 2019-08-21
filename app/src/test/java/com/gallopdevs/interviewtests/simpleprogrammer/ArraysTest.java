@@ -4,8 +4,10 @@ import com.gallopdevs.interviewtests.simpleprogrammer.arrays.FindMultipleDuplica
 import com.gallopdevs.interviewtests.simpleprogrammer.arrays.FindMultipleDuplicates2;
 import com.gallopdevs.interviewtests.simpleprogrammer.arrays.MinMaxArray;
 import com.gallopdevs.interviewtests.simpleprogrammer.arrays.MinMaxArray2;
-import com.gallopdevs.interviewtests.simpleprogrammer.arrays.MissingNumber;
-import com.gallopdevs.interviewtests.simpleprogrammer.arrays.MissingNumber2;
+import com.gallopdevs.interviewtests.simpleprogrammer.arrays.GetMissingNumber;
+import com.gallopdevs.interviewtests.simpleprogrammer.arrays.GetMissingNumber2;
+import com.gallopdevs.interviewtests.simpleprogrammer.arrays.PrintMissingNumbers;
+import com.gallopdevs.interviewtests.simpleprogrammer.arrays.PrintMissingNumbers2;
 import com.gallopdevs.interviewtests.simpleprogrammer.arrays.RemoveDuplicates;
 import com.gallopdevs.interviewtests.simpleprogrammer.arrays.RemoveDuplicates2;
 import com.gallopdevs.interviewtests.simpleprogrammer.arrays.ReverseArray;
@@ -28,12 +30,12 @@ public class ArraysTest {
         System.out.println("=========Test1 Single Number=========");
         // Only one missing number in array
         int[] numbers = new int[]{1, 2, 3, 5};
-        int missing = MissingNumber.getMissingNumber(numbers, 5);
+        int missing = GetMissingNumber.getMissingNumber(numbers, 5);
         System.out.printf("Missing number in array %s is %d %n", Arrays.toString(numbers), missing);
         System.out.println("\n=========Test2 Single Number=========");
         // Only one missing number in array
         int[] numbers2 = new int[]{1, 2, 3, 5};
-        int missing2 = MissingNumber2.getMissingNumber(numbers, 5);
+        int missing2 = GetMissingNumber2.getMissingNumber(numbers, 5);
         System.out.printf("Missing number in array %s is %d %n", Arrays.toString(numbers2), missing2);
     }
 
@@ -41,22 +43,22 @@ public class ArraysTest {
     public void MultipleMissingNumbers() {
         System.out.println("=========Test1 Multiple Numbers=========");
         // one missing number
-        MissingNumber.printMissingNumbers(new int[]{1, 2, 3, 4, 6}, 6);
+        PrintMissingNumbers.printMissingNumbers(new int[]{1, 2, 3, 4, 6}, 6);
         // two missing numbers
-        MissingNumber.printMissingNumbers(new int[]{1, 2, 3, 4, 6, 7, 9, 10}, 10);
+        PrintMissingNumbers.printMissingNumbers(new int[]{1, 2, 3, 4, 6, 7, 9, 10}, 10);
         // three missing numbers
-        MissingNumber.printMissingNumbers(new int[]{1, 2, 3, 4, 6, 9, 8}, 10);
+        PrintMissingNumbers.printMissingNumbers(new int[]{1, 2, 3, 4, 6, 9, 8}, 10);
         // four missing numbers
-        MissingNumber.printMissingNumbers(new int[]{1, 2, 3, 4, 9, 8}, 10);
+        PrintMissingNumbers.printMissingNumbers(new int[]{1, 2, 3, 4, 9, 8}, 10);
         System.out.println("\n=========Test2 Multiple Numbers=========");
         // one missing number
-        MissingNumber2.printMissingNumbers(new int[]{1, 2, 3, 4, 6}, 6);
+        PrintMissingNumbers2.printMissingNumbers(new int[]{1, 2, 3, 4, 6}, 6);
         // two missing numbers
-        MissingNumber2.printMissingNumbers(new int[]{1, 2, 3, 4, 6, 7, 9, 10}, 10);
+        PrintMissingNumbers2.printMissingNumbers(new int[]{1, 2, 3, 4, 6, 7, 9, 10}, 10);
         // three missing numbers
-        MissingNumber2.printMissingNumbers(new int[]{1, 2, 3, 4, 6, 9, 8}, 10);
+        PrintMissingNumbers2.printMissingNumbers(new int[]{1, 2, 3, 4, 6, 9, 8}, 10);
         // four missing numbers
-        MissingNumber2.printMissingNumbers(new int[]{1, 2, 3, 4, 9, 8}, 10);
+        PrintMissingNumbers2.printMissingNumbers(new int[]{1, 2, 3, 4, 9, 8}, 10);
     }
 
     @Test

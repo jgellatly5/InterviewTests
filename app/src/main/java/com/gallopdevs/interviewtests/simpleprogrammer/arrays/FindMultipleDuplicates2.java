@@ -18,7 +18,7 @@ public class FindMultipleDuplicates2 {
     }
 
     public static void findDuplicatesSet(int[] numbers) {
-        HashSet<Integer> set = new HashSet<>();
+        Set set = new HashSet<>();
         for (int num : numbers) {
             if (!set.add(num)) {
                 System.out.print(num + " ");
@@ -41,8 +41,8 @@ public class FindMultipleDuplicates2 {
         Set<Map.Entry<Integer, Integer>> entrySet = numAndCount.entrySet();
         for (Map.Entry<Integer, Integer> entry : entrySet) {
             if (entry.getValue() > 1) {
-                System.out.println("Duplicate element: " + entry.getKey()
-                    + ", count: " + entry.getValue());
+                System.out.println("Duplicate element: " +
+                        entry.getKey() + ", count:  " + entry.getValue());
             }
         }
     }
