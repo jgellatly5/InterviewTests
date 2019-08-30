@@ -19,12 +19,12 @@ public class IsPalindrome {
         return head;
     }
 
-    private static boolean isEqual(LinkedListNode one, LinkedListNode two) {
-        while (one != null && two != null) {
-            if (one.data != two.data) return false;
-            one = one.next;
-            two = two.next;
+    private static boolean isEqual(LinkedListNode l1, LinkedListNode l2) {
+        while (l1 != null && l2 != null) {
+            if (l1.data != l2.data) return false;
+            l1 = l1.next;
+            l2 = l2.next;
         }
-        return one == null && two == null;
+        return l1 == null && l2 == null;
     }
 }

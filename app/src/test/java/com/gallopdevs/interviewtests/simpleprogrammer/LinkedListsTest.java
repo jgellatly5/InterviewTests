@@ -96,8 +96,10 @@ public class LinkedListsTest {
     public void FindLength() {
         System.out.println("=========Test1 FindLength=========");
         int length = FindLength.findLength(node);
+        prettyPrint(node);
         System.out.println("findLength: " + length);
         System.out.println("\n=========Test2 FindLength=========");
+        prettyPrint(node);
         int length2 = FindLength2.findLength(node);
         System.out.println("findLength: " + length2);
     }
