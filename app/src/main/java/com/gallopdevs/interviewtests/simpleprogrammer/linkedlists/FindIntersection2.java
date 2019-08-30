@@ -39,9 +39,9 @@ public class FindIntersection2 {
     }
 
     private static class Result {
-        public LinkedListNode tail;
-        public int size;
-        public Result(LinkedListNode tail, int size) {
+        LinkedListNode tail;
+        int size;
+        Result(LinkedListNode tail, int size) {
             this.tail = tail;
             this.size = size;
         }
