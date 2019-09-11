@@ -40,7 +40,7 @@ public class FindIntersection {
 
     private static class Result {
         LinkedListNode tail;
-        public int size;
+        int size;
         Result(LinkedListNode tail, int size) {
             this.tail = tail;
             this.size = size;
