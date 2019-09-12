@@ -7,7 +7,7 @@ public class OneEditAway2 {
         } else if (s1.length() + 1 == s2.length()) {
             return oneEditInsert(s1, s2);
         } else if (s1.length() - 1 == s2.length()) {
-            return oneEditInsert(s1, s2);
+            return oneEditInsert(s2, s1);
         } else {
             return false;
         }
