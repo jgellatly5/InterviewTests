@@ -8,6 +8,7 @@ import com.gallopdevs.interviewtests.simpleprogrammer.strings.IsUnique;
 import com.gallopdevs.interviewtests.simpleprogrammer.strings.IsUnique2;
 import com.gallopdevs.interviewtests.simpleprogrammer.strings.OneEditAway;
 import com.gallopdevs.interviewtests.simpleprogrammer.strings.Rotation;
+import com.gallopdevs.interviewtests.simpleprogrammer.strings.Urlify;
 import com.gallopdevs.interviewtests.simpleprogrammer.strings.Urlify2;
 
 import org.junit.Before;
@@ -65,8 +66,16 @@ public class StringsTest {
 
     @Test
     public void Urlify() {
+        System.out.println("=========Test1 Urlify=========");
+        System.out.println(text5);
         char[] chars = text5.toCharArray();
-        System.out.println(Urlify2.urlify(chars, 13));
+        System.out.println(Urlify.urlify(chars, 13));
+        System.out.println();
+        System.out.println("=========Test2 Urlify=========");
+        System.out.println(text5);
+        char[] chars2 = text5.toCharArray();
+        System.out.println(Urlify2.urlify(chars2, 13));
+        System.out.println();
     }
 
     @Test
