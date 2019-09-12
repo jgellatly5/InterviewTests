@@ -1,7 +1,6 @@
 package com.gallopdevs.interviewtests.simpleprogrammer.strings;
 
 public class OneEditAway {
-
     public static boolean oneEditAway(String first, String second) {
         if (first.length() == second.length()) {
             return oneEditReplace(first, second);

@@ -1,14 +1,13 @@
 package com.gallopdevs.interviewtests.simpleprogrammer.strings;
 
 public class OneEditAway2 {
-
-    public static boolean oneEditAway(String first, String second) {
-        if (first.length() == second.length()) {
-            return oneEditReplace(first, second);
-        } else if (first.length() + 1 == second.length()) {
-            return oneEditInsert(first, second);
-        } else if (first.length() - 1 == second.length()) {
-            return oneEditInsert(second, first);
+    public static boolean oneEditAway(String s1, String s2) {
+        if (s1.length() == s2.length()) {
+            return oneEditReplace(s1, s2);
+        } else if (s1.length() + 1 == s2.length()) {
+            return oneEditInsert(s1, s2);
+        } else if (s1.length() - 1 == s2.length()) {
+            return oneEditInsert(s1, s2);
         } else {
             return false;
         }
@@ -30,9 +29,7 @@ public class OneEditAway2 {
         int index2 = 0;
         while (index2 < s2.length() && index1 < s1.length()) {
             if (s1.charAt(index1) != s2.charAt(index2)) {
-                if (index1 != index2) {
-                    return false;
-                }
+                if (index1 != index2) return false;
                 index2++;
             } else {
                 index1++;

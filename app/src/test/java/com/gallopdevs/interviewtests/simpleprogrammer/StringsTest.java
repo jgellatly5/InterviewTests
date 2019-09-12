@@ -9,6 +9,7 @@ import com.gallopdevs.interviewtests.simpleprogrammer.strings.IsPermutationPalin
 import com.gallopdevs.interviewtests.simpleprogrammer.strings.IsUnique;
 import com.gallopdevs.interviewtests.simpleprogrammer.strings.IsUnique2;
 import com.gallopdevs.interviewtests.simpleprogrammer.strings.OneEditAway;
+import com.gallopdevs.interviewtests.simpleprogrammer.strings.OneEditAway2;
 import com.gallopdevs.interviewtests.simpleprogrammer.strings.Rotation;
 import com.gallopdevs.interviewtests.simpleprogrammer.strings.Rotation2;
 import com.gallopdevs.interviewtests.simpleprogrammer.strings.Urlify;
@@ -110,7 +111,15 @@ public class StringsTest {
 
     @Test
     public void OneEditAway() {
+        System.out.println("=========Test1 OneEditAway=========");
+        System.out.println("bear , pear");
         System.out.println(OneEditAway.oneEditAway("bear", "pear"));
+        System.out.println("beary , pearf");
         System.out.println(OneEditAway.oneEditAway("beary", "pearf"));
+        System.out.println("\n=========Test2 OneEditAway=========");
+        System.out.println("bear , pear");
+        System.out.println(OneEditAway2.oneEditAway("bear", "pear"));
+        System.out.println("beary , pearf");
+        System.out.println(OneEditAway2.oneEditAway("beary", "pearf"));
     }
 }
