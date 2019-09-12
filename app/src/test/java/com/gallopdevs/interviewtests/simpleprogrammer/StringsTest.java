@@ -4,6 +4,7 @@ import com.gallopdevs.interviewtests.simpleprogrammer.strings.Compress;
 import com.gallopdevs.interviewtests.simpleprogrammer.strings.Compress2;
 import com.gallopdevs.interviewtests.simpleprogrammer.strings.IsPalindrome;
 import com.gallopdevs.interviewtests.simpleprogrammer.strings.IsPalindrome2;
+import com.gallopdevs.interviewtests.simpleprogrammer.strings.IsPermutationPalindrome;
 import com.gallopdevs.interviewtests.simpleprogrammer.strings.IsPermutationPalindrome2;
 import com.gallopdevs.interviewtests.simpleprogrammer.strings.IsUnique;
 import com.gallopdevs.interviewtests.simpleprogrammer.strings.IsUnique2;
@@ -99,6 +100,11 @@ public class StringsTest {
 
     @Test
     public void IsPermutationPalindrome() {
+        System.out.println("=========Test1 isPermutationPalindrome=========");
+        System.out.println("tact coa");
+        System.out.println(IsPermutationPalindrome.isPermutationPalindrome("tact coa"));
+        System.out.println("\n=========Test2 isPermutationPalindrome=========");
+        System.out.println("tact coa");
         System.out.println(IsPermutationPalindrome2.isPermutationPalindrome("tact coa"));
     }
 
