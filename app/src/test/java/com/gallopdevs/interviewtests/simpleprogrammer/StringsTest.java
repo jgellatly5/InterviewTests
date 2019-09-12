@@ -9,6 +9,7 @@ import com.gallopdevs.interviewtests.simpleprogrammer.strings.IsUnique;
 import com.gallopdevs.interviewtests.simpleprogrammer.strings.IsUnique2;
 import com.gallopdevs.interviewtests.simpleprogrammer.strings.OneEditAway;
 import com.gallopdevs.interviewtests.simpleprogrammer.strings.Rotation;
+import com.gallopdevs.interviewtests.simpleprogrammer.strings.Rotation2;
 import com.gallopdevs.interviewtests.simpleprogrammer.strings.Urlify;
 import com.gallopdevs.interviewtests.simpleprogrammer.strings.Urlify2;
 
@@ -78,17 +79,22 @@ public class StringsTest {
 
     @Test
     public void Compress() {
-        System.out.println("=========Test1 Urlify=========");
+        System.out.println("=========Test1 Compress=========");
         System.out.println(text6);
         System.out.println(Compress.compress(text6));
-        System.out.println("\n=========Test2 Urlify=========");
+        System.out.println("\n=========Test2 Compress=========");
         System.out.println(text6);
         System.out.println(Compress2.compress(text6));
     }
 
     @Test
     public void IsRotation() {
+        System.out.println("=========Test1 isRotation=========");
+        System.out.println("waterbottle , erbottlewat");
         System.out.println(Rotation.isRotation("waterbottle", "erbottlewat"));
+        System.out.println("\n=========Test2 isRotation=========");
+        System.out.println("waterbottle , erbottlewat");
+        System.out.println(Rotation2.isRotation("waterbottle", "erbottlewat"));
     }
 
     @Test
