@@ -1,6 +1,7 @@
 package com.gallopdevs.interviewtests.simpleprogrammer;
 
 import com.gallopdevs.interviewtests.simpleprogrammer.strings.Compress;
+import com.gallopdevs.interviewtests.simpleprogrammer.strings.IsPalindrome;
 import com.gallopdevs.interviewtests.simpleprogrammer.strings.IsPalindrome2;
 import com.gallopdevs.interviewtests.simpleprogrammer.strings.IsPermutationPalindrome2;
 import com.gallopdevs.interviewtests.simpleprogrammer.strings.IsUnique;
@@ -36,16 +37,28 @@ public class StringsTest {
         System.out.println("=========Test1 IsUnique=========");
         System.out.println(text);
         System.out.println(IsUnique.isUnique(text));
+        System.out.println(text2);
         System.out.println(IsUnique.isUnique(text2));
         System.out.println();
         System.out.println("=========Test2 IsUnique=========");
+        System.out.println(text);
         System.out.println(IsUnique2.isUnique(text));
+        System.out.println(text2);
         System.out.println(IsUnique2.isUnique(text2));
     }
 
     @Test
     public void IsPalindrome() {
+        System.out.println("=========Test1 IsPalindrome=========");
+        System.out.println(text3);
+        System.out.println(IsPalindrome.isPalindrome(text3));
+        System.out.println(text4);
+        System.out.println(IsPalindrome.isPalindrome(text4));
+        System.out.println();
+        System.out.println("=========Test2 IsPalindrome=========");
+        System.out.println(text3);
         System.out.println(IsPalindrome2.isPalindrome(text3));
+        System.out.println(text4);
         System.out.println(IsPalindrome2.isPalindrome(text4));
     }
 

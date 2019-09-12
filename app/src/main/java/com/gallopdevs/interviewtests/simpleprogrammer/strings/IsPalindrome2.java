@@ -1,7 +1,6 @@
 package com.gallopdevs.interviewtests.simpleprogrammer.strings;
 
 public class IsPalindrome2 {
-
     public static boolean isPalindrome(String text) {
         char[] chars = text.toCharArray();
         int length = chars.length;
