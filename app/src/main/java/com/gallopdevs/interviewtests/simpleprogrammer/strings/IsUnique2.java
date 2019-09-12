@@ -1,7 +1,6 @@
 package com.gallopdevs.interviewtests.simpleprogrammer.strings;
 
 public class IsUnique2 {
-
     public static boolean isUnique(String text) {
         if (text.length() > 128) return false;
         boolean[] charSet = new boolean[128];

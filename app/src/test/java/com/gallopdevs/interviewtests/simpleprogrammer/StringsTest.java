@@ -4,6 +4,7 @@ import com.gallopdevs.interviewtests.simpleprogrammer.strings.Compress;
 import com.gallopdevs.interviewtests.simpleprogrammer.strings.IsPalindrome2;
 import com.gallopdevs.interviewtests.simpleprogrammer.strings.IsPermutationPalindrome2;
 import com.gallopdevs.interviewtests.simpleprogrammer.strings.IsUnique;
+import com.gallopdevs.interviewtests.simpleprogrammer.strings.IsUnique2;
 import com.gallopdevs.interviewtests.simpleprogrammer.strings.OneEditAway;
 import com.gallopdevs.interviewtests.simpleprogrammer.strings.Rotation;
 import com.gallopdevs.interviewtests.simpleprogrammer.strings.Urlify2;
@@ -32,9 +33,14 @@ public class StringsTest {
 
     @Test
     public void IsUnique() {
+        System.out.println("=========Test1 IsUnique=========");
+        System.out.println(text);
         System.out.println(IsUnique.isUnique(text));
         System.out.println(IsUnique.isUnique(text2));
-
+        System.out.println();
+        System.out.println("=========Test2 IsUnique=========");
+        System.out.println(IsUnique2.isUnique(text));
+        System.out.println(IsUnique2.isUnique(text2));
     }
 
     @Test
