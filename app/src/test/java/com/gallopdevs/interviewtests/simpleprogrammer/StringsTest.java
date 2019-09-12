@@ -1,6 +1,7 @@
 package com.gallopdevs.interviewtests.simpleprogrammer;
 
 import com.gallopdevs.interviewtests.simpleprogrammer.strings.Compress;
+import com.gallopdevs.interviewtests.simpleprogrammer.strings.Compress2;
 import com.gallopdevs.interviewtests.simpleprogrammer.strings.IsPalindrome;
 import com.gallopdevs.interviewtests.simpleprogrammer.strings.IsPalindrome2;
 import com.gallopdevs.interviewtests.simpleprogrammer.strings.IsPermutationPalindrome2;
@@ -40,8 +41,7 @@ public class StringsTest {
         System.out.println(IsUnique.isUnique(text));
         System.out.println(text2);
         System.out.println(IsUnique.isUnique(text2));
-        System.out.println();
-        System.out.println("=========Test2 IsUnique=========");
+        System.out.println("\n=========Test2 IsUnique=========");
         System.out.println(text);
         System.out.println(IsUnique2.isUnique(text));
         System.out.println(text2);
@@ -55,8 +55,7 @@ public class StringsTest {
         System.out.println(IsPalindrome.isPalindrome(text3));
         System.out.println(text4);
         System.out.println(IsPalindrome.isPalindrome(text4));
-        System.out.println();
-        System.out.println("=========Test2 IsPalindrome=========");
+        System.out.println("\n=========Test2 IsPalindrome=========");
         System.out.println(text3);
         System.out.println(IsPalindrome2.isPalindrome(text3));
         System.out.println(text4);
@@ -70,8 +69,7 @@ public class StringsTest {
         System.out.println(text5);
         char[] chars = text5.toCharArray();
         System.out.println(Urlify.urlify(chars, 13));
-        System.out.println();
-        System.out.println("=========Test2 Urlify=========");
+        System.out.println("\n=========Test2 Urlify=========");
         System.out.println(text5);
         char[] chars2 = text5.toCharArray();
         System.out.println(Urlify2.urlify(chars2, 13));
@@ -80,7 +78,12 @@ public class StringsTest {
 
     @Test
     public void Compress() {
+        System.out.println("=========Test1 Urlify=========");
+        System.out.println(text6);
         System.out.println(Compress.compress(text6));
+        System.out.println("\n=========Test2 Urlify=========");
+        System.out.println(text6);
+        System.out.println(Compress2.compress(text6));
     }
 
     @Test

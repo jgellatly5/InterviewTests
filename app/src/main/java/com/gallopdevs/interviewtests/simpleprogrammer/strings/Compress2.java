@@ -1,7 +1,6 @@
 package com.gallopdevs.interviewtests.simpleprogrammer.strings;
 
 public class Compress2 {
-
     public static String compress(String text) {
         StringBuilder result = new StringBuilder();
         int countConsecutive = 0;
