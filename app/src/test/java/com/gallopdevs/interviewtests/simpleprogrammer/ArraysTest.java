@@ -1,7 +1,11 @@
 package com.gallopdevs.interviewtests.simpleprogrammer;
 
-import com.gallopdevs.interviewtests.simpleprogrammer.arrays.FindMultipleDuplicates;
-import com.gallopdevs.interviewtests.simpleprogrammer.arrays.FindMultipleDuplicates2;
+import com.gallopdevs.interviewtests.simpleprogrammer.arrays.FindDuplicatesCount;
+import com.gallopdevs.interviewtests.simpleprogrammer.arrays.FindDuplicatesCount2;
+import com.gallopdevs.interviewtests.simpleprogrammer.arrays.FindDuplicatesLoop;
+import com.gallopdevs.interviewtests.simpleprogrammer.arrays.FindDuplicatesLoop2;
+import com.gallopdevs.interviewtests.simpleprogrammer.arrays.FindDuplicatesSet;
+import com.gallopdevs.interviewtests.simpleprogrammer.arrays.FindDuplicatesSet2;
 import com.gallopdevs.interviewtests.simpleprogrammer.arrays.MinMaxArray;
 import com.gallopdevs.interviewtests.simpleprogrammer.arrays.MinMaxArray2;
 import com.gallopdevs.interviewtests.simpleprogrammer.arrays.GetMissingNumber;
@@ -62,16 +66,36 @@ public class ArraysTest {
     }
 
     @Test
-    public void MultipleDuplicates() {
-        System.out.println("=========Test1=========");
-        FindMultipleDuplicates.findDuplicates(new int[]{1, 2, 4, 1, 5, 6, 4});
-        FindMultipleDuplicates.findDuplicatesSet(new int[]{1, 2, 4, 1, 5, 6, 4});
-        FindMultipleDuplicates.findDuplicatesCount(new int[]{1, 2, 4, 1, 5, 6, 4});
-        System.out.println();
-        System.out.println("=========Test2=========");
-        FindMultipleDuplicates2.findDuplicates(new int[]{1, 2, 4, 1, 5, 6, 4});
-        FindMultipleDuplicates2.findDuplicatesSet(new int[]{1, 2, 4, 1, 5, 6, 4});
-        FindMultipleDuplicates2.findDuplicatesCount(new int[]{1, 2, 4, 1, 5, 6, 4});
+    public void FindDuplicatesLoop() {
+        System.out.println("=========Test1 FindDuplicatesLoop=========");
+        int[] numbers = new int[]{1, 2, 4, 1, 5, 6, 4};
+        System.out.println(Arrays.toString(numbers));
+        FindDuplicatesLoop.findDuplicatesLoop(new int[]{1, 2, 4, 1, 5, 6, 4});
+        System.out.println("\n=========Test2 FindDuplicatesLoop=========");
+        System.out.println(Arrays.toString(numbers));
+        FindDuplicatesLoop2.findDuplicatesLoop(new int[]{1, 2, 4, 1, 5, 6, 4});
+    }
+
+    @Test
+    public void FindDuplicatesSet() {
+        System.out.println("=========Test1 FindDuplicatesSet=========");
+        int[] numbers = new int[]{1, 2, 4, 1, 5, 6, 4};
+        System.out.println(Arrays.toString(numbers));
+        FindDuplicatesSet.findDuplicatesSet(new int[]{1, 2, 4, 1, 5, 6, 4});
+        System.out.println("\n=========Test2 FindDuplicatesSet=========");
+        System.out.println(Arrays.toString(numbers));
+        FindDuplicatesSet2.findDuplicatesSet(new int[]{1, 2, 4, 1, 5, 6, 4});
+    }
+
+    @Test
+    public void FindDuplicatesCount() {
+        System.out.println("=========Test1 FindDuplicatesCount=========");
+        int[] numbers = new int[]{1, 2, 4, 1, 5, 6, 4};
+        System.out.println(Arrays.toString(numbers));
+        FindDuplicatesCount.findDuplicatesCount(numbers);
+        System.out.println("\n=========Test2 FindDuplicatesCount=========");
+        System.out.println(Arrays.toString(numbers));
+        FindDuplicatesCount2.findDuplicatesCount(numbers);
     }
 
     @Test
