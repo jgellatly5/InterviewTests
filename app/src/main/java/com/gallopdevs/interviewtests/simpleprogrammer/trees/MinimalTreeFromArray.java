@@ -1,17 +1,8 @@
 package com.gallopdevs.interviewtests.simpleprogrammer.trees;
 
+import com.gallopdevs.interviewtests.datastructures.TreeNode;
+
 public class MinimalTreeFromArray {
-
-    public static class TreeNode {
-        public int data;
-        public TreeNode left, right, parent;
-        private int size;
-        public TreeNode(int data) {
-            this.data = data;
-            size = 1;
-        }
-    }
-
     public static TreeNode createMinimalBst(int[] array) {
         return createMinimalBst(array, 0, array.length - 1);
     }
