@@ -120,8 +120,7 @@ public class LinkedListsTest {
         prettyPrint(node);
         RemoveDuplicates.removeDuplicates(node);
         prettyPrint(node);
-        System.out.println();
-        System.out.println("=========Test2 RemoveDuplicates=========");
+        System.out.println("\n=========Test2 RemoveDuplicates=========");
         prettyPrint(node2);
         RemoveDuplicates2.removeDuplicates(node2);
         prettyPrint(node2);
