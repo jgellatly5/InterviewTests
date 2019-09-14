@@ -20,8 +20,8 @@ public class FindIntersection2 {
 
     private static Result getTailAndSize(LinkedListNode node) {
         if (node == null) return null;
-        int size = 1;
         LinkedListNode current = node;
+        int size = 1;
         while (current.next != null) {
             size++;
             current = current.next;
