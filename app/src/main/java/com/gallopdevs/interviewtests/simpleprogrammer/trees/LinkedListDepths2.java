@@ -5,7 +5,7 @@ import com.gallopdevs.interviewtests.datastructures.TreeNode;
 import java.util.ArrayList;
 import java.util.LinkedList;
 
-public class LinkedListDepths {
+public class LinkedListDepths2 {
     public static ArrayList<LinkedList<TreeNode>> createLevelLinkedListDepthFirst(TreeNode root) {
         ArrayList<LinkedList<TreeNode>> lists = new ArrayList<>();
         createLevelLinkedListDepthFirst(root, lists, 0);
