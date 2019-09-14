@@ -5,13 +5,12 @@ import com.gallopdevs.interviewtests.datastructures.TreeNode;
 import java.util.ArrayList;
 import java.util.LinkedList;
 
-public class LinkedListDepths {
+public class LinkedListDepthFirst {
     public static ArrayList<LinkedList<TreeNode>> createLevelLinkedListDepthFirst(TreeNode root) {
         ArrayList<LinkedList<TreeNode>> lists = new ArrayList<>();
         createLevelLinkedListDepthFirst(root, lists, 0);
         return lists;
     }
-    // DFS
     private static void createLevelLinkedListDepthFirst(TreeNode root,
                                                         ArrayList<LinkedList<TreeNode>> lists,
                                                         int level) {
@@ -26,27 +25,5 @@ public class LinkedListDepths {
         list.add(root);
         createLevelLinkedListDepthFirst(root.left, lists, level + 1);
         createLevelLinkedListDepthFirst(root.right, lists, level + 1);
-    }
-    // BFS
-    private static ArrayList<LinkedList<TreeNode>> createLevelLinkedListBreadthFirst(TreeNode root) {
-        ArrayList<LinkedList<TreeNode>> result = new ArrayList<LinkedList<TreeNode>>();
-        LinkedList<TreeNode> current = new LinkedList<TreeNode>();
-        if (root != null) {
-            current.add(root);
-        }
-        while (current.size() > 0) {
-            result.add(current);
-            LinkedList<TreeNode> parents = current;
-            current = new LinkedList<TreeNode>();
-            for (TreeNode parent : parents) {
-                if (parent.left != null) {
-                    current.add(parent.left);
-                }
-                if (parent.right != null) {
-                    current.add(parent.right);
-                }
-            }
-        }
-        return result;
     }
 }

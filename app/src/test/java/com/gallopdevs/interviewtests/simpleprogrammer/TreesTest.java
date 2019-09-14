@@ -1,8 +1,10 @@
 package com.gallopdevs.interviewtests.simpleprogrammer;
 
 import com.gallopdevs.interviewtests.datastructures.TreeNode;
-import com.gallopdevs.interviewtests.simpleprogrammer.trees.LinkedListDepths;
-import com.gallopdevs.interviewtests.simpleprogrammer.trees.LinkedListDepths2;
+import com.gallopdevs.interviewtests.simpleprogrammer.trees.LinkedListBreadthFirst;
+import com.gallopdevs.interviewtests.simpleprogrammer.trees.LinkedListBreadthFirst2;
+import com.gallopdevs.interviewtests.simpleprogrammer.trees.LinkedListDepthFirst;
+import com.gallopdevs.interviewtests.simpleprogrammer.trees.LinkedListDepthFirst2;
 import com.gallopdevs.interviewtests.simpleprogrammer.trees.MinimalTreeFromArray;
 import com.gallopdevs.interviewtests.simpleprogrammer.trees.MinimalTreeFromArray2;
 
@@ -10,13 +12,11 @@ import org.junit.Before;
 import org.junit.Test;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.LinkedList;
-import java.util.stream.StreamSupport;
 
 public class TreesTest {
 
-    TreeNode root;
+    private TreeNode root;
 
     @Before
     public void setup() {
@@ -48,17 +48,37 @@ public class TreesTest {
     }
 
     @Test
-    public void LinkedListDepths() {
-        System.out.println("=========Test1 LinkedListDepths=========");
-        ArrayList<LinkedList<TreeNode>> lists = LinkedListDepths.createLevelLinkedListDepthFirst(root);
+    public void LinkedListDepthFirst() {
+        System.out.println("=========Test1 LinkedListDepthFirst=========");
+        ArrayList<LinkedList<TreeNode>> lists = LinkedListDepthFirst.createLevelLinkedListDepthFirst(root);
         for (LinkedList<TreeNode> list : lists) {
             for (TreeNode node : list) {
                 System.out.print(node.data + " ");
             }
             System.out.println();
         }
-        System.out.println("\n=========Test2 LinkedListDepths=========");
-        ArrayList<LinkedList<TreeNode>> lists2 = LinkedListDepths2.createLevelLinkedListDepthFirst(root);
+        System.out.println("\n=========Test2 LinkedListDepthFirst=========");
+        ArrayList<LinkedList<TreeNode>> lists2 = LinkedListDepthFirst2.createLevelLinkedListDepthFirst(root);
+        for (LinkedList<TreeNode> list : lists2) {
+            for (TreeNode node : list) {
+                System.out.print(node.data + " ");
+            }
+            System.out.println();
+        }
+    }
+
+    @Test
+    public void LinkedListBreadthFirst() {
+        System.out.println("=========Test1 LinkedListBreadthFirst=========");
+        ArrayList<LinkedList<TreeNode>> lists = LinkedListBreadthFirst.createLevelLinkedListBreadthFirst(root);
+        for (LinkedList<TreeNode> list : lists) {
+            for (TreeNode node : list) {
+                System.out.print(node.data + " ");
+            }
+            System.out.println();
+        }
+        System.out.println("\n=========Test2 LinkedListBreadthFirst=========");
+        ArrayList<LinkedList<TreeNode>> lists2 = LinkedListBreadthFirst2.createLevelLinkedListBreadthFirst(root);
         for (LinkedList<TreeNode> list : lists2) {
             for (TreeNode node : list) {
                 System.out.print(node.data + " ");
