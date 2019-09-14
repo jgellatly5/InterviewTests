@@ -8,8 +8,8 @@ public class RemoveDuplicates {
     // How are duplicate nodes removed in an unsorted linked list?
     public static void removeDuplicates(LinkedListNode head) {
         HashSet<Integer> hashSet = new HashSet<>();
-        LinkedListNode current = head;
         LinkedListNode previous = null;
+        LinkedListNode current = head;
         while (current != null) {
             if (hashSet.contains(current.data)) {
                 previous.next = current.next;

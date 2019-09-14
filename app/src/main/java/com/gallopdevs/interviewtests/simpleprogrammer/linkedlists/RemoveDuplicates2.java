@@ -7,8 +7,8 @@ import java.util.HashSet;
 public class RemoveDuplicates2 {
     public static void removeDuplicates(LinkedListNode head) {
         HashSet<Integer> hashSet = new HashSet<>();
-        LinkedListNode current = head;
         LinkedListNode previous = null;
+        LinkedListNode current = head;
         while (current != null) {
             if (hashSet.contains(current.data)) {
                 previous.next = current.next;

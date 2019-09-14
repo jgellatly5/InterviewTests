@@ -18,7 +18,7 @@ public class TwoNumArraySum2 {
 
     public static void printPairsSet(int[] numbers, int sum) {
         if (numbers.length < 2) return;
-        Set set = new HashSet<>(numbers.length);
+        HashSet<Integer> set = new HashSet<>();
         for (int num : numbers) {
             int target = sum - num;
             if (!set.contains(target)) {

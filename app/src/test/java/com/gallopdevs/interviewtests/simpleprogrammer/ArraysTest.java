@@ -112,18 +112,23 @@ public class ArraysTest {
     public void SumPairs() {
         int[] numbers = { 2, 4, 3, 5, 7, 8, 9 };
         int[] numbersWithDuplicates = { 2, 4, 3, 5, 6, -2, 4, 7, 8, 9 };
-
+        int sum = 7;
         System.out.println("=========Test1=========");
-        TwoNumArraySum.prettyPrint(numbers, 7);
-        TwoNumArraySum.prettyPrint(numbersWithDuplicates, 7);
-
-        TwoNumArraySum.prettyPrintSet(TwoNumArraySum.getRandomArray(9), 11);
-        TwoNumArraySum.prettyPrintSet(TwoNumArraySum.getRandomArray(10), 12);
-
-        System.out.println("=========Test2=========");
-        TwoNumArraySum2.printPairs(numbers, 7);
+        System.out.println(Arrays.toString(numbers));
+        System.out.println("Sum: " + sum);
+        TwoNumArraySum.printPairs(numbers, sum);
         System.out.println();
-        TwoNumArraySum2.printPairsSet(numbers, 7);
+        System.out.println(Arrays.toString(numbers));
+        System.out.println("Sum: " + sum);
+        TwoNumArraySum.printPairsSet(numbers, sum);
+        System.out.println("\n=========Test2=========");
+        System.out.println(Arrays.toString(numbers));
+        System.out.println("Sum: " + sum);
+        TwoNumArraySum2.printPairs(numbers, sum);
+        System.out.println();
+        System.out.println(Arrays.toString(numbers));
+        System.out.println("Sum: " + sum);
+        TwoNumArraySum2.printPairsSet(numbers, sum);
     }
 
     @Test
@@ -182,5 +187,13 @@ public class ArraysTest {
                 {13, 14, 15, 16}
         };
         ZeroMatrix2.zeroMatrix(matrix2);
+    }
+
+    public static int[] getRandomArray(int length) {
+        int[] randoms = new int[length];
+        for(int i=0; i<length; i++) {
+            randoms[i] = (int) (Math.random()*15);
+        }
+        return randoms;
     }
 }
