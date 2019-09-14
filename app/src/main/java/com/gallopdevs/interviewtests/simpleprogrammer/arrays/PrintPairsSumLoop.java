@@ -1,9 +1,6 @@
 package com.gallopdevs.interviewtests.simpleprogrammer.arrays;
 
-import java.util.HashSet;
-import java.util.Set;
-
-public class TwoNumArraySum {
+public class PrintPairsSumLoop {
     // How do you find all pairs of an integer array whose sum is equal to a given number?
     public static void printPairs(int[] numbers, int sum) {
         for (int i = 0; i < numbers.length; i++) {
@@ -13,19 +10,6 @@ public class TwoNumArraySum {
                 if (first + second == sum) {
                     System.out.printf("(%d, %d) %n", first, second);
                 }
-            }
-        }
-    }
-
-    public static void printPairsSet(int[] numbers, int sum) {
-        if (numbers.length < 2) return;
-        Set set = new HashSet<>(numbers.length);
-        for (int num : numbers) {
-            int target = sum - num;
-            if (!set.contains(target)) {
-                set.add(num);
-            } else {
-                System.out.printf("(%d, %d) %n", num, target);
             }
         }
     }

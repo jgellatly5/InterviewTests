@@ -3,9 +3,10 @@
     <string-array name="questions_array">
         <item name="q_1">How do you find the missing number in a given integer array of 1 to 100?</item>
         <item name="q_2">How do you find multiple missing numbers in a given integer array of 1 to 100?</item>
-        <item name="q_3">How do you find the duplicate number on a given integer array?</item>
-        <item name="q_4">How do you find duplicate numbers in an array if it contains multiple duplicates? What is the count?</item>
-        <item name="q_5">How are duplicates removed from a given array in Java?</item>
+        <item name="q_3">How do you find the duplicate numbers of a given integer array using a loop?</item>
+        <item name="q_4">How do you find the duplicate numbers of a given integer array using a set?</item>
+        <item name="q_5">How do you find the number of times a duplicate number appears in an array?</item>
+        <item name="q_6">How are duplicates removed from a given array in Java?</item>
         <item name="q_6">How do you find the largest and smallest number in an unsorted integer array?</item>
         <item name="q_7">How do you find all pairs of an integer array whose sum is equal to a given number?</item>
         <item name="q_8">How do you reverse an array?</item>

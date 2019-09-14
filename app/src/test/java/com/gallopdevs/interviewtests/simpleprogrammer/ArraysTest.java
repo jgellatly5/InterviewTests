@@ -12,14 +12,16 @@ import com.gallopdevs.interviewtests.simpleprogrammer.arrays.GetMissingNumber;
 import com.gallopdevs.interviewtests.simpleprogrammer.arrays.GetMissingNumber2;
 import com.gallopdevs.interviewtests.simpleprogrammer.arrays.PrintMissingNumbers;
 import com.gallopdevs.interviewtests.simpleprogrammer.arrays.PrintMissingNumbers2;
+import com.gallopdevs.interviewtests.simpleprogrammer.arrays.PrintPairsSumSet;
+import com.gallopdevs.interviewtests.simpleprogrammer.arrays.PrintPairsSumSet2;
 import com.gallopdevs.interviewtests.simpleprogrammer.arrays.RemoveDuplicates;
 import com.gallopdevs.interviewtests.simpleprogrammer.arrays.RemoveDuplicates2;
 import com.gallopdevs.interviewtests.simpleprogrammer.arrays.ReverseArray;
 import com.gallopdevs.interviewtests.simpleprogrammer.arrays.ReverseArray2;
 import com.gallopdevs.interviewtests.simpleprogrammer.arrays.RotateMatrix;
 import com.gallopdevs.interviewtests.simpleprogrammer.arrays.RotateMatrix2;
-import com.gallopdevs.interviewtests.simpleprogrammer.arrays.TwoNumArraySum;
-import com.gallopdevs.interviewtests.simpleprogrammer.arrays.TwoNumArraySum2;
+import com.gallopdevs.interviewtests.simpleprogrammer.arrays.PrintPairsSumLoop;
+import com.gallopdevs.interviewtests.simpleprogrammer.arrays.PrintPairsSumLoop2;
 import com.gallopdevs.interviewtests.simpleprogrammer.arrays.ZeroMatrix;
 import com.gallopdevs.interviewtests.simpleprogrammer.arrays.ZeroMatrix2;
 
@@ -133,26 +135,31 @@ public class ArraysTest {
     }
 
     @Test
-    public void SumPairs() {
+    public void PrintPairsSumLoop() {
         int[] numbers = { 2, 4, 3, 5, 7, 8, 9 };
-        int[] numbersWithDuplicates = { 2, 4, 3, 5, 6, -2, 4, 7, 8, 9 };
         int sum = 7;
-        System.out.println("=========Test1=========");
+        System.out.println("=========Test1 PrintPairsSumLoop=========");
         System.out.println(Arrays.toString(numbers));
         System.out.println("Sum: " + sum);
-        TwoNumArraySum.printPairs(numbers, sum);
-        System.out.println();
+        PrintPairsSumLoop.printPairs(numbers, sum);
+        System.out.println("\n=========Test2 PrintPairsSumLoop=========");
         System.out.println(Arrays.toString(numbers));
         System.out.println("Sum: " + sum);
-        TwoNumArraySum.printPairsSet(numbers, sum);
-        System.out.println("\n=========Test2=========");
+        PrintPairsSumLoop2.printPairs(numbers, sum);
+    }
+
+    @Test
+    public void PrintPairsSumSet() {
+        int[] numbers = { 2, 4, 3, 5, 7, 8, 9 };
+        int sum = 7;
+        System.out.println("=========Test1 PrintPairsSumSet=========");
         System.out.println(Arrays.toString(numbers));
         System.out.println("Sum: " + sum);
-        TwoNumArraySum2.printPairs(numbers, sum);
-        System.out.println();
+        PrintPairsSumSet.printPairsSet(numbers, sum);
+        System.out.println("\n=========Test2 PrintPairsSumSet=========");
         System.out.println(Arrays.toString(numbers));
         System.out.println("Sum: " + sum);
-        TwoNumArraySum2.printPairsSet(numbers, sum);
+        PrintPairsSumSet2.printPairsSet(numbers, sum);
     }
 
     @Test
@@ -214,10 +221,10 @@ public class ArraysTest {
     }
 
     public static int[] getRandomArray(int length) {
-        int[] randoms = new int[length];
-        for(int i=0; i<length; i++) {
-            randoms[i] = (int) (Math.random()*15);
+        int[] randomNums = new int[length];
+        for (int i = 0; i < length; i++) {
+            randomNums[i] = (int) (Math.random() * 15);
         }
-        return randoms;
+        return randomNums;
     }
 }
