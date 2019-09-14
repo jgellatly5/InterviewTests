@@ -18,7 +18,6 @@ public class ZeroMatrix {
         for (int j = 0; j < column.length; j++) {
             if (column[j]) nullifyColumn(matrix, j);
         }
-        print(matrix);
     }
 
     private static void nullifyRow(int[][] matrix, int row) {
@@ -30,15 +29,6 @@ public class ZeroMatrix {
     private static void nullifyColumn(int[][] matrix, int column) {
         for (int i = 0; i < matrix.length; i++) {
             matrix[i][column] = 0;
-        }
-    }
-
-    private static void print(int[][] matrix) {
-        for (int i = 0; i < matrix.length; i++) {
-            for (int j = 0; j < matrix[0].length; j++) {
-                System.out.print(matrix[i][j] + " ");
-            }
-            System.out.println();
         }
     }
 }

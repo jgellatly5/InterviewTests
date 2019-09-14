@@ -18,10 +18,12 @@ import com.gallopdevs.interviewtests.simpleprogrammer.arrays.RemoveDuplicates;
 import com.gallopdevs.interviewtests.simpleprogrammer.arrays.RemoveDuplicates2;
 import com.gallopdevs.interviewtests.simpleprogrammer.arrays.ReverseArray;
 import com.gallopdevs.interviewtests.simpleprogrammer.arrays.ReverseArray2;
-import com.gallopdevs.interviewtests.simpleprogrammer.arrays.RotateMatrix;
-import com.gallopdevs.interviewtests.simpleprogrammer.arrays.RotateMatrix2;
+import com.gallopdevs.interviewtests.simpleprogrammer.arrays.RotateMatrixClockwise;
+import com.gallopdevs.interviewtests.simpleprogrammer.arrays.RotateMatrixClockwise2;
 import com.gallopdevs.interviewtests.simpleprogrammer.arrays.PrintPairsSumLoop;
 import com.gallopdevs.interviewtests.simpleprogrammer.arrays.PrintPairsSumLoop2;
+import com.gallopdevs.interviewtests.simpleprogrammer.arrays.RotateMatrixCounterClockwise;
+import com.gallopdevs.interviewtests.simpleprogrammer.arrays.RotateMatrixCounterClockwise2;
 import com.gallopdevs.interviewtests.simpleprogrammer.arrays.ZeroMatrix;
 import com.gallopdevs.interviewtests.simpleprogrammer.arrays.ZeroMatrix2;
 
@@ -129,8 +131,7 @@ public class ArraysTest {
         int[] test = new int[]{10, 3, 5, 6, 7, 2};
         System.out.println("=========Test1=========");
         MinMaxArray.findMinAndMax(test);
-        System.out.println();
-        System.out.println("=========Test2=========");
+        System.out.println("\n=========Test2=========");
         MinMaxArray2.findMinAndMax(test);
     }
 
@@ -175,7 +176,7 @@ public class ArraysTest {
     }
 
     @Test
-    public void RotateMatrix() {
+    public void RotateMatrixClockwise() {
         System.out.println("=========Test1=========");
         int matrix[][] = {
             {1, 2, 3, 4},
@@ -183,20 +184,27 @@ public class ArraysTest {
             {9, 10, 11, 12},
             {13, 14, 15, 16}
         };
-        RotateMatrix.rotateMatrixClockwise(matrix);
-        System.out.println();
-        RotateMatrix.rotateMatrixCounterClockwise(matrix);
-        System.out.println();
-        System.out.println("=========Test2=========");
-        int matrix2[][] = {
-                {10, 20, 30, 40},
-                {50, 60, 70, 80},
-                {90, 100, 110, 120},
-                {130, 140, 150, 160}
+        RotateMatrixClockwise.rotateMatrixClockwise(matrix);
+        printMatrix(matrix);
+        System.out.println("\n=========Test2=========");
+        RotateMatrixClockwise2.rotateMatrixClockwise(matrix);
+        printMatrix(matrix);
+    }
+
+    @Test
+    public void RotateMatrixCounterClockwise() {
+        System.out.println("=========Test1=========");
+        int matrix[][] = {
+                {1, 2, 3, 4},
+                {5, 6, 7, 8},
+                {9, 10, 11, 12},
+                {13, 14, 15, 16}
         };
-        RotateMatrix2.rotateMatrixClockwise(matrix2);
-        System.out.println();
-//        RotateMatrix2.rotateMatrixCounterClockwise(matrix2);
+        RotateMatrixCounterClockwise.rotateMatrixCounterClockwise(matrix);
+        printMatrix(matrix);
+        System.out.println("\n=========Test2=========");
+        RotateMatrixCounterClockwise2.rotateMatrixCounterClockwise(matrix);
+        printMatrix(matrix);
     }
 
     @Test
@@ -209,8 +217,8 @@ public class ArraysTest {
                 {13, 14, 15, 16}
         };
         ZeroMatrix.zeroMatrix(matrix);
-        System.out.println();
-        System.out.println("=========Test2=========");
+        printMatrix(matrix);
+        System.out.println("\n=========Test2=========");
         int matrix2[][] = {
                 {1, 2, 3, 4},
                 {5, 6, 7, 0},
@@ -218,13 +226,23 @@ public class ArraysTest {
                 {13, 14, 15, 16}
         };
         ZeroMatrix2.zeroMatrix(matrix2);
+        printMatrix(matrix2);
     }
 
-    public static int[] getRandomArray(int length) {
+    private static int[] getRandomArray(int length) {
         int[] randomNums = new int[length];
         for (int i = 0; i < length; i++) {
             randomNums[i] = (int) (Math.random() * 15);
         }
         return randomNums;
+    }
+
+    private static void printMatrix(int[][] matrix) {
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[0].length; j++) {
+                System.out.print(matrix[i][j] + " ");
+            }
+            System.out.println();
+        }
     }
 }
