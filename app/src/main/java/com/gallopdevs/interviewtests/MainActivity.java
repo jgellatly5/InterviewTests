@@ -19,10 +19,13 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
     private TextView tvQuestion;
     private Button bQuestion;
+    private Button bCompleted;
     private Spinner spinnerQuestion;
 
     private int minRange = 1;
     private int maxRange = 10;
+    private int random = 0;
+    private boolean alreadyMarked;
     private String[] questions;
     ArrayList<Integer> removeList = new ArrayList<>();
 
@@ -31,31 +34,42 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        AppDatabase db = Room.databaseBuilder(getApplicationContext(), AppDatabase.class, "questionScores")
+                .allowMainThreadQueries()
+                .build();
+        QuestionScoreDao questionScoreDao = db.getQuestionScoreDao();
+
         questions = getResources().getStringArray(R.array.questions_array);
 
         tvQuestion = findViewById(R.id.question);
         bQuestion = findViewById(R.id.btn_question);
+        bCompleted = findViewById(R.id.btn_completed);
         bQuestion.setOnClickListener(v -> {
+            bCompleted.setVisibility(View.VISIBLE);
             if (removeList.size() == maxRange - minRange + 1) {
                 tvQuestion.setText("Completed Set!");
                 removeList.clear();
             } else {
-                int random = generateRandom(minRange, maxRange, removeList);
+                random = generateRandom(minRange, maxRange, removeList);
                 Toast.makeText(this, String.valueOf(random), Toast.LENGTH_SHORT).show();
                 tvQuestion.setText(questions[random - 1]);
                 removeList.add(random);
+                alreadyMarked = false;
             }
         });
-
-
+        bCompleted.setOnClickListener(v -> {
+            if (!alreadyMarked) {
+                QuestionScore questionScore = new QuestionScore(questions[random - 1], 1);
+                questionScoreDao.insert(questionScore);
+                Toast.makeText(this, "Adding score", Toast.LENGTH_SHORT).show();
+                alreadyMarked = true;
+            }
+        });
         spinnerQuestion = findViewById(R.id.spinner_question);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.choices_array, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerQuestion.setAdapter(adapter);
         spinnerQuestion.setOnItemSelectedListener(this);
-
-        AppDatabase db = Room.databaseBuilder(getApplicationContext(),
-                AppDatabase.class, "questionScores").build();
     }
 
     public int generateRandom(int start, int end, ArrayList<Integer> excludeRows) {

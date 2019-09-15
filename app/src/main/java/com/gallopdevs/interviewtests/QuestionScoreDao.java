@@ -10,10 +10,10 @@ import java.util.List;
 @Dao
 public interface QuestionScoreDao {
     @Query("SELECT * FROM questionScore")
-    List<QuestionScore> getAll();
+    List<QuestionScore> getScores();
 
     @Insert
-    void insertAll(QuestionScore... scores);
+    void insert(QuestionScore score);
 
     @Delete
     void delete(QuestionScore score);

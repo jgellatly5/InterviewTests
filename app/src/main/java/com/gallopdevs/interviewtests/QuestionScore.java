@@ -7,6 +7,12 @@ import androidx.room.PrimaryKey;
 
 @Entity
 public class QuestionScore {
+
+    public QuestionScore(String name, int score) {
+        this.name = name;
+        this.score = score;
+    }
+
     @PrimaryKey
     public @NonNull String name;
 

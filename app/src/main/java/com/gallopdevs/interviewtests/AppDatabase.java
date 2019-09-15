@@ -5,5 +5,5 @@ import androidx.room.RoomDatabase;
 
 @Database(entities = {QuestionScore.class}, version = 1)
 public abstract class AppDatabase extends RoomDatabase {
-    public abstract QuestionScoreDao questionScoreDao();
+    public abstract QuestionScoreDao getQuestionScoreDao();
 }
