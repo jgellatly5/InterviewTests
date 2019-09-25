@@ -6,7 +6,7 @@ import java.util.Set;
 
 public class FindDuplicatesCount2 {
     public static void findDuplicatesCount(int[] numbers) {
-        Map<Integer, Integer> numAndCount= new HashMap<>();
+        HashMap<Integer, Integer> numAndCount = new HashMap<>();
         for (int num : numbers) {
             Integer count = numAndCount.get(num);
             if (count == null) {
