@@ -7,11 +7,8 @@ public class MinMaxArray2 {
         int max = numbers[0];
         int min = numbers[0];
         for (int num : numbers) {
-            if (num > max) {
-                max = num;
-            } else if (num < min) {
-                min = num;
-            }
+            if (num > max) max = num;
+            else if (num < min) min = num;
         }
         System.out.println("Array: " + Arrays.toString(numbers));
         System.out.println("Max: " + max);

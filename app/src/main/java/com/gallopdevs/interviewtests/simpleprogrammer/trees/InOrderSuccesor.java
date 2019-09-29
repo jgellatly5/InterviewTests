@@ -1,19 +1,8 @@
 package com.gallopdevs.interviewtests.simpleprogrammer.trees;
 
-import com.gallopdevs.interviewtests.crackingthecodinginterview.chapter_four.Four_Six;
+import com.gallopdevs.interviewtests.datastructures.TreeNode;
 
 public class InOrderSuccesor {
-    public static class TreeNode {
-        public int data;
-        public TreeNode left, right, parent;
-        private int size = 0;
-
-        public TreeNode(int data) {
-            this.data = data;
-            size = 1;
-        }
-    }
-
     public static TreeNode inOrderSuccesor(TreeNode node) {
         if (node == null) return null;
         if (node.right == null) return leftMostChild(node.right);

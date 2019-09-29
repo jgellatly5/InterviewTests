@@ -7,24 +7,24 @@ import java.util.LinkedList;
 
 public class LinkedListBreadthFirst2 {
     public static ArrayList<LinkedList<TreeNode>> createLevelLinkedListBreadthFirst(TreeNode root) {
-        ArrayList<LinkedList<TreeNode>> result = new ArrayList<LinkedList<TreeNode>>();
-        LinkedList<TreeNode> current = new LinkedList<TreeNode>();
+        ArrayList<LinkedList<TreeNode>> allLists = new ArrayList<LinkedList<TreeNode>>();
+        LinkedList<TreeNode> currentList = new LinkedList<TreeNode>();
         if (root != null) {
-            current.add(root);
+            currentList.add(root);
         }
-        while (current.size() > 0) {
-            result.add(current);
-            LinkedList<TreeNode> parents = current;
-            current = new LinkedList<TreeNode>();
+        while (currentList.size() > 0) {
+            allLists.add(currentList);
+            LinkedList<TreeNode> parents = currentList;
+            currentList = new LinkedList<>();
             for (TreeNode parent : parents) {
                 if (parent.left != null) {
-                    current.add(parent.left);
+                    currentList.add(parent.left);
                 }
                 if (parent.right != null) {
-                    current.add(parent.right);
+                    currentList.add(parent.right);
                 }
             }
         }
-        return result;
+        return allLists;
     }
 }

@@ -6,9 +6,7 @@ public class GetMissingNumber {
     public static int getMissingNumber(int[] numbers, double totalCount) {
         double expectedSum = totalCount * ((totalCount + 1) / 2);
         int actualSum = 0;
-        for (int num : numbers) {
-            actualSum += num;
-        }
+        for (int num : numbers) actualSum += num;
         return (int) (expectedSum - actualSum);
     }
 }

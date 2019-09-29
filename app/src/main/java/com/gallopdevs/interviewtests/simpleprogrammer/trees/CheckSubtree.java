@@ -1,17 +1,8 @@
 package com.gallopdevs.interviewtests.simpleprogrammer.trees;
 
+import com.gallopdevs.interviewtests.datastructures.TreeNode;
+
 public class CheckSubtree {
-    public static class TreeNode {
-        public int data;
-        public TreeNode left, right, parent;
-        private int size = 0;
-
-        public TreeNode(int data) {
-            this.data = data;
-            size = 1;
-        }
-    }
-
     public static boolean containsTree(TreeNode t1, TreeNode t2) {
         StringBuilder string1 = new StringBuilder();
         StringBuilder string2 = new StringBuilder();

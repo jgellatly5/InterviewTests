@@ -7,23 +7,24 @@ import java.util.LinkedList;
 
 public class LinkedListDepthFirst {
     public static ArrayList<LinkedList<TreeNode>> createLevelLinkedListDepthFirst(TreeNode root) {
-        ArrayList<LinkedList<TreeNode>> lists = new ArrayList<>();
-        createLevelLinkedListDepthFirst(root, lists, 0);
-        return lists;
+        ArrayList<LinkedList<TreeNode>> allLists = new ArrayList<>();
+        createLevelLinkedListDepthFirst(root, allLists, 0);
+        return allLists;
     }
+
     private static void createLevelLinkedListDepthFirst(TreeNode root,
-                                                        ArrayList<LinkedList<TreeNode>> lists,
+                                                        ArrayList<LinkedList<TreeNode>> allLists,
                                                         int level) {
         if (root == null) return;
-        LinkedList<TreeNode> list;
-        if (lists.size() == level) {
-            list = new LinkedList<>();
-            lists.add(list);
+        LinkedList<TreeNode> currentList;
+        if (allLists.size() == level) {
+            currentList = new LinkedList<>();
+            allLists.add(currentList);
         } else {
-            list = lists.get(level);
+            currentList = allLists.get(level);
         }
-        list.add(root);
-        createLevelLinkedListDepthFirst(root.left, lists, level + 1);
-        createLevelLinkedListDepthFirst(root.right, lists, level + 1);
+        currentList.add(root);
+        createLevelLinkedListDepthFirst(root.left, allLists, level + 1);
+        createLevelLinkedListDepthFirst(root.right, allLists, level + 1);
     }
 }

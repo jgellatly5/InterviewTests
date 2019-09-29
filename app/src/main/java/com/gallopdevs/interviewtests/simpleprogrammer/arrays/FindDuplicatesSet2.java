@@ -4,9 +4,9 @@ import java.util.HashSet;
 
 public class FindDuplicatesSet2 {
     public static void findDuplicatesSet(int[] numbers) {
-        HashSet<Integer> set = new HashSet<>();
+        HashSet<Integer> hashSet = new HashSet<>();
         for (int num : numbers) {
-            if (!set.add(num)) {
+            if (!hashSet.add(num)) {
                 System.out.print(num + " ");
             }
         }

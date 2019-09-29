@@ -3,14 +3,14 @@ package com.gallopdevs.interviewtests.simpleprogrammer.strings;
 public class IsPermutationPalindrome2 {
     private static final int a = Character.getNumericValue('a');
     private static final int z = Character.getNumericValue('z');
-    public static boolean isPermutationPalindrome(String phrase) {
-        int[] table = buildCharFrequencyTable(phrase);
+    public static boolean isPermutationPalindrome(String text) {
+        int[] table = buildCharFrequencyTable(text);
         return checkMaxOneOdd(table);
     }
 
-    private static int[] buildCharFrequencyTable(String phrase) {
+    private static int[] buildCharFrequencyTable(String text) {
         int[] table = new int[z - a + 1];
-        for (char c : phrase.toCharArray()) {
+        for (char c : text.toCharArray()) {
             int index = getCharNumber(c);
             if (index != -1) table[index]++;
         }

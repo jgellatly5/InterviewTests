@@ -1,18 +1,8 @@
 package com.gallopdevs.interviewtests.simpleprogrammer.trees;
 
+import com.gallopdevs.interviewtests.datastructures.TreeNode;
+
 public class CheckBalanced {
-
-    public static class TreeNode {
-        public int data;
-        public TreeNode left, right, parent;
-        private int size = 0;
-
-        public TreeNode(int data) {
-            this.data = data;
-            size = 1;
-        }
-    }
-
     // solution 1
     private static int getHeight(TreeNode root) {
         if (root == null) return -1;

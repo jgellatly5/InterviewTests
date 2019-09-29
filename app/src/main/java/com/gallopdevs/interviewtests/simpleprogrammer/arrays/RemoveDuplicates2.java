@@ -10,9 +10,7 @@ public class RemoveDuplicates2 {
         result[0] = previous;
         for (int i = 1; i < numbers.length; i++) {
             int current = numbers[i];
-            if (previous != current) {
-                result[i] = current;
-            }
+            if (previous != current) result[i] = current;
             previous = current;
         }
         return result;
