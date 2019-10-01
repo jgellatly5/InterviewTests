@@ -7,6 +7,10 @@ import com.gallopdevs.interviewtests.simpleprogrammer.trees.LinkedListDepthFirst
 import com.gallopdevs.interviewtests.simpleprogrammer.trees.LinkedListDepthFirst2;
 import com.gallopdevs.interviewtests.simpleprogrammer.trees.MinimalTreeFromArray;
 import com.gallopdevs.interviewtests.simpleprogrammer.trees.MinimalTreeFromArray2;
+import com.gallopdevs.interviewtests.simpleprogrammer.trees.ValidateBstInOrderTraversal;
+import com.gallopdevs.interviewtests.simpleprogrammer.trees.ValidateBstInOrderTraversal2;
+import com.gallopdevs.interviewtests.simpleprogrammer.trees.ValidateBstMinMax;
+import com.gallopdevs.interviewtests.simpleprogrammer.trees.ValidateBstMinMax2;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -85,6 +89,22 @@ public class TreesTest {
             }
             System.out.println();
         }
+    }
+
+    @Test
+    public void ValidateBstInOrderTraversal() {
+        System.out.println("=========Test1 ValidateBstInOrderTraversal=========");
+        System.out.println(ValidateBstInOrderTraversal.validateBstIot(root));
+        System.out.println("\n=========Test2 ValidateBstInOrderTraversal=========");
+        System.out.println(ValidateBstInOrderTraversal2.validateBstIot(root));
+    }
+
+    @Test
+    public void ValidateBstMinMax() {
+        System.out.println("=========Test1 ValidateBstMinMax=========");
+        System.out.println(ValidateBstMinMax.validateBstMinMax(root));
+        System.out.println("\n=========Test2 ValidateBstInOrderTraversal=========");
+        System.out.println(ValidateBstMinMax2.validateBstMinMax(root));
     }
 
     private static void printTreeByLevel(TreeNode root) {
