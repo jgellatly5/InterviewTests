@@ -6,15 +6,15 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 
 public class LinkedListDepthFirst {
-    public static ArrayList<LinkedList<TreeNode>> createLevelLinkedListDepthFirst(TreeNode root) {
+    public static ArrayList<LinkedList<TreeNode>> createListsDfs(TreeNode root) {
         ArrayList<LinkedList<TreeNode>> allLists = new ArrayList<>();
-        createLevelLinkedListDepthFirst(root, allLists, 0);
+        createListsDfs(root, allLists, 0);
         return allLists;
     }
 
-    private static void createLevelLinkedListDepthFirst(TreeNode root,
-                                                        ArrayList<LinkedList<TreeNode>> allLists,
-                                                        int level) {
+    private static void createListsDfs(TreeNode root,
+                                       ArrayList<LinkedList<TreeNode>> allLists,
+                                       int level) {
         if (root == null) return;
         LinkedList<TreeNode> currentList;
         if (allLists.size() == level) {
@@ -24,7 +24,7 @@ public class LinkedListDepthFirst {
             currentList = allLists.get(level);
         }
         currentList.add(root);
-        createLevelLinkedListDepthFirst(root.left, allLists, level + 1);
-        createLevelLinkedListDepthFirst(root.right, allLists, level + 1);
+        createListsDfs(root.left, allLists, level + 1);
+        createListsDfs(root.right, allLists, level + 1);
     }
 }

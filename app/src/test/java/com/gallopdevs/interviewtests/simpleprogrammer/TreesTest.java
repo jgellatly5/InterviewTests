@@ -50,7 +50,7 @@ public class TreesTest {
     @Test
     public void LinkedListDepthFirst() {
         System.out.println("=========Test1 LinkedListDepthFirst=========");
-        ArrayList<LinkedList<TreeNode>> lists = LinkedListDepthFirst.createLevelLinkedListDepthFirst(root);
+        ArrayList<LinkedList<TreeNode>> lists = LinkedListDepthFirst.createListsDfs(root);
         for (LinkedList<TreeNode> list : lists) {
             for (TreeNode node : list) {
                 System.out.print(node.data + " ");
@@ -58,7 +58,7 @@ public class TreesTest {
             System.out.println();
         }
         System.out.println("\n=========Test2 LinkedListDepthFirst=========");
-        ArrayList<LinkedList<TreeNode>> lists2 = LinkedListDepthFirst2.createLevelLinkedListDepthFirst(root);
+        ArrayList<LinkedList<TreeNode>> lists2 = LinkedListDepthFirst2.createListsDfs(root);
         for (LinkedList<TreeNode> list : lists2) {
             for (TreeNode node : list) {
                 System.out.print(node.data + " ");
@@ -70,7 +70,7 @@ public class TreesTest {
     @Test
     public void LinkedListBreadthFirst() {
         System.out.println("=========Test1 LinkedListBreadthFirst=========");
-        ArrayList<LinkedList<TreeNode>> lists = LinkedListBreadthFirst.createLevelLinkedListBreadthFirst(root);
+        ArrayList<LinkedList<TreeNode>> lists = LinkedListBreadthFirst.createListsBfs(root);
         for (LinkedList<TreeNode> list : lists) {
             for (TreeNode node : list) {
                 System.out.print(node.data + " ");
@@ -78,7 +78,7 @@ public class TreesTest {
             System.out.println();
         }
         System.out.println("\n=========Test2 LinkedListBreadthFirst=========");
-        ArrayList<LinkedList<TreeNode>> lists2 = LinkedListBreadthFirst2.createLevelLinkedListBreadthFirst(root);
+        ArrayList<LinkedList<TreeNode>> lists2 = LinkedListBreadthFirst2.createListsBfs(root);
         for (LinkedList<TreeNode> list : lists2) {
             for (TreeNode node : list) {
                 System.out.print(node.data + " ");

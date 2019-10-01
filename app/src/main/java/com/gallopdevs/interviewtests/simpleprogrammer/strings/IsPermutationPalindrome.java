@@ -4,11 +4,11 @@ public class IsPermutationPalindrome {
     private static final int a = Character.getNumericValue('a');
     private static final int z = Character.getNumericValue('z');
     public static boolean isPermutationPalindrome(String text) {
-        int[] table = buildCharFrequencyTable(text);
+        int[] table = getCharFrequencyTable(text);
         return checkMaxOneOdd(table);
     }
 
-    private static int[] buildCharFrequencyTable(String text) {
+    private static int[] getCharFrequencyTable(String text) {
         int[] table = new int[z - a + 1];
         for (char c : text.toCharArray()) {
             int index = getCharNumber(c);
