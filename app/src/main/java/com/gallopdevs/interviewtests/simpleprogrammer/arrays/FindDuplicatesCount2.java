@@ -15,8 +15,8 @@ public class FindDuplicatesCount2 {
         Set<Map.Entry<Integer, Integer>> entrySet = numAndCount.entrySet();
         for (Map.Entry<Integer, Integer> entry : entrySet) {
             if (entry.getValue() > 1) {
-                System.out.println("Duplicate element: " + entry.getKey()
-                    + ", count: " + entry.getValue());
+                System.out.println("Duplicate: " + entry.getKey()
+                        + " , count: " + entry.getValue());
             }
         }
     }

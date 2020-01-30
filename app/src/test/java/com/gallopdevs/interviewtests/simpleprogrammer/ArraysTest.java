@@ -167,10 +167,14 @@ public class ArraysTest {
     public void ReverseArray() {
         System.out.println("=========Test1 ReverseArray=========");
         int[] reverseArray = new int[]{4, 3, 5, 6, 7, 2};
+        int[] reverseArray2 = new int[]{4, 3, 5, 6, 7, 2, 10};
         System.out.println(Arrays.toString(reverseArray));
         ReverseArray.reverseArray(reverseArray);
+        System.out.println(Arrays.toString(reverseArray2));
+        ReverseArray.reverseArray(reverseArray2);
         System.out.println("\n=========Test2 ReverseArray=========");
-        int[] reverseArray2 = new int[]{4, 3, 5, 6, 7, 2};
+        System.out.println(Arrays.toString(reverseArray));
+        ReverseArray2.reverseArray(reverseArray);
         System.out.println(Arrays.toString(reverseArray2));
         ReverseArray2.reverseArray(reverseArray2);
     }

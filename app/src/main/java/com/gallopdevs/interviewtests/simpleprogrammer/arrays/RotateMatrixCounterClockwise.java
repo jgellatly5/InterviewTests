@@ -1,7 +1,7 @@
 package com.gallopdevs.interviewtests.simpleprogrammer.arrays;
 
 public class RotateMatrixCounterClockwise {
-    public static void rotateMatrixCounterClockwise(int matrix[][]) {
+    public static void rotateMatrixCounterClockwise(int[][] matrix) {
         if (matrix.length == 0 || matrix.length != matrix[0].length) return;
         int n = matrix.length;
         for (int i = 0; i < n / 2; i++) {

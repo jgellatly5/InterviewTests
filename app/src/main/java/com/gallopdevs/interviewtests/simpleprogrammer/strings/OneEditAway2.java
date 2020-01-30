@@ -27,7 +27,7 @@ public class OneEditAway2 {
     private static boolean oneEditInsert(String s1, String s2) {
         int index1 = 0;
         int index2 = 0;
-        while (index2 < s2.length() && index1 < s1.length()) {
+        while (index1 < s1.length() && index2 < s2.length()) {
             if (s1.charAt(index1) != s2.charAt(index2)) {
                 if (index1 != index2) return false;
                 index2++;

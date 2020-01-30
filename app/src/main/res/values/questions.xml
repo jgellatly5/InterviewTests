@@ -43,5 +43,29 @@
         <item name="q_40">Stock Prices</item>
         <item name="q_41">Write an algorithm to print the fibonacci sequence</item>
         <item name="q_42">Convex Polygon</item>
+        <item name="q_43">Declare an array</item>
+        <item name="q_44">Print array</item>
+        <item name="q_45">Create ArrayList from an array</item>
+        <item name="q_46">Check if an array contains a certain value</item>
+        <item name="q_47">Concatenate two arrays</item>
+        <item name="q_48">Convert an ArrayList to an array</item>
+        <item name="q_49">Convert an array to a Set</item>
+        <item name="q_50">Get the first and last element</item>
+        <item name="q_51">Get random element</item>
+        <item name="q_52">Append a new item to an array</item>
+        <item name="q_53">Compare two arrays</item>
+        <item name="q_54">Check if an array is empty</item>
+        <item name="q_55">Filter values in an array</item>
+        <item name="q_56">Find the sum and the average</item>
+        <item name="q_57">Sort an array of strings and numbers</item>
+        <item name="q_58">Find the index of an element</item>
+        <item name="q_59">Remove a specific element</item>
+        <item name="q_60">Insert at a specific index</item>
+        <item name="q_61">Find common elements between two arrays</item>
+        <item name="q_62">Find 2nd largest element</item>
+        <item name="q_63">Find 2nd smallest element</item>
+        <item name="q_64">Add two matrices of the same size</item>
+        <item name="q_65">Move all 0s to the end of an array</item>
+        <item name="q_66">Find the number of even and odd integers</item>
     </string-array>
 </resources>

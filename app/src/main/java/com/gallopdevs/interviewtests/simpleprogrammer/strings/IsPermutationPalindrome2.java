@@ -4,14 +4,14 @@ public class IsPermutationPalindrome2 {
     private static final int a = Character.getNumericValue('a');
     private static final int z = Character.getNumericValue('z');
     public static boolean isPermutationPalindrome(String text) {
-        int[] table = getCharFrequencyTable(text);
+        int[] table = buildCharFrequencyTable(text);
         return checkMaxOneOdd(table);
     }
 
-    private static int[] getCharFrequencyTable(String text) {
+    private static int[] buildCharFrequencyTable(String text) {
         int[] table = new int[z - a + 1];
-        for (char c : text.toCharArray()) {
-            int index = getCharNumber(c);
+        for (Character c : text.toCharArray()) {
+            int index = getCharValue(c);
             if (index != -1) table[index]++;
         }
         return table;
@@ -28,7 +28,7 @@ public class IsPermutationPalindrome2 {
         return true;
     }
 
-    private static int getCharNumber(Character c) {
+    private static int getCharValue(Character c) {
         int value = Character.getNumericValue(c);
         if (a <= value && value <= z) return value - a;
         return -1;

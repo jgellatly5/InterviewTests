@@ -40,9 +40,13 @@ public class AlgorithmsTest {
 
     @Test
     public void BinarySearch() {
+        System.out.println("=========BinarySearch1=========");
         int[] array = {3, 52, 79, 184, 256, 373, 490};
         Assert.assertEquals(BinarySearch.binarySearch(array, 52), 1);
         Assert.assertEquals(BinarySearch.binarySearchRecursive(array, 52, 0, array.length - 1), 1);
+        System.out.println("=========BinarySearch2=========");
+        int[] array2 = {3, 52, 79, 184, 256, 373, 490};
+        System.out.println(BinarySearch2.binarySearchIterative(array2, 79));
     }
 
     @Test
