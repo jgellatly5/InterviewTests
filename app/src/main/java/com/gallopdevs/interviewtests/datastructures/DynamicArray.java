@@ -17,7 +17,6 @@ public class DynamicArray<String> {
 
     public void set(int index, String value) {
         data[index] = value;
-        size++;
     }
 
     public void insert(int index, String value) {

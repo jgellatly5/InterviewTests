@@ -103,11 +103,11 @@ public class LinkedListNode {
         while (current.next != null) {
             if (current.next.data == data) {
                 current.next = current.next.next;
+                size--;
                 return;
             }
             current = current.next;
         }
-        size--;
     }
 
     public int size() {

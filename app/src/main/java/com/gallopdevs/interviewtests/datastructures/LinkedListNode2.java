@@ -1,21 +1,21 @@
 package com.gallopdevs.interviewtests.datastructures;
 
+import java.util.Currency;
+
 public class LinkedListNode2 {
+
     public int data;
-    public LinkedListNode2 head;
     public LinkedListNode2 next;
-    private int size;
-
-    public LinkedListNode2() {
-
-    }
 
     public LinkedListNode2(int data) {
         this.data = data;
         this.next = null;
     }
 
-    // addFront
+    public LinkedListNode2 head;
+    private int size;
+
+    //addFront
     public void addFront(int data) {
         LinkedListNode2 newNode = new LinkedListNode2(data);
         if (head == null) {
@@ -27,7 +27,7 @@ public class LinkedListNode2 {
         size++;
     }
 
-    // addBack
+    //addBack
     public void addBack(int data) {
         LinkedListNode2 newNode = new LinkedListNode2(data);
         if (head == null) {
@@ -42,12 +42,12 @@ public class LinkedListNode2 {
         size++;
     }
 
-    // getFirst
+    //getFirst
     public int getFirst() {
         return head.data;
     }
 
-    // getLast
+    //getLast
     public int getLast() {
         LinkedListNode2 current = head;
         while (current.next != null) {
@@ -56,13 +56,13 @@ public class LinkedListNode2 {
         return current.data;
     }
 
-    // insertAtIndex
+    //insertAfter
     public void insertAtIndex(int index, int data) {
         LinkedListNode2 current = head;
         int i = 0;
         while (i < index - 1 && current.next != null) {
-           current = current.next;
-           i++;
+            current = current.next;
+            i++;
         }
         LinkedListNode2 temp = current.next;
         current.next = new LinkedListNode2(data);
@@ -70,8 +70,8 @@ public class LinkedListNode2 {
         size++;
     }
 
-    // findNodeAtIndex
-    public LinkedListNode2 findNodeAtIndex(int index) {
+    //findNodeAtIndex
+   public LinkedListNode2 findNodeAtIndex(int index) {
         LinkedListNode2 current = head;
         int i = 0;
         while (i < index) {
@@ -79,22 +79,13 @@ public class LinkedListNode2 {
             i++;
         }
         return current;
-    }
+   }
 
-    // isEmpty
-    public boolean isEmpty() {
-        return head == null;
-    }
-
-    // clear
-    public void clear() {
-        head = null;
-        size = 0;
-    }
-
-    // delete
+    //delete
     public void delete(int data) {
-        if (head == null) return;
+        if (head == null) {
+            return;
+        }
         if (head.data == data) {
             head = head.next;
             return;
@@ -103,25 +94,37 @@ public class LinkedListNode2 {
         while (current.next != null) {
             if (current.next.data == data) {
                 current.next = current.next.next;
+                size--;
                 return;
             }
             current = current.next;
         }
-        size--;
     }
 
-    // size
+    //clear
+    public void clear() {
+        head = null;
+        size = 0;
+    }
+
+    //isEmpty
+    public boolean isEmpty() {
+        return head == null;
+    }
+
+    //size
     public int size() {
         return size;
     }
 
-    // print
+    //print
     public void print() {
         LinkedListNode2 current = head;
-        while (current != null) {
+        while (current.next != null) {
             System.out.print(current.data + " ");
             current = current.next;
         }
         System.out.println();
     }
+
 }
