@@ -1,7 +1,5 @@
 package com.gallopdevs.interviewtests.datastructures;
 
-import java.util.Currency;
-
 public class LinkedListNode2 {
 
     public int data;
@@ -20,6 +18,7 @@ public class LinkedListNode2 {
         LinkedListNode2 newNode = new LinkedListNode2(data);
         if (head == null) {
             head = newNode;
+            size++;
             return;
         }
         newNode.next = head;
@@ -32,6 +31,7 @@ public class LinkedListNode2 {
         LinkedListNode2 newNode = new LinkedListNode2(data);
         if (head == null) {
             head = newNode;
+            size++;
             return;
         }
         LinkedListNode2 current = head;
@@ -42,12 +42,12 @@ public class LinkedListNode2 {
         size++;
     }
 
-    //getFirst
-    public int getFirst() {
+    //getFront
+    public int getFront() {
         return head.data;
     }
 
-    //getLast
+    //getBack
     public int getLast() {
         LinkedListNode2 current = head;
         while (current.next != null) {
@@ -56,7 +56,7 @@ public class LinkedListNode2 {
         return current.data;
     }
 
-    //insertAfter
+    //insertAtIndex
     public void insertAtIndex(int index, int data) {
         LinkedListNode2 current = head;
         int i = 0;
@@ -71,7 +71,7 @@ public class LinkedListNode2 {
     }
 
     //findNodeAtIndex
-   public LinkedListNode2 findNodeAtIndex(int index) {
+    public LinkedListNode2 findNodeAtIndex(int index) {
         LinkedListNode2 current = head;
         int i = 0;
         while (i < index) {
@@ -79,15 +79,14 @@ public class LinkedListNode2 {
             i++;
         }
         return current;
-   }
+    }
 
     //delete
     public void delete(int data) {
-        if (head == null) {
-            return;
-        }
+        if (head == null) return;
         if (head.data == data) {
             head = head.next;
+            size--;
             return;
         }
         LinkedListNode2 current = head;
@@ -102,29 +101,7 @@ public class LinkedListNode2 {
     }
 
     //clear
-    public void clear() {
-        head = null;
-        size = 0;
-    }
-
     //isEmpty
-    public boolean isEmpty() {
-        return head == null;
-    }
-
     //size
-    public int size() {
-        return size;
-    }
-
     //print
-    public void print() {
-        LinkedListNode2 current = head;
-        while (current.next != null) {
-            System.out.print(current.data + " ");
-            current = current.next;
-        }
-        System.out.println();
-    }
-
 }
