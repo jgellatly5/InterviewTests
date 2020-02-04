@@ -6,6 +6,7 @@ public class Stack2 {
     private static class Node {
         private int data;
         private Node next;
+
         Node(int data) {
             this.data = data;
         }
@@ -14,7 +15,6 @@ public class Stack2 {
     private Node top;
     private int size;
 
-    // push
     public void push(int data) {
         Node newNode = new Node(data);
         newNode.next = top;
@@ -22,7 +22,6 @@ public class Stack2 {
         size++;
     }
 
-    // pop
     public int pop() {
         if (top == null) throw new EmptyStackException();
         int data = top.data;
@@ -31,12 +30,10 @@ public class Stack2 {
         return data;
     }
 
-    // peek
     public int peek() {
         return top.data;
     }
 
-    // isEmpty
     public boolean isEmpty() {
         return top == null;
     }
