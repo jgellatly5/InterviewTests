@@ -7,10 +7,12 @@ import com.gallopdevs.interviewtests.simpleprogrammer.linkedlists.FindIntersecti
 import com.gallopdevs.interviewtests.simpleprogrammer.linkedlists.FindIntersection2;
 import com.gallopdevs.interviewtests.simpleprogrammer.linkedlists.FindLength;
 import com.gallopdevs.interviewtests.simpleprogrammer.linkedlists.FindLength2;
+import com.gallopdevs.interviewtests.simpleprogrammer.linkedlists.FindMiddle;
 import com.gallopdevs.interviewtests.simpleprogrammer.linkedlists.IsCyclic;
 import com.gallopdevs.interviewtests.simpleprogrammer.linkedlists.IsCyclic2;
-import com.gallopdevs.interviewtests.simpleprogrammer.linkedlists.IsPalindrome;
-import com.gallopdevs.interviewtests.simpleprogrammer.linkedlists.IsPalindrome2;
+import com.gallopdevs.interviewtests.simpleprogrammer.linkedlists.IsPalindromeCloneAndReverse;
+import com.gallopdevs.interviewtests.simpleprogrammer.linkedlists.IsPalindromeCloneAndReverse2;
+import com.gallopdevs.interviewtests.simpleprogrammer.linkedlists.IsPalindromeStack;
 import com.gallopdevs.interviewtests.simpleprogrammer.linkedlists.Partition;
 import com.gallopdevs.interviewtests.simpleprogrammer.linkedlists.Partition2;
 import com.gallopdevs.interviewtests.simpleprogrammer.linkedlists.RemoveDuplicates;
@@ -29,6 +31,7 @@ public class LinkedListsTest {
 
     private LinkedListNode node;
     private LinkedListNode node2;
+    private LinkedListNode node3;
     private LinkedListNode cyclicList;
     private LinkedListNode l1;
     private LinkedListNode l2;
@@ -56,6 +59,15 @@ public class LinkedListsTest {
         node2.next.next.next.next.next = new LinkedListNode(10);
         node2.next.next.next.next.next.next = new LinkedListNode(11);
         node2.next.next.next.next.next.next.next = new LinkedListNode(11);
+
+        node3 = new LinkedListNode(5);
+        node3.next = new LinkedListNode(1);
+        node3.next.next = new LinkedListNode(3);
+        node3.next.next.next = new LinkedListNode(7);
+        node3.next.next.next.next = new LinkedListNode(10);
+        node3.next.next.next.next.next = new LinkedListNode(10);
+        node3.next.next.next.next.next.next = new LinkedListNode(11);
+        node3.next.next.next.next.next.next.next = new LinkedListNode(11);
 
         cyclicList = new LinkedListNode(4);
         cyclicList.next = new LinkedListNode(1);
@@ -102,6 +114,14 @@ public class LinkedListsTest {
         prettyPrint(node);
         int length2 = FindLength2.findLength(node);
         System.out.println("findLength: " + length2);
+        System.out.println("\n=========FindLength Recursively=========");
+        prettyPrint(node);
+        int length3 = FindLength2.findLengthRecursive(node);
+        System.out.println("findLength: " + length3);
+        System.out.println("\n=========FindLength Middle=========");
+        prettyPrint(l2);
+        int middle = FindMiddle.findMiddle(l2);
+        System.out.println("findMiddle: " + middle);
     }
 
     @Test
@@ -112,6 +132,9 @@ public class LinkedListsTest {
         System.out.println("\n=========Test2 IsCyclic=========");
         System.out.println("List is cyclic: " + IsCyclic2.isCyclic(node));
         System.out.println("List is cyclic: " + IsCyclic2.isCyclic(cyclicList));
+        System.out.println("\n=========Test3 IsCyclicHash=========");
+        System.out.println("List is cyclic: " + IsCyclic2.isCylicHash(node));
+        System.out.println("List is cyclic: " + IsCyclic2.isCylicHash(cyclicList));
     }
 
     @Test
@@ -124,6 +147,10 @@ public class LinkedListsTest {
         prettyPrint(node2);
         RemoveDuplicates2.removeDuplicates(node2);
         prettyPrint(node2);
+        System.out.println("\n=========Test3 RemoveDuplicatesLoops=========");
+        prettyPrint(node3);
+        RemoveDuplicates2.removeDuplicatesLoops(node3);
+        prettyPrint(node3);
     }
 
     @Test
@@ -150,6 +177,9 @@ public class LinkedListsTest {
         System.out.println("\n=========Test2 ReverseList=========");
         prettyPrint(node2);
         prettyPrint(ReverseList2.reverseList(node2));
+        System.out.println("\n=========Test3 ReverseList Recursively=========");
+        prettyPrint(node3);
+        prettyPrint(ReverseList2.reverseListRecursive(node3));
     }
 
     @Test
@@ -188,14 +218,19 @@ public class LinkedListsTest {
     public void IsPalindrome() {
         System.out.println("=========Test1 IsPalindrome=========");
         prettyPrint(node);
-        System.out.println(IsPalindrome.isPalindrome(node));
+        System.out.println(IsPalindromeCloneAndReverse.isPalindrome(node));
         prettyPrint(nodePalindrome);
-        System.out.println(IsPalindrome.isPalindrome(nodePalindrome));
+        System.out.println(IsPalindromeCloneAndReverse.isPalindrome(nodePalindrome));
         System.out.println("\n=========Test2 IsPalindrome=========");
         prettyPrint(node2);
-        System.out.println(IsPalindrome2.isPalindrome(node2));
+        System.out.println(IsPalindromeCloneAndReverse2.isPalindrome(node2));
         prettyPrint(nodePalindrome2);
-        System.out.println(IsPalindrome2.isPalindrome(nodePalindrome2));
+        System.out.println(IsPalindromeCloneAndReverse2.isPalindrome(nodePalindrome2));
+        System.out.println("\n=========Test3 IsPalindromeStack=========");
+        prettyPrint(node2);
+        System.out.println(IsPalindromeStack.isPalindromeStack(node2));
+        prettyPrint(nodePalindrome2);
+        System.out.println(IsPalindromeStack.isPalindromeStack(nodePalindrome2));
     }
 
     @Test

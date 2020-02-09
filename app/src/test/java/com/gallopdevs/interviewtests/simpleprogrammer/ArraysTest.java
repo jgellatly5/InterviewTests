@@ -37,13 +37,13 @@ public class ArraysTest {
     public void SingleMissingNumber() {
         System.out.println("=========Test1 Single Number=========");
         // Only one missing number in array
-        int[] numbers = new int[]{1, 2, 3, 5};
-        int missing = GetMissingNumber.getMissingNumber(numbers, 5);
+        int[] numbers = new int[]{1, 2, 3, 5, 6};
+        int missing = GetMissingNumber.getMissingNumber(numbers, numbers.length + 1);
         System.out.printf("Missing number in array %s is %d %n", Arrays.toString(numbers), missing);
         System.out.println("\n=========Test2 Single Number=========");
         // Only one missing number in array
-        int[] numbers2 = new int[]{1, 2, 3, 5};
-        int missing2 = GetMissingNumber2.getMissingNumber(numbers, 5);
+        int[] numbers2 = new int[]{1, 2, 3, 5, 6};
+        int missing2 = GetMissingNumber2.getMissingNumber(numbers2, numbers2.length + 1);
         System.out.printf("Missing number in array %s is %d %n", Arrays.toString(numbers2), missing2);
     }
 

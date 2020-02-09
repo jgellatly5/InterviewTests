@@ -2,7 +2,7 @@ package com.gallopdevs.interviewtests.simpleprogrammer.linkedlists;
 
 import com.gallopdevs.interviewtests.datastructures.LinkedListNode;
 
-public class IsPalindrome2 {
+public class IsPalindromeCloneAndReverse2 {
     public static boolean isPalindrome(LinkedListNode head) {
         LinkedListNode reversed = cloneAndReverse(head);
         return isEqual(head, reversed);

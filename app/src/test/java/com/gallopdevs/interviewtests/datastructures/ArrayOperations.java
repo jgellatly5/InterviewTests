@@ -175,9 +175,12 @@ public class ArrayOperations {
     @Test
     public void Practice() {
         String[] stringArray = {"a", "b", "c"};
-        //3.
+        // ArrayList
         ArrayList<String> arrayList = new ArrayList<>(Arrays.asList(stringArray));
-        System.out.println(arrayList.toString());
+        System.out.println(arrayList);
+        // Contains
+        System.out.println(Arrays.asList(stringArray).contains("a"));
+        System.out.println(Arrays.asList(stringArray).contains("z"));
     }
 
     private int[] insert(int[] numbers, int index, int value) {
@@ -186,7 +189,7 @@ public class ArrayOperations {
             result[i] = numbers[i];
         }
         result[index] = value;
-        for (int i = index + 1; i < numbers.length; i++) {
+        for (int i = index + 1; i < result.length; i++) {
             result[i] = numbers[i - 1];
         }
         return result;
