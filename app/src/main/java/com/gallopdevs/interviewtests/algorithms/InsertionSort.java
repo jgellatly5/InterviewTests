@@ -1,22 +1,17 @@
 package com.gallopdevs.interviewtests.algorithms;
 
-public class InsertionSort {
+import java.util.Arrays;
 
+public class InsertionSort {
     public static void insertionSort(int[] numbers) {
         for (int i = 1; i < numbers.length; i++) {
-            int key = numbers[i];
+            int startingElement = numbers[i];
             int j;
-            for (j = i - 1; (j >= 0 && numbers[j] > key); j--) {
+            for (j = i - 1; (j >= 0 && numbers[j] > startingElement); j--) {
                 numbers[j + 1] = numbers[j];
             }
-            numbers[j + 1] = key;
+            numbers[j + 1] = startingElement;
         }
-        print(numbers);
-    }
-
-    private static void print(int[] array) {
-        for (int i = 0; i < array.length; i++) {
-            System.out.print(array[i] + " ");
-        }
+        System.out.println(Arrays.toString(numbers));
     }
 }
