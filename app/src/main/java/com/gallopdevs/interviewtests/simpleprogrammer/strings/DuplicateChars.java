@@ -1,4 +1,4 @@
-package com.gallopdevs.interviewtests.udemyinterviewclass.strings;
+package com.gallopdevs.interviewtests.simpleprogrammer.strings;
 
 import java.util.HashMap;
 import java.util.Map;

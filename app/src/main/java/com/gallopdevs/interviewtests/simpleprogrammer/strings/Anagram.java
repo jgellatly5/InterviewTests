@@ -1,10 +1,10 @@
-package com.gallopdevs.interviewtests.udemyinterviewclass.strings;
+package com.gallopdevs.interviewtests.simpleprogrammer.strings;
 
 import java.util.Arrays;
 
 public class Anagram {
 
-    public static boolean isAnagramSimple(String wordOne, String wordTwo) {
+    public static boolean isAnagram(String wordOne, String wordTwo) {
         char[] charsOne = wordOne.toCharArray();
         char[] charsTwo = wordTwo.toCharArray();
 

@@ -1,4 +1,4 @@
-package com.gallopdevs.interviewtests.udemyinterviewclass.classic;
+package com.gallopdevs.interviewtests.simpleprogrammer.strings;
 
 public class ReverseInt {
 
