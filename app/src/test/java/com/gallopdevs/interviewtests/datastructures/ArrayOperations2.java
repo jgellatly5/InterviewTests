@@ -13,14 +13,20 @@ public class ArrayOperations2 {
 
     @Test
     public void Practice() {
-        int[] numbers = {1, 2, 3, 4, 5};
-        int indexToRemove = 1;
-        int[] smaller = new int[numbers.length - 1];
-        for (int i = 0, j = 0; i < numbers.length; i++) {
-            if (i == indexToRemove) continue;
-            smaller[j++] = numbers[i];
+        int[] numbers = {7, 8, 0, 0, 0, 0, 0, 9, 10, 11};
+        moveZeros(numbers);
+    }
+
+    private void moveZeros(int[] numbers) {
+        int count = 0;
+        for (int num : numbers) {
+            if (num != 0) {
+                numbers[count++] = num;
+            }
+        }
+        while (count < numbers.length) {
+            numbers[count++] = 0;
         }
         System.out.println(Arrays.toString(numbers));
-        System.out.println(Arrays.toString(smaller));
     }
 }

@@ -2,7 +2,7 @@ package com.gallopdevs.interviewtests.datastructures;
 
 public class HashTable {
 
-    private int INITIAL_CAPACITY = 16;
+    private int initialCapacity = 16;
     private HashEntry[] data;
 
     private static class HashEntry {
@@ -10,7 +10,7 @@ public class HashTable {
         private String value;
         private HashEntry next;
 
-        public HashEntry(String key, String value) {
+        HashEntry(String key, String value) {
             this.key = key;
             this.value = value;
             this.next = null;
@@ -18,21 +18,12 @@ public class HashTable {
     }
 
     public HashTable() {
-        data = new HashEntry[INITIAL_CAPACITY];
+        data = new HashEntry[initialCapacity];
     }
 
-    public void put(String key, String value) {
-        int index = getIndex(key);
-        HashEntry newEntry = new HashEntry(key, value);
-        if (data[index] == null) {
-            data[index] = newEntry;
-        } else {
-            HashEntry entries = data[index];
-            while (entries.next != null) {
-                entries = entries.next;
-            }
-            entries.next = newEntry;
-        }
+    private int getIndex(String key) {
+        int hashCode = key.hashCode();
+        return (hashCode & 0x7fffffff) % initialCapacity;
     }
 
     public String get(String key) {
@@ -48,9 +39,17 @@ public class HashTable {
         return null;
     }
 
-    private int getIndex(String key) {
-        int hashCode = key.hashCode();
-        int index = (hashCode & 0x7fffffff) % INITIAL_CAPACITY;
-        return index;
+    public void put(String key, String value) {
+        int index = getIndex(key);
+        HashEntry newEntry = new HashEntry(key, value);
+        if (data[index] == null) {
+            data[index] = newEntry;
+        } else {
+            HashEntry entries = data[index];
+            while (entries.next != null) {
+                entries = entries.next;
+            }
+            entries.next = newEntry;
+        }
     }
 }

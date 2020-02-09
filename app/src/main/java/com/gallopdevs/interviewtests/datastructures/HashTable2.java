@@ -1,9 +1,10 @@
 package com.gallopdevs.interviewtests.datastructures;
 
 public class HashTable2 {
-    private int INITIAL_CAPACITY = 16;
+    private int initialCapacity = 16;
     private HashEntry[] data;
 
+    // LinkedListNode
     private static class HashEntry {
         private String key;
         private String value;
@@ -17,8 +18,40 @@ public class HashTable2 {
     }
 
     public HashTable2() {
-        data = new HashEntry[INITIAL_CAPACITY];
+        data = new HashEntry[initialCapacity];
     }
 
+    // getIndex
+    private int getIndex(String key) {
+        int hashCode = key.hashCode();
+        return (hashCode & 0x7fffffff) % initialCapacity;
+    }
 
+    // get
+    public String get(String key) {
+        int index = getIndex(key);
+        HashEntry entries = data[index];
+        if (entries != null) {
+            while (!entries.key.equals(key) && entries.next != null) {
+                entries = entries.next;
+            }
+            return entries.value;
+        }
+        return null;
+    }
+
+    // put
+    public void put(String key, String value) {
+        int index = getIndex(key);
+        HashEntry newEntry = new HashEntry(key, value);
+        if (data[index] == null) {
+            data[index] = newEntry;
+        } else {
+            HashEntry entries = data[index];
+            while (entries.next != null) {
+                entries = entries.next;
+            }
+            entries.next = newEntry;
+        }
+    }
 }
