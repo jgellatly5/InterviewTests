@@ -1,4 +1,4 @@
-package com.gallopdevs.interviewtests.simpleprogrammer;
+package com.gallopdevs.interviewtests.hackerrank;
 
 import com.gallopdevs.interviewtests.hackerrank.MinimumBribes;
 import com.gallopdevs.interviewtests.hackerrank.RotationLeft;

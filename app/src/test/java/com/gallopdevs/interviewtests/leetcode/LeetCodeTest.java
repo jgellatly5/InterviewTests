@@ -1,4 +1,4 @@
-package com.gallopdevs.interviewtests.simpleprogrammer;
+package com.gallopdevs.interviewtests.leetcode;
 
 import com.gallopdevs.interviewtests.leetcode.IsValid;
 import com.gallopdevs.interviewtests.leetcode.LongestSubstring;
@@ -38,6 +38,13 @@ public class LeetCodeTest {
         int[] nums3 = new int[]{2, 5, 16};
         int[] nums4 = new int[]{3, 15, 20};
         System.out.println("Median: " + MedianTwoSortedArrays.findMedianSortedArrays(nums3, nums4));
+        System.out.println("=========MedianTwoSortedArrays Test2=========");
+        int[] nums5 = new int[]{2, 5, 6};
+        int[] nums6 = new int[]{3, 15};
+        System.out.println("Median: " + MedianTwoSortedArrays2.findMedian(nums1, nums2));
+        int[] nums7 = new int[]{2, 5, 16};
+        int[] nums8 = new int[]{3, 15, 20};
+        System.out.println("Median: " + MedianTwoSortedArrays2.findMedian(nums3, nums4));
     }
 
     @Test

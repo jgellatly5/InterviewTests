@@ -67,5 +67,19 @@
         <item name="q_64">Add two matrices of the same size</item>
         <item name="q_65">Move all 0s to the end of an array</item>
         <item name="q_66">Find the number of even and odd integers</item>
+        <item name="q_67">Implement a Dynamic Array</item>
+        <item name="q_68">Implement a LinkedList</item>
+        <item name="q_69">Implement a Stack</item>
+        <item name="q_70">Implement a Queue</item>
+        <item name="q_71">Implement a Binary Search Tree (BST)</item>
+        <item name="q_72">Implement a HashTable</item>
+        <item name="q_73">Implement a Max Heap</item>
+        <item name="q_74">Implement the binary search algorithm</item>
+        <item name="q_75">Implement the bubble sort algorithm</item>
+        <item name="q_76">Implement the selection sort algorithm</item>
+        <item name="q_77">Implement the insertion sort algorithm</item>
+        <item name="q_78">Implement the mergesort algorithm</item>
+        <item name="q_79">Implement the quicksort algorithm</item>
+        <item name="q_80">Find all the prime numbers in an array</item>
     </string-array>
 </resources>
