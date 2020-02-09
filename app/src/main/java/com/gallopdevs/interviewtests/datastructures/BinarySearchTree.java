@@ -8,17 +8,14 @@ public class BinarySearchTree {
         private Node left;
         private Node right;
 
-        public Node(int key, String value) {
+        Node(int key, String value) {
             this.key = key;
             this.value = value;
         }
 
-        public Node findMin() {
-            if (left == null) {
-                return this;
-            } else {
-                return left.findMin();
-            }
+        Node findMin() {
+            if (left == null) return this;
+            else return left.findMin();
         }
     }
 
@@ -63,7 +60,7 @@ public class BinarySearchTree {
         return node;
     }
 
-    public Node findMinNode(Node node) {
+    private Node findMinNode(Node node) {
         return node.findMin();
     }
 
