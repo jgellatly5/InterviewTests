@@ -1,23 +1,19 @@
 package com.gallopdevs.interviewtests.algorithms;
 
+import java.util.Arrays;
+
 public class SelectionSort {
-    public static void selectionSort(int[] array) {
-        for (int i = 0; i < array.length - 1; i++) {
-            int index = i;
-            for (int j = i + 1; j < array.length; j++) {
-                if (array[j] < array[index]) {
-                    index = j;
+    public static void selectionSort(int[] numbers) {
+        for (int i = 0; i < numbers.length - 1; i++) {
+            int startingElement = i;
+            for (int j = i + 1; j < numbers.length; j++) {
+                if (numbers[j] < numbers[startingElement]) {
+                    startingElement = j;
                 }
             }
-            swap(array, index, i);
+            swap(numbers, startingElement, i);
         }
-        print(array);
-    }
-
-    private static void print(int[] array) {
-        for (int i = 0; i < array.length; i++) {
-            System.out.print(array[i] + " ");
-        }
+        System.out.println(Arrays.toString(numbers));
     }
 
     private static void swap(int[] array, int indexOne, int indexTwo) {
