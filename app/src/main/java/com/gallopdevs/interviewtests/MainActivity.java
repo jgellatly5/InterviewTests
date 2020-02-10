@@ -93,33 +93,29 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         switch (position) {
             case 0:
                 minRange = 1;
-                maxRange = 13;
+                maxRange = 37;
                 break;
             case 1:
-                minRange = 14;
-                maxRange = 23;
+                minRange = 38;
+                maxRange = 47;
                 break;
             case 2:
-                minRange = 24;
-                maxRange = 30;
+                minRange = 48;
+                maxRange = 54;
                 break;
             case 3:
-                minRange = 31;
-                maxRange = 38;
+                minRange = 55;
+                maxRange = 62;
                 break;
             case 4:
-                minRange = 39;
-                maxRange = 42;
-                break;
-            case 5:
-                minRange = 43;
+                minRange = 63;
                 maxRange = 66;
                 break;
-            case 6:
+            case 5:
                 minRange = 67;
                 maxRange = 73;
                 break;
-            case 7:
+            case 6:
                 minRange = 74;
                 maxRange = 80;
                 break;

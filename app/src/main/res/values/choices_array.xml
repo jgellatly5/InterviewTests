@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="choices_array">
-        <item>Arrays</item>
+        <item>Array Operations</item>
         <item>LinkedLists</item>
         <item>Strings</item>
         <item>Trees</item>
         <item>Misc</item>
-        <item>Array Operations</item>
         <item>Data Structures</item>
         <item>Algorithms</item>
     </string-array>

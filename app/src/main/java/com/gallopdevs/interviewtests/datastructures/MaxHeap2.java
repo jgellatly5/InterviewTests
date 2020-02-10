@@ -5,7 +5,7 @@ import java.util.Arrays;
 public class MaxHeap2 {
 
     private int capacity = 10;
-    private int size;
+    private int size = 0;
 
     private int[] items = new int[capacity];
 
@@ -20,10 +20,10 @@ public class MaxHeap2 {
     }
 
     private boolean hasLeftChild(int index) {
-        return leftChildIndex(index) < index;
+        return leftChildIndex(index) < size;
     }
     private boolean hasRightChild(int index) {
-        return rightChildIndex(index) < index;
+        return rightChildIndex(index) < size;
     }
     private boolean hasParent(int index) {
         return parentIndex(index) >= 0;
@@ -39,13 +39,7 @@ public class MaxHeap2 {
         return items[parentIndex(index)];
     }
 
-    public void insert(int item) {
-        ensureCapacity();
-        items[size] = item;
-        size++;
-        heapifyUp();
-    }
-
+    // extractMax
     public int extractMax() {
         if (size == 0) throw new IllegalStateException();
         int item = items[0];
@@ -55,6 +49,7 @@ public class MaxHeap2 {
         return item;
     }
 
+    // heapifyDown
     private void heapifyDown() {
         int index = 0;
         while (hasLeftChild(index)) {
@@ -62,32 +57,41 @@ public class MaxHeap2 {
             if (hasRightChild(index) && rightChildValue(index) > leftChildValue(index)) {
                 smallerChildIndex = rightChildIndex(index);
             }
-
-            if (items[index] > items[smallerChildIndex]) {
-                break;
-            } else {
-                swap(index, smallerChildIndex);
-            }
+            if (items[index] > items[smallerChildIndex]) break;
+            else swap(index, smallerChildIndex);
             index = smallerChildIndex;
         }
     }
 
+    // insert
+    public void insert(int item) {
+        ensureCapacity();
+        items[size] = item;
+        size++;
+        heapifyUp();
+    }
+
+    // heapifyUp
     private void heapifyUp() {
-        int index = items[size - 1];
+        int index = size - 1;
         while (hasParent(index) && parentValue(index) < items[index]) {
             swap(parentIndex(index), index);
             index = parentIndex(index);
         }
     }
 
+    // ensureCapacity
+    private void ensureCapacity() {
+        if (size == capacity) {
+            items = Arrays.copyOf(items, capacity * 2);
+            capacity *= 2;
+        }
+    }
+
+    // swap
     private void swap(int indexOne, int indexTwo) {
         int temp = items[indexOne];
         items[indexOne] = items[indexTwo];
         items[indexTwo] = temp;
-    }
-
-    private void ensureCapacity() {
-        items = Arrays.copyOf(items, capacity * 2);
-        capacity *= 2;
     }
 }
