@@ -1,4 +1,4 @@
-package com.gallopdevs.interviewtests.simpleprogrammer.misc;
+package com.gallopdevs.interviewtests.simpleprogrammer.recursive;
 
 public class Fibonacci {
 

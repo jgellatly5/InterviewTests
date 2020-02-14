@@ -1,10 +1,9 @@
-package com.gallopdevs.interviewtests.simpleprogrammer.misc;
+package com.gallopdevs.interviewtests.simpleprogrammer.arrays;
 
-public class StockPrices {
-
-    public static int maxProfit(int[] prices) {
+public class StockPrices2 {
+    public static int maxPrice(int[] prices) {
         if (prices == null || prices.length <= 1) return 0;
-        int min = prices[0]; // min so far
+        int min = prices[0];
         int result = 0;
         for (int i = 1; i < prices.length; i++) {
             result = Math.max(result, prices[i] - min);

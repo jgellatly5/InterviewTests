@@ -15,14 +15,4 @@ public class IsCyclic2 {
         }
         return false;
     }
-
-    public static boolean isCylicHash(LinkedListNode node) {
-        HashSet<LinkedListNode> hashSet = new HashSet<>();
-        while (node != null) {
-            if (hashSet.contains(node)) return true;
-            hashSet.add(node);
-            node = node.next;
-        }
-        return false;
-    }
 }

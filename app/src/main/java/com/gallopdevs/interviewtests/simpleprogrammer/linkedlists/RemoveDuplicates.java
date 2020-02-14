@@ -20,4 +20,24 @@ public class RemoveDuplicates {
             current = current.next;
         }
     }
+
+    // Loops
+    public static void removeDuplicatesLoops(LinkedListNode head) {
+        LinkedListNode previous = null;
+        LinkedListNode current = head;
+        LinkedListNode next = null;
+        while (current != null) {
+            previous = current;
+            next = current.next;
+            while (next != null) {
+                if (current.data == next.data) {
+                    previous.next = next.next;
+                } else {
+                    previous = next;
+                }
+                next = next.next;
+            }
+            current = current.next;
+        }
+    }
 }

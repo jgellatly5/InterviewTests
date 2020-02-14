@@ -6,7 +6,7 @@ public class ReturnKthToLast2 {
     public static int printKthToLast(LinkedListNode head, int k) {
         if (head == null) return -1;
         int index = printKthToLast(head.next, k) + 1;
-        if (index == k) System.out.println(k + " element(s) from last node is: " + head.data);
+        if (index == k) System.out.println(k + " element(s) from last is: " + head.data);
         return index;
     }
 }

@@ -1,7 +1,7 @@
 package com.gallopdevs.interviewtests.simpleprogrammer;
 
-import com.gallopdevs.interviewtests.simpleprogrammer.misc.Fibonacci;
-import com.gallopdevs.interviewtests.simpleprogrammer.misc.FizzBuzz;
+import com.gallopdevs.interviewtests.simpleprogrammer.recursive.Fibonacci;
+import com.gallopdevs.interviewtests.simpleprogrammer.arrays.FizzBuzz;
 
 import org.junit.Test;
 
