@@ -4,7 +4,7 @@ import com.gallopdevs.interviewtests.datastructures.LinkedListNode;
 
 import java.util.HashSet;
 
-public class RemoveDuplicates {
+public class RemoveDuplicatesUnsorted {
     // How are duplicate nodes removed in an unsorted linked list?
     public static void removeDuplicates(LinkedListNode head) {
         HashSet<Integer> hashSet = new HashSet<>();

@@ -36,6 +36,10 @@ import java.util.Random;
 
 public class ArraysTest {
 
+    // first non-repeating integers in an array
+    // merge two sorted arrays
+    // rearrange positive and negative values in an array
+
     @Test
     public void SingleMissingNumber() {
         System.out.println("=========Test1 Single Number=========");

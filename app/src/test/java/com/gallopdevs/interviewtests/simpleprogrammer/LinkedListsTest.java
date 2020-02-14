@@ -1,8 +1,7 @@
 package com.gallopdevs.interviewtests.simpleprogrammer;
 
 import com.gallopdevs.interviewtests.datastructures.LinkedListNode;
-import com.gallopdevs.interviewtests.simpleprogrammer.linkedlists.DeleteMiddleNode;
-import com.gallopdevs.interviewtests.simpleprogrammer.linkedlists.DeleteMiddleNode2;
+import com.gallopdevs.interviewtests.simpleprogrammer.linkedlists.DeleteMiddle;
 import com.gallopdevs.interviewtests.simpleprogrammer.linkedlists.FindIntersection;
 import com.gallopdevs.interviewtests.simpleprogrammer.linkedlists.FindIntersection2;
 import com.gallopdevs.interviewtests.simpleprogrammer.linkedlists.FindLength;
@@ -15,8 +14,9 @@ import com.gallopdevs.interviewtests.simpleprogrammer.linkedlists.IsPalindromeCl
 import com.gallopdevs.interviewtests.simpleprogrammer.linkedlists.IsPalindromeStack;
 import com.gallopdevs.interviewtests.simpleprogrammer.linkedlists.Partition;
 import com.gallopdevs.interviewtests.simpleprogrammer.linkedlists.Partition2;
-import com.gallopdevs.interviewtests.simpleprogrammer.linkedlists.RemoveDuplicates;
-import com.gallopdevs.interviewtests.simpleprogrammer.linkedlists.RemoveDuplicates2;
+import com.gallopdevs.interviewtests.simpleprogrammer.linkedlists.RemoveDuplicatesSorted;
+import com.gallopdevs.interviewtests.simpleprogrammer.linkedlists.RemoveDuplicatesUnsorted;
+import com.gallopdevs.interviewtests.simpleprogrammer.linkedlists.RemoveDuplicatesUnsorted2;
 import com.gallopdevs.interviewtests.simpleprogrammer.linkedlists.ReturnKthToLast;
 import com.gallopdevs.interviewtests.simpleprogrammer.linkedlists.ReturnKthToLast2;
 import com.gallopdevs.interviewtests.simpleprogrammer.linkedlists.ReverseList;
@@ -39,6 +39,7 @@ public class LinkedListsTest {
     private LinkedListNode nodePalindrome2;
     private LinkedListNode nodeIntersection;
     private LinkedListNode nodeIntersection2;
+    private LinkedListNode nodeSorted;
 
     @Before
     public void setUp() throws Exception {
@@ -102,6 +103,13 @@ public class LinkedListsTest {
 
         nodeIntersection2 = new LinkedListNode(5);
         nodeIntersection2.next = nodeIntersection.next;
+
+        nodeSorted = new LinkedListNode(1);
+        nodeSorted.next = new LinkedListNode(1);
+        nodeSorted.next.next = new LinkedListNode(2);
+        nodeSorted.next.next.next = new LinkedListNode(2);
+        nodeSorted.next.next.next.next = new LinkedListNode(2);
+        nodeSorted.next.next.next.next.next = new LinkedListNode(3);
     }
 
     @Test
@@ -142,33 +150,49 @@ public class LinkedListsTest {
     }
 
     @Test
-    public void RemoveDuplicates() {
+    public void RemoveDuplicatesUnsorted() {
         System.out.println("=========Test1 RemoveDuplicates=========");
         prettyPrint(node);
-        RemoveDuplicates.removeDuplicates(node);
+        RemoveDuplicatesUnsorted.removeDuplicates(node);
         prettyPrint(node);
         System.out.println("\n=========Test2 RemoveDuplicates=========");
         prettyPrint(node2);
-        RemoveDuplicates2.removeDuplicates(node2);
+        RemoveDuplicatesUnsorted2.removeDuplicates(node2);
         prettyPrint(node2);
         System.out.println("\n=========Test3 RemoveDuplicatesLoops=========");
         prettyPrint(node3);
-        RemoveDuplicates.removeDuplicatesLoops(node3);
+        RemoveDuplicatesUnsorted.removeDuplicatesLoops(node3);
         prettyPrint(node3);
     }
 
     @Test
-    public void DeleteMiddleNode() {
-        System.out.println("=========Test1 DeleteMiddleNode=========");
+    public void RemoveDuplicatesSortedIterative() {
+        System.out.println("=========Test1 RemoveDuplicatesSorted=========");
+        prettyPrint(nodeSorted);
+        RemoveDuplicatesSorted.removeDuplicatesSorted(nodeSorted);
+        prettyPrint(nodeSorted);
+    }
+
+    @Test
+    public void RemoveDuplicatesSortedRecursive() {
+        System.out.println("=========Test1 RemoveDuplicatesSorted=========");
+        prettyPrint(nodeSorted);
+        RemoveDuplicatesSorted.removeDuplicatesRecursive(nodeSorted);
+        prettyPrint(nodeSorted);
+    }
+
+    @Test
+    public void DeleteMiddle() {
+        System.out.println("=========Test1 DeleteMiddle=========");
         System.out.println("findLength before: " + FindLength.findLength(node));
         prettyPrint(node);
-        DeleteMiddleNode.deleteMiddleNode(node.next);
+        DeleteMiddle.deleteMiddle(node);
         System.out.println("findLength after: " + FindLength.findLength(node));
         prettyPrint(node);
-        System.out.println("\n=========Test2 DeleteMiddleNode=========");
+        System.out.println("\n=========Test2 DeleteMiddle=========");
         System.out.println("findLength before: " + FindLength.findLength(node2));
         prettyPrint(node2);
-        DeleteMiddleNode2.deleteMiddleNode(node2.next);
+//        DeleteMiddleNode2.deleteMiddleNode(node2.next);
         System.out.println("findLength after: " + FindLength.findLength(node2));
         prettyPrint(node2);
     }

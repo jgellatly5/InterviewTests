@@ -4,7 +4,7 @@ import com.gallopdevs.interviewtests.datastructures.LinkedListNode;
 
 import java.util.HashSet;
 
-public class RemoveDuplicates2 {
+public class RemoveDuplicatesUnsorted2 {
     public static void removeDuplicates(LinkedListNode head) {
         HashSet<Integer> hashSet = new HashSet<>();
         LinkedListNode previous = null;
