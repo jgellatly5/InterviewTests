@@ -5,6 +5,7 @@ import com.gallopdevs.interviewtests.datastructures.LinkedListNode;
 import java.util.Stack;
 
 public class SumLists {
+    // https://www.ideserve.co.in/  learn/sum-of-two-linked-lists-using-stacks
     // stack
     public static LinkedListNode sumListsStack(LinkedListNode l1, LinkedListNode l2) {
         if (l1 == null) return l2;
@@ -49,25 +50,26 @@ public class SumLists {
         return createLinkedListFromStack(sumStack);
     }
 
-    LinkedListNode head;
-    LinkedListNode tail;
+    public static LinkedListNode head;
+    private static LinkedListNode tail;
     private static LinkedListNode createLinkedListFromStack(Stack<Integer> stack) {
-        LinkedListNode tail = null;
+        if (head != null) head = null;
         while (!stack.isEmpty()) {
-            LinkedListNode node = new LinkedListNode(stack.pop());
-            tail.next = node;
-            tail = node;
+            appendNode(stack.pop());
         }
-        // TODO
-        return null;
+        return head;
     }
 
-//    private static void appendNode(int value) {
-//        if (head == null) {
-//            head = new LinkedListNode(value);
-//            tail.next =
-//        }
-//    }
+    private static void appendNode(int value) {
+        if (head == null) {
+            head = new LinkedListNode(value);
+            tail = head;
+            return;
+        }
+        LinkedListNode n = new LinkedListNode(value);
+        tail.next = n;
+        tail = n;
+    }
 
     // recursion
     public static LinkedListNode sumListsRecursively(LinkedListNode l1, LinkedListNode l2, int carry) {

@@ -15,6 +15,7 @@ import com.gallopdevs.interviewtests.questionsbytype.linkedlists.RemoveDuplicate
 import com.gallopdevs.interviewtests.questionsbytype.linkedlists.RemoveDuplicatesUnsorted;
 import com.gallopdevs.interviewtests.questionsbytype.linkedlists.PrintKthToLast;
 import com.gallopdevs.interviewtests.questionsbytype.linkedlists.ReverseList;
+import com.gallopdevs.interviewtests.questionsbytype.linkedlists.ReversePairs;
 import com.gallopdevs.interviewtests.questionsbytype.linkedlists.SortedMerge;
 import com.gallopdevs.interviewtests.questionsbytype.linkedlists.SumLists;
 
@@ -209,6 +210,10 @@ public class LinkedListsTest {
 
     @Test
     public void SumLists() {
+        System.out.println("\n=========SumLists Stack=========");
+        prettyPrint(l1);
+        prettyPrint(l2);
+        prettyPrint(SumLists.sumListsStack(l1, l2));
         System.out.println("=========SumLists Iterative=========");
         prettyPrint(l1);
         prettyPrint(l2);
@@ -291,6 +296,16 @@ public class LinkedListsTest {
         FindDuplicates.findDuplicatesCount(node2);
     }
 
+    @Test
+    public void ReversePairs() {
+        System.out.println("=========Reverse Pairs Iteratively=========");
+        prettyPrint(node2);
+        prettyPrint(ReversePairs.reversePairs(node2));
+        System.out.println("\n=========Reverse Pairs Recursively=========");
+        prettyPrint(node2);
+        prettyPrint(ReversePairs.reversePairsRecursive(node2));
+    }
+
     private void prettyPrint(LinkedListNode node) {
         while (node != null) {
             System.out.print(node.data + " ");
@@ -298,7 +313,4 @@ public class LinkedListsTest {
         }
         System.out.println();
     }
-
-    // 3. Reverse LinkedList in pairs
-    // https://java2blog.com/java-program-to-reverse-linked-list-in/
 }
