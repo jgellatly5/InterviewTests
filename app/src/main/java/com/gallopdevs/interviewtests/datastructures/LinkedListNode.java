@@ -18,12 +18,10 @@ public class LinkedListNode {
 
     public void addFront(int data) {
         LinkedListNode newNode = new LinkedListNode(data);
-
         if (head == null) {
             head = newNode;
             return;
         }
-
         newNode.next = head;
         head = newNode;
         size++;
@@ -31,12 +29,10 @@ public class LinkedListNode {
 
     public void addBack(int data) {
         LinkedListNode newNode = new LinkedListNode(data);
-
         if (head == null) {
             head = newNode;
             return;
         }
-
         LinkedListNode current = head;
         while (current.next != null) {
             current = current.next;
@@ -90,15 +86,11 @@ public class LinkedListNode {
     }
 
     public void delete(int data) {
-        if (head == null) {
-            return;
-        }
-
+        if (head == null) return;
         if (head.data == data) {
             head = head.next;
             return;
         }
-
         LinkedListNode current = head;
         while (current.next != null) {
             if (current.next.data == data) {
@@ -117,7 +109,7 @@ public class LinkedListNode {
     public void print() {
         LinkedListNode current = head;
         while (current != null) {
-            System.out.println(current.data);
+            System.out.print(current.data + " ");
             current = current.next;
         }
         System.out.println();

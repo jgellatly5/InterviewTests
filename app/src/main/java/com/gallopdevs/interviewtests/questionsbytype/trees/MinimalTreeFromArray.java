@@ -3,6 +3,7 @@ package com.gallopdevs.interviewtests.questionsbytype.trees;
 import com.gallopdevs.interviewtests.datastructures.TreeNode;
 
 public class MinimalTreeFromArray {
+
     public static TreeNode createMinimalBst(int[] array) {
         return createMinimalBst(array, 0, array.length - 1);
     }

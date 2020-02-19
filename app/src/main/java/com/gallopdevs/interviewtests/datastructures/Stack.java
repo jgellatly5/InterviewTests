@@ -3,39 +3,45 @@ package com.gallopdevs.interviewtests.datastructures;
 import java.util.EmptyStackException;
 
 public class Stack {
-
     private static class Node {
         private int data;
         private Node next;
-
         Node(int data) {
             this.data = data;
         }
     }
 
-    private Node top;
+    private Node head;
     private int size;
 
     public void push(int data) {
         Node newNode = new Node(data);
-        newNode.next = top;
-        top = newNode;
+        if (head == null) {
+            head = newNode;
+            return;
+        }
+        newNode.next = head;
+        head = newNode;
         size++;
     }
 
     public int pop() {
-        if (top == null) throw new EmptyStackException();
-        int data = top.data;
-        top = top.next;
+        if (head == null) throw new EmptyStackException();
+        int data = head.data;
+        head = head.next;
         size--;
         return data;
     }
 
     public int peek() {
-        return top.data;
+        return head.data;
     }
 
     public boolean isEmpty() {
-        return top == null;
+        return head == null;
+    }
+
+    public int size() {
+        return size;
     }
 }

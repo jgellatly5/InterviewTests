@@ -29,7 +29,6 @@ public class HashTable {
     public String get(String key) {
         int index = getIndex(key);
         HashEntry entries = data[index];
-
         if (entries != null) {
             while (!entries.key.equals(key) && entries.next != null) {
                 entries = entries.next;

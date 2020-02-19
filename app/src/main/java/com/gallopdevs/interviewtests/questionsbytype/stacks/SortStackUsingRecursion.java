@@ -23,7 +23,7 @@ public class SortStackUsingRecursion {
             stack.push(value);
             return;
         }
-        // If top is greater, remove the top item and recur
+        // If top is greater, dequeue the top item and recur
         int temp = stack.pop();
         sortedInsert(stack, value);
         // Put back the top item removed earlier

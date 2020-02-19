@@ -50,7 +50,7 @@ public class FindAndRemoveLoop {
             pointer2 = pointer2.next;
         }
 
-        // remove the next pointer to the node causing the loop
+        // dequeue the next pointer to the node causing the loop
         pointer2.next = null;
     }
 }

@@ -3,6 +3,7 @@ package com.gallopdevs.interviewtests.questionsbytype;
 import com.gallopdevs.interviewtests.questionsbytype.arrays.FindDuplicatesCount;
 import com.gallopdevs.interviewtests.questionsbytype.arrays.FindDuplicatesLoop;
 import com.gallopdevs.interviewtests.questionsbytype.arrays.FindDuplicatesSet;
+import com.gallopdevs.interviewtests.questionsbytype.arrays.MedianTwoSortedArrays;
 import com.gallopdevs.interviewtests.questionsbytype.arrays.MinMaxArray;
 import com.gallopdevs.interviewtests.questionsbytype.arrays.GetMissingNumber;
 import com.gallopdevs.interviewtests.questionsbytype.arrays.PrintMissingNumbers;
@@ -128,11 +129,11 @@ public class ArraysTest {
     @Test
     public void RotateMatrixClockwise() {
         System.out.println("=========Test1=========");
-        int matrix[][] = {
-            {1, 2, 3, 4},
-            {5, 6, 7, 8},
-            {9, 10, 11, 12},
-            {13, 14, 15, 16}
+        int[][] matrix = {
+                {1, 2, 3, 4},
+                {5, 6, 7, 8},
+                {9, 10, 11, 12},
+                {13, 14, 15, 16}
         };
         RotateMatrixClockwise.rotateMatrixClockwise(matrix);
         printMatrix(matrix);
@@ -141,7 +142,7 @@ public class ArraysTest {
     @Test
     public void RotateMatrixCounterClockwise() {
         System.out.println("=========Test1=========");
-        int matrix[][] = {
+        int[][] matrix = {
                 {1, 2, 3, 4},
                 {5, 6, 7, 8},
                 {9, 10, 11, 12},
@@ -153,8 +154,8 @@ public class ArraysTest {
 
     @Test
     public void ZeroMatrix() {
-        System.out.println("=========Test1=========");
-        int matrix[][] = {
+        System.out.println("=========ZeroMatrix=========");
+        int[][] matrix = {
                 {0, 2, 3, 4},
                 {5, 6, 7, 8},
                 {9, 10, 11, 12},
@@ -162,6 +163,16 @@ public class ArraysTest {
         };
         ZeroMatrix.zeroMatrix(matrix);
         printMatrix(matrix);
+    }
+
+    @Test
+    public void MedianTwoSortedArrays() {
+        System.out.println("=========MedianTwoSortedArrays=========");
+        int[] a = {1, 3, 5};
+        int[] b = {2, 4, 6};
+        System.out.println(Arrays.toString(a));
+        System.out.println(Arrays.toString(b));
+        System.out.println("Median: " + MedianTwoSortedArrays.medianTwoSortedArrays(a, b));
     }
 
     private static int[] getRandomArray(int length) {
