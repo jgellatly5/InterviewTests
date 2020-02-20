@@ -54,12 +54,12 @@ public class MaxHeap {
     private void heapifyUp() {
         int currentIndex = size - 1;
         while (hasParent(currentIndex) && parentValue(currentIndex) < items[currentIndex]) {
-            swap(parentIndex(currentIndex), currentIndex);
+            swapItems(parentIndex(currentIndex), currentIndex);
             currentIndex = parentIndex(currentIndex);
         }
     }
 
-    private void swap(int indexOne, int indexTwo) {
+    private void swapItems(int indexOne, int indexTwo) {
         int temp = items[indexOne];
         items[indexOne] = items[indexTwo];
         items[indexTwo] = temp;
@@ -84,7 +84,7 @@ public class MaxHeap {
             if (items[currentIndex] > items[indexChildLargestValue]) {
                 break;
             } else {
-                swap(currentIndex, indexChildLargestValue);
+                swapItems(currentIndex, indexChildLargestValue);
             }
             currentIndex = indexChildLargestValue;
         }
