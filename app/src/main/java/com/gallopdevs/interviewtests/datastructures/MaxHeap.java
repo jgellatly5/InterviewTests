@@ -3,10 +3,9 @@ package com.gallopdevs.interviewtests.datastructures;
 import java.util.Arrays;
 
 public class MaxHeap {
-    private int capacity = 10;
-    private int size = 0;
-
-    private int[] items = new int[capacity];
+    private int initialCapacity = 10;
+    private int size;
+    private int[] items = new int[initialCapacity];
 
     private int leftChildIndex(int parentIndex) {
         return 2 * parentIndex + 1;
@@ -38,15 +37,6 @@ public class MaxHeap {
         return items[parentIndex(index)];
     }
 
-    public int extractMax() {
-        if (size == 0) throw new IllegalStateException();
-        int item = items[0];
-        items[0] = items[size - 1];
-        size--;
-        heapifyDown();
-        return item;
-    }
-
     public void insert(int item) {
         ensureCapacity();
         items[size] = item;
@@ -54,35 +44,18 @@ public class MaxHeap {
         heapifyUp();
     }
 
-    private void heapifyUp() {
-        int index = size - 1;
-        while (hasParent(index) && parentValue(index) < items[index]) {
-            swap(parentIndex(index), index);
-            index = parentIndex(index);
-        }
-    }
-
     private void ensureCapacity() {
-        if (size == capacity) {
-            items = Arrays.copyOf(items, capacity * 2);
-            capacity *= 2;
+        if (size == initialCapacity) {
+            items = Arrays.copyOf(items, initialCapacity * 2);
+            initialCapacity *= 2;
         }
     }
 
-    private void heapifyDown() {
-        int index = 0;
-        while (hasLeftChild(index)) {
-            int smallerChildIndex = leftChildIndex(index);
-            if (hasRightChild(index) && rightChildValue(index) > leftChildValue(index)) {
-                smallerChildIndex = rightChildIndex(index);
-            }
-
-            if (items[index] > items[smallerChildIndex]) {
-                break;
-            } else {
-                swap(index, smallerChildIndex);
-            }
-            index = smallerChildIndex;
+    private void heapifyUp() {
+        int currentIndex = size - 1;
+        while (hasParent(currentIndex) && parentValue(currentIndex) < items[currentIndex]) {
+            swap(parentIndex(currentIndex), currentIndex);
+            currentIndex = parentIndex(currentIndex);
         }
     }
 
@@ -90,5 +63,30 @@ public class MaxHeap {
         int temp = items[indexOne];
         items[indexOne] = items[indexTwo];
         items[indexTwo] = temp;
+    }
+
+    public int extractMax() {
+        if (size == 0) throw new IllegalStateException();
+        int max = items[0];
+        items[0] = items[size - 1];
+        size--;
+        heapifyDown();
+        return max;
+    }
+
+    private void heapifyDown() {
+        int currentIndex = 0;
+        while (hasLeftChild(currentIndex)) {
+            int indexChildLargestValue = leftChildIndex(currentIndex);
+            if (hasRightChild(currentIndex) && rightChildValue(currentIndex) > leftChildValue(currentIndex)) {
+                indexChildLargestValue = rightChildIndex(currentIndex);
+            }
+            if (items[currentIndex] > items[indexChildLargestValue]) {
+                break;
+            } else {
+                swap(currentIndex, indexChildLargestValue);
+            }
+            currentIndex = indexChildLargestValue;
+        }
     }
 }

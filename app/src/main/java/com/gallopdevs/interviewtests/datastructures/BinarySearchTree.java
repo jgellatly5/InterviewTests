@@ -25,7 +25,7 @@ public class BinarySearchTree {
         root = null;
     }
 
-    public String findKey(int key) {
+    public String findValue(int key) {
         Node node = findNode(root, key);
         return node == null ? null : node.value;
     }
@@ -35,27 +35,25 @@ public class BinarySearchTree {
             return node;
         } else if (key < node.key) {
             return findNode(node.left, key);
-        } else if (key > node.key) {
+        } else {
             return findNode(node.right, key);
         }
-        return null;
     }
 
     public void insert(int key, String value) {
-        root = insertItem(root, key, value);
+        root = insertNode(root, key, value);
     }
 
-    private Node insertItem(Node node, int key, String value) {
+    private Node insertNode(Node node, int key, String value) {
         Node newNode = new Node(key, value);
         if (node == null) {
             node = newNode;
             return node;
         }
-
         if (key < node.key) {
-            node.left = insertItem(node.left, key, value);
+            node.left = insertNode(node.left, key, value);
         } else {
-            node.right = insertItem(node.right, key, value);
+            node.right = insertNode(node.right, key, value);
         }
         return node;
     }

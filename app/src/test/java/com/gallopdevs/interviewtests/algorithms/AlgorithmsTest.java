@@ -7,17 +7,17 @@ public class AlgorithmsTest {
 
     @Test
     public void BubbleSort() {
-        BubbleSort2.bubbleSort(new int[]{6, 8, 4, 9, 0, 12, 2});
+        BubbleSort.bubbleSort(new int[]{6, 8, 4, 9, 0, 12, 2});
     }
 
     @Test
     public void InsertionSort() {
-        InsertionSort2.insertionSort(new int[]{6, 8, 4, 9, 0, 12, 2});
+        InsertionSort.insertionSort(new int[]{6, 8, 4, 9, 0, 12, 2});
     }
 
     @Test
     public void SelectionSort() {
-        SelectionSort2.selectionSort(new int[]{6, 8, 4, 9, 0, 12, 2});
+        SelectionSort.selectionSort(new int[]{6, 8, 4, 9, 0, 12, 2});
     }
 
     @Test
@@ -40,13 +40,10 @@ public class AlgorithmsTest {
 
     @Test
     public void BinarySearch() {
-        System.out.println("=========BinarySearch1=========");
+        System.out.println("=========BinarySearch=========");
         int[] array = {3, 52, 79, 184, 256, 373, 490};
-        Assert.assertEquals(BinarySearch.binarySearch(array, 52), 1);
+        Assert.assertEquals(BinarySearch.binarySearchIterative(array, 52), 1);
         Assert.assertEquals(BinarySearch.binarySearchRecursive(array, 52, 0, array.length - 1), 1);
-        System.out.println("=========BinarySearch2=========");
-        int[] array2 = {3, 52, 79, 184, 256, 373, 490};
-        System.out.println(BinarySearch2.binarySearchIterative(array2, 79));
     }
 
     @Test

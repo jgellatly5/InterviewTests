@@ -6,13 +6,13 @@ public class Trie {
 
     private static class TrieNode {
         public char character;
-        public boolean isWholeWord;
-        public HashMap<Character, TrieNode> children = new HashMap<>();
+        boolean isWholeWord;
+        HashMap<Character, TrieNode> children = new HashMap<>();
 
-        public TrieNode() {
+        TrieNode() {
         }
 
-        public TrieNode(char character) {
+        TrieNode(char character) {
             this.character = character;
         }
     }

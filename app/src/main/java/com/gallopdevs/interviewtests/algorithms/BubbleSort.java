@@ -1,27 +1,18 @@
 package com.gallopdevs.interviewtests.algorithms;
 
-public class BubbleSort {
+import java.util.Arrays;
 
-    public static void bubbleSort(int[] array) {
-        for (int i = 0; i < array.length - 1; i++) {
-            for (int j = 0; j < array.length - i - 1; j++) {
-                if (array[j] > array[j + 1]) {
-                    swap(array, j, j + 1);
+public class BubbleSort {
+    public static void bubbleSort(int[] numbers) {
+        for (int i = 0; i < numbers.length - 1; i++) {
+            for (int j = 0; j < numbers.length - 1 - i; j++) {
+                if (numbers[j] > numbers[j + 1]) {
+                    int temp = numbers[j];
+                    numbers[j] = numbers[j + 1];
+                    numbers[j + 1] = temp;
                 }
             }
         }
-        print(array);
-    }
-
-    private static void print(int[] array) {
-        for (int i = 0; i < array.length; i++) {
-            System.out.print(array[i] + " ");
-        }
-    }
-
-    private static void swap(int[] array, int indexOne, int indexTwo) {
-        int temp = array[indexOne];
-        array[indexOne] = array[indexTwo];
-        array[indexTwo] = temp;
+        System.out.println(Arrays.toString(numbers));
     }
 }

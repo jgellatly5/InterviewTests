@@ -51,4 +51,21 @@ public class HashTable {
             entries.next = newEntry;
         }
     }
+
+    public void delete(String key) {
+        int index = getIndex(key);
+        HashEntry entries = data[index];
+        if (entries == null) return;
+        if (entries.key.equals(key)) {
+            data[index] = entries.next;
+            return;
+        }
+        while (entries.next != null) {
+            if (entries.next.key.equals(key)) {
+                entries.next = entries.next.next;
+                return;
+            }
+            entries = entries.next;
+        }
+    }
 }
