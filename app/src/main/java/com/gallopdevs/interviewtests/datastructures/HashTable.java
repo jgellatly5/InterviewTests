@@ -29,13 +29,11 @@ public class HashTable {
     public String get(String key) {
         int index = getIndex(key);
         HashEntry entries = data[index];
-        if (entries != null) {
-            while (!entries.key.equals(key) && entries.next != null) {
-                entries = entries.next;
-            }
-            return entries.value;
+        if (entries == null) return null;
+        while (!entries.key.equals(key) && entries.next != null) {
+            entries = entries.next;
         }
-        return null;
+        return entries.value;
     }
 
     public void put(String key, String value) {
