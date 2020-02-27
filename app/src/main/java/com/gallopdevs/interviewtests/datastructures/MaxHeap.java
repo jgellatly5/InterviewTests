@@ -81,12 +81,12 @@ public class MaxHeap {
             if (hasRightChild(currentIndex) && rightChildValue(currentIndex) > leftChildValue(currentIndex)) {
                 indexChildLargestValue = rightChildIndex(currentIndex);
             }
-            if (items[currentIndex] > items[indexChildLargestValue]) {
-                break;
+            if (items[indexChildLargestValue] > items[currentIndex]) {
+                swapItems(indexChildLargestValue, currentIndex);
+                currentIndex = indexChildLargestValue;
             } else {
-                swapItems(currentIndex, indexChildLargestValue);
+                break;
             }
-            currentIndex = indexChildLargestValue;
         }
     }
 }
