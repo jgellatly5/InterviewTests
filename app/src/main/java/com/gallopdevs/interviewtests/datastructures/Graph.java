@@ -23,18 +23,17 @@ public class Graph {
 
     public void performBreadthFirstSearch(int source) {
         boolean[] visited = new boolean[vertices];
-        LinkedList<Integer> queue = new LinkedList<Integer>();
+        LinkedList<Integer> queue = new LinkedList<>();
         queue.add(source);
         visited[source] = true;
-
         while (queue.size() != 0) {
             source = queue.poll();
             Iterator<Integer> iterator = adjacencyLists[source].listIterator();
             while (iterator.hasNext()) {
                 int next = iterator.next();
                 if (!visited[next]) {
-                    visited[next] = true;
                     queue.add(next);
+                    visited[next] = true;
                 }
             }
         }
@@ -42,18 +41,17 @@ public class Graph {
 
     public void performDepthFirstSearch(int source) {
         boolean[] visited = new boolean[vertices];
-        Stack<Integer> stack = new Stack<Integer>();
+        Stack<Integer> stack = new Stack<>();
         stack.add(source);
         visited[source] = true;
-
         while (!stack.isEmpty()) {
-            int current = stack.pop();
-            Iterator<Integer> iterator = adjacencyLists[current].listIterator();
+            source = stack.pop();
+            Iterator<Integer> iterator = adjacencyLists[source].listIterator();
             while (iterator.hasNext()) {
                 int next = iterator.next();
                 if (!visited[next]) {
-                    visited[next] = true;
                     stack.add(next);
+                    visited[next] = true;
                 }
             }
         }
