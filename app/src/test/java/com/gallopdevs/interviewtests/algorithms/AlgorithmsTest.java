@@ -8,6 +8,7 @@ public class AlgorithmsTest {
     @Test
     public void BubbleSort() {
         BubbleSort.bubbleSort(new int[]{6, 8, 4, 9, 0, 12, 2});
+        BubbleSort.bubbleSort(new int[]{12, 9, 8, 6, 4, 2, 0});
     }
 
     @Test
@@ -23,13 +24,13 @@ public class AlgorithmsTest {
     @Test
     public void MergeSort() {
         int[] array = {6, 8, 4, 9, 1, 12, 2};
-        MergeSort2.mergeSort(array);
+        MergeSort.mergeSort(array);
     }
 
     @Test
     public void QuickSort() {
         int[] array = {15, 3, 2, 1, 9, 5, 7, 8, 6};
-        QuickSort2.quickSort(array);
+        QuickSort.quickSort(array);
     }
 
     @Test
@@ -56,6 +57,6 @@ public class AlgorithmsTest {
 
     @Test
     public void SieveOfErathosthenes() {
-        SieveOfEratosthenes2.print(100);
+        SieveOfEratosthenes.print(100);
     }
 }

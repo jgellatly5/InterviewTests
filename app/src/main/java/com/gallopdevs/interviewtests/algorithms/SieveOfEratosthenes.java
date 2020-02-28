@@ -15,8 +15,9 @@ public class SieveOfEratosthenes {
         }
         System.out.println("\nEverything left over is prime...");
         for (int n = upperBoundSquareRoot; n <= upperBound; n++) {
-            if (!isComposite[n])
+            if (!isComposite[n]) {
                 System.out.print(n + " ");
+            }
         }
     }
 }

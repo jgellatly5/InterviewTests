@@ -1,6 +1,7 @@
 package com.gallopdevs.interviewtests.algorithms;
 
 public class QuickSort {
+
     public static void quickSort(int[] array) {
         sort(array, 0, array.length - 1);
         print(array);
@@ -33,10 +34,10 @@ public class QuickSort {
         return left;
     }
 
-    private static void swap(int[] array, int left, int right) {
-        int temp = array[left];
-        array[left] = array[right];
-        array[right] = temp;
+    private static void swap(int[] array, int index1, int index2) {
+        int temp = array[index1];
+        array[index1] = array[index2];
+        array[index2] = temp;
     }
 
     public static void print(int[] a) {
