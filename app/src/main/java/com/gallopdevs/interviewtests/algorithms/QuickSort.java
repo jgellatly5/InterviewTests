@@ -1,48 +1,44 @@
 package com.gallopdevs.interviewtests.algorithms;
 
+import java.util.Arrays;
+
 public class QuickSort {
 
-    public static void quickSort(int[] array) {
-        sort(array, 0, array.length - 1);
-        print(array);
+    public static void quickSort(int[] numbers) {
+        sort(numbers, 0, numbers.length - 1);
+        System.out.println(Arrays.toString(numbers));
     }
 
-    private static void sort(int[] array, int left, int right) {
-        if (left >= right) return;
-        int pivot = array[(left + right) / 2];
-        int index = partition(array, left, right, pivot);
-        sort(array, left, index - 1);
-        sort(array, index, right);
+    private static void sort(int[] numbers, int lowIndex, int highIndex) {
+        if (lowIndex >= highIndex) return;
+        int pivotValue = numbers[(lowIndex + highIndex) / 2];
+        int partitionIndex = partition(numbers, lowIndex, highIndex, pivotValue);
+        sort(numbers, lowIndex, partitionIndex - 1);
+        sort(numbers, partitionIndex, highIndex);
     }
 
-    private static int partition(int[] array, int left, int right, int pivot) {
-        while (left <= right) {
-            while (array[left] < pivot) {
-                left++;
+    private static int partition(int[] numbers, int lowIndex, int highIndex, int pivotValue) {
+        while (lowIndex <= highIndex) {
+            while (numbers[lowIndex] < pivotValue) {
+                lowIndex++;
             }
 
-            while (array[right] > pivot) {
-                right--;
+            while (numbers[highIndex] > pivotValue) {
+                highIndex--;
             }
 
-            if (left <= right) {
-                swap(array, left, right);
-                left++;
-                right--;
+            if (lowIndex <= highIndex) {
+                swapValues(numbers, lowIndex, highIndex);
+                lowIndex++;
+                highIndex--;
             }
         }
-        return left;
+        return lowIndex;
     }
 
-    private static void swap(int[] array, int index1, int index2) {
-        int temp = array[index1];
-        array[index1] = array[index2];
-        array[index2] = temp;
-    }
-
-    public static void print(int[] a) {
-        for (int i = 0; i < a.length; i++) {
-            System.out.print(a[i] + " ");
-        }
+    private static void swapValues(int[] numbers, int index1, int index2) {
+        int temp = numbers[index1];
+        numbers[index1] = numbers[index2];
+        numbers[index2] = temp;
     }
 }
