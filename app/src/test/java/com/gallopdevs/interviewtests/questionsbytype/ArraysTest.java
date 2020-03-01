@@ -3,6 +3,7 @@ package com.gallopdevs.interviewtests.questionsbytype;
 import com.gallopdevs.interviewtests.questionsbytype.arrays.FindDuplicatesCount;
 import com.gallopdevs.interviewtests.questionsbytype.arrays.FindDuplicatesLoop;
 import com.gallopdevs.interviewtests.questionsbytype.arrays.FindDuplicatesSet;
+import com.gallopdevs.interviewtests.questionsbytype.arrays.MatrixProduct;
 import com.gallopdevs.interviewtests.questionsbytype.arrays.MedianTwoSortedArrays;
 import com.gallopdevs.interviewtests.questionsbytype.arrays.MinMaxArray;
 import com.gallopdevs.interviewtests.questionsbytype.arrays.GetMissingNumber;
@@ -173,6 +174,17 @@ public class ArraysTest {
         System.out.println(Arrays.toString(a));
         System.out.println(Arrays.toString(b));
         System.out.println("Median: " + MedianTwoSortedArrays.medianTwoSortedArrays(a, b));
+    }
+
+    @Test
+    public void MatrixProduct() {
+        System.out.println("=========MatrixProduct=========");
+        int[][] matrix = {
+                {-1, 2, 3},
+                {4, 5, -6},
+                {7, 8, 9}
+        };
+        System.out.println(MatrixProduct.matrixProduct(matrix));
     }
 
     private static int[] getRandomArray(int length) {

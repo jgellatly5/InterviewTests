@@ -1,6 +1,7 @@
 package com.gallopdevs.interviewtests.questionsbytype;
 
 import com.gallopdevs.interviewtests.datastructures.TreeNode;
+import com.gallopdevs.interviewtests.questionsbytype.trees.FindHeight;
 import com.gallopdevs.interviewtests.questionsbytype.trees.LinkedListBreadthFirst;
 import com.gallopdevs.interviewtests.questionsbytype.trees.LinkedListDepthFirst;
 import com.gallopdevs.interviewtests.questionsbytype.trees.MinimalTreeFromArray;
@@ -16,6 +17,7 @@ import java.util.LinkedList;
 public class TreesTest {
 
     private TreeNode root;
+    private FindHeight.Node node;
 
     @Before
     public void setup() {
@@ -30,6 +32,14 @@ public class TreesTest {
         root.right.left = new TreeNode(19);
         root.right.right.right = new TreeNode(17);
         root.right.right.left = new TreeNode(21);
+
+        node = new FindHeight.Node(5);
+        node.left = new FindHeight.Node(2);
+        node.right = new FindHeight.Node(7);
+        node.left.left = new FindHeight.Node(1);
+        node.left.right = new FindHeight.Node(3);
+        node.right.left = new FindHeight.Node(6);
+        node.right.right = new FindHeight.Node(8);
     }
 
 
@@ -76,6 +86,12 @@ public class TreesTest {
     public void ValidateBstMinMax() {
         System.out.println("=========Test1 ValidateBstMinMax=========");
         System.out.println(ValidateBstMinMax.validateBstMinMax(root));
+    }
+
+    @Test
+    public void FindHeight() {
+        System.out.println("=========FindHeight=========");
+        System.out.println(FindHeight.findHeight(node));
     }
 
     private static void printTreeByLevel(TreeNode root) {
