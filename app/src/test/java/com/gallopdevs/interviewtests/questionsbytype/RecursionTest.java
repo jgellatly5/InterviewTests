@@ -2,6 +2,7 @@ package com.gallopdevs.interviewtests.questionsbytype;
 
 import com.gallopdevs.interviewtests.questionsbytype.recursive.BunnyEars;
 import com.gallopdevs.interviewtests.questionsbytype.recursive.BunnyEarsVariation;
+import com.gallopdevs.interviewtests.questionsbytype.recursive.ChangeXY;
 import com.gallopdevs.interviewtests.questionsbytype.recursive.Count8;
 import com.gallopdevs.interviewtests.questionsbytype.recursive.CountHi;
 import com.gallopdevs.interviewtests.questionsbytype.recursive.CountSeven;
@@ -152,5 +153,13 @@ public class RecursionTest {
         System.out.println(CountHi.countHi("xxhixx"));
         System.out.println(CountHi.countHi("xhixhix"));
         System.out.println(CountHi.countHi("hi"));
+    }
+
+    @Test
+    public void ChangeXY() {
+        System.out.println("=========ChangeXY=========");
+        System.out.println(ChangeXY.changeXY("xxhixx"));
+        System.out.println(ChangeXY.changeXY("xhixhix"));
+        System.out.println(ChangeXY.changeXY("hi"));
     }
 }

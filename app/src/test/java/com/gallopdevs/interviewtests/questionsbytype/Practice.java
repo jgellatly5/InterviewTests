@@ -1,5 +1,6 @@
 package com.gallopdevs.interviewtests.questionsbytype;
 
+import com.gallopdevs.interviewtests.questionsbytype.recursive.ChangeXY;
 import com.gallopdevs.interviewtests.questionsbytype.recursive.Count8;
 import com.gallopdevs.interviewtests.questionsbytype.recursive.CountHi;
 import com.gallopdevs.interviewtests.questionsbytype.recursive.CountX;
@@ -26,9 +27,9 @@ public class Practice {
 
     @Test
     public void PracticeTest() {
-        System.out.println("=========CountHi=========");
-        System.out.println(CountHi.countHi("xxhixx"));
-        System.out.println(CountHi.countHi("xhixhix"));
-        System.out.println(CountHi.countHi("hi"));
+        System.out.println("=========ChangeXY=========");
+        System.out.println(ChangeXY.changeXY("xxhixx"));
+        System.out.println(ChangeXY.changeXY("xhixhix"));
+        System.out.println(ChangeXY.changeXY("hi"));
     }
 }
