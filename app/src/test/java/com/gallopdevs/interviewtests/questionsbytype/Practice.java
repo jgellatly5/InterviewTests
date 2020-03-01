@@ -1,5 +1,9 @@
 package com.gallopdevs.interviewtests.questionsbytype;
 
+import com.gallopdevs.interviewtests.questionsbytype.recursive.Count8;
+import com.gallopdevs.interviewtests.questionsbytype.recursive.CountHi;
+import com.gallopdevs.interviewtests.questionsbytype.recursive.CountX;
+import com.gallopdevs.interviewtests.questionsbytype.recursive.PowerN;
 import com.gallopdevs.interviewtests.questionsbytype.trees.FindHeight;
 
 import org.junit.Before;
@@ -22,29 +26,9 @@ public class Practice {
 
     @Test
     public void PracticeTest() {
-        System.out.println("=========Matrix=========");
-        int[][] matrix = {
-                {1, 2, 3, 4},
-                {5, 6, 7, 8},
-                {9, 10, 11, 12},
-                {13, 14, 15, 16}
-        };
-        System.out.println(findProductArray(matrix));
-    }
-
-    private int findProductArray(int[][] matrix) {
-        int product = 1;
-        for (int i = 0; i < matrix.length; i++) {
-            for (int j = 0; j < matrix[0].length; j++) {
-                if (j == matrix[0].length - 1) {
-                    product *= matrix[i][j];
-                    break;
-                } else if (i == matrix.length - 1) {
-                    product *= matrix[i][j];
-                    break;
-                }
-            }
-        }
-        return product;
+        System.out.println("=========CountHi=========");
+        System.out.println(CountHi.countHi("xxhixx"));
+        System.out.println(CountHi.countHi("xhixhix"));
+        System.out.println(CountHi.countHi("hi"));
     }
 }

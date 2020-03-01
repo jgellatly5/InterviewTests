@@ -2,10 +2,14 @@ package com.gallopdevs.interviewtests.questionsbytype;
 
 import com.gallopdevs.interviewtests.questionsbytype.recursive.BunnyEars;
 import com.gallopdevs.interviewtests.questionsbytype.recursive.BunnyEarsVariation;
+import com.gallopdevs.interviewtests.questionsbytype.recursive.Count8;
+import com.gallopdevs.interviewtests.questionsbytype.recursive.CountHi;
 import com.gallopdevs.interviewtests.questionsbytype.recursive.CountSeven;
+import com.gallopdevs.interviewtests.questionsbytype.recursive.CountX;
 import com.gallopdevs.interviewtests.questionsbytype.recursive.Factorial;
 import com.gallopdevs.interviewtests.questionsbytype.recursive.MakingChange;
 import com.gallopdevs.interviewtests.questionsbytype.recursive.Permutations;
+import com.gallopdevs.interviewtests.questionsbytype.recursive.PowerN;
 import com.gallopdevs.interviewtests.questionsbytype.recursive.SumDigits;
 import com.gallopdevs.interviewtests.questionsbytype.recursive.Triangle;
 import com.gallopdevs.interviewtests.questionsbytype.recursive.VerifyBST;
@@ -65,7 +69,7 @@ public class RecursionTest {
 
     @Test
     public void BunnyEars() {
-        System.out.println("\n=========Bunny Ears=========");
+        System.out.println("=========Bunny Ears=========");
         System.out.println(BunnyEars.bunnyEars(5));
         System.out.println(BunnyEars.bunnyEars(12));
     }
@@ -112,5 +116,41 @@ public class RecursionTest {
         System.out.println(CountSeven.countSeven(707));
         System.out.println(CountSeven.countSeven(777));
         System.out.println(CountSeven.countSeven(123));
+    }
+
+    @Test
+    public void Count8() {
+        System.out.println("=========Count 8=========");
+        System.out.println(Count8.count8(8));
+        System.out.println(Count8.count8(818));
+        System.out.println(Count8.count8(8818));
+    }
+
+    @Test
+    public void PowerN() {
+        System.out.println("=========PowerN=========");
+        System.out.println(PowerN.powerN(3, 4));
+        System.out.println(PowerN.powerN(2, 3));
+        System.out.println(PowerN.powerN(4, 2));
+        System.out.println(PowerN.powerN(2, 1));
+        System.out.println(PowerN.powerN(1, 1));
+        System.out.println(PowerN.powerN(10, 0));
+        System.out.println(PowerN.powerN(0, 12));
+    }
+
+    @Test
+    public void CountX() {
+        System.out.println("=========CountX=========");
+        System.out.println(CountX.countX("xxhixx"));
+        System.out.println(CountX.countX("xhixhix"));
+        System.out.println(CountX.countX("hi"));
+    }
+
+    @Test
+    public void CountHi() {
+        System.out.println("=========CountHi=========");
+        System.out.println(CountHi.countHi("xxhixx"));
+        System.out.println(CountHi.countHi("xhixhix"));
+        System.out.println(CountHi.countHi("hi"));
     }
 }
