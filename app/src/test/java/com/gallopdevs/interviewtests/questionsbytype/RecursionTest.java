@@ -1,14 +1,23 @@
 package com.gallopdevs.interviewtests.questionsbytype;
 
+import com.gallopdevs.interviewtests.questionsbytype.recursive.AllStar;
+import com.gallopdevs.interviewtests.questionsbytype.recursive.Array11;
+import com.gallopdevs.interviewtests.questionsbytype.recursive.Array220;
+import com.gallopdevs.interviewtests.questionsbytype.recursive.Array6;
 import com.gallopdevs.interviewtests.questionsbytype.recursive.BunnyEars;
 import com.gallopdevs.interviewtests.questionsbytype.recursive.BunnyEarsVariation;
+import com.gallopdevs.interviewtests.questionsbytype.recursive.ChangePi;
 import com.gallopdevs.interviewtests.questionsbytype.recursive.ChangeXY;
 import com.gallopdevs.interviewtests.questionsbytype.recursive.Count8;
 import com.gallopdevs.interviewtests.questionsbytype.recursive.CountHi;
+import com.gallopdevs.interviewtests.questionsbytype.recursive.CountPairs;
 import com.gallopdevs.interviewtests.questionsbytype.recursive.CountSeven;
 import com.gallopdevs.interviewtests.questionsbytype.recursive.CountX;
+import com.gallopdevs.interviewtests.questionsbytype.recursive.EndX;
 import com.gallopdevs.interviewtests.questionsbytype.recursive.Factorial;
 import com.gallopdevs.interviewtests.questionsbytype.recursive.MakingChange;
+import com.gallopdevs.interviewtests.questionsbytype.recursive.NoX;
+import com.gallopdevs.interviewtests.questionsbytype.recursive.PairStar;
 import com.gallopdevs.interviewtests.questionsbytype.recursive.Permutations;
 import com.gallopdevs.interviewtests.questionsbytype.recursive.PowerN;
 import com.gallopdevs.interviewtests.questionsbytype.recursive.SumDigits;
@@ -161,5 +170,88 @@ public class RecursionTest {
         System.out.println(ChangeXY.changeXY("xxhixx"));
         System.out.println(ChangeXY.changeXY("xhixhix"));
         System.out.println(ChangeXY.changeXY("hi"));
+    }
+
+    @Test
+    public void ChangePi() {
+        System.out.println("=========ChangePi=========");
+        System.out.println(ChangePi.changePi("xpix"));
+        System.out.println(ChangePi.changePi("pipi"));
+        System.out.println(ChangePi.changePi("pip"));
+    }
+
+    @Test
+    public void NoX() {
+        System.out.println("=========NoX=========");
+        System.out.println(NoX.noX("xaxb"));
+        System.out.println(NoX.noX("abc"));
+        System.out.println(NoX.noX("xx"));
+    }
+
+    @Test
+    public void Array6() {
+        System.out.println("=========Array6=========");
+        int[] test1 = {1, 4, 6};
+        int[] test2 = {1, 4};
+        int[] test3 = {6};
+        System.out.println(Array6.array6(test1, 0));
+        System.out.println(Array6.array6(test2, 0));
+        System.out.println(Array6.array6(test3, 0));
+    }
+
+    @Test
+    public void Array11() {
+        System.out.println("=========Array11=========");
+        int[] test1 = {1, 2, 11};
+        int[] test2 = {11, 11};
+        int[] test3 = {1, 2, 3, 4};
+        System.out.println(Array11.array11(test1, 0));
+        System.out.println(Array11.array11(test2, 0));
+        System.out.println(Array11.array11(test3, 0));
+    }
+
+    @Test
+    public void Array220() {
+        System.out.println("=========Array220=========");
+        int[] test1 = {1, 2, 20};
+        int[] test2 = {3, 30};
+        int[] test3 = {3};
+        System.out.println(Array220.array220(test1, 0));
+        System.out.println(Array220.array220(test2, 0));
+        System.out.println(Array220.array220(test3, 0));
+    }
+
+    @Test
+    public void AllStar() {
+        System.out.println("=========AllStar=========");
+        System.out.println(AllStar.allStar("hello"));
+        System.out.println(AllStar.allStar("abc"));
+        System.out.println(AllStar.allStar("ab"));
+        System.out.println(AllStar.allStar("a"));
+    }
+
+    @Test
+    public void PairStar() {
+        System.out.println("=========PairStar=========");
+        System.out.println(PairStar.pairStar("hello"));
+        System.out.println(PairStar.pairStar("xxyy"));
+        System.out.println(PairStar.pairStar("aaaa"));
+    }
+
+    @Test
+    public void EndX() {
+        System.out.println("=========EndX=========");
+        System.out.println(EndX.endX("xxre"));
+        System.out.println(EndX.endX("xxhixx"));
+        System.out.println(EndX.endX("xhixhix"));
+    }
+
+    @Test
+    public void CountPairs() {
+        System.out.println("=========CountPairs=========");
+        System.out.println(CountPairs.countPairs("axa"));
+        System.out.println(CountPairs.countPairs("axax"));
+        System.out.println(CountPairs.countPairs("axab"));
+        System.out.println(CountPairs.countPairs("axaxa"));
     }
 }

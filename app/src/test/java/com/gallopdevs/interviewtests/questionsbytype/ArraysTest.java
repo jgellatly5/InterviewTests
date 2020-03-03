@@ -5,15 +5,18 @@ import com.gallopdevs.interviewtests.questionsbytype.arrays.FindDuplicatesLoop;
 import com.gallopdevs.interviewtests.questionsbytype.arrays.FindDuplicatesSet;
 import com.gallopdevs.interviewtests.questionsbytype.arrays.MatrixProduct;
 import com.gallopdevs.interviewtests.questionsbytype.arrays.MedianTwoSortedArrays;
+import com.gallopdevs.interviewtests.questionsbytype.arrays.MidThree;
 import com.gallopdevs.interviewtests.questionsbytype.arrays.MinMaxArray;
 import com.gallopdevs.interviewtests.questionsbytype.arrays.GetMissingNumber;
 import com.gallopdevs.interviewtests.questionsbytype.arrays.PrintMissingNumbers;
 import com.gallopdevs.interviewtests.questionsbytype.arrays.PrintPairsSumSet;
 import com.gallopdevs.interviewtests.questionsbytype.arrays.RemoveDuplicates;
 import com.gallopdevs.interviewtests.questionsbytype.arrays.ReverseArray;
+import com.gallopdevs.interviewtests.questionsbytype.arrays.RotateLeft;
 import com.gallopdevs.interviewtests.questionsbytype.arrays.RotateMatrixClockwise;
 import com.gallopdevs.interviewtests.questionsbytype.arrays.PrintPairsSumLoop;
 import com.gallopdevs.interviewtests.questionsbytype.arrays.RotateMatrixCounterClockwise;
+import com.gallopdevs.interviewtests.questionsbytype.arrays.Sum2;
 import com.gallopdevs.interviewtests.questionsbytype.arrays.ZeroMatrix;
 
 import org.junit.Test;
@@ -185,6 +188,39 @@ public class ArraysTest {
                 {7, 8, 9}
         };
         System.out.println(MatrixProduct.matrixProduct(matrix));
+    }
+
+    @Test
+    public void RotateLeft() {
+        System.out.println("=========RotateLeft=========");
+        int[] test1 = {1, 2, 3, 4};
+        int[] test2 = {5, 11, 9, 5};
+        int[] test3 = {7, 0, 0, 5};
+        System.out.println(Arrays.toString(RotateLeft.rotateLeft(test1)));
+        System.out.println(Arrays.toString(RotateLeft.rotateLeft(test2)));
+        System.out.println(Arrays.toString(RotateLeft.rotateLeft(test3)));
+    }
+
+    @Test
+    public void Sum2() {
+        System.out.println("=========Sum2=========");
+        int[] test1 = {1, 2, 3};
+        int[] test2 = {1, 1};
+        int[] test3 = {1, 1, 1, 1};
+        System.out.println(Sum2.sum2(test1));
+        System.out.println(Sum2.sum2(test2));
+        System.out.println(Sum2.sum2(test3));
+    }
+
+    @Test
+    public void MidThree() {
+        System.out.println("=========MidThree=========");
+        int[] test1 = {1, 2, 3, 4, 5};
+        int[] test2 = {8, 6, 7, 5, 3, 0, 9};
+        int[] test3 = {1, 2, 3};
+        System.out.println(Arrays.toString(MidThree.midThree(test1)));
+        System.out.println(Arrays.toString(MidThree.midThree(test2)));
+        System.out.println(Arrays.toString(MidThree.midThree(test3)));
     }
 
     private static int[] getRandomArray(int length) {

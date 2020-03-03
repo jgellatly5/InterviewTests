@@ -2,6 +2,7 @@ package com.gallopdevs.interviewtests.questionsbytype;
 
 import com.gallopdevs.interviewtests.datastructures.TreeNode;
 import com.gallopdevs.interviewtests.questionsbytype.trees.FindHeight;
+import com.gallopdevs.interviewtests.questionsbytype.trees.IsBalanced;
 import com.gallopdevs.interviewtests.questionsbytype.trees.LinkedListBreadthFirst;
 import com.gallopdevs.interviewtests.questionsbytype.trees.LinkedListDepthFirst;
 import com.gallopdevs.interviewtests.questionsbytype.trees.MinimalTreeFromArray;
@@ -18,6 +19,7 @@ public class TreesTest {
 
     private TreeNode root;
     private FindHeight.Node node;
+    private IsBalanced.Node isBalancedNode;
 
     @Before
     public void setup() {
@@ -40,6 +42,13 @@ public class TreesTest {
         node.left.right = new FindHeight.Node(3);
         node.right.left = new FindHeight.Node(6);
         node.right.right = new FindHeight.Node(8);
+
+        isBalancedNode = new IsBalanced.Node(1);
+        isBalancedNode.left = new IsBalanced.Node(2);
+        isBalancedNode.right = new IsBalanced.Node(3);
+        isBalancedNode.left.left = new IsBalanced.Node(4);
+        isBalancedNode.right.left = new IsBalanced.Node(6);
+        isBalancedNode.right.right = new IsBalanced.Node(7);
     }
 
 
@@ -92,6 +101,12 @@ public class TreesTest {
     public void FindHeight() {
         System.out.println("=========FindHeight=========");
         System.out.println(FindHeight.findHeight(node));
+    }
+
+    @Test
+    public void IsBalanced() {
+        System.out.println("=========IsBalanced=========");
+        System.out.println(IsBalanced.isBalanced(isBalancedNode));
     }
 
     private static void printTreeByLevel(TreeNode root) {

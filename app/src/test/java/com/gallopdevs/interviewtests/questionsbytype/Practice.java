@@ -1,14 +1,15 @@
 package com.gallopdevs.interviewtests.questionsbytype;
 
-import com.gallopdevs.interviewtests.questionsbytype.recursive.ChangeXY;
-import com.gallopdevs.interviewtests.questionsbytype.recursive.Count8;
-import com.gallopdevs.interviewtests.questionsbytype.recursive.CountHi;
-import com.gallopdevs.interviewtests.questionsbytype.recursive.CountX;
-import com.gallopdevs.interviewtests.questionsbytype.recursive.PowerN;
+import com.gallopdevs.interviewtests.questionsbytype.arrays.MaxEnd;
+import com.gallopdevs.interviewtests.questionsbytype.arrays.MidThree;
+import com.gallopdevs.interviewtests.questionsbytype.arrays.RotateLeft;
+import com.gallopdevs.interviewtests.questionsbytype.recursive.CountPairs;
 import com.gallopdevs.interviewtests.questionsbytype.trees.FindHeight;
 
 import org.junit.Before;
 import org.junit.Test;
+
+import java.util.Arrays;
 
 public class Practice {
 
@@ -27,9 +28,12 @@ public class Practice {
 
     @Test
     public void PracticeTest() {
-        System.out.println("=========ChangeXY=========");
-        System.out.println(ChangeXY.changeXY("xxhixx"));
-        System.out.println(ChangeXY.changeXY("xhixhix"));
-        System.out.println(ChangeXY.changeXY("hi"));
+        System.out.println("=========MidThree=========");
+        int[] test1 = {1, 2, 3, 4, 5};
+        int[] test2 = {8, 6, 7, 5, 3, 0, 9};
+        int[] test3 = {1, 2, 3};
+        System.out.println(Arrays.toString(MidThree.midThree(test1)));
+        System.out.println(Arrays.toString(MidThree.midThree(test2)));
+        System.out.println(Arrays.toString(MidThree.midThree(test3)));
     }
 }
