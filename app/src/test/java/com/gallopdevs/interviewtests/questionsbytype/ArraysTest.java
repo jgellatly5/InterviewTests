@@ -1,23 +1,48 @@
 package com.gallopdevs.interviewtests.questionsbytype;
 
+import com.gallopdevs.interviewtests.questionsbytype.arrays.StockPrices;
+import com.gallopdevs.interviewtests.questionsbytype.arrays.codebat.CountPairsWithSum;
+import com.gallopdevs.interviewtests.questionsbytype.arrays.codebat.Either24;
 import com.gallopdevs.interviewtests.questionsbytype.arrays.FindDuplicatesCount;
 import com.gallopdevs.interviewtests.questionsbytype.arrays.FindDuplicatesLoop;
 import com.gallopdevs.interviewtests.questionsbytype.arrays.FindDuplicatesSet;
+import com.gallopdevs.interviewtests.questionsbytype.arrays.codebat.FizzArray2;
+import com.gallopdevs.interviewtests.questionsbytype.arrays.codebat.FizzArray3;
+import com.gallopdevs.interviewtests.questionsbytype.arrays.codebat.Front11;
+import com.gallopdevs.interviewtests.questionsbytype.arrays.GetMissingNumber;
+import com.gallopdevs.interviewtests.questionsbytype.arrays.codebat.Has12;
+import com.gallopdevs.interviewtests.questionsbytype.arrays.codebat.Has22;
+import com.gallopdevs.interviewtests.questionsbytype.arrays.codebat.Has77;
+import com.gallopdevs.interviewtests.questionsbytype.arrays.codebat.HaveThree;
+import com.gallopdevs.interviewtests.questionsbytype.arrays.codebat.IsEverywhere;
+import com.gallopdevs.interviewtests.questionsbytype.arrays.codebat.MatchUp;
 import com.gallopdevs.interviewtests.questionsbytype.arrays.MatrixProduct;
 import com.gallopdevs.interviewtests.questionsbytype.arrays.MedianTwoSortedArrays;
 import com.gallopdevs.interviewtests.questionsbytype.arrays.MidThree;
 import com.gallopdevs.interviewtests.questionsbytype.arrays.MinMaxArray;
-import com.gallopdevs.interviewtests.questionsbytype.arrays.GetMissingNumber;
+import com.gallopdevs.interviewtests.questionsbytype.arrays.codebat.ModThree;
 import com.gallopdevs.interviewtests.questionsbytype.arrays.PrintMissingNumbers;
+import com.gallopdevs.interviewtests.questionsbytype.arrays.PrintPairsSumLoop;
 import com.gallopdevs.interviewtests.questionsbytype.arrays.PrintPairsSumSet;
 import com.gallopdevs.interviewtests.questionsbytype.arrays.RemoveDuplicates;
 import com.gallopdevs.interviewtests.questionsbytype.arrays.ReverseArray;
 import com.gallopdevs.interviewtests.questionsbytype.arrays.RotateLeft;
 import com.gallopdevs.interviewtests.questionsbytype.arrays.RotateMatrixClockwise;
-import com.gallopdevs.interviewtests.questionsbytype.arrays.PrintPairsSumLoop;
 import com.gallopdevs.interviewtests.questionsbytype.arrays.RotateMatrixCounterClockwise;
-import com.gallopdevs.interviewtests.questionsbytype.arrays.Sum2;
+import com.gallopdevs.interviewtests.questionsbytype.arrays.codebat.NotAlone;
+import com.gallopdevs.interviewtests.questionsbytype.arrays.codebat.Post4;
+import com.gallopdevs.interviewtests.questionsbytype.arrays.codebat.Pre4;
+import com.gallopdevs.interviewtests.questionsbytype.arrays.codebat.SameEnds;
+import com.gallopdevs.interviewtests.questionsbytype.arrays.codebat.ShiftLeft;
+import com.gallopdevs.interviewtests.questionsbytype.arrays.codebat.Sum13;
+import com.gallopdevs.interviewtests.questionsbytype.arrays.codebat.Sum2;
+import com.gallopdevs.interviewtests.questionsbytype.arrays.codebat.Sum67;
+import com.gallopdevs.interviewtests.questionsbytype.arrays.codebat.TenRun;
+import com.gallopdevs.interviewtests.questionsbytype.arrays.codebat.TripleUp;
+import com.gallopdevs.interviewtests.questionsbytype.arrays.codebat.TwoTwo;
+import com.gallopdevs.interviewtests.questionsbytype.arrays.codebat.Unlucky1;
 import com.gallopdevs.interviewtests.questionsbytype.arrays.ZeroMatrix;
+import com.gallopdevs.interviewtests.questionsbytype.arrays.codebat.ZeroFront;
 
 import org.junit.Test;
 
@@ -101,7 +126,7 @@ public class ArraysTest {
 
     @Test
     public void PrintPairsSumLoop() {
-        int[] numbers = { 2, 4, 3, 5, 7, 8, 9 };
+        int[] numbers = {2, 4, 3, 5, 7, 8, 9};
         int sum = 7;
         System.out.println("=========Test1 PrintPairsSumLoop=========");
         System.out.println(Arrays.toString(numbers));
@@ -111,7 +136,7 @@ public class ArraysTest {
 
     @Test
     public void PrintPairsSumSet() {
-        int[] numbers = { 2, 4, 3, 5, 7, 8, 9 };
+        int[] numbers = {2, 4, 3, 5, 7, 8, 9};
         int sum = 7;
         System.out.println("=========Test1 PrintPairsSumSet=========");
         System.out.println(Arrays.toString(numbers));
@@ -223,6 +248,301 @@ public class ArraysTest {
         System.out.println(Arrays.toString(MidThree.midThree(test3)));
     }
 
+    @Test
+    public void Sum13() {
+        System.out.println("=========Sum13=========");
+        int[] test1 = {1, 2, 2, 1};
+        int[] test2 = {1, 1};
+        int[] test3 = {1, 2, 2, 1, 13};
+        int[] test4 = {1, 2, 2, 1, 13, 6};
+        System.out.println(Sum13.sum13(test1));
+        System.out.println(Sum13.sum13(test2));
+        System.out.println(Sum13.sum13(test3));
+        System.out.println(Sum13.sum13(test4));
+    }
+
+    @Test
+    public void Sum67() {
+        System.out.println("=========Sum67=========");
+        int[] test1 = {1, 2, 2};
+        int[] test2 = {1, 2, 2, 6, 99, 99, 7};
+        int[] test3 = {1, 1, 6, 7, 2};
+        System.out.println(Sum67.sum67(test1));
+        System.out.println(Sum67.sum67(test2));
+        System.out.println(Sum67.sum67(test3));
+    }
+
+    @Test
+    public void Has22() {
+        System.out.println("=========Has22=========");
+        int[] test1 = {1, 2, 2};
+        int[] test2 = {1, 2, 1, 2};
+        int[] test3 = {2, 1, 2};
+        System.out.println(Has22.has22(test1));
+        System.out.println(Has22.has22(test2));
+        System.out.println(Has22.has22(test3));
+    }
+
+    @Test
+    public void FizzArray2() {
+        System.out.println("=========FizzArray2=========");
+        System.out.println(Arrays.toString(FizzArray2.fizzArray2(4)));
+        System.out.println(Arrays.toString(FizzArray2.fizzArray2(10)));
+        System.out.println(Arrays.toString(FizzArray2.fizzArray2(2)));
+    }
+
+    @Test
+    public void IsEverywhere() {
+        System.out.println("=========IsEverywhere=========");
+        int[] test1 = {1, 2, 2};
+        int[] test2 = {1, 2, 1, 2};
+        int[] test3 = {2, 1, 2};
+        System.out.println(IsEverywhere.isEverywhere(test1, 1));
+        System.out.println(IsEverywhere.isEverywhere(test2, 1));
+        System.out.println(IsEverywhere.isEverywhere(test3, 2));
+    }
+
+    @Test
+    public void CountPairsWithSum() {
+        System.out.println("=========CountPairsWithSum=========");
+        int[] numbers = {2, 3, 6, 2, 8};
+        System.out.println(CountPairsWithSum.countPairsWithSum(numbers, 8));
+        int[] numbers2 = {7, 15, 9, 10, 2, 1, 5, 2, 6, 11, 6};
+        System.out.println(CountPairsWithSum.countPairsWithSum(numbers2, 12));
+        int[] numbers3 = {2, 2, 2, 2, 2, 2};
+        System.out.println(CountPairsWithSum.countPairsWithSum(numbers3, 4));
+    }
+
+    @Test
+    public void Unlucky1() {
+        System.out.println("=========Unlucky1=========");
+        int[] test1 = {1, 3, 4, 5};
+        int[] test2 = {2, 1, 3, 4, 5};
+        int[] test3 = {1, 1, 1};
+        System.out.println(Unlucky1.unlucky1(test1));
+        System.out.println(Unlucky1.unlucky1(test2));
+        System.out.println(Unlucky1.unlucky1(test3));
+    }
+
+    @Test
+    public void Front11() {
+        System.out.println("=========Front11=========");
+        System.out.println(Arrays.toString(Front11.front11(new int[]{1, 2, 3}, new int[]{7, 9, 8})));
+        System.out.println(Arrays.toString(Front11.front11(new int[]{1}, new int[]{2})));
+        System.out.println(Arrays.toString(Front11.front11(new int[]{}, new int[]{1, 2})));
+    }
+
+    @Test
+    public void Either24() {
+        System.out.println("=========Either24=========");
+        int[] test1 = {1, 2, 2};
+        int[] test2 = {4, 4, 1};
+        int[] test3 = {4, 4, 1, 2, 2};
+        System.out.println(Either24.either24(test1));
+        System.out.println(Either24.either24(test2));
+        System.out.println(Either24.either24(test3));
+    }
+
+    @Test
+    public void MatchUp() {
+        System.out.println("=========MatchUp=========");
+        System.out.println(MatchUp.matchUp(new int[]{1, 2, 3}, new int[]{2, 3, 10}));
+        System.out.println(MatchUp.matchUp(new int[]{1, 2, 3}, new int[]{2, 3, 5}));
+        System.out.println(MatchUp.matchUp(new int[]{1, 2, 3}, new int[]{2, 3, 3}));
+    }
+
+    @Test
+    public void Has77() {
+        System.out.println("=========Has77=========");
+        int[] test1 = {1, 7, 7};
+        int[] test2 = {1, 7, 1, 7};
+        int[] test3 = {1, 7, 1, 1, 7};
+        System.out.println(Has77.has77(test1));
+        System.out.println(Has77.has77(test2));
+        System.out.println(Has77.has77(test3));
+    }
+
+    @Test
+    public void Has12() {
+        System.out.println("=========Has12=========");
+        int[] test1 = {1, 3, 2};
+        int[] test2 = {3, 1, 2};
+        int[] test3 = {3, 1, 4, 5, 2};
+        int[] test4 = {2, 1, 3};
+        int[] test5 = {1, 3, 5};
+        System.out.println(Has12.has12(test1));
+        System.out.println(Has12.has12(test2));
+        System.out.println(Has12.has12(test3));
+        System.out.println(Has12.has12(test4));
+        System.out.println(Has12.has12(test5));
+    }
+
+    @Test
+    public void ModThree() {
+        System.out.println("=========ModThree=========");
+        int[] test1 = {2, 1, 3, 5};
+        int[] test2 = {2, 1, 2, 5};
+        int[] test3 = {2, 4, 2, 5};
+        System.out.println(ModThree.modThree(test1));
+        System.out.println(ModThree.modThree(test2));
+        System.out.println(ModThree.modThree(test3));
+    }
+
+    @Test
+    public void HaveThree() {
+        System.out.println("=========HaveThree=========");
+        int[] test1 = {3, 1, 3, 1, 3};
+        int[] test2 = {3, 1, 3, 3};
+        int[] test3 = {3, 4, 3, 3, 4};
+        System.out.println(HaveThree.hasThree(test1));
+        System.out.println(HaveThree.hasThree(test2));
+        System.out.println(HaveThree.hasThree(test3));
+    }
+
+    @Test
+    public void TwoTwo() {
+        System.out.println("=========TwoTwo=========");
+        int[] test1 = {4, 2, 2, 3};
+        int[] test2 = {2, 2, 4};
+        int[] test3 = {2, 2, 4, 2};
+        System.out.println(TwoTwo.twoTwo(test1));
+        System.out.println(TwoTwo.twoTwo(test2));
+        System.out.println(TwoTwo.twoTwo(test3));
+    }
+
+    @Test
+    public void SameEnds() {
+        System.out.println("=========SameEnds=========");
+        int[] numbers = {5, 6, 45, 99, 13, 5, 6};
+        System.out.println(SameEnds.sameEnds(numbers, 1));
+        System.out.println(SameEnds.sameEnds(numbers, 2));
+        System.out.println(SameEnds.sameEnds(numbers, 3));
+        int[] numbers2 = {5, 6, 7, 99, 13, 5, 6, 7};
+        System.out.println(SameEnds.sameEnds(numbers2, 2));
+        System.out.println(SameEnds.sameEnds(numbers2, 3));
+    }
+
+    @Test
+    public void TripleUp() {
+        System.out.println("=========TripleUp=========");
+        int[] test1 = {1, 4, 5, 6, 2};
+        int[] test2 = {1, 2, 3};
+        int[] test3 = {1, 2, 4};
+        System.out.println(TripleUp.tripleUp(test1));
+        System.out.println(TripleUp.tripleUp(test2));
+        System.out.println(TripleUp.tripleUp(test3));
+    }
+
+    @Test
+    public void FizzArray3() {
+        System.out.println("=========FizzArray3=========");
+        System.out.println(Arrays.toString(FizzArray3.fizzArray3(5, 10)));
+        System.out.println(Arrays.toString(FizzArray3.fizzArray3(11, 18)));
+        System.out.println(Arrays.toString(FizzArray3.fizzArray3(1, 3)));
+        System.out.println(Arrays.toString(FizzArray3.fizzArray3(1, 1)));
+        System.out.println(Arrays.toString(FizzArray3.fizzArray3(0, 0)));
+    }
+
+    @Test
+    public void ShiftLeft() {
+        System.out.println("=========ShiftLeft=========");
+        int[] test1 = {6, 2, 5, 3};
+        int[] test2 = {1, 2};
+        int[] test3 = {1};
+        System.out.println(Arrays.toString(ShiftLeft.shiftLeft(test1)));
+        System.out.println(Arrays.toString(ShiftLeft.shiftLeft(test2)));
+        System.out.println(Arrays.toString(ShiftLeft.shiftLeft(test3)));
+    }
+
+    @Test
+    public void TenRun() {
+        System.out.println("=========TenRun=========");
+        int[] test1 = {2, 10, 3, 4, 20, 5};
+        int[] test2 = {10, 1, 20, 2};
+        int[] test3 = {10, 1, 9, 20};
+        int[] test4 = {0, 2};
+        System.out.println(Arrays.toString(TenRun.tenRun(test1)));
+        System.out.println(Arrays.toString(TenRun.tenRun(test2)));
+        System.out.println(Arrays.toString(TenRun.tenRun(test3)));
+        System.out.println(Arrays.toString(TenRun.tenRun(test4)));
+    }
+
+    @Test
+    public void Pre4() {
+        System.out.println("=========Pre4=========");
+        int[] test1 = {1, 2, 4, 1};
+        int[] test2 = {3, 1, 4};
+        int[] test3 = {1, 4, 4};
+        System.out.println(Arrays.toString(Pre4.pre4(test1)));
+        System.out.println(Arrays.toString(Pre4.pre4(test2)));
+        System.out.println(Arrays.toString(Pre4.pre4(test3)));
+    }
+
+    @Test
+    public void Post4() {
+        System.out.println("=========Post4=========");
+        int[] test1 = {2, 4, 1, 2};
+        int[] test2 = {4, 1, 4, 2};
+        int[] test3 = {4, 4, 1, 2, 3};
+        System.out.println(Arrays.toString(Post4.post4(test1)));
+        System.out.println(Arrays.toString(Post4.post4(test2)));
+        System.out.println(Arrays.toString(Post4.post4(test3)));
+    }
+
+    @Test
+    public void NotAlone() {
+        System.out.println("=========NotAlone=========");
+        int[] test1 = {1, 2, 3};
+        int[] test2 = {1, 2, 3, 2, 5, 2};
+        int[] test3 = {3, 4};
+        System.out.println(Arrays.toString(NotAlone.notAlone(test1, 2)));
+        System.out.println(Arrays.toString(NotAlone.notAlone(test2, 2)));
+        System.out.println(Arrays.toString(NotAlone.notAlone(test3, 3)));
+    }
+
+    @Test
+    public void ZeroFront() {
+        System.out.println("=========ZeroFront=========");
+        int[] test1 = {1, 0, 0, 1};
+        int[] test2 = {0, 1, 1, 0, 1};
+        int[] test3 = {1, 0};
+        System.out.println(Arrays.toString(ZeroFront.zeroFront(test1)));
+        System.out.println(Arrays.toString(ZeroFront.zeroFront(test2)));
+        System.out.println(Arrays.toString(ZeroFront.zeroFront(test3)));
+    }
+
+    @Test
+    public void StockPrices() {
+        System.out.println("=========StockPrices=========");
+        int[] test1 = {100, 80, 120, 130, 70, 60, 100, 125};
+        int[] test2 = {100, 80, 70, 65, 60, 55, 50};
+        int[] test3 = {5, 7, 8, 4, 12, 1};
+        int[] test4 = {1, 0};
+        int[] test5 = {1};
+        System.out.println(StockPrices.maxProfit(test1));
+        System.out.println(StockPrices.maxProfit(test2));
+        System.out.println(StockPrices.maxProfit(test3));
+        System.out.println(StockPrices.maxProfit(test4));
+        System.out.println(StockPrices.maxProfit(test5));
+    }
+
+    public int findMaxProfit(int[] numbers) {
+        if (numbers.length <= 1) return 0;
+        int globalMax = 0;
+        int currentMax;
+        for (int i = 0; i < numbers.length - 1; i++) {
+            for (int j = i + 1; j < numbers.length; j++) {
+                if (numbers[j] > numbers[i]) {
+                    currentMax = numbers[j] - numbers[i];
+                } else {
+                    currentMax = 0;
+                }
+                globalMax = Math.max(currentMax, globalMax);
+            }
+        }
+        return globalMax;
+    }
+
     private static int[] getRandomArray(int length) {
         int[] randomNums = new int[length];
         for (int i = 0; i < length; i++) {
@@ -276,21 +596,21 @@ public class ArraysTest {
         System.out.println(hashSet);
 
         // 8. Get the first & last element
-        int[] example8 = new int[] {10, 20, 30, 40, 50};
+        int[] example8 = new int[]{10, 20, 30, 40, 50};
         System.out.println(Arrays.toString(example8));
         int firstItem = example8[0];
         int lastItem = example8[example8.length - 1];
         System.out.println("firstItem: " + firstItem + ", lastItem: " + lastItem);
 
         // 9. Get random element
-        int[] example9 = new int[] {10, 20, 30, 40, 50};
+        int[] example9 = new int[]{10, 20, 30, 40, 50};
         System.out.println(Arrays.toString(example9));
         int random = example9[new Random().nextInt(example9.length)];
         System.out.println("Random: " + random);
 
         // 10. Append a new item to an array
         int newItem = 60;
-        int[] example10Copy = new int[] {10, 20, 30, 40, 50};
+        int[] example10Copy = new int[]{10, 20, 30, 40, 50};
         int[] example10 = Arrays.copyOf(example10Copy, example10Copy.length + 1);
         System.out.println(Arrays.toString(example10));
         example10[example10.length - 1] = newItem;
@@ -306,14 +626,14 @@ public class ArraysTest {
         System.out.println(isEmpty);
 
         // 13. Filter values in an array
-        int[] example13 = new int[] {1, 2, 3, 4, 5};
+        int[] example13 = new int[]{1, 2, 3, 4, 5};
         int[] evenArray = Arrays.stream(example13)
                 .filter(value -> value % 2 == 0)
                 .toArray();
         System.out.println(Arrays.toString(evenArray));
 
         // 14. Find the sum & the average
-        int[] example14 = new int[] {10, 20, 30, 40, 50};
+        int[] example14 = new int[]{10, 20, 30, 40, 50};
         int sum = 0;
         for (int num : example14) {
             sum += num;
@@ -330,7 +650,7 @@ public class ArraysTest {
         System.out.println(Arrays.toString(example15Integers));
 
         // 16. Find the index of an element
-        int[] example16 = new int[] {8, 28, 1, 56, 909};
+        int[] example16 = new int[]{8, 28, 1, 56, 909};
         int target = 56;
         int index = 0;
         for (int i = 0; i < example16.length; i++) {
@@ -341,7 +661,7 @@ public class ArraysTest {
         System.out.println("Target: " + target + ", index: " + index);
 
         // 17. Remove a specific element (just using arrays)
-        int[] example17 = new int[] {8, 28, 1, 56, 909};
+        int[] example17 = new int[]{8, 28, 1, 56, 909};
         int index17 = 1;
         int[] smallArray = new int[example17.length - 1];
         for (int i = 0, k = 0; i < example17.length; i++) {
@@ -352,7 +672,7 @@ public class ArraysTest {
         System.out.println(Arrays.toString(smallArray));
 
         // 18. Insert at a specific index
-        int[] example18 = new int[] {8, 28, 1, 56, 909};
+        int[] example18 = new int[]{8, 28, 1, 56, 909};
         int[] insertAtIndex = insert(example18, 1, 202);
         System.out.println(Arrays.toString(example18));
         System.out.println(Arrays.toString(insertAtIndex));
@@ -362,7 +682,7 @@ public class ArraysTest {
         int[] x = {1, 2, 3, 4, 5};
         int[] y = {3, 4, 5, 6, 7};
         for (int i = 0; i < x.length; i++) {
-            for(int j = 0; j < y.length; j++) {
+            for (int j = 0; j < y.length; j++) {
                 if (x[i] == y[j]) {
                     System.out.print(x[i] + " ");
                 }

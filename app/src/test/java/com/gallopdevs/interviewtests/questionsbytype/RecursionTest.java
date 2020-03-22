@@ -8,18 +8,27 @@ import com.gallopdevs.interviewtests.questionsbytype.recursive.BunnyEars;
 import com.gallopdevs.interviewtests.questionsbytype.recursive.BunnyEarsVariation;
 import com.gallopdevs.interviewtests.questionsbytype.recursive.ChangePi;
 import com.gallopdevs.interviewtests.questionsbytype.recursive.ChangeXY;
+import com.gallopdevs.interviewtests.questionsbytype.recursive.Count11;
 import com.gallopdevs.interviewtests.questionsbytype.recursive.Count8;
+import com.gallopdevs.interviewtests.questionsbytype.recursive.CountAbc;
 import com.gallopdevs.interviewtests.questionsbytype.recursive.CountHi;
+import com.gallopdevs.interviewtests.questionsbytype.recursive.CountHi2;
 import com.gallopdevs.interviewtests.questionsbytype.recursive.CountPairs;
 import com.gallopdevs.interviewtests.questionsbytype.recursive.CountSeven;
 import com.gallopdevs.interviewtests.questionsbytype.recursive.CountX;
 import com.gallopdevs.interviewtests.questionsbytype.recursive.EndX;
 import com.gallopdevs.interviewtests.questionsbytype.recursive.Factorial;
+import com.gallopdevs.interviewtests.questionsbytype.recursive.IsStringPalindromeRecursive;
 import com.gallopdevs.interviewtests.questionsbytype.recursive.MakingChange;
+import com.gallopdevs.interviewtests.questionsbytype.recursive.NestParen;
 import com.gallopdevs.interviewtests.questionsbytype.recursive.NoX;
 import com.gallopdevs.interviewtests.questionsbytype.recursive.PairStar;
+import com.gallopdevs.interviewtests.questionsbytype.recursive.ParenBit;
 import com.gallopdevs.interviewtests.questionsbytype.recursive.Permutations;
 import com.gallopdevs.interviewtests.questionsbytype.recursive.PowerN;
+import com.gallopdevs.interviewtests.questionsbytype.recursive.StrCopies;
+import com.gallopdevs.interviewtests.questionsbytype.recursive.StrDist;
+import com.gallopdevs.interviewtests.questionsbytype.recursive.StringClean;
 import com.gallopdevs.interviewtests.questionsbytype.recursive.SumDigits;
 import com.gallopdevs.interviewtests.questionsbytype.recursive.Triangle;
 import com.gallopdevs.interviewtests.questionsbytype.recursive.VerifyBST;
@@ -29,6 +38,9 @@ import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Set;
 
 public class RecursionTest {
 
@@ -253,5 +265,80 @@ public class RecursionTest {
         System.out.println(CountPairs.countPairs("axax"));
         System.out.println(CountPairs.countPairs("axab"));
         System.out.println(CountPairs.countPairs("axaxa"));
+    }
+
+    @Test
+    public void CountAbc() {
+        System.out.println("=========CountAbc=========");
+        System.out.println(CountAbc.countAbc("abc"));
+        System.out.println(CountAbc.countAbc("abcxxabc"));
+        System.out.println(CountAbc.countAbc("abaxxaba"));
+        System.out.println(CountAbc.countAbc("abcaba"));
+    }
+
+    @Test
+    public void Count11() {
+        System.out.println("=========Count11=========");
+        System.out.println(Count11.count11("11abc11"));
+        System.out.println(Count11.count11("abc11x11x11"));
+        System.out.println(Count11.count11("111"));
+    }
+
+    @Test
+    public void StringClean() {
+        System.out.println("=========StringClean=========");
+        System.out.println(StringClean.stringClean("yyzzza"));
+        System.out.println(StringClean.stringClean("abbbcdd"));
+        System.out.println(StringClean.stringClean("Hello"));
+    }
+
+    @Test
+    public void CountHi2() {
+        System.out.println("=========CountHi2=========");
+        System.out.println(CountHi2.countHi2("ahixhi"));
+        System.out.println(CountHi2.countHi2("ahibhi"));
+        System.out.println(CountHi2.countHi2("xhixhi"));
+    }
+
+    @Test
+    public void ParenBit() {
+        System.out.println("=========ParenBit=========");
+        System.out.println(ParenBit.parenBit("xyz(abc)123"));
+        System.out.println(ParenBit.parenBit("x(hello)"));
+        System.out.println(ParenBit.parenBit("(xy)1"));
+    }
+
+    @Test
+    public void NestParen() {
+        System.out.println("=========NestParen=========");
+        System.out.println(NestParen.nestParen("(())"));
+        System.out.println(NestParen.nestParen("((()))"));
+        System.out.println(NestParen.nestParen("(((x))"));
+        System.out.println(NestParen.nestParen("(yy)"));
+    }
+
+    @Test
+    public void StrCopies() {
+        System.out.println("=========StrCopies=========");
+        System.out.println(StrCopies.strCopies("catcowcat", "cat", 2));
+        System.out.println(StrCopies.strCopies("catcowcat", "cow", 2));
+        System.out.println(StrCopies.strCopies("catcowcat", "cow", 1));
+    }
+
+    @Test
+    public void StrDist() {
+        System.out.println("=========StrDist=========");
+        System.out.println(StrDist.strDist("catcowcat", "cat"));
+        System.out.println(StrDist.strDist("catcowcat", "cow"));
+        System.out.println(StrDist.strDist("cccatcowcatxx", "cat"));
+    }
+
+    @Test
+    public void IsStringPalindromeRecursive() {
+        System.out.println("=========IsStringPalindromeRecursive=========");
+        System.out.println(IsStringPalindromeRecursive.isStringPalindromeRecursive("abcba"));
+        System.out.println(IsStringPalindromeRecursive.isStringPalindromeRecursive("abcbd"));
+        System.out.println(IsStringPalindromeRecursive.isStringPalindromeRecursive("abba"));
+        System.out.println(IsStringPalindromeRecursive.isStringPalindromeRecursive("abbg"));
     }
 }

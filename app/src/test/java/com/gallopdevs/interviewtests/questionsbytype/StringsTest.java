@@ -1,12 +1,15 @@
 package com.gallopdevs.interviewtests.questionsbytype;
 
+import com.gallopdevs.interviewtests.questionsbytype.strings.codebat.CatDog;
 import com.gallopdevs.interviewtests.questionsbytype.strings.Compress;
+import com.gallopdevs.interviewtests.questionsbytype.strings.codebat.CountCode;
 import com.gallopdevs.interviewtests.questionsbytype.strings.IsPalindrome;
 import com.gallopdevs.interviewtests.questionsbytype.strings.IsPermutationPalindrome;
 import com.gallopdevs.interviewtests.questionsbytype.strings.IsUnique;
 import com.gallopdevs.interviewtests.questionsbytype.strings.OneEditAway;
 import com.gallopdevs.interviewtests.questionsbytype.strings.Rotation;
 import com.gallopdevs.interviewtests.questionsbytype.strings.Urlify;
+import com.gallopdevs.interviewtests.questionsbytype.strings.codebat.EndOther;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -85,6 +88,31 @@ public class StringsTest {
         System.out.println(OneEditAway.oneEditAway("bear", "pear"));
         System.out.println("beary , pearf");
         System.out.println(OneEditAway.oneEditAway("beary", "pearf"));
+    }
+
+    @Test
+    public void CatDog() {
+        System.out.println("=========CatDog=========");
+        System.out.println(CatDog.catDog("catdog"));
+        System.out.println(CatDog.catDog("catcat"));
+        System.out.println(CatDog.catDog("1cat1cadodog"));
+        System.out.println(CatDog.catDog("catcatdogdog"));
+    }
+
+    @Test
+    public void CountCode() {
+        System.out.println("=========CountCode=========");
+//        System.out.println(CountCode.countCode("aaacodebbb"));
+//        System.out.println(CountCode.countCode("codexxcode"));
+        System.out.println(CountCode.countCode("cozexxcope"));
+    }
+
+    @Test
+    public void EndOther() {
+        System.out.println("=========EndOther=========");
+        System.out.println(EndOther.endOther("Hiabc", "abc"));
+        System.out.println(EndOther.endOther("AbC", "HiaBc"));
+        System.out.println(EndOther.endOther("abc", "abXabc"));
     }
 
     // https://stackabuse.com/common-string-operations-in-java/

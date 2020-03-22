@@ -1,0 +1,11 @@
+package com.gallopdevs.interviewtests.questionsbytype.recursive;
+
+public class IsStringPalindromeRecursive {
+    public static boolean isStringPalindromeRecursive(String s) {
+        if (s.length() <= 1) return true;
+        if (s.charAt(0) == s.charAt(s.length() - 1)) {
+            return isStringPalindromeRecursive(s.substring(1, s.length() - 1));
+        }
+        return false;
+    }
+}

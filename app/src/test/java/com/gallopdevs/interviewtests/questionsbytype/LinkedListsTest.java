@@ -16,6 +16,7 @@ import com.gallopdevs.interviewtests.questionsbytype.linkedlists.RemoveDuplicate
 import com.gallopdevs.interviewtests.questionsbytype.linkedlists.PrintKthToLast;
 import com.gallopdevs.interviewtests.questionsbytype.linkedlists.ReverseList;
 import com.gallopdevs.interviewtests.questionsbytype.linkedlists.ReversePairs;
+import com.gallopdevs.interviewtests.questionsbytype.linkedlists.ReversePrintList;
 import com.gallopdevs.interviewtests.questionsbytype.linkedlists.SortedMerge;
 import com.gallopdevs.interviewtests.questionsbytype.linkedlists.SumLists;
 
@@ -304,6 +305,13 @@ public class LinkedListsTest {
         System.out.println("\n=========Reverse Pairs Recursively=========");
         prettyPrint(node2);
         prettyPrint(ReversePairs.reversePairsRecursive(node2));
+    }
+
+    @Test
+    public void ReversePrintList() {
+        System.out.println("=========ReversePrintList=========");
+        prettyPrint(node);
+        ReversePrintList.reversePrintList(node);
     }
 
     private void prettyPrint(LinkedListNode node) {

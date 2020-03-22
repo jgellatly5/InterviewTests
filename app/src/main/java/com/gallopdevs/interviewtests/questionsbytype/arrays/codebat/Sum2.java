@@ -1,4 +1,4 @@
-package com.gallopdevs.interviewtests.questionsbytype.arrays;
+package com.gallopdevs.interviewtests.questionsbytype.arrays.codebat;
 
 public class Sum2 {
     public static int sum2(int[] numbers) {

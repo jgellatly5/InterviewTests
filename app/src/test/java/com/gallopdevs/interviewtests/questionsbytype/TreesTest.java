@@ -5,6 +5,7 @@ import com.gallopdevs.interviewtests.questionsbytype.trees.FindHeight;
 import com.gallopdevs.interviewtests.questionsbytype.trees.IsBalanced;
 import com.gallopdevs.interviewtests.questionsbytype.trees.LinkedListBreadthFirst;
 import com.gallopdevs.interviewtests.questionsbytype.trees.LinkedListDepthFirst;
+import com.gallopdevs.interviewtests.questionsbytype.trees.LongestConsecutiveBranch;
 import com.gallopdevs.interviewtests.questionsbytype.trees.MinimalTreeFromArray;
 import com.gallopdevs.interviewtests.questionsbytype.trees.ValidateBstInOrderTraversal;
 import com.gallopdevs.interviewtests.questionsbytype.trees.ValidateBstMinMax;
@@ -18,6 +19,7 @@ import java.util.LinkedList;
 public class TreesTest {
 
     private TreeNode root;
+    private TreeNode longestNode;
     private FindHeight.Node node;
     private IsBalanced.Node isBalancedNode;
 
@@ -34,6 +36,14 @@ public class TreesTest {
         root.right.left = new TreeNode(19);
         root.right.right.right = new TreeNode(17);
         root.right.right.left = new TreeNode(21);
+
+        longestNode = new TreeNode(0);
+        longestNode.left = new TreeNode(1);
+        longestNode.right = new TreeNode(2);
+        longestNode.left.left = new TreeNode(1);
+        longestNode.left.right = new TreeNode(2);
+        longestNode.right.left = new TreeNode(1);
+        longestNode.right.right = new TreeNode(3);
 
         node = new FindHeight.Node(5);
         node.left = new FindHeight.Node(2);
@@ -107,6 +117,12 @@ public class TreesTest {
     public void IsBalanced() {
         System.out.println("=========IsBalanced=========");
         System.out.println(IsBalanced.isBalanced(isBalancedNode));
+    }
+
+    @Test
+    public void LongestConsecutiveBranch() {
+        System.out.println("=========LongestConsecutiveBranch=========");
+//        System.out.println(LongestConsecutiveBranch.longestConsecutiveBranch(longestNode));
     }
 
     private static void printTreeByLevel(TreeNode root) {
