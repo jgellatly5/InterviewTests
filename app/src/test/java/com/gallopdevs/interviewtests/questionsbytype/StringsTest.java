@@ -1,6 +1,6 @@
 package com.gallopdevs.interviewtests.questionsbytype;
 
-import com.gallopdevs.interviewtests.questionsbytype.strings.IntegerToRoman;
+import com.gallopdevs.interviewtests.questionsbytype.integers.IntegerToRoman;
 import com.gallopdevs.interviewtests.questionsbytype.strings.ReverseString;
 import com.gallopdevs.interviewtests.questionsbytype.strings.codebat.CatDog;
 import com.gallopdevs.interviewtests.questionsbytype.strings.Compress;
@@ -124,13 +124,6 @@ public class StringsTest {
         System.out.println(ReverseString.reverseStringSimple("Cool"));
         System.out.println(ReverseString.reverseStringAdvanced("Hello World"));
         System.out.println(ReverseString.reverseStringAdvanced("Cool"));
-    }
-
-    @Test
-    public void IntegerToRoman() {
-        System.out.println(IntegerToRoman.integerToRoman(1));
-        System.out.println(IntegerToRoman.integerToRoman(4));
-        System.out.println(IntegerToRoman.integerToRoman(49));
     }
 
     // https://stackabuse.com/common-string-operations-in-java/

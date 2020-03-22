@@ -1,4 +1,4 @@
-package com.gallopdevs.interviewtests.questionsbytype.strings;
+package com.gallopdevs.interviewtests.questionsbytype.integers;
 
 public class IntegerToRoman {
     private static final String[] numerals = new String[] {
