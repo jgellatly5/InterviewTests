@@ -1,5 +1,7 @@
 package com.gallopdevs.interviewtests.questionsbytype;
 
+import com.gallopdevs.interviewtests.questionsbytype.strings.IntegerToRoman;
+import com.gallopdevs.interviewtests.questionsbytype.strings.ReverseString;
 import com.gallopdevs.interviewtests.questionsbytype.strings.codebat.CatDog;
 import com.gallopdevs.interviewtests.questionsbytype.strings.Compress;
 import com.gallopdevs.interviewtests.questionsbytype.strings.codebat.CountCode;
@@ -115,6 +117,22 @@ public class StringsTest {
         System.out.println(EndOther.endOther("abc", "abXabc"));
     }
 
+    @Test
+    public void ReverseString() {
+        System.out.println("=========ReverseString=========");
+        System.out.println(ReverseString.reverseStringSimple("Hello World"));
+        System.out.println(ReverseString.reverseStringSimple("Cool"));
+        System.out.println(ReverseString.reverseStringAdvanced("Hello World"));
+        System.out.println(ReverseString.reverseStringAdvanced("Cool"));
+    }
+
+    @Test
+    public void IntegerToRoman() {
+        System.out.println(IntegerToRoman.integerToRoman(1));
+        System.out.println(IntegerToRoman.integerToRoman(4));
+        System.out.println(IntegerToRoman.integerToRoman(49));
+    }
+
     // https://stackabuse.com/common-string-operations-in-java/
 
     //1. Determine String Length
@@ -176,12 +194,17 @@ public class StringsTest {
     // StringBuilder & append method
     // concat()
 
-    String s1 = "       fantastic        ";
-    String s2 = "WORLD               ";
-
     @Test
     public void Practice() {
-        System.out.println(s1.trim());
-        System.out.println(s2.trim());
+        System.out.println(reverseString("Hello World"));
+        System.out.println(reverseString("Cool"));
+    }
+
+    public String reverseString(String s) {
+        StringBuilder result = new StringBuilder();
+        for (int i = s.length() - 1; i >= 0; i--) {
+            result.append(s.charAt(i));
+        }
+        return result.toString();
     }
 }

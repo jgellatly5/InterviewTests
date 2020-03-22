@@ -133,6 +133,9 @@ public class LinkedListsTest {
         System.out.println("=========IsCyclic=========");
         System.out.println("List is cyclic: " + IsCyclic.isCyclic(node));
         System.out.println("List is cyclic: " + IsCyclic.isCyclic(cyclicList));
+        System.out.println("=========IsCyclicSet=========");
+        System.out.println("List is cyclic: " + IsCyclic.isCyclicSet(node));
+        System.out.println("List is cyclic: " + IsCyclic.isCyclicSet(cyclicList));
     }
 
     @Test
@@ -312,6 +315,23 @@ public class LinkedListsTest {
         System.out.println("=========ReversePrintList=========");
         prettyPrint(node);
         ReversePrintList.reversePrintList(node);
+    }
+
+    @Test
+    public void Practice() {
+        System.out.println(isCyclic(node));
+        System.out.println(isCyclic(cyclicList));
+    }
+
+    private boolean isCyclic(LinkedListNode head) {
+        LinkedListNode fast = head;
+        LinkedListNode slow = head;
+        while (fast != null && fast.next != null) {
+            fast = fast.next.next;
+            slow = slow.next;
+            if (fast == slow) return true;
+        }
+        return false;
     }
 
     private void prettyPrint(LinkedListNode node) {
