@@ -18,6 +18,7 @@ import com.gallopdevs.interviewtests.questionsbytype.recursive.CountSeven;
 import com.gallopdevs.interviewtests.questionsbytype.recursive.CountX;
 import com.gallopdevs.interviewtests.questionsbytype.recursive.EndX;
 import com.gallopdevs.interviewtests.questionsbytype.recursive.Factorial;
+import com.gallopdevs.interviewtests.questionsbytype.recursive.Fibonacci;
 import com.gallopdevs.interviewtests.questionsbytype.recursive.IsStringPalindromeRecursive;
 import com.gallopdevs.interviewtests.questionsbytype.recursive.MakingChange;
 import com.gallopdevs.interviewtests.questionsbytype.recursive.NestParen;
@@ -340,5 +341,16 @@ public class RecursionTest {
         System.out.println(IsStringPalindromeRecursive.isStringPalindromeRecursive("abcbd"));
         System.out.println(IsStringPalindromeRecursive.isStringPalindromeRecursive("abba"));
         System.out.println(IsStringPalindromeRecursive.isStringPalindromeRecursive("abbg"));
+    }
+
+    @Test
+    public void Fibonacci() {
+        System.out.println(Fibonacci.fibonacciRecursive(1));
+        System.out.println(Fibonacci.fibonacciRecursive(2));
+        System.out.println(Fibonacci.fibonacciRecursive(3));
+        System.out.println(Fibonacci.fibonacciRecursive(4));
+        System.out.println(Fibonacci.fibonacciDynamic(10));
+        System.out.println(Fibonacci.fibonacciDynamic(20));
+        System.out.println(Fibonacci.fibonacciDynamic(30));
     }
 }
