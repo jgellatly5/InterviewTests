@@ -1,7 +1,6 @@
 package com.gallopdevs.interviewtests.questionsbytype.strings;
 
 public class CountVowels {
-
     public static void countVowels(String text) {
         char[] characters = text.toCharArray();
         int counter = 0;
@@ -19,7 +18,7 @@ public class CountVowels {
             }
         }
         int consonants = characters.length - counter;
-        System.out.println("Number of vowels: " + String.valueOf(counter));
-        System.out.println("Number of consontants: " + String.valueOf(consonants));
+        System.out.println("Number of vowels: " + counter);
+        System.out.println("Number of consonants: " + consonants);
     }
 }

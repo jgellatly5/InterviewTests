@@ -3,6 +3,7 @@ package com.gallopdevs.interviewtests.questionsbytype.linkedlists;
 import com.gallopdevs.interviewtests.datastructures.LinkedListNode;
 
 public class FindMiddle {
+    // Time: O(n)
     public static int findMiddle(LinkedListNode head) {
         LinkedListNode fast = head;
         LinkedListNode slow = head;

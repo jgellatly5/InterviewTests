@@ -5,6 +5,8 @@ import java.util.Map;
 import java.util.Set;
 
 public class FindDuplicatesCount {
+    // Time: O(n)
+    // Space: O(n)
     public static void findDuplicatesCount(int[] numbers) {
         HashMap<Integer, Integer> numAndCount = new HashMap<>();
         for (int num : numbers) {

@@ -3,7 +3,9 @@ package com.gallopdevs.interviewtests.questionsbytype.arrays;
 import java.util.Arrays;
 
 public class MedianTwoSortedArrays {
-    // iterative
+    // Iterative
+    // Time: O(n)
+    // Space: O(n)
     public static double medianTwoSortedArrays(int[] numbers1, int[] numbers2) {
         int[] result = new int[numbers1.length + numbers2.length];
         int index1 = 0;

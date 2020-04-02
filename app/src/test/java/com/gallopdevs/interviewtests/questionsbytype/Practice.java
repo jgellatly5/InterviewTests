@@ -1,9 +1,6 @@
 package com.gallopdevs.interviewtests.questionsbytype;
 
-import com.gallopdevs.interviewtests.questionsbytype.arrays.MaxEnd;
-import com.gallopdevs.interviewtests.questionsbytype.arrays.MidThree;
-import com.gallopdevs.interviewtests.questionsbytype.arrays.RotateLeft;
-import com.gallopdevs.interviewtests.questionsbytype.recursive.CountPairs;
+import com.gallopdevs.interviewtests.questionsbytype.arrays.codebat.MidThree;
 import com.gallopdevs.interviewtests.questionsbytype.trees.FindHeight;
 
 import org.junit.Before;

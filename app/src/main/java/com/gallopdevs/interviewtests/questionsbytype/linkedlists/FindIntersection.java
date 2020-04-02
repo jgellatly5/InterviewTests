@@ -3,6 +3,7 @@ package com.gallopdevs.interviewtests.questionsbytype.linkedlists;
 import com.gallopdevs.interviewtests.datastructures.LinkedListNode;
 
 public class FindIntersection {
+    // Time: ?
     public static LinkedListNode findIntersection(LinkedListNode l1, LinkedListNode l2) {
         if (l1 == null || l2 == null) return null;
         Result result1 = getTailAndSize(l1);

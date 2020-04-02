@@ -1,7 +1,7 @@
 package com.gallopdevs.interviewtests.datastructures;
 
 public class Queue {
-    public static class Node {
+    private static class Node {
         private int data;
         private Node next;
         Node(int data) {

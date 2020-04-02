@@ -3,7 +3,8 @@ package com.gallopdevs.interviewtests.questionsbytype.linkedlists;
 import com.gallopdevs.interviewtests.datastructures.LinkedListNode;
 
 public class RemoveDuplicatesSorted {
-    // iterative
+    // Iterative
+    // Time: O(n^2)
     public static void removeDuplicatesSorted(LinkedListNode head) {
         LinkedListNode current = head;
         while (current != null) {
@@ -17,7 +18,8 @@ public class RemoveDuplicatesSorted {
         }
     }
 
-    // recursive
+    // Recursive
+    // Time: ?
     public static void removeDuplicatesRecursive(LinkedListNode node) {
         if (node == null || node.next == null) return;
         if (node.data == node.next.data) {

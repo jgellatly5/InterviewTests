@@ -27,6 +27,7 @@ import com.gallopdevs.interviewtests.questionsbytype.recursive.PairStar;
 import com.gallopdevs.interviewtests.questionsbytype.recursive.ParenBit;
 import com.gallopdevs.interviewtests.questionsbytype.recursive.Permutations;
 import com.gallopdevs.interviewtests.questionsbytype.recursive.PowerN;
+import com.gallopdevs.interviewtests.questionsbytype.recursive.ReverseStack;
 import com.gallopdevs.interviewtests.questionsbytype.recursive.StrCopies;
 import com.gallopdevs.interviewtests.questionsbytype.recursive.StrDist;
 import com.gallopdevs.interviewtests.questionsbytype.recursive.StringClean;
@@ -42,6 +43,7 @@ import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
+import java.util.Stack;
 
 public class RecursionTest {
 
@@ -352,5 +354,20 @@ public class RecursionTest {
         System.out.println(Fibonacci.fibonacciDynamic(10));
         System.out.println(Fibonacci.fibonacciDynamic(20));
         System.out.println(Fibonacci.fibonacciDynamic(30));
+    }
+
+    @Test
+    public void ReverseStack() {
+        java.util.Stack<Integer> stack = new Stack<>();
+        stack.push(1);
+        stack.push(2);
+        stack.push(3);
+        Stack<Integer> reversedStack = ReverseStack.reverseStack(stack);
+        while (!stack.isEmpty()) {
+            System.out.print(stack.pop() + "->");
+        }
+        while (!reversedStack.isEmpty()) {
+            System.out.print(reversedStack.pop() + "->");
+        }
     }
 }

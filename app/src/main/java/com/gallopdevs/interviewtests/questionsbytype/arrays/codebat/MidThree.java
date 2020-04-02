@@ -1,4 +1,4 @@
-package com.gallopdevs.interviewtests.questionsbytype.arrays;
+package com.gallopdevs.interviewtests.questionsbytype.arrays.codebat;
 
 public class MidThree {
     public static int[] midThree(int[] numbers) {

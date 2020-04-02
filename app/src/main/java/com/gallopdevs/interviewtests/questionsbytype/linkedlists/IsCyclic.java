@@ -5,8 +5,7 @@ import com.gallopdevs.interviewtests.datastructures.LinkedListNode;
 import java.util.HashSet;
 
 public class IsCyclic {
-    // How do you check if a given linked list contains a cycle?
-    // How do you find the starting node of the cycle?
+    // Time: O(n)
     public static boolean isCyclic(LinkedListNode head) {
         LinkedListNode fast = head;
         LinkedListNode slow = head;

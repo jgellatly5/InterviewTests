@@ -4,7 +4,7 @@ import com.gallopdevs.interviewtests.datastructures.LinkedListNode;
 
 public class ReversePairs {
     // https://java2blog.com/java-program-to-reverse-linked-list-in/
-    // iteratively
+    // Iteratively
     public static LinkedListNode reversePairs(LinkedListNode head) {
         LinkedListNode current = head;
         LinkedListNode temp = null;
@@ -24,7 +24,7 @@ public class ReversePairs {
         return newHead;
     }
 
-    // recursive
+    // Recursive
     public static LinkedListNode reversePairsRecursive(LinkedListNode node) {
         if (node == null || node.next == null) return node;
         LinkedListNode temp = node.next;

@@ -1,8 +1,7 @@
 package com.gallopdevs.interviewtests.questionsbytype.arrays;
 
 public class FindDuplicatesLoop {
-    // How do you find the duplicate number on a given integer array?
-    // How do you find duplicate numbers in an array if it contains multiple duplicates?
+    // Time: O(n^2)
     public static void findDuplicatesLoop(int[] numbers) {
         for (int i = 0; i < numbers.length; i++) {
             for (int j = i + 1; j < numbers.length; j++) {

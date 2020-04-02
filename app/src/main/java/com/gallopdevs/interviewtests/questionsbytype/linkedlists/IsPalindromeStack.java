@@ -5,6 +5,8 @@ import com.gallopdevs.interviewtests.datastructures.LinkedListNode;
 import java.util.Stack;
 
 public class IsPalindromeStack {
+    // Time: O(n)
+    // Space: O(n)
     public static boolean isPalindromeStack(LinkedListNode head) {
         LinkedListNode fillStack = head;
         Stack<Integer> stack = new Stack<>();

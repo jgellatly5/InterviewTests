@@ -3,6 +3,7 @@ package com.gallopdevs.interviewtests.questionsbytype.linkedlists;
 import com.gallopdevs.interviewtests.datastructures.LinkedListNode;
 
 public class DeleteMiddle {
+    // Time: O(n)
     public static void deleteMiddle(LinkedListNode head) {
         if (head == null || head.next == null) return;
         LinkedListNode fast = head;

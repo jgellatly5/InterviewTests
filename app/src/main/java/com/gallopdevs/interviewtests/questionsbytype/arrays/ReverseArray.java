@@ -3,6 +3,7 @@ package com.gallopdevs.interviewtests.questionsbytype.arrays;
 import java.util.Arrays;
 
 public class ReverseArray {
+    // Time: O(n)
     public static void reverseArray(int[] numbers) {
         for (int i = 0; i < numbers.length / 2; i++) {
             int temp = numbers[i];

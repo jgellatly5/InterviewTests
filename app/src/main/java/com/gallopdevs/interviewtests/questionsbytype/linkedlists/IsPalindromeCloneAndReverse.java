@@ -3,6 +3,8 @@ package com.gallopdevs.interviewtests.questionsbytype.linkedlists;
 import com.gallopdevs.interviewtests.datastructures.LinkedListNode;
 
 public class IsPalindromeCloneAndReverse {
+    // Time: O(n)
+    // Space: O(n)
     public static boolean isPalindrome(LinkedListNode head) {
         LinkedListNode reversed = cloneAndReverse(head);
         return isEqual(head, reversed);

@@ -2,8 +2,8 @@ package com.gallopdevs.interviewtests.questionsbytype.trees;
 
 import com.gallopdevs.interviewtests.datastructures.TreeNode;
 
-public class InOrderSuccesor {
-    public static TreeNode inOrderSuccesor(TreeNode node) {
+public class InOrderSuccessor {
+    public static TreeNode inOrderSuccessor(TreeNode node) {
         if (node == null) return null;
         if (node.right == null) return leftMostChild(node.right);
         else {

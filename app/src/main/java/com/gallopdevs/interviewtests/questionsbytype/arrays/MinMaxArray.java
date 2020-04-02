@@ -3,7 +3,7 @@ package com.gallopdevs.interviewtests.questionsbytype.arrays;
 import java.util.Arrays;
 
 public class MinMaxArray {
-    // How do you find the largest and smallest number in an unsorted integer array?
+    // Time: O(n)
     public static void findMinAndMax(int[] numbers) {
         int min = numbers[0];
         int max = numbers[0];

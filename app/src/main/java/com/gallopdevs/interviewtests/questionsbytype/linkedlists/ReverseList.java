@@ -3,7 +3,8 @@ package com.gallopdevs.interviewtests.questionsbytype.linkedlists;
 import com.gallopdevs.interviewtests.datastructures.LinkedListNode;
 
 public class ReverseList {
-    // iterative
+    // Iterative
+    // Time: O(n)
     public static LinkedListNode reverseListIterative(LinkedListNode head) {
         LinkedListNode previous = null;
         LinkedListNode current = head;
@@ -16,7 +17,8 @@ public class ReverseList {
         head = previous;
         return head;
     }
-    // recursive
+    // Recursive
+    // Time: O(n)
     public static void reverseListRecursive(LinkedListNode node) {
         if (node == null) return;
         reverseListRecursive(node.next);

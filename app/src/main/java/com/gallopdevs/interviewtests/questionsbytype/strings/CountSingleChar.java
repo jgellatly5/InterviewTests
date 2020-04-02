@@ -1,14 +1,11 @@
 package com.gallopdevs.interviewtests.questionsbytype.strings;
 
 public class CountSingleChar {
-
     public static int countSingleChar(String text, char c) {
         char[] characters = text.toCharArray();
         int counter = 0;
-        for (int i = 0; i < characters.length; i++) {
-            if (characters[i] == c) {
-                counter++;
-            }
+        for (char character : characters) {
+            if (character == c) counter++;
         }
         return counter;
     }

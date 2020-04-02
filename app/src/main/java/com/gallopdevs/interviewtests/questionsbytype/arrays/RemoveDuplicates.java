@@ -3,9 +3,8 @@ package com.gallopdevs.interviewtests.questionsbytype.arrays;
 import java.util.Arrays;
 
 public class RemoveDuplicates {
-    // How are duplicates removed from a given array in Java?
-    // How do you dequeue duplicates from an array in place?
-    // How are duplicates removed from an array without using any library?
+    // Time: O(n log n)
+    // Space: O(n)
     public static int[] removeDuplicates(int[] numbers) {
         Arrays.sort(numbers);
         int[] result = new int[numbers.length];

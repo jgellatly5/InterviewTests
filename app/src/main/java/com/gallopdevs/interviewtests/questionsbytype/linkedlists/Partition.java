@@ -3,6 +3,7 @@ package com.gallopdevs.interviewtests.questionsbytype.linkedlists;
 import com.gallopdevs.interviewtests.datastructures.LinkedListNode;
 
 public class Partition {
+    // Time: O(n)
     public static LinkedListNode partition(LinkedListNode node, int value) {
         LinkedListNode beforeStart = null;
         LinkedListNode beforeEnd = null;

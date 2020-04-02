@@ -5,16 +5,14 @@ import java.util.Map;
 import java.util.Set;
 
 public class DuplicateChars {
-
     public static void printDuplicateLetter(String text) {
         HashMap<Character, Integer> map = new HashMap<>();
         char[] characters = text.toCharArray();
-        for (int i = 0; i < characters.length; i++) {
-            char letter = characters[i];
-            if (map.containsKey(letter)) {
-                map.put(letter, map.get(letter) + 1);
+        for (char character : characters) {
+            if (map.containsKey(character)) {
+                map.put(character, map.get(character) + 1);
             } else {
-                map.put(letter, 1);
+                map.put(character, 1);
             }
         }
 
@@ -25,6 +23,5 @@ public class DuplicateChars {
                 System.out.printf("%s : %d %n", entry.getKey(), entry.getValue());
             }
         }
-
     }
 }

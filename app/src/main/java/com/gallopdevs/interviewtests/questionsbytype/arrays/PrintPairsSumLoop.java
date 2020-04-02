@@ -1,7 +1,7 @@
 package com.gallopdevs.interviewtests.questionsbytype.arrays;
 
 public class PrintPairsSumLoop {
-    // How do you find all pairs of an integer array whose sum is equal to a given number?
+    // Time: O(n^2)
     public static void printPairs(int[] numbers, int sum) {
         for (int i = 0; i < numbers.length; i++) {
             int first = numbers[i];

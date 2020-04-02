@@ -1,7 +1,12 @@
 package com.gallopdevs.interviewtests.questionsbytype;
 
+import com.gallopdevs.interviewtests.questionsbytype.arrays.ConsecutiveArray;
+import com.gallopdevs.interviewtests.questionsbytype.arrays.FindLowHighIndex;
+import com.gallopdevs.interviewtests.questionsbytype.arrays.codebat.MaxEnd3;
+import com.gallopdevs.interviewtests.questionsbytype.arrays.MergeOverlaps;
+import com.gallopdevs.interviewtests.questionsbytype.arrays.MergeSortedArray;
 import com.gallopdevs.interviewtests.questionsbytype.arrays.StockPrices;
-import com.gallopdevs.interviewtests.questionsbytype.arrays.codebat.CountPairsWithSum;
+import com.gallopdevs.interviewtests.questionsbytype.arrays.CountPairsWithSum;
 import com.gallopdevs.interviewtests.questionsbytype.arrays.codebat.Either24;
 import com.gallopdevs.interviewtests.questionsbytype.arrays.FindDuplicatesCount;
 import com.gallopdevs.interviewtests.questionsbytype.arrays.FindDuplicatesLoop;
@@ -18,7 +23,7 @@ import com.gallopdevs.interviewtests.questionsbytype.arrays.codebat.IsEverywhere
 import com.gallopdevs.interviewtests.questionsbytype.arrays.codebat.MatchUp;
 import com.gallopdevs.interviewtests.questionsbytype.arrays.MatrixProduct;
 import com.gallopdevs.interviewtests.questionsbytype.arrays.MedianTwoSortedArrays;
-import com.gallopdevs.interviewtests.questionsbytype.arrays.MidThree;
+import com.gallopdevs.interviewtests.questionsbytype.arrays.codebat.MidThree;
 import com.gallopdevs.interviewtests.questionsbytype.arrays.MinMaxArray;
 import com.gallopdevs.interviewtests.questionsbytype.arrays.codebat.ModThree;
 import com.gallopdevs.interviewtests.questionsbytype.arrays.PrintMissingNumbers;
@@ -42,6 +47,7 @@ import com.gallopdevs.interviewtests.questionsbytype.arrays.codebat.TripleUp;
 import com.gallopdevs.interviewtests.questionsbytype.arrays.codebat.TwoTwo;
 import com.gallopdevs.interviewtests.questionsbytype.arrays.codebat.Unlucky1;
 import com.gallopdevs.interviewtests.questionsbytype.arrays.ZeroMatrix;
+import com.gallopdevs.interviewtests.questionsbytype.arrays.codebat.Without10;
 import com.gallopdevs.interviewtests.questionsbytype.arrays.codebat.ZeroFront;
 
 import org.junit.Test;
@@ -49,6 +55,7 @@ import org.junit.Test;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Random;
 
 public class ArraysTest {
@@ -526,6 +533,80 @@ public class ArraysTest {
         System.out.println(StockPrices.maxProfit(test5));
     }
 
+    @Test
+    public void FindLowHighIndex() {
+        System.out.println("=========FindLowHighIndex=========");
+        int[] test1 = {1, 2, 5, 5, 5, 5, 5, 7};
+        int[] test2 = {1, 3, 4, 5, 5, 5, 5, 3};
+        FindLowHighIndex.findLowHighIndex(test1, 5);
+        FindLowHighIndex.findLowHighIndex(test2, 3);
+    }
+
+    @Test
+    public void Without10() {
+        System.out.println("=========Without10=========");
+        int[] test1 = {1, 10, 10, 2};
+        int[] test2 = {10, 2, 10};
+        int[] test3 = {1, 99, 10};
+        System.out.println(Arrays.toString(Without10.without10(test1)));
+        System.out.println(Arrays.toString(Without10.without10(test2)));
+        System.out.println(Arrays.toString(Without10.without10(test3)));
+    }
+
+    @Test
+    public void MergeOverlaps() {
+        System.out.println("=========MergeOverlaps=========");
+        List<List<Integer>> test1 = new ArrayList<>();
+        List<Integer> pair1 = new ArrayList<>();
+        pair1.add(1);
+        pair1.add(5);
+        List<Integer> pair2 = new ArrayList<>();
+        pair1.add(3);
+        pair1.add(7);
+        List<Integer> pair3 = new ArrayList<>();
+        pair1.add(4);
+        pair1.add(6);
+        List<Integer> pair4 = new ArrayList<>();
+        pair1.add(6);
+        pair1.add(8);
+        test1.add(pair1);
+        test1.add(pair2);
+        test1.add(pair3);
+        test1.add(pair4);
+        List<Integer> result = MergeOverlaps.mergeOverlaps(test1);
+        for (Integer num : result) {
+            System.out.print(num + ", ");
+        }
+    }
+
+    @Test
+    public void MergeSortedArray() {
+        int[] a = {1, 3, 5, 0, 0, 0};
+        int[] b = {2, 4, 6};
+        System.out.println(Arrays.toString(a));
+        System.out.println(Arrays.toString(b));
+        MergeSortedArray.mergeSortedArray(a, b, 3, 3);
+        System.out.println(Arrays.toString(a));
+    }
+
+    @Test
+    public void ConsecutiveArray() {
+        int[] test1 = {4, 2, 1, 6, 5};
+        int[] test2 = {5, 5, 3, 1};
+        System.out.println(ConsecutiveArray.consecutiveArraySet(test1));
+        System.out.println(ConsecutiveArray.consecutiveArraySort(test1));
+        System.out.println(ConsecutiveArray.consecutiveArraySet(test2));
+        System.out.println(ConsecutiveArray.consecutiveArraySort(test2));
+    }
+
+    @Test
+    public void MaxEnd() {
+        int[] test1 = {4, 2, 1};
+        int[] test2 = {5, 3, 1};
+        System.out.println(Arrays.toString(MaxEnd3.maxEndThree(test1)));
+        System.out.println(Arrays.toString(MaxEnd3.maxEndThree(test2)));
+    }
+
     public int findMaxProfit(int[] numbers) {
         if (numbers.length <= 1) return 0;
         int globalMax = 0;
@@ -753,7 +834,7 @@ public class ArraysTest {
         // position 2 = starting position of source array
         // position 3 = destination array
         // position 4 = starting position of destination array
-        // position 5 = number of element to be copied
+        // position 5 = number of elements to be copied
         System.arraycopy(a, 0, result, 0, a.length);
         System.arraycopy(b, 0, result, a.length, b.length);
         return result;

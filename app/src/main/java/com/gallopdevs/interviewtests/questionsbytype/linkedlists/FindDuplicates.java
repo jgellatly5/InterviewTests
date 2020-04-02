@@ -8,8 +8,8 @@ import java.util.Map;
 import java.util.Set;
 
 public class FindDuplicates {
-
-    // loops
+    // Loops
+    // Fix
     public static void findDuplicatesLoops(LinkedListNode head) {
         LinkedListNode current = head;
         while (current.next != null) {
@@ -20,8 +20,9 @@ public class FindDuplicates {
         }
         System.out.println();
     }
-
-    // set
+    // Set
+    // Time: O(n)
+    // Space: O(n)
     public static void findDuplicatesSet(LinkedListNode head) {
         HashSet<Integer> hashSet = new HashSet<>();
         LinkedListNode current = head;
@@ -33,8 +34,9 @@ public class FindDuplicates {
         }
         System.out.println();
     }
-
-    // count
+    // Count
+    // Time: O(n)
+    // Space: O(n)
     public static void findDuplicatesCount(LinkedListNode head) {
         HashMap<Integer, Integer> numAndCount = new HashMap<>();
         LinkedListNode current = head;

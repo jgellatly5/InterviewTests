@@ -40,7 +40,7 @@ public class BinarySearchTree {
         }
     }
 
-    public void insert(int key, String value) {
+    public void insertValue(int key, String value) {
         root = insertNode(root, key, value);
     }
 
@@ -62,7 +62,7 @@ public class BinarySearchTree {
         return node.findMin();
     }
 
-    public void delete(int key) {
+    public void deleteValue(int key) {
         root = deleteNode(root, key);
     }
 

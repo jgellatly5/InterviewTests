@@ -1,6 +1,7 @@
 package com.gallopdevs.interviewtests.questionsbytype.arrays;
 
 public class StockPrices {
+    // Time: O(n)
     public static int maxProfit(int[] stockPrices) {
         int minimumPrice = Integer.MAX_VALUE; // min so far
         int maxProfit = 0;

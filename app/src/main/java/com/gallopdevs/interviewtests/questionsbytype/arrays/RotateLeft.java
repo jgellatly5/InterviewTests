@@ -1,6 +1,7 @@
 package com.gallopdevs.interviewtests.questionsbytype.arrays;
 
 public class RotateLeft {
+    // Time: O(n)
     public static int[] rotateLeft(int[] numbers) {
         int temp = numbers[0];
         for (int i = 0; i < numbers.length - 1; i++) {

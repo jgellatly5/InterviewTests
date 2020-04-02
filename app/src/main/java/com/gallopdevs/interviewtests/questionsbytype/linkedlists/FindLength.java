@@ -3,7 +3,8 @@ package com.gallopdevs.interviewtests.questionsbytype.linkedlists;
 import com.gallopdevs.interviewtests.datastructures.LinkedListNode;
 
 public class FindLength {
-    // iterative
+    // Iterative
+    // Time: O(n)
     public static int findLength(LinkedListNode head) {
         int length = 0;
         LinkedListNode current = head;
@@ -14,7 +15,8 @@ public class FindLength {
         return length;
     }
 
-    // recursive
+    // Recursive
+    // Time: O(n)
     public static int findLengthRecursive(LinkedListNode node) {
         if (node == null) return 0;
         return findLengthRecursive(node.next) + 1;

@@ -1,8 +1,9 @@
-package com.gallopdevs.interviewtests.questionsbytype.arrays.codebat;
+package com.gallopdevs.interviewtests.questionsbytype.arrays;
 
 import java.util.HashSet;
 
 public class CountPairsWithSum {
+    // Fix
     public static int countPairsWithSum(int[] numbers, int sum) {
         HashSet<Integer> hashSet = new HashSet<>();
         for (int i = 0; i < numbers.length; i++) {

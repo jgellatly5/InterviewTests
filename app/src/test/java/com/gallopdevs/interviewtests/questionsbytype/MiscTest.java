@@ -1,7 +1,7 @@
 package com.gallopdevs.interviewtests.questionsbytype;
 
 import com.gallopdevs.interviewtests.questionsbytype.recursive.Fibonacci;
-import com.gallopdevs.interviewtests.questionsbytype.arrays.FizzBuzz;
+import com.gallopdevs.interviewtests.questionsbytype.integers.FizzBuzz;
 
 import org.junit.Test;
 

@@ -1,6 +1,7 @@
 package com.gallopdevs.interviewtests.questionsbytype.arrays;
 
 public class RotateMatrixCounterClockwise {
+    // Time: ?
     public static void rotateMatrixCounterClockwise(int[][] matrix) {
         if (matrix.length == 0 || matrix.length != matrix[0].length) return;
         int n = matrix.length;

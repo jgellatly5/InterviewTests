@@ -12,6 +12,7 @@ import com.gallopdevs.interviewtests.questionsbytype.strings.OneEditAway;
 import com.gallopdevs.interviewtests.questionsbytype.strings.Rotation;
 import com.gallopdevs.interviewtests.questionsbytype.strings.Urlify;
 import com.gallopdevs.interviewtests.questionsbytype.strings.codebat.EndOther;
+import com.gallopdevs.interviewtests.questionsbytype.strings.codebat.XyzThere;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -124,6 +125,14 @@ public class StringsTest {
         System.out.println(ReverseString.reverseStringSimple("Cool"));
         System.out.println(ReverseString.reverseStringAdvanced("Hello World"));
         System.out.println(ReverseString.reverseStringAdvanced("Cool"));
+    }
+
+    @Test
+    public void XyzThere() {
+        System.out.println("=========XyzThere=========");
+        System.out.println(XyzThere.xyzThere("abcxyz"));
+        System.out.println(XyzThere.xyzThere("abc.xyz"));
+        System.out.println(XyzThere.xyzThere("xyz.abc"));
     }
 
     // https://stackabuse.com/common-string-operations-in-java/

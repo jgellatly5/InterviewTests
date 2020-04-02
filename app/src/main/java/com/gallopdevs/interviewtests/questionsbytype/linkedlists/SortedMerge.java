@@ -3,7 +3,8 @@ package com.gallopdevs.interviewtests.questionsbytype.linkedlists;
 import com.gallopdevs.interviewtests.datastructures.LinkedListNode;
 
 public class SortedMerge {
-    // iterative
+    // Iterative
+    // Time: O(n)
     public static LinkedListNode sortedMergeIterative(LinkedListNode l1, LinkedListNode l2) {
         LinkedListNode head = new LinkedListNode(0);
         LinkedListNode tail = head;
@@ -22,7 +23,8 @@ public class SortedMerge {
         return head.next;
     }
 
-    // recursive
+    // Recursive
+    // Time: O(n)
     public static LinkedListNode sortedMergeRecursive(LinkedListNode l1, LinkedListNode l2) {
         if (l1 == null) return l2;
         if (l2 == null) return l1;

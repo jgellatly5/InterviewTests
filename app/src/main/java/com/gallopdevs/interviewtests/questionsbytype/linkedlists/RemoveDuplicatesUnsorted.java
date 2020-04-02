@@ -6,6 +6,8 @@ import java.util.HashSet;
 
 public class RemoveDuplicatesUnsorted {
     // Set
+    // Time: O(n)
+    // Space: O(n)
     public static void removeDuplicates(LinkedListNode head) {
         HashSet<Integer> hashSet = new HashSet<>();
         LinkedListNode previous = null;
@@ -22,6 +24,7 @@ public class RemoveDuplicatesUnsorted {
     }
 
     // Loops
+    // Time: O(n^2)
     public static void removeDuplicatesLoops(LinkedListNode head) {
         LinkedListNode previous = null;
         LinkedListNode current = head;

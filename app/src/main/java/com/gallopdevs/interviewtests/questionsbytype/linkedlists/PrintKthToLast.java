@@ -3,8 +3,8 @@ package com.gallopdevs.interviewtests.questionsbytype.linkedlists;
 import com.gallopdevs.interviewtests.datastructures.LinkedListNode;
 
 public class PrintKthToLast {
-
-    // length
+    // Length
+    // Time: O(n)
     public static void printKthToLastUsingLength(LinkedListNode head, int k) {
         int length = 0;
         LinkedListNode current = head;
@@ -19,7 +19,8 @@ public class PrintKthToLast {
         System.out.println(k + " from last node is: " + current.data);
     }
 
-    // pointers
+    // Pointers
+    // Time: O(n)
     public static void printKthToLastPointers(LinkedListNode head, int k) {
         LinkedListNode current = head;
         LinkedListNode follower = head;
@@ -39,7 +40,8 @@ public class PrintKthToLast {
         System.out.println(k + " from last node is: " + follower.data);
     }
 
-    // recursive
+    // Recursive
+    // Time: O(n)
     public static int printKthToLastRecursive(LinkedListNode head, int k) {
         if (head == null) return -1;
         int index = printKthToLastRecursive(head.next, k) + 1;

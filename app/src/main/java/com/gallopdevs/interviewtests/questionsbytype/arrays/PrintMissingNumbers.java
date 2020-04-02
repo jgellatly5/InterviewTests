@@ -3,7 +3,8 @@ package com.gallopdevs.interviewtests.questionsbytype.arrays;
 import java.util.BitSet;
 
 public class PrintMissingNumbers {
-    // more than one missing element
+    // Note: this will work if there is more than one missing element
+    // Time: O(n)
     public static void printMissingNumbers(int[] numbers, int n) {
         int missingCount = n - numbers.length;
         BitSet bitSet = new BitSet(n);
