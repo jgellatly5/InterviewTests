@@ -3,12 +3,8 @@ package com.gallopdevs.interviewtests.questionsbytype.trees;
 import com.gallopdevs.interviewtests.datastructures.TreeNode;
 
 public class CheckBalanced {
-    // solution 1
-    private static int getHeight(TreeNode root) {
-        if (root == null) return -1;
-        return Math.max(getHeight(root.left), getHeight(root.right)) + 1;
-    }
-
+    // Solution 1
+    // Time: O(n)
     public static boolean isBalanced(TreeNode root) {
         if (root == null) return true;
         int heightDiff = getHeight(root.left) - getHeight(root.right);
@@ -19,7 +15,17 @@ public class CheckBalanced {
         }
     }
 
-    // solution 2
+    private static int getHeight(TreeNode root) {
+        if (root == null) return -1;
+        return Math.max(getHeight(root.left), getHeight(root.right)) + 1;
+    }
+
+    // Solution 2
+    // Time: O(n)
+    public static boolean isBalancedTwo(TreeNode root) {
+        return checkHeight(root) != Integer.MIN_VALUE;
+    }
+
     private static int checkHeight(TreeNode root) {
         if (root == null) return -1;
         int leftHeight = checkHeight(root.left);
@@ -32,9 +38,5 @@ public class CheckBalanced {
         } else {
             return Math.max(leftHeight, rightHeight) + 1;
         }
-    }
-
-    public static boolean isBalancedTwo(TreeNode root) {
-        return checkHeight(root) != Integer.MIN_VALUE;
     }
 }

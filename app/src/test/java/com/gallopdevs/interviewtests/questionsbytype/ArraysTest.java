@@ -806,13 +806,21 @@ public class ArraysTest {
 
     @Test
     public void Practice() {
-        String[] stringArray = {"a", "b", "c"};
-        // ArrayList
-        ArrayList<String> arrayList = new ArrayList<>(Arrays.asList(stringArray));
-        System.out.println(arrayList);
-        // Contains
-        System.out.println(Arrays.asList(stringArray).contains("a"));
-        System.out.println(Arrays.asList(stringArray).contains("z"));
+        int[] test1 = {4, 5, 6, 7, 8};
+        sumPairs(test1, 12);
+    }
+
+    private void sumPairs(int[] numbers, int sum) {
+        if (numbers.length < 2) return;
+        HashSet<Integer> hashSet = new HashSet<>();
+        for (int num : numbers) {
+            int target = sum - num;
+            if (!hashSet.contains(target)) {
+                hashSet.add(num);
+            } else {
+                System.out.printf("(%d, %d) %n", num, target);
+            }
+        }
     }
 
     private int[] insert(int[] numbers, int index, int value) {

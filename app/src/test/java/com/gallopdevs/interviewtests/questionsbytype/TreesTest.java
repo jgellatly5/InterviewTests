@@ -14,13 +14,14 @@ import org.junit.Before;
 import org.junit.Test;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.LinkedList;
 
 public class TreesTest {
 
     private TreeNode root;
     private TreeNode longestNode;
-    private FindHeight.Node node;
+    private TreeNode node;
     private IsBalanced.Node isBalancedNode;
 
     @Before
@@ -45,13 +46,13 @@ public class TreesTest {
         longestNode.right.left = new TreeNode(1);
         longestNode.right.right = new TreeNode(3);
 
-        node = new FindHeight.Node(5);
-        node.left = new FindHeight.Node(2);
-        node.right = new FindHeight.Node(7);
-        node.left.left = new FindHeight.Node(1);
-        node.left.right = new FindHeight.Node(3);
-        node.right.left = new FindHeight.Node(6);
-        node.right.right = new FindHeight.Node(8);
+        node = new TreeNode(5);
+        node.left = new TreeNode(2);
+        node.right = new TreeNode(7);
+        node.left.left = new TreeNode(1);
+        node.left.right = new TreeNode(3);
+        node.right.left = new TreeNode(6);
+        node.right.right = new TreeNode(8);
 
         isBalancedNode = new IsBalanced.Node(1);
         isBalancedNode.left = new IsBalanced.Node(2);
@@ -67,7 +68,7 @@ public class TreesTest {
         System.out.println("=========Test1 MinimalTreeFromArray=========");
         int[] minimalTreeArray = new int[]{2, 4, 6, 8, 12, 24, 35, 46};
         TreeNode minimalTree = MinimalTreeFromArray.createMinimalBst(minimalTreeArray);
-        System.out.println("Height of the tree is: " + findTreeHeight(minimalTree));
+        System.out.println("Height of the tree is: " + FindHeight.findHeight(minimalTree));
         printTreeByLevel(minimalTree);
     }
 
@@ -125,8 +126,29 @@ public class TreesTest {
 //        System.out.println(LongestConsecutiveBranch.longestConsecutiveBranch(longestNode));
     }
 
+    @Test
+    public void Practice() {
+        int[] test1 = {8, 20, 5, 44, 12, 909};
+        System.out.println(Arrays.toString(test1));
+        System.out.println();
+        printTreeByLevel(createMinimalBst(test1));
+    }
+
+    private TreeNode createMinimalBst(int[] array) {
+        return createMinimalBst(array, 0, array.length - 1);
+    }
+
+    private TreeNode createMinimalBst(int[] array, int start, int end) {
+        if (end < start) return null;
+        int middle = (start + end) / 2;
+        TreeNode node = new TreeNode(array[middle]);
+        node.left = createMinimalBst(array, start, middle - 1);
+        node.right = createMinimalBst(array, middle + 1, end);
+        return node;
+    }
+
     private static void printTreeByLevel(TreeNode root) {
-        int height = findTreeHeight(root);
+        int height = FindHeight.findHeight(root);
         for (int i = 1; i <= height; i++) {
             printGivenLevel(root, i);
             System.out.println();
@@ -139,16 +161,6 @@ public class TreesTest {
         else if (level > 1) {
             printGivenLevel(root.left, level - 1);
             printGivenLevel(root.right, level - 1);
-        }
-    }
-
-    private static int findTreeHeight(TreeNode root) {
-        if (root == null) return 0;
-        else {
-            int leftDepth = findTreeHeight(root.left);
-            int rightDepth = findTreeHeight(root.right);
-            if (leftDepth > rightDepth) return leftDepth + 1;
-            else return rightDepth + 1;
         }
     }
 }
