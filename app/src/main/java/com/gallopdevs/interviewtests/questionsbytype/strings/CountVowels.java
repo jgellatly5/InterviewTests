@@ -1,6 +1,7 @@
 package com.gallopdevs.interviewtests.questionsbytype.strings;
 
 public class CountVowels {
+    // Time: O(n)
     public static void countVowels(String text) {
         char[] characters = text.toCharArray();
         int counter = 0;

@@ -1,6 +1,7 @@
 package com.gallopdevs.interviewtests.questionsbytype.strings;
 
 public class IsPalindrome {
+    // Time: O(n)
     public static boolean isPalindrome(String text) {
         char[] chars = text.toCharArray();
         int length = chars.length;

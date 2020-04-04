@@ -5,9 +5,9 @@ import java.util.HashMap;
 public class Trie {
 
     private static class TrieNode {
-        public char character;
-        boolean isWholeWord;
-        HashMap<Character, TrieNode> children = new HashMap<>();
+        private char character;
+        private boolean isWholeWord;
+        private HashMap<Character, TrieNode> children = new HashMap<>();
 
         TrieNode() {
         }

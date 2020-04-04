@@ -1,6 +1,7 @@
 package com.gallopdevs.interviewtests.questionsbytype.strings;
 
 public class Compress {
+    // Time: O(n)
     public static String compress(String text) {
         StringBuilder result = new StringBuilder();
         int countConsecutive = 0;

@@ -5,6 +5,8 @@ import java.util.Map;
 import java.util.Set;
 
 public class DuplicateChars {
+    // Time: O(n)
+    // Space: O(n)
     public static void printDuplicateLetter(String text) {
         HashMap<Character, Integer> map = new HashMap<>();
         char[] characters = text.toCharArray();

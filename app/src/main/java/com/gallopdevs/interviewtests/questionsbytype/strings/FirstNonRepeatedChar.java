@@ -6,7 +6,8 @@ import java.util.List;
 import java.util.Set;
 
 public class FirstNonRepeatedChar {
-
+    // Time: O(n)
+    // Space: O(n)
     public static char getFirstNonRepeatedChar(String text) {
         Set<Character> repeating = new HashSet<>();
         List<Character> nonRepeating = new ArrayList<>();

@@ -198,15 +198,22 @@ public class StringsTest {
 
     @Test
     public void Practice() {
-        System.out.println(reverseString("Hello World"));
-        System.out.println(reverseString("Cool"));
+        System.out.println(compress("aabbccdd"));
+        System.out.println(compress("aaaaaa"));
+        System.out.println(compress("abcd"));
     }
 
-    public String reverseString(String s) {
+    public String compress(String s) {
         StringBuilder result = new StringBuilder();
-        for (int i = s.length() - 1; i >= 0; i--) {
-            result.append(s.charAt(i));
+        int count = 0;
+        for (int i = 0; i < s.length(); i++) {
+            count++;
+            if (i + 1 >= s.length() || s.charAt(i) != s.charAt(i + 1)) {
+                result.append(s.charAt(i));
+                result.append(count);
+                count = 0;
+            }
         }
-        return result.toString();
+        return result.length() < s.length() ? result.toString() : s;
     }
 }

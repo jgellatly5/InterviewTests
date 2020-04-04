@@ -1,7 +1,6 @@
 package com.gallopdevs.interviewtests.codility;
 
 public class SaddlePointMatrix {
-
     public static int findSaddlePoints(int[][] matrix) {
         int saddlePoints = 0;
         for (int i = 1; i < matrix.length - 1; i++) {

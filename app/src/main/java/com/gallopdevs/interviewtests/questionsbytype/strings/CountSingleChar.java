@@ -1,6 +1,7 @@
 package com.gallopdevs.interviewtests.questionsbytype.strings;
 
 public class CountSingleChar {
+    // Time: O(n)
     public static int countSingleChar(String text, char c) {
         char[] characters = text.toCharArray();
         int counter = 0;

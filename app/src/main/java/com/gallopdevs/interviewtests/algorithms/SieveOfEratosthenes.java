@@ -1,7 +1,6 @@
 package com.gallopdevs.interviewtests.algorithms;
 
 public class SieveOfEratosthenes {
-
     public static void print(int upperBound) {
         int upperBoundSquareRoot = (int) Math.sqrt(upperBound);
         boolean[] isComposite = new boolean[upperBound + 1];
