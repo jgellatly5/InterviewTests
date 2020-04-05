@@ -16,7 +16,7 @@ public class CheckSubtree {
             sb.append("X");
             return;
         }
-        sb.append(node.data + " ");
+        sb.append(node.data).append(" ");
         getOrderString(node.left, sb);
         getOrderString(node.right, sb);
     }

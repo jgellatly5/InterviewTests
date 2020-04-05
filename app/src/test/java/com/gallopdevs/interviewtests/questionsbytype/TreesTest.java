@@ -1,5 +1,6 @@
 package com.gallopdevs.interviewtests.questionsbytype;
 
+import com.gallopdevs.interviewtests.datastructures.LinkedListNode;
 import com.gallopdevs.interviewtests.datastructures.TreeNode;
 import com.gallopdevs.interviewtests.questionsbytype.trees.FindHeight;
 import com.gallopdevs.interviewtests.questionsbytype.trees.IsBalanced;
@@ -13,6 +14,7 @@ import com.gallopdevs.interviewtests.questionsbytype.trees.ValidateBstMinMax;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.LinkedList;
@@ -22,7 +24,7 @@ public class TreesTest {
     private TreeNode root;
     private TreeNode longestNode;
     private TreeNode node;
-    private IsBalanced.Node isBalancedNode;
+    private TreeNode isBalancedNode;
 
     @Before
     public void setup() {
@@ -54,12 +56,12 @@ public class TreesTest {
         node.right.left = new TreeNode(6);
         node.right.right = new TreeNode(8);
 
-        isBalancedNode = new IsBalanced.Node(1);
-        isBalancedNode.left = new IsBalanced.Node(2);
-        isBalancedNode.right = new IsBalanced.Node(3);
-        isBalancedNode.left.left = new IsBalanced.Node(4);
-        isBalancedNode.right.left = new IsBalanced.Node(6);
-        isBalancedNode.right.right = new IsBalanced.Node(7);
+        isBalancedNode = new TreeNode(1);
+        isBalancedNode.left = new TreeNode(2);
+        isBalancedNode.right = new TreeNode(3);
+        isBalancedNode.left.left = new TreeNode(4);
+        isBalancedNode.right.left = new TreeNode(6);
+        isBalancedNode.right.right = new TreeNode(7);
     }
 
 
@@ -123,15 +125,12 @@ public class TreesTest {
     @Test
     public void LongestConsecutiveBranch() {
         System.out.println("=========LongestConsecutiveBranch=========");
-//        System.out.println(LongestConsecutiveBranch.longestConsecutiveBranch(longestNode));
+        System.out.println(LongestConsecutiveBranch.consecutive(longestNode));
     }
 
     @Test
     public void Practice() {
-        int[] test1 = {8, 20, 5, 44, 12, 909};
-        System.out.println(Arrays.toString(test1));
-        System.out.println();
-        printTreeByLevel(createMinimalBst(test1));
+
     }
 
     private TreeNode createMinimalBst(int[] array) {
