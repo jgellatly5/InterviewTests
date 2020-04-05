@@ -1,22 +1,24 @@
 package com.gallopdevs.interviewtests.questionsbytype;
 
-import com.gallopdevs.interviewtests.datastructures.LinkedListNode;
 import com.gallopdevs.interviewtests.datastructures.TreeNode;
+import com.gallopdevs.interviewtests.questionsbytype.trees.AreIdentical;
 import com.gallopdevs.interviewtests.questionsbytype.trees.FindHeight;
+import com.gallopdevs.interviewtests.questionsbytype.trees.InOrderTraversal;
 import com.gallopdevs.interviewtests.questionsbytype.trees.IsBalanced;
+import com.gallopdevs.interviewtests.questionsbytype.trees.LevelOrderTraversal;
 import com.gallopdevs.interviewtests.questionsbytype.trees.LinkedListBreadthFirst;
 import com.gallopdevs.interviewtests.questionsbytype.trees.LinkedListDepthFirst;
 import com.gallopdevs.interviewtests.questionsbytype.trees.LongestConsecutiveBranch;
 import com.gallopdevs.interviewtests.questionsbytype.trees.MinimalTreeFromArray;
+import com.gallopdevs.interviewtests.questionsbytype.trees.PostOrderTraversal;
+import com.gallopdevs.interviewtests.questionsbytype.trees.PreOrderTraversal;
 import com.gallopdevs.interviewtests.questionsbytype.trees.ValidateBstInOrderTraversal;
 import com.gallopdevs.interviewtests.questionsbytype.trees.ValidateBstMinMax;
 
 import org.junit.Before;
 import org.junit.Test;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.LinkedList;
 
 public class TreesTest {
@@ -24,6 +26,7 @@ public class TreesTest {
     private TreeNode root;
     private TreeNode longestNode;
     private TreeNode node;
+    private TreeNode node2;
     private TreeNode isBalancedNode;
 
     @Before
@@ -56,6 +59,14 @@ public class TreesTest {
         node.right.left = new TreeNode(6);
         node.right.right = new TreeNode(8);
 
+        node2 = new TreeNode(5);
+        node2.left = new TreeNode(2);
+        node2.right = new TreeNode(7);
+        node2.left.left = new TreeNode(1);
+        node2.left.right = new TreeNode(3);
+        node2.right.left = new TreeNode(6);
+        node2.right.right = new TreeNode(8);
+
         isBalancedNode = new TreeNode(1);
         isBalancedNode.left = new TreeNode(2);
         isBalancedNode.right = new TreeNode(3);
@@ -71,7 +82,7 @@ public class TreesTest {
         int[] minimalTreeArray = new int[]{2, 4, 6, 8, 12, 24, 35, 46};
         TreeNode minimalTree = MinimalTreeFromArray.createMinimalBst(minimalTreeArray);
         System.out.println("Height of the tree is: " + FindHeight.findHeight(minimalTree));
-        printTreeByLevel(minimalTree);
+        LevelOrderTraversal.levelOrderTraversal(minimalTree);
     }
 
     @Test
@@ -114,6 +125,9 @@ public class TreesTest {
     public void FindHeight() {
         System.out.println("=========FindHeight=========");
         System.out.println(FindHeight.findHeight(node));
+        System.out.println(FindHeight.findHeightIterative(node));
+        System.out.println(FindHeight.findHeight(root));
+        System.out.println(FindHeight.findHeightIterative(root));
     }
 
     @Test
@@ -129,37 +143,45 @@ public class TreesTest {
     }
 
     @Test
+    public void AreIdentical() {
+        System.out.println("=========AreIdentical=========");
+        System.out.println(AreIdentical.areIdentical(node, node2));
+    }
+
+    @Test
+    public void InOrderTraversal() {
+        System.out.println("=========InOrderTraversal=========");
+        InOrderTraversal.inOrderTraversalRecursive(root);
+        System.out.println();
+        InOrderTraversal.inOrderTraversalIterative(root);
+    }
+
+    @Test
+    public void PreOrderTraversal() {
+        System.out.println("=========PreOrderTraversal=========");
+        PreOrderTraversal.preOrderTraversalRecursive(root);
+        System.out.println();
+        PreOrderTraversal.preOrderTraversalIterative(root);
+    }
+
+    @Test
+    public void PostOrderTraversal() {
+        System.out.println("=========PostOrderTraversal=========");
+        PostOrderTraversal.postOrderTraversalRecursive(root);
+        System.out.println();
+        PostOrderTraversal.postOrderTraversalIterative(root);
+    }
+
+    @Test
+    public void LevelOrderTraversal() {
+        System.out.println("=========LevelOrderTraversal=========");
+        LevelOrderTraversal.levelOrderTraversal(root);
+        System.out.println();
+        LevelOrderTraversal.levelOrderTraversalQueue(root);
+    }
+
+    @Test
     public void Practice() {
 
-    }
-
-    private TreeNode createMinimalBst(int[] array) {
-        return createMinimalBst(array, 0, array.length - 1);
-    }
-
-    private TreeNode createMinimalBst(int[] array, int start, int end) {
-        if (end < start) return null;
-        int middle = (start + end) / 2;
-        TreeNode node = new TreeNode(array[middle]);
-        node.left = createMinimalBst(array, start, middle - 1);
-        node.right = createMinimalBst(array, middle + 1, end);
-        return node;
-    }
-
-    private static void printTreeByLevel(TreeNode root) {
-        int height = FindHeight.findHeight(root);
-        for (int i = 1; i <= height; i++) {
-            printGivenLevel(root, i);
-            System.out.println();
-        }
-    }
-
-    private static void printGivenLevel(TreeNode root, int level) {
-        if (root == null) return;
-        if (level == 1) System.out.print(root.data + " ");
-        else if (level > 1) {
-            printGivenLevel(root.left, level - 1);
-            printGivenLevel(root.right, level - 1);
-        }
     }
 }

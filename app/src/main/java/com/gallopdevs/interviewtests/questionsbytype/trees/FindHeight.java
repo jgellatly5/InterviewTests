@@ -2,12 +2,34 @@ package com.gallopdevs.interviewtests.questionsbytype.trees;
 
 import com.gallopdevs.interviewtests.datastructures.TreeNode;
 
+import java.util.ArrayDeque;
+import java.util.Queue;
+
 public class FindHeight {
+    // Recursive
+    // Time: O (log(n))
     public static int findHeight(TreeNode node) {
         if (node == null) return 0;
-        int leftHeight = findHeight(node.left);
-        int rightHeight = findHeight(node.right);
-        if (leftHeight > rightHeight) return leftHeight + 1;
-        return rightHeight + 1;
+        return 1 + Math.max(findHeight(node.left), findHeight(node.right));
+    }
+    // Iterative
+    // Time: O(n)
+    // Space: O(n)
+    public static int findHeightIterative(TreeNode root) {
+        if (root == null) return 0;
+        Queue<TreeNode> queue = new ArrayDeque<>();
+        queue.add(root);
+        TreeNode front;
+        int height = 0;
+        while (!queue.isEmpty()) {
+            int size = queue.size();
+            while (size-- > 0) {
+                front = queue.poll();
+                if (front.left != null) queue.add(front.left);
+                if (front.right != null) queue.add(front.right);
+             }
+            height++;
+        }
+        return height;
     }
 }
