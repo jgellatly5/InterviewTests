@@ -12,6 +12,7 @@ import com.gallopdevs.interviewtests.questionsbytype.trees.LongestConsecutiveBra
 import com.gallopdevs.interviewtests.questionsbytype.trees.MinimalTreeFromArray;
 import com.gallopdevs.interviewtests.questionsbytype.trees.PostOrderTraversal;
 import com.gallopdevs.interviewtests.questionsbytype.trees.PreOrderTraversal;
+import com.gallopdevs.interviewtests.questionsbytype.trees.SpiralOrderTraversal;
 import com.gallopdevs.interviewtests.questionsbytype.trees.ValidateBstInOrderTraversal;
 import com.gallopdevs.interviewtests.questionsbytype.trees.ValidateBstMinMax;
 
@@ -178,6 +179,16 @@ public class TreesTest {
         LevelOrderTraversal.levelOrderTraversal(root);
         System.out.println();
         LevelOrderTraversal.levelOrderTraversalQueue(root);
+    }
+
+    @Test
+    public void SpiralOrderTraversal() {
+        System.out.println("=========SpiralOrderTraversal=========");
+        LevelOrderTraversal.levelOrderTraversal(root);
+        System.out.println();
+        SpiralOrderTraversal.spiralOrderTraversal(root);
+        System.out.println();
+        SpiralOrderTraversal.spiralOrderTraversalQueue(root);
     }
 
     @Test

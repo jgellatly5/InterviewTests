@@ -9,9 +9,8 @@ public class LevelOrderTraversal {
     // Time: O(n^2)
     public static void levelOrderTraversal(BinarySearchTree.TreeNode root) {
         int level = 1;
-        while (printGivenLevel(root, level)) {
+        while (printGivenLevel(root, level++)) {
             System.out.println();
-            level++;
         }
     }
 
