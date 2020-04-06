@@ -20,10 +20,7 @@ public class DynamicArray<String> {
     }
 
     public void insert(int index, String value) {
-        if (size == initialCapacity) {
-            resize();
-        }
-
+        if (size == initialCapacity) resize();
         for (int i = size; i > index; i--) {
             data[i] = data[i - 1];
         }
@@ -39,10 +36,7 @@ public class DynamicArray<String> {
     }
 
     public void add(String value) {
-        if (size == initialCapacity) {
-            resize();
-        }
-
+        if (size == initialCapacity) resize();
         data[size] = value;
         size++;
     }

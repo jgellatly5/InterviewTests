@@ -1,11 +1,14 @@
 package com.gallopdevs.interviewtests.questionsbytype.recursive;
 
 public class Fibonacci {
+    // Time: O(2^n)
     public static int fibonacciRecursive(int n) {
         if (n <= 1) return n;
         return fibonacciRecursive(n - 1) + fibonacciRecursive(n - 2);
     }
 
+    // Time: O(n)
+    // Space: O(n)
     public static long fibonacciDynamic(int n) {
         if (n < 0) return -1;
         if (n == 0) return 0;
