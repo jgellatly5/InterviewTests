@@ -26,12 +26,10 @@ public class Queue {
 
     public int dequeue() {
         if (head == null) throw new IllegalStateException();
-        else {
-            int value = head.data;
-            head = head.next;
-            size--;
-            return value;
-        }
+        int value = head.data;
+        head = head.next;
+        size--;
+        return value;
     }
 
     public int peek() {
