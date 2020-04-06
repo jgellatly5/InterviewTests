@@ -1,10 +1,10 @@
 package com.gallopdevs.interviewtests.questionsbytype.trees;
 
-import com.gallopdevs.interviewtests.datastructures.TreeNode;
+import com.gallopdevs.interviewtests.datastructures.BinarySearchTree;
 
 public class ValidateBstInOrderTraversal {
     private static Integer lastPrinted = null;
-    public static boolean validateBstIot(TreeNode root) {
+    public static boolean validateBstIot(BinarySearchTree.TreeNode root) {
         if (root == null) return true;
         if (!validateBstIot(root.left)) return false;
         if (lastPrinted != null && root.data <= lastPrinted) return false;

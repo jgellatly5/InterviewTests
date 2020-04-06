@@ -1,9 +1,9 @@
 package com.gallopdevs.interviewtests.questionsbytype.trees;
 
-import com.gallopdevs.interviewtests.datastructures.TreeNode;
+import com.gallopdevs.interviewtests.datastructures.BinarySearchTree;
 
 public class CheckSubtree {
-    public static boolean containsTree(TreeNode t1, TreeNode t2) {
+    public static boolean containsTree(BinarySearchTree.TreeNode t1, BinarySearchTree.TreeNode t2) {
         StringBuilder string1 = new StringBuilder();
         StringBuilder string2 = new StringBuilder();
         getOrderString(t1, string1);
@@ -11,7 +11,7 @@ public class CheckSubtree {
         return string1.indexOf(string2.toString()) != -1;
     }
 
-    private static void getOrderString(TreeNode node, StringBuilder sb) {
+    private static void getOrderString(BinarySearchTree.TreeNode node, StringBuilder sb) {
         if (node == null) {
             sb.append("X");
             return;

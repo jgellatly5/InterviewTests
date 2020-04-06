@@ -1,11 +1,11 @@
 package com.gallopdevs.interviewtests.questionsbytype.trees;
 
-import com.gallopdevs.interviewtests.datastructures.TreeNode;
+import com.gallopdevs.interviewtests.datastructures.BinarySearchTree;
 
 public class CheckBalanced {
     // Solution 1
     // Time: O(n)
-    public static boolean isBalanced(TreeNode root) {
+    public static boolean isBalanced(BinarySearchTree.TreeNode root) {
         if (root == null) return true;
         int heightDiff = getHeight(root.left) - getHeight(root.right);
         if (Math.abs(heightDiff) > 1) {
@@ -15,18 +15,18 @@ public class CheckBalanced {
         }
     }
 
-    private static int getHeight(TreeNode root) {
+    private static int getHeight(BinarySearchTree.TreeNode root) {
         if (root == null) return -1;
         return Math.max(getHeight(root.left), getHeight(root.right)) + 1;
     }
 
     // Solution 2
     // Time: O(n)
-    public static boolean isBalancedTwo(TreeNode root) {
+    public static boolean isBalancedTwo(BinarySearchTree.TreeNode root) {
         return checkHeight(root) != Integer.MIN_VALUE;
     }
 
-    private static int checkHeight(TreeNode root) {
+    private static int checkHeight(BinarySearchTree.TreeNode root) {
         if (root == null) return -1;
         int leftHeight = checkHeight(root.left);
         if (leftHeight == Integer.MIN_VALUE) return Integer.MIN_VALUE;

@@ -2,63 +2,54 @@ package com.gallopdevs.interviewtests.datastructures;
 
 public class BinarySearchTree {
 
-    private static class Node {
-        private int key;
-        private String value;
-        private Node left;
-        private Node right;
+    public static class TreeNode {
+        public int data;
+        public TreeNode left;
+        public TreeNode right;
 
-        Node(int key, String value) {
-            this.key = key;
-            this.value = value;
+        public TreeNode(int data) {
+            this.data = data;
         }
 
-        Node findMin() {
+        private TreeNode findMin() {
             if (left == null) return this;
             else return left.findMin();
         }
     }
 
-    private Node root;
+    private TreeNode root;
 
     public BinarySearchTree() {
         root = null;
     }
 
-    public String findValue(int key) {
-        Node node = findNode(root, key);
-        return node == null ? null : node.value;
+    public int findValue(int data) {
+        TreeNode node = findNode(root, data);
+        return node == null ? null : node.data;
     }
 
-    private Node findNode(Node node, int key) {
-        if (node == null || node.key == key) {
-            return node;
-        } else if (key < node.key) {
-            return findNode(node.left, key);
-        } else {
-            return findNode(node.right, key);
-        }
+    private TreeNode findNode(TreeNode node, int key) {
+        if (node == null || node.data == key) return node;
+        if (key < node.data) return findNode(node.left, key);
+        return findNode(node.right, key);
     }
 
-    public void insertValue(int key, String value) {
-        root = insertNode(root, key, value);
+    public void insertValue(int data, String value) {
+        root = insertNode(root, data);
     }
 
-    private Node insertNode(Node node, int key, String value) {
-        Node newNode = new Node(key, value);
+    private TreeNode insertNode(TreeNode node, int data) {
+        TreeNode newNode = new TreeNode(data);
         if (node == null) {
             node = newNode;
             return node;
         }
-        if (key < node.key) {
-            node.left = insertNode(node.left, key, value);
-        } else {
-            node.right = insertNode(node.right, key, value);
-        }
+        if (data < node.data) node.left = insertNode(node.left, data);
+        else node.right = insertNode(node.right, data);
         return node;
     }
 
-    private Node findMinNode(Node node) {
+    private TreeNode findMinNode(TreeNode node) {
         return node.findMin();
     }
 
@@ -66,32 +57,18 @@ public class BinarySearchTree {
         root = deleteNode(root, key);
     }
 
-    private Node deleteNode(Node node, int key) {
-        if (node == null) {
-            return null;
-        } else if (key < node.key) {
-            node.left = deleteNode(node.left, key);
-        } else if (key > node.key) {
-            node.right = deleteNode(node.right, key);
-        } else {
-            // case 1: no child
-            if (node.left == null && node.right == null) {
-                node = null;
-            }
-
-            // case 2: one child
-            else if (node.left == null) {
-                node = node.right;
-            } else if (node.right == null) {
-                node = node.left;
-            }
-
-            // case 3 : both children
+    private TreeNode deleteNode(TreeNode node, int data) {
+        if (node == null) return null;
+        else if (data < node.data) node.left = deleteNode(node.left, data);
+        else if (data > node.data) node.right = deleteNode(node.right, data);
+        else {
+            if (node.left == null && node.right == null) node = null;
+            else if (node.left == null) node = node.right;
+            else if (node.right == null) node = node.left;
             else {
-                Node minRight = findMinNode(node.right);
-                node.key = minRight.key;
-                node.value = minRight.value;
-                node.right = deleteNode(node.right, node.key);
+                TreeNode minRight = findMinNode(node.right);
+                node.data = minRight.data;
+                node.right = deleteNode(node.right, node.data);
             }
         }
         return node;

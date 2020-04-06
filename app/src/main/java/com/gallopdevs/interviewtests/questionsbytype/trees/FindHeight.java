@@ -1,6 +1,6 @@
 package com.gallopdevs.interviewtests.questionsbytype.trees;
 
-import com.gallopdevs.interviewtests.datastructures.TreeNode;
+import com.gallopdevs.interviewtests.datastructures.BinarySearchTree;
 
 import java.util.ArrayDeque;
 import java.util.Queue;
@@ -8,18 +8,18 @@ import java.util.Queue;
 public class FindHeight {
     // Recursive
     // Time: O (log(n))
-    public static int findHeight(TreeNode node) {
+    public static int findHeight(BinarySearchTree.TreeNode node) {
         if (node == null) return 0;
         return 1 + Math.max(findHeight(node.left), findHeight(node.right));
     }
     // Iterative
     // Time: O(n)
     // Space: O(n)
-    public static int findHeightIterative(TreeNode root) {
+    public static int findHeightIterative(BinarySearchTree.TreeNode root) {
         if (root == null) return 0;
-        Queue<TreeNode> queue = new ArrayDeque<>();
+        Queue<BinarySearchTree.TreeNode> queue = new ArrayDeque<>();
         queue.add(root);
-        TreeNode front;
+        BinarySearchTree.TreeNode front;
         int height = 0;
         while (!queue.isEmpty()) {
             int size = queue.size();

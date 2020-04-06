@@ -1,22 +1,22 @@
 package com.gallopdevs.interviewtests.questionsbytype.trees;
 
-import com.gallopdevs.interviewtests.datastructures.TreeNode;
+import com.gallopdevs.interviewtests.datastructures.BinarySearchTree;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
 
 public class LinkedListDepthFirst {
-    public static ArrayList<LinkedList<TreeNode>> createListsDfs(TreeNode root) {
-        ArrayList<LinkedList<TreeNode>> allLists = new ArrayList<>();
+    public static ArrayList<LinkedList<BinarySearchTree.TreeNode>> createListsDfs(BinarySearchTree.TreeNode root) {
+        ArrayList<LinkedList<BinarySearchTree.TreeNode>> allLists = new ArrayList<>();
         createListsDfs(root, allLists, 0);
         return allLists;
     }
 
-    private static void createListsDfs(TreeNode root,
-                                       ArrayList<LinkedList<TreeNode>> allLists,
+    private static void createListsDfs(BinarySearchTree.TreeNode root,
+                                       ArrayList<LinkedList<BinarySearchTree.TreeNode>> allLists,
                                        int level) {
         if (root == null) return;
-        LinkedList<TreeNode> currentList;
+        LinkedList<BinarySearchTree.TreeNode> currentList;
         if (allLists.size() == level) {
             currentList = new LinkedList<>();
             allLists.add(currentList);

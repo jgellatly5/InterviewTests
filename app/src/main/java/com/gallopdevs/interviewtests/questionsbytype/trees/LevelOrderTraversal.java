@@ -1,13 +1,13 @@
 package com.gallopdevs.interviewtests.questionsbytype.trees;
 
-import com.gallopdevs.interviewtests.datastructures.TreeNode;
+import com.gallopdevs.interviewtests.datastructures.BinarySearchTree;
 
 import java.util.ArrayDeque;
 import java.util.Queue;
 
 public class LevelOrderTraversal {
     // Time: O(n^2)
-    public static void levelOrderTraversal(TreeNode root) {
+    public static void levelOrderTraversal(BinarySearchTree.TreeNode root) {
         int level = 1;
         while (printGivenLevel(root, level)) {
             System.out.println();
@@ -15,7 +15,7 @@ public class LevelOrderTraversal {
         }
     }
 
-    private static boolean printGivenLevel(TreeNode root, int level) {
+    private static boolean printGivenLevel(BinarySearchTree.TreeNode root, int level) {
         if (root == null) return false;
         if (level == 1) {
             System.out.print(root.data + " ");
@@ -28,10 +28,10 @@ public class LevelOrderTraversal {
 
     // Time: O(n)
     // Space: O(n)
-    public static void levelOrderTraversalQueue(TreeNode root) {
-        Queue<TreeNode> queue = new ArrayDeque<>();
+    public static void levelOrderTraversalQueue(BinarySearchTree.TreeNode root) {
+        Queue<BinarySearchTree.TreeNode> queue = new ArrayDeque<>();
         queue.add(root);
-        TreeNode current;
+        BinarySearchTree.TreeNode current;
         while (!queue.isEmpty()) {
             current = queue.poll();
             System.out.print(current.data + " ");
