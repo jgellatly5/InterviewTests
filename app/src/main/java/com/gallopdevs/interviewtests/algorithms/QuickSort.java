@@ -3,7 +3,8 @@ package com.gallopdevs.interviewtests.algorithms;
 import java.util.Arrays;
 
 public class QuickSort {
-
+    // Time: O(n^2)
+    // Space: O(log(n))
     public static void quickSort(int[] numbers) {
         sort(numbers, 0, numbers.length - 1);
         System.out.println(Arrays.toString(numbers));

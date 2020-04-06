@@ -3,6 +3,7 @@ package com.gallopdevs.interviewtests.algorithms;
 import java.util.Arrays;
 
 public class InsertionSort {
+    // Time: O(n^2)
     public static void insertionSort(int[] numbers) {
         for (int i = 1; i < numbers.length; i++) {
             int startingElement = numbers[i];

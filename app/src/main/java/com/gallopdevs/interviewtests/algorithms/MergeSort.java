@@ -3,9 +3,11 @@ package com.gallopdevs.interviewtests.algorithms;
 import java.util.Arrays;
 
 public class MergeSort {
-
+    // Time: O(n log(n))
+    // Space: O(n)
     public static void mergeSort(int[] numbers) {
         sort(numbers, 0, numbers.length - 1);
+        System.out.println(Arrays.toString(numbers));
     }
 
     private static void sort(int[] numbers, int lowIndex, int highIndex) {

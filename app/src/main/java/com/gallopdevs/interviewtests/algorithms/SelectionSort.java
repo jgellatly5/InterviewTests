@@ -3,6 +3,7 @@ package com.gallopdevs.interviewtests.algorithms;
 import java.util.Arrays;
 
 public class SelectionSort {
+    // Time: O(n^2)
     public static void selectionSort(int[] numbers) {
         for (int i = 0; i < numbers.length - 1; i++) {
             int startingIndex = i;
