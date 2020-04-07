@@ -1,37 +1,38 @@
 package com.gallopdevs.interviewtests.questionsbytype;
 
-import com.gallopdevs.interviewtests.questionsbytype.recursive.AllStar;
-import com.gallopdevs.interviewtests.questionsbytype.recursive.Array11;
-import com.gallopdevs.interviewtests.questionsbytype.recursive.Array220;
-import com.gallopdevs.interviewtests.questionsbytype.recursive.Array6;
-import com.gallopdevs.interviewtests.questionsbytype.recursive.BunnyEars;
-import com.gallopdevs.interviewtests.questionsbytype.recursive.BunnyEarsVariation;
-import com.gallopdevs.interviewtests.questionsbytype.recursive.ChangePi;
-import com.gallopdevs.interviewtests.questionsbytype.recursive.ChangeXY;
-import com.gallopdevs.interviewtests.questionsbytype.recursive.Count11;
-import com.gallopdevs.interviewtests.questionsbytype.recursive.Count8;
-import com.gallopdevs.interviewtests.questionsbytype.recursive.CountAbc;
-import com.gallopdevs.interviewtests.questionsbytype.recursive.CountHi;
-import com.gallopdevs.interviewtests.questionsbytype.recursive.CountHi2;
-import com.gallopdevs.interviewtests.questionsbytype.recursive.CountPairs;
-import com.gallopdevs.interviewtests.questionsbytype.recursive.CountSeven;
-import com.gallopdevs.interviewtests.questionsbytype.recursive.CountX;
-import com.gallopdevs.interviewtests.questionsbytype.recursive.EndX;
-import com.gallopdevs.interviewtests.questionsbytype.recursive.Factorial;
+import com.gallopdevs.interviewtests.questionsbytype.recursive.SumWithoutArithmetic;
+import com.gallopdevs.interviewtests.questionsbytype.recursive.codebat.AllStar;
+import com.gallopdevs.interviewtests.questionsbytype.recursive.codebat.Array11;
+import com.gallopdevs.interviewtests.questionsbytype.recursive.codebat.Array220;
+import com.gallopdevs.interviewtests.questionsbytype.recursive.codebat.Array6;
+import com.gallopdevs.interviewtests.questionsbytype.recursive.codebat.BunnyEars;
+import com.gallopdevs.interviewtests.questionsbytype.recursive.codebat.BunnyEarsVariation;
+import com.gallopdevs.interviewtests.questionsbytype.recursive.codebat.ChangePi;
+import com.gallopdevs.interviewtests.questionsbytype.recursive.codebat.ChangeXY;
+import com.gallopdevs.interviewtests.questionsbytype.recursive.codebat.Count11;
+import com.gallopdevs.interviewtests.questionsbytype.recursive.codebat.Count8;
+import com.gallopdevs.interviewtests.questionsbytype.recursive.codebat.CountAbc;
+import com.gallopdevs.interviewtests.questionsbytype.recursive.codebat.CountHi;
+import com.gallopdevs.interviewtests.questionsbytype.recursive.codebat.CountHi2;
+import com.gallopdevs.interviewtests.questionsbytype.recursive.codebat.CountPairs;
+import com.gallopdevs.interviewtests.questionsbytype.recursive.codebat.CountSeven;
+import com.gallopdevs.interviewtests.questionsbytype.recursive.codebat.CountX;
+import com.gallopdevs.interviewtests.questionsbytype.recursive.codebat.EndX;
+import com.gallopdevs.interviewtests.questionsbytype.recursive.codebat.Factorial;
 import com.gallopdevs.interviewtests.questionsbytype.recursive.Fibonacci;
 import com.gallopdevs.interviewtests.questionsbytype.recursive.IsStringPalindromeRecursive;
 import com.gallopdevs.interviewtests.questionsbytype.recursive.MakingChange;
-import com.gallopdevs.interviewtests.questionsbytype.recursive.NestParen;
-import com.gallopdevs.interviewtests.questionsbytype.recursive.NoX;
-import com.gallopdevs.interviewtests.questionsbytype.recursive.PairStar;
-import com.gallopdevs.interviewtests.questionsbytype.recursive.ParenBit;
+import com.gallopdevs.interviewtests.questionsbytype.recursive.codebat.NestParen;
+import com.gallopdevs.interviewtests.questionsbytype.recursive.codebat.NoX;
+import com.gallopdevs.interviewtests.questionsbytype.recursive.codebat.PairStar;
+import com.gallopdevs.interviewtests.questionsbytype.recursive.codebat.ParenBit;
 import com.gallopdevs.interviewtests.questionsbytype.recursive.Permutations;
-import com.gallopdevs.interviewtests.questionsbytype.recursive.PowerN;
+import com.gallopdevs.interviewtests.questionsbytype.recursive.codebat.PowerN;
 import com.gallopdevs.interviewtests.questionsbytype.recursive.ReverseStack;
-import com.gallopdevs.interviewtests.questionsbytype.recursive.StrCopies;
-import com.gallopdevs.interviewtests.questionsbytype.recursive.StrDist;
-import com.gallopdevs.interviewtests.questionsbytype.recursive.StringClean;
-import com.gallopdevs.interviewtests.questionsbytype.recursive.SumDigits;
+import com.gallopdevs.interviewtests.questionsbytype.recursive.codebat.StrCopies;
+import com.gallopdevs.interviewtests.questionsbytype.recursive.codebat.StrDist;
+import com.gallopdevs.interviewtests.questionsbytype.recursive.codebat.StringClean;
+import com.gallopdevs.interviewtests.questionsbytype.recursive.codebat.SumDigits;
 import com.gallopdevs.interviewtests.questionsbytype.recursive.Triangle;
 import com.gallopdevs.interviewtests.questionsbytype.recursive.VerifyBST;
 
@@ -40,9 +41,6 @@ import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Set;
 import java.util.Stack;
 
 public class RecursionTest {
@@ -71,10 +69,10 @@ public class RecursionTest {
 
     @Test
     public void MakingChange() {
-        System.out.println("=========Making Change Iterative=========");
-        System.out.println(MakingChange.changeIterative(101));
-        System.out.println("\n=========Making Change Recursive=========");
-        System.out.println(MakingChange.changeRecursive(105));
+        System.out.println("\n=========Making Change (Dynamic Programming)=========");
+        // Coins = {10, 6, 1}
+        System.out.println(MakingChange.makeChange(100));
+        System.out.println(MakingChange.makeChange(105));
     }
 
     @Test
@@ -369,5 +367,11 @@ public class RecursionTest {
         while (!reversedStack.isEmpty()) {
             System.out.print(reversedStack.pop() + "->");
         }
+    }
+
+    @Test
+    public void SumWithoutArithmetic() {
+        System.out.println(SumWithoutArithmetic.sumWithoutArithmetic(4, 5));
+        System.out.println(SumWithoutArithmetic.sumWithoutArithmetic(6, 7));
     }
 }

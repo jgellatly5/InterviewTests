@@ -1,4 +1,4 @@
-package com.gallopdevs.interviewtests.questionsbytype.recursive;
+package com.gallopdevs.interviewtests.questionsbytype.recursive.codebat;
 
 public class BunnyEars {
     public static int bunnyEars(int bunnies) {

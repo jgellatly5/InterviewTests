@@ -1,4 +1,4 @@
-package com.gallopdevs.interviewtests.questionsbytype.recursive;
+package com.gallopdevs.interviewtests.questionsbytype.recursive.codebat;
 
 public class CountX {
     public static int countX(String s) {

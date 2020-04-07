@@ -1,4 +1,4 @@
-package com.gallopdevs.interviewtests.questionsbytype.recursive;
+package com.gallopdevs.interviewtests.questionsbytype.recursive.codebat;
 
 public class PowerN {
     public static int powerN(int base, int n) {

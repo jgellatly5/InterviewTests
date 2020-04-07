@@ -1,4 +1,4 @@
-package com.gallopdevs.interviewtests.questionsbytype.recursive;
+package com.gallopdevs.interviewtests.questionsbytype.recursive.codebat;
 
 public class Count8 {
     public static int count8(int n) {

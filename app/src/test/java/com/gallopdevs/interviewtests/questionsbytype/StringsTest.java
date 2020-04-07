@@ -79,9 +79,15 @@ public class StringsTest {
 
     @Test
     public void IsPermutationPalindrome() {
-        System.out.println("=========Test1 isPermutationPalindrome=========");
-        System.out.println("tact coa");
-        System.out.println(IsPermutationPalindrome.isPermutationPalindrome("tact coa"));
+        System.out.println("=========IsPermutationPalindrome=========");
+        System.out.println("tactcoa");
+        System.out.println(IsPermutationPalindrome.isPermutationPalindrome("tactcoa"));
+        System.out.println("carrace");
+        System.out.println(IsPermutationPalindrome.isPermutationPalindrome("carrace"));
+        System.out.println("photo");
+        System.out.println(IsPermutationPalindrome.isPermutationPalindrome("photo"));
+        System.out.println("olloyy");
+        System.out.println(IsPermutationPalindrome.isPermutationPalindrome("olloyy"));
     }
 
     @Test

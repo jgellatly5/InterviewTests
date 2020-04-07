@@ -1,46 +1,34 @@
 package com.gallopdevs.interviewtests.questionsbytype.recursive;
 
 public class MakingChange {
-
-    // This is assuming American coin system
-    // Using generic coin system, recursive calls = exponential time
-    // Use cache (Dynamic Programming) to save previous values from recursive calls
-    public static int changeIterative(int value) {
-        int numberOfCoins = 0;
-        while (value - 50 >= 0) {
-            numberOfCoins++;
-            value -= 50;
-            System.out.println("Adding 50cent coin");
+    private static int[] coins = {10, 6, 1};
+    // Time: O(c^n) where c = height of recursive tree, n = number of coin variations
+    public static int makeChangeNaive(int c) {
+        if (c == 0) return 0;
+        int minCoins = Integer.MAX_VALUE;
+        for (int coin : coins) {
+            if (c - coin >= 0) {
+                int currMinCoins = makeChangeNaive(c - coin);
+                if (currMinCoins < minCoins) minCoins = currMinCoins;
+            }
         }
-        while (value - 25 >= 0) {
-            numberOfCoins++;
-            value -= 25;
-            System.out.println("Adding 25cent coin");
-        }
-        while (value - 10 >= 0) {
-            numberOfCoins++;
-            value -= 10;
-            System.out.println("Adding 10cent coin");
-        }
-        while (value - 5 >= 0) {
-            numberOfCoins++;
-            value -= 5;
-            System.out.println("Adding 5cent coin");
-        }
-        while (value - 1 >= 0) {
-            numberOfCoins++;
-            value -= 1;
-            System.out.println("Adding 1cent coin");
-        }
-        return numberOfCoins;
+        return minCoins + 1;
     }
-
-    public static int changeRecursive(int value) {
-        if (value - 50 >= 0) return changeRecursive(value - 50) + 1;
-        else if (value - 25 >= 0) return changeRecursive(value - 25) + 1;
-        else if (value - 10 >= 0) return changeRecursive(value - 10) + 1;
-        else if (value - 5 >= 0) return changeRecursive(value - 5) + 1;
-        else if (value - 1 >= 0) return changeRecursive(value - 1) + 1;
-        else return 0;
+    // Time: O(c * n)
+    // Space: O(c)
+    // where c = height of recursive tree, n = number of coin variations
+    public static int makeChange(int c) {
+        int[] cache = new int[c + 1];
+        for (int i = 1; i <= c; i++) {
+            int minCoins = Integer.MAX_VALUE;
+            for (int coin : coins) {
+                if (i - coin >= 0) {
+                    int currentCoins = cache[i - coin] + 1;
+                    minCoins = Math.min(minCoins, currentCoins);
+                }
+            }
+            cache[i] = minCoins;
+        }
+        return cache[c];
     }
 }

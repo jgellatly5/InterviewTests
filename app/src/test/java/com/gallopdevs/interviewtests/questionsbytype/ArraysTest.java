@@ -1,31 +1,17 @@
 package com.gallopdevs.interviewtests.questionsbytype;
 
 import com.gallopdevs.interviewtests.questionsbytype.arrays.ConsecutiveArray;
-import com.gallopdevs.interviewtests.questionsbytype.arrays.FindLowHighIndex;
-import com.gallopdevs.interviewtests.questionsbytype.arrays.codebat.MaxEnd3;
-import com.gallopdevs.interviewtests.questionsbytype.arrays.MergeOverlaps;
-import com.gallopdevs.interviewtests.questionsbytype.arrays.MergeSortedArray;
-import com.gallopdevs.interviewtests.questionsbytype.arrays.StockPrices;
 import com.gallopdevs.interviewtests.questionsbytype.arrays.CountPairsWithSum;
-import com.gallopdevs.interviewtests.questionsbytype.arrays.codebat.Either24;
 import com.gallopdevs.interviewtests.questionsbytype.arrays.FindDuplicatesCount;
 import com.gallopdevs.interviewtests.questionsbytype.arrays.FindDuplicatesLoop;
 import com.gallopdevs.interviewtests.questionsbytype.arrays.FindDuplicatesSet;
-import com.gallopdevs.interviewtests.questionsbytype.arrays.codebat.FizzArray2;
-import com.gallopdevs.interviewtests.questionsbytype.arrays.codebat.FizzArray3;
-import com.gallopdevs.interviewtests.questionsbytype.arrays.codebat.Front11;
+import com.gallopdevs.interviewtests.questionsbytype.arrays.FindLowHighIndex;
 import com.gallopdevs.interviewtests.questionsbytype.arrays.GetMissingNumber;
-import com.gallopdevs.interviewtests.questionsbytype.arrays.codebat.Has12;
-import com.gallopdevs.interviewtests.questionsbytype.arrays.codebat.Has22;
-import com.gallopdevs.interviewtests.questionsbytype.arrays.codebat.Has77;
-import com.gallopdevs.interviewtests.questionsbytype.arrays.codebat.HaveThree;
-import com.gallopdevs.interviewtests.questionsbytype.arrays.codebat.IsEverywhere;
-import com.gallopdevs.interviewtests.questionsbytype.arrays.codebat.MatchUp;
 import com.gallopdevs.interviewtests.questionsbytype.arrays.MatrixProduct;
 import com.gallopdevs.interviewtests.questionsbytype.arrays.MedianTwoSortedArrays;
-import com.gallopdevs.interviewtests.questionsbytype.arrays.codebat.MidThree;
+import com.gallopdevs.interviewtests.questionsbytype.arrays.MergeOverlaps;
+import com.gallopdevs.interviewtests.questionsbytype.arrays.MergeSortedArray;
 import com.gallopdevs.interviewtests.questionsbytype.arrays.MinMaxArray;
-import com.gallopdevs.interviewtests.questionsbytype.arrays.codebat.ModThree;
 import com.gallopdevs.interviewtests.questionsbytype.arrays.PrintMissingNumbers;
 import com.gallopdevs.interviewtests.questionsbytype.arrays.PrintPairsSumLoop;
 import com.gallopdevs.interviewtests.questionsbytype.arrays.PrintPairsSumSet;
@@ -34,6 +20,21 @@ import com.gallopdevs.interviewtests.questionsbytype.arrays.ReverseArray;
 import com.gallopdevs.interviewtests.questionsbytype.arrays.RotateLeft;
 import com.gallopdevs.interviewtests.questionsbytype.arrays.RotateMatrixClockwise;
 import com.gallopdevs.interviewtests.questionsbytype.arrays.RotateMatrixCounterClockwise;
+import com.gallopdevs.interviewtests.questionsbytype.arrays.StockPrices;
+import com.gallopdevs.interviewtests.questionsbytype.arrays.ZeroMatrix;
+import com.gallopdevs.interviewtests.questionsbytype.arrays.codebat.Either24;
+import com.gallopdevs.interviewtests.questionsbytype.arrays.codebat.FizzArray2;
+import com.gallopdevs.interviewtests.questionsbytype.arrays.codebat.FizzArray3;
+import com.gallopdevs.interviewtests.questionsbytype.arrays.codebat.Front11;
+import com.gallopdevs.interviewtests.questionsbytype.arrays.codebat.Has12;
+import com.gallopdevs.interviewtests.questionsbytype.arrays.codebat.Has22;
+import com.gallopdevs.interviewtests.questionsbytype.arrays.codebat.Has77;
+import com.gallopdevs.interviewtests.questionsbytype.arrays.codebat.HaveThree;
+import com.gallopdevs.interviewtests.questionsbytype.arrays.codebat.IsEverywhere;
+import com.gallopdevs.interviewtests.questionsbytype.arrays.codebat.MatchUp;
+import com.gallopdevs.interviewtests.questionsbytype.arrays.codebat.MaxEnd3;
+import com.gallopdevs.interviewtests.questionsbytype.arrays.codebat.MidThree;
+import com.gallopdevs.interviewtests.questionsbytype.arrays.codebat.ModThree;
 import com.gallopdevs.interviewtests.questionsbytype.arrays.codebat.NotAlone;
 import com.gallopdevs.interviewtests.questionsbytype.arrays.codebat.Post4;
 import com.gallopdevs.interviewtests.questionsbytype.arrays.codebat.Pre4;
@@ -46,7 +47,6 @@ import com.gallopdevs.interviewtests.questionsbytype.arrays.codebat.TenRun;
 import com.gallopdevs.interviewtests.questionsbytype.arrays.codebat.TripleUp;
 import com.gallopdevs.interviewtests.questionsbytype.arrays.codebat.TwoTwo;
 import com.gallopdevs.interviewtests.questionsbytype.arrays.codebat.Unlucky1;
-import com.gallopdevs.interviewtests.questionsbytype.arrays.ZeroMatrix;
 import com.gallopdevs.interviewtests.questionsbytype.arrays.codebat.Without10;
 import com.gallopdevs.interviewtests.questionsbytype.arrays.codebat.ZeroFront;
 
@@ -112,15 +112,17 @@ public class ArraysTest {
 
     @Test
     public void RemoveDuplicates() {
-        System.out.println("=========Test1=========");
-        int[][] test = new int[][]{
+        System.out.println("=========RemoveDuplicates=========");
+        int[][] tests = new int[][]{
                 {1, 1, 2, 2, 3, 4, 5},
                 {1, 1, 1, 1, 1, 1, 1},
                 {1, 2, 3, 4, 5, 6, 7},
-                {1, 2, 1, 1, 1, 1, 1},};
-        for (int[] input : test) {
-            System.out.println("Array with Duplicates       : " + Arrays.toString(input));
-            System.out.println("After removing duplicates   : " + Arrays.toString(RemoveDuplicates.removeDuplicates(input)));
+                {1, 2, 1, 1, 1, 1, 1},
+                {1, 1, 2, 2, 3, 3, 4}
+        };
+        for (int[] test : tests) {
+            System.out.println("Array with Duplicates       : " + Arrays.toString(test));
+            System.out.println("After removing duplicates   : " + Arrays.toString(RemoveDuplicates.removeDuplicates(test)));
         }
     }
 

@@ -1,6 +1,8 @@
 package com.gallopdevs.interviewtests.questionsbytype.strings;
 
 public class IsPermutationPalindrome {
+    // Time: O(n)
+    // Space: O(n)
     private static final int a = Character.getNumericValue('a');
     private static final int z = Character.getNumericValue('z');
     public static boolean isPermutationPalindrome(String text) {
