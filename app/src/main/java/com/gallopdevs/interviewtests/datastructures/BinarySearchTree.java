@@ -24,6 +24,7 @@ public class BinarySearchTree {
         root = null;
     }
 
+    // Time: O(n)
     public int findValue(int data) {
         TreeNode node = findNode(root, data);
         return node == null ? null : node.data;
@@ -35,7 +36,8 @@ public class BinarySearchTree {
         return findNode(node.right, key);
     }
 
-    public void insertValue(int data, String value) {
+    // Time: O(n)
+    public void insertValue(int data) {
         root = insertNode(root, data);
     }
 
@@ -54,6 +56,7 @@ public class BinarySearchTree {
         return node.findMin();
     }
 
+    // Time: O(n)
     public void deleteValue(int key) {
         root = deleteNode(root, key);
     }

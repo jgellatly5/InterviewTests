@@ -14,6 +14,7 @@ public class Stack {
     private Node head;
     private int size;
 
+    // Time: O(1)
     public void push(int data) {
         Node newNode = new Node(data);
         if (head == null) {
@@ -25,6 +26,7 @@ public class Stack {
         size++;
     }
 
+    // Time: O(1)
     public int pop() {
         if (head == null) throw new EmptyStackException();
         int data = head.data;
@@ -33,14 +35,17 @@ public class Stack {
         return data;
     }
 
+    // Time: O(1)
     public int peek() {
         return head.data;
     }
 
+    // Time: O(1)
     public boolean isEmpty() {
         return head == null;
     }
 
+    // Time: O(1)
     public int size() {
         return size;
     }

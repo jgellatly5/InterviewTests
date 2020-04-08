@@ -37,6 +37,7 @@ public class MaxHeap {
         return items[parentIndex(index)];
     }
 
+    // Time: O(log(n))
     public void insert(int item) {
         ensureCapacity();
         items[size] = item;
@@ -65,6 +66,7 @@ public class MaxHeap {
         items[indexTwo] = temp;
     }
 
+    // Time: O(log(n))
     public int extractMax() {
         if (size == 0) throw new IllegalStateException();
         int max = items[0];

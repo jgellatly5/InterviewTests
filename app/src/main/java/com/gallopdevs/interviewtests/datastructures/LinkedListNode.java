@@ -16,6 +16,7 @@ public class LinkedListNode {
     public LinkedListNode head;
     private int size;
 
+    // Time: O(1)
     public void addFront(int data) {
         LinkedListNode newNode = new LinkedListNode(data);
         if (head == null) {
@@ -27,6 +28,7 @@ public class LinkedListNode {
         size++;
     }
 
+    // Time: O(n)
     public void addBack(int data) {
         LinkedListNode newNode = new LinkedListNode(data);
         if (head == null) {
@@ -41,10 +43,12 @@ public class LinkedListNode {
         size++;
     }
 
+    // Time: O(1)
     public int getFirst() {
         return head.data;
     }
 
+    // Time: O(n)
     public int getLast() {
         LinkedListNode current = head;
         while (current.next != null) {
@@ -53,6 +57,7 @@ public class LinkedListNode {
         return current.data;
     }
 
+    // Time: O(n)
     public void insertAtIndex(int index, int data) {
         LinkedListNode current = head;
         int i = 0;
@@ -66,6 +71,7 @@ public class LinkedListNode {
         size++;
     }
 
+    // Time: O(n)
     public LinkedListNode findNodeAtIndex(int index) {
         LinkedListNode current = head;
         int i = 0;
@@ -76,15 +82,18 @@ public class LinkedListNode {
         return current;
     }
 
+    // Time: O(1)
     public boolean isEmpty() {
         return head == null;
     }
 
+    // Time: O(1)
     public void clear() {
         head = null;
         size = 0;
     }
 
+    // Time: O(n)
     public void delete(int data) {
         if (head == null) return;
         if (head.data == data) {
@@ -102,10 +111,12 @@ public class LinkedListNode {
         }
     }
 
+    // Time: O(1)
     public int size() {
         return size;
     }
 
+    // Time: O(n)
     public void print() {
         LinkedListNode current = head;
         while (current != null) {

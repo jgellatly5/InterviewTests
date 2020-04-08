@@ -2,58 +2,32 @@ package com.gallopdevs.interviewtests.questionsbytype;
 
 public class ImplementationPractice {
 
-    public class HashTable {
-
-        private int initialCapacity = 16;
-        private HashEntry[] data;
-
-        private class HashEntry {
-            private String key;
-            private String value;
-            private HashEntry next;
-            HashEntry(String key, String value) {
-                this.key = key;
-                this.value = value;
-                this.next = null;
-            }
+    // Binary Search Iterative
+    // Time: O(log(n))
+    public int binarySearchIterative(int[] numbers, int target) {
+        int lowIndex = 0;
+        int highIndex = numbers.length - 1;
+        int middleIndex;
+        while (lowIndex <= highIndex) {
+            middleIndex = (lowIndex + highIndex) / 2;
+            if (numbers[middleIndex] < target) lowIndex = middleIndex + 1;
+            else if (numbers[middleIndex] > target) highIndex = middleIndex - 1;
+            else return numbers[middleIndex];
         }
+        throw new IllegalStateException();
+    }
 
-        public HashTable() {
-            data = new HashEntry[initialCapacity];
+    // Binary Search Recursive
+    // Time: O(log(n))
+    public int binarySearchRecursive(int[] numbers, int target, int lowIndex, int highIndex) {
+        if (lowIndex > highIndex) throw new IllegalStateException();
+        int middleIndex = (lowIndex + highIndex) / 2;
+        if (numbers[middleIndex] < target) {
+            return binarySearchRecursive(numbers, target, middleIndex + 1, highIndex);
         }
-
-        // getIndex
-        private int getIndex(String key) {
-            int index = key.hashCode();
-            return (index & 0x7fffffff) % initialCapacity;
+        if (numbers[middleIndex] > target) {
+            return binarySearchRecursive(numbers, target, lowIndex, middleIndex - 1);
         }
-
-        // get
-        public String get(String key) {
-            int index = getIndex(key);
-            HashEntry entries = data[index];
-            if (entries != null) {
-                while (!entries.key.equals(key) && entries.next != null) {
-                    entries = entries.next;
-                }
-                return entries.value;
-            }
-            return null;
-        }
-
-        // put
-        public void put(String key, String value) {
-            int index = getIndex(key);
-            HashEntry newEntry = new HashEntry(key, value);
-            if (data[index] == null) {
-                data[index] = newEntry;
-            } else {
-                HashEntry entries = data[index];
-                while (entries.next != null) {
-                    entries = entries.next;
-                }
-                entries.next = newEntry;
-            }
-        }
+        return numbers[middleIndex];
     }
 }

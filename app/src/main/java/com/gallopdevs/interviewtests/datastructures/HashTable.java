@@ -26,6 +26,7 @@ public class HashTable {
         return (hashCode & 0x7fffffff) % initialCapacity;
     }
 
+    // Time: O(n)
     public String get(String key) {
         int index = getIndex(key);
         HashEntry entries = data[index];
@@ -36,6 +37,7 @@ public class HashTable {
         return entries.value;
     }
 
+    // Time: O(n)
     public void put(String key, String value) {
         int index = getIndex(key);
         HashEntry newEntry = new HashEntry(key, value);
@@ -50,6 +52,7 @@ public class HashTable {
         }
     }
 
+    // Time: O(n)
     public void delete(String key) {
         int index = getIndex(key);
         HashEntry entries = data[index];

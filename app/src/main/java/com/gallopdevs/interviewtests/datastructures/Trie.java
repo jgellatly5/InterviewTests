@@ -23,6 +23,7 @@ public class Trie {
         root = new TrieNode();
     }
 
+    // Time: O(n)
     public void insert(String word) {
         HashMap<Character, TrieNode> children = root.children;
         TrieNode node = null;
@@ -41,10 +42,12 @@ public class Trie {
         }
     }
 
+    // Time: O(n)
     public boolean startsWith(String prefix) {
         return containsNode(prefix) != null;
     }
 
+    // Time: O(n)
     public boolean contains(String word) {
         TrieNode node = containsNode(word);
         return node != null && node.isWholeWord;

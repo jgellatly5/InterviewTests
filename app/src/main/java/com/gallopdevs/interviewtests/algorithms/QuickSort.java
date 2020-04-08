@@ -23,11 +23,9 @@ public class QuickSort {
             while (numbers[lowIndex] < pivotValue) {
                 lowIndex++;
             }
-
             while (numbers[highIndex] > pivotValue) {
                 highIndex--;
             }
-
             if (lowIndex <= highIndex) {
                 swapValues(numbers, lowIndex, highIndex);
                 lowIndex++;
