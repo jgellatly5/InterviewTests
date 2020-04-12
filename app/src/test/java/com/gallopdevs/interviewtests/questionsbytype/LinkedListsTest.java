@@ -319,19 +319,27 @@ public class LinkedListsTest {
 
     @Test
     public void Practice() {
-        System.out.println(isCyclic(node));
-        System.out.println(isCyclic(cyclicList));
+        System.out.println("\n=========SumLists Recursive=========");
+        // 6->7->8
+        prettyPrint(l1);
+        // 4->3->2
+        prettyPrint(l2);
+        prettyPrint(sumLists(l1, l2, 0));
     }
 
-    private boolean isCyclic(LinkedListNode head) {
-        LinkedListNode fast = head;
-        LinkedListNode slow = head;
-        while (fast != null && fast.next != null) {
-            fast = fast.next.next;
-            slow = slow.next;
-            if (fast == slow) return true;
-        }
-        return false;
+    private LinkedListNode sumLists(LinkedListNode l1, LinkedListNode l2, int carry) {
+        if (l1 == null && l2 == null && carry == 0) return null;
+        LinkedListNode result = new LinkedListNode();
+        int value = carry;
+        if (l1 != null) value += l1.data;
+        if (l2 != null) value += l2.data;
+        result.data = value % 10;
+        result.next = sumLists(
+                l1 != null ? l1.next : null,
+                l2 != null ? l2.next : null,
+                value >= 10 ? 1 : 0
+        );
+        return result;
     }
 
     private void prettyPrint(LinkedListNode node) {

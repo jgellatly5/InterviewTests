@@ -80,7 +80,8 @@ public class SumLists {
         if (l2 != null) value += l2.data;
         result.data = value % 10;
         if (l1 != null || l2 != null) {
-            result.next = sumListsRecursively(l1 == null ? null : l1.next,
+            result.next = sumListsRecursively(
+                    l1 == null ? null : l1.next,
                     l2 == null ? null : l2.next,
                     value >= 10 ? 1 : 0);
         }

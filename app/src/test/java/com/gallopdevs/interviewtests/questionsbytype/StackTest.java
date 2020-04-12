@@ -1,6 +1,6 @@
 package com.gallopdevs.interviewtests.questionsbytype;
 
-import com.gallopdevs.interviewtests.questionsbytype.stacks.ReverseStackUsingRecursion;
+import com.gallopdevs.interviewtests.questionsbytype.stacks.ReverseStack;
 import com.gallopdevs.interviewtests.questionsbytype.stacks.SortStackUsingRecursion;
 import com.gallopdevs.interviewtests.questionsbytype.stacks.SortStackUsingTempStack;
 
@@ -10,8 +10,6 @@ import org.junit.Test;
 import java.util.Stack;
 
 public class StackTest {
-
-    // 4. Reverse a stack without using extra space in O(n)
     // 5. Delete middle element of a stack
     // 6. Sorting array using stacks
     // 7. Implement queue using stacks
@@ -41,12 +39,11 @@ public class StackTest {
     }
 
     @Test
-    public void ReverseStackUsingRecursion() {
+    public void ReverseStack() {
         System.out.println("Original Stack");
-        System.out.println(stack);
-        ReverseStackUsingRecursion.reverse(stack);
+        System.out.println(stack2);
         System.out.println("Reversed Stack");
-        System.out.println(stack);
+        System.out.println(ReverseStack.reverseStack(stack2));
     }
 
     @Test
@@ -66,5 +63,28 @@ public class StackTest {
         SortStackUsingTempStack.sortStack(stack2);
         System.out.println("Sorted Stack");
         System.out.println(stack2);
+    }
+
+    @Test
+    public void Practice() {
+
+    }
+
+    private Stack<Integer> reverseStack(Stack<Integer> stack) {
+        if (stack.isEmpty()) return stack;
+        int temp = stack.pop();
+        reverseStack(stack);
+        insertAtBottom(stack, temp);
+        return stack;
+    }
+
+    private void insertAtBottom(Stack<Integer> stack, int x) {
+        if (stack.isEmpty()) {
+            stack.push(x);
+            return;
+        }
+        int temp = stack.pop();
+        insertAtBottom(stack, x);
+        stack.push(temp);
     }
 }

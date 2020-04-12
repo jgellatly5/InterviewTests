@@ -808,20 +808,46 @@ public class ArraysTest {
 
     @Test
     public void Practice() {
-        int[] test1 = {4, 5, 6, 7, 8};
-        sumPairs(test1, 12);
+        System.out.println("=========ZeroMatrix=========");
+        int[][] matrix = {
+                {0, 2, 3, 4},
+                {5, 6, 7, 8},
+                {9, 10, 11, 12},
+                {13, 14, 15, 16}
+        };
+        zeroMatrix(matrix);
+        printMatrix(matrix);
     }
 
-    private void sumPairs(int[] numbers, int sum) {
-        if (numbers.length < 2) return;
-        HashSet<Integer> hashSet = new HashSet<>();
-        for (int num : numbers) {
-            int target = sum - num;
-            if (!hashSet.contains(target)) {
-                hashSet.add(num);
-            } else {
-                System.out.printf("(%d, %d) %n", num, target);
+    private void zeroMatrix(int[][] matrix) {
+        boolean[] row = new boolean[matrix.length];
+        boolean[] column = new boolean[matrix[0].length];
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[0].length; j++) {
+                if (matrix[i][j] == 0) {
+                    row[i] = true;
+                    column[j] = true;
+                }
             }
+        }
+        for (int i = 0; i < row.length; i++) {
+            if (row[i]) nullifyRow(matrix, i);
+        }
+        for (int j = 0; j < column.length; j++) {
+            if (column[j]) nullifyColumn(matrix, j);
+        }
+        // print;
+    }
+
+    private void nullifyRow(int[][] matrix, int row) {
+        for (int j = 0; j < matrix[0].length; j++) {
+            matrix[row][j] = 0;
+        }
+    }
+
+    private void nullifyColumn(int[][] matrix, int column) {
+        for (int i = 0; i < matrix.length; i++) {
+            matrix[i][column] = 0;
         }
     }
 
