@@ -112,10 +112,10 @@ public class LinkedListsTest {
     public void FindLength() {
         System.out.println("=========FindLength Iteratively=========");
         int length = FindLength.findLength(node);
-        prettyPrint(node);
+        LinkedListNode.print(node);
         System.out.println("findLength: " + length);
         System.out.println("\n=========FindLength Recursively=========");
-        prettyPrint(node);
+        LinkedListNode.print(node);
         int length3 = FindLength.findLengthRecursive(node);
         System.out.println("findLength: " + length3);
     }
@@ -123,7 +123,7 @@ public class LinkedListsTest {
     @Test
     public void FindMiddle() {
         System.out.println("\n=========FindLength Middle=========");
-        prettyPrint(l2);
+        LinkedListNode.print(l2);
         int middle = FindMiddle.findMiddle(l2);
         System.out.println("findMiddle: " + middle);
     }
@@ -141,116 +141,116 @@ public class LinkedListsTest {
     @Test
     public void RemoveDuplicatesUnsorted() {
         System.out.println("=========RemoveDuplicatesSet=========");
-        prettyPrint(node);
+        LinkedListNode.print(node);
         RemoveDuplicatesUnsorted.removeDuplicates(node);
-        prettyPrint(node);
+        LinkedListNode.print(node);
         System.out.println("\n=========RemoveDuplicatesLoops=========");
-        prettyPrint(node3);
+        LinkedListNode.print(node3);
         RemoveDuplicatesUnsorted.removeDuplicatesLoops(node3);
-        prettyPrint(node3);
+        LinkedListNode.print(node3);
     }
 
     @Test
     public void RemoveDuplicatesSortedIterative() {
         System.out.println("=========Test1 RemoveDuplicatesSorted=========");
-        prettyPrint(nodeSorted);
+        LinkedListNode.print(nodeSorted);
         RemoveDuplicatesSorted.removeDuplicatesSorted(nodeSorted);
-        prettyPrint(nodeSorted);
+        LinkedListNode.print(nodeSorted);
     }
 
     @Test
     public void RemoveDuplicatesSortedRecursive() {
         System.out.println("=========Test1 RemoveDuplicatesSorted=========");
-        prettyPrint(nodeSorted);
+        LinkedListNode.print(nodeSorted);
         RemoveDuplicatesSorted.removeDuplicatesRecursive(nodeSorted);
-        prettyPrint(nodeSorted);
+        LinkedListNode.print(nodeSorted);
     }
 
     @Test
     public void DeleteMiddle() {
         System.out.println("=========Test1 DeleteMiddle=========");
         System.out.println("findLength before: " + FindLength.findLength(node));
-        prettyPrint(node);
+        LinkedListNode.print(node);
         DeleteMiddle.deleteMiddle(node);
         System.out.println("findLength after: " + FindLength.findLength(node));
-        prettyPrint(node);
+        LinkedListNode.print(node);
         System.out.println("\n=========Test2 DeleteMiddle=========");
         System.out.println("findLength before: " + FindLength.findLength(node2));
-        prettyPrint(node2);
+        LinkedListNode.print(node2);
 //        DeleteMiddleNode2.deleteMiddleNode(node2.next);
         System.out.println("findLength after: " + FindLength.findLength(node2));
-        prettyPrint(node2);
+        LinkedListNode.print(node2);
     }
 
     @Test
     public void ReverseList() {
         System.out.println("=========ReverseList Iteratively=========");
-        prettyPrint(node);
-        prettyPrint(ReverseList.reverseListIterative(node));
+        LinkedListNode.print(node);
+        LinkedListNode.print(ReverseList.reverseListIterative(node));
         System.out.println("\n=========ReverseList Recursively=========");
-        prettyPrint(node2);
+        LinkedListNode.print(node2);
         ReverseList.reverseListRecursive(node2);
     }
 
     @Test
     public void PrintKthToLast() {
         System.out.println("=========PrintKthToLastUsingLength=========");
-        prettyPrint(node);
+        LinkedListNode.print(node);
         PrintKthToLast.printKthToLastUsingLength(node, 5);
         System.out.println("\n=========PrintKthToLastPointers=========");
-        prettyPrint(node);
+        LinkedListNode.print(node);
         PrintKthToLast.printKthToLastPointers(node, 5);
         System.out.println("\n=========PrintKthToLastRecursively=========");
-        prettyPrint(node);
+        LinkedListNode.print(node);
         PrintKthToLast.printKthToLastRecursive(node, 5);
     }
 
     @Test
     public void Partition() {
         System.out.println("=========Test1 Partition=========");
-        prettyPrint(node);
-        prettyPrint(Partition.partition(node, 3));
+        LinkedListNode.print(node);
+        LinkedListNode.print(Partition.partition(node, 3));
     }
 
     @Test
     public void SumLists() {
         System.out.println("\n=========SumLists Stack=========");
-        prettyPrint(l1);
-        prettyPrint(l2);
-        prettyPrint(SumLists.sumListsStack(l1, l2));
+        LinkedListNode.print(l1);
+        LinkedListNode.print(l2);
+        LinkedListNode.print(SumLists.sumListsStack(l1, l2));
         System.out.println("=========SumLists Iterative=========");
-        prettyPrint(l1);
-        prettyPrint(l2);
-        prettyPrint(SumLists.sumListsIterative(l1, l2));
+        LinkedListNode.print(l1);
+        LinkedListNode.print(l2);
+        LinkedListNode.print(SumLists.sumListsIterative(l1, l2));
         System.out.println("\n=========SumLists Recursive=========");
-        prettyPrint(l1);
-        prettyPrint(l2);
-        prettyPrint(SumLists.sumListsRecursively(l1, l2, 0));
+        LinkedListNode.print(l1);
+        LinkedListNode.print(l2);
+        LinkedListNode.print(SumLists.sumListsRecursively(l1, l2, 0));
     }
 
     @Test
     public void IsPalindrome() {
         System.out.println("=========IsPalindromeUsingReverse=========");
-        prettyPrint(node);
+        LinkedListNode.print(node);
         System.out.println(IsPalindromeCloneAndReverse.isPalindrome(node));
-        prettyPrint(nodePalindrome);
+        LinkedListNode.print(nodePalindrome);
         System.out.println(IsPalindromeCloneAndReverse.isPalindrome(nodePalindrome));
     }
 
     @Test
     public void IsPalindromeUsingStack() {
         System.out.println("\n=========IsPalindromeUsingStack=========");
-        prettyPrint(node2);
+        LinkedListNode.print(node2);
         System.out.println(IsPalindromeStack.isPalindromeStack(node2));
-        prettyPrint(nodePalindrome2);
+        LinkedListNode.print(nodePalindrome2);
         System.out.println(IsPalindromeStack.isPalindromeStack(nodePalindrome2));
     }
 
     @Test
     public void FindIntersection() {
         System.out.println("=========Test1 FindIntersection=========");
-        prettyPrint(nodeIntersection);
-        prettyPrint(nodeIntersection2);
+        LinkedListNode.print(nodeIntersection);
+        LinkedListNode.print(nodeIntersection2);
         LinkedListNode pointOfIntersection = FindIntersection.findIntersection(nodeIntersection, nodeIntersection2);
         System.out.println(pointOfIntersection.data);
     }
@@ -264,7 +264,7 @@ public class LinkedListsTest {
         LinkedListNode l2 = new LinkedListNode(13);
         l2.next = new LinkedListNode(15);
         l2.next.next = new LinkedListNode(17);
-        prettyPrint(SortedMerge.sortedMergeIterative(l1, l2));
+        LinkedListNode.print(SortedMerge.sortedMergeIterative(l1, l2));
         System.out.println("\n=========SortedMerge Recursive=========");
         LinkedListNode l3 = new LinkedListNode(2);
         l3.next = new LinkedListNode(4);
@@ -272,7 +272,7 @@ public class LinkedListsTest {
         LinkedListNode l4 = new LinkedListNode(3);
         l4.next = new LinkedListNode(5);
         l4.next.next = new LinkedListNode(7);
-        prettyPrint(SortedMerge.sortedMergeRecursive(l3, l4));
+        LinkedListNode.print(SortedMerge.sortedMergeRecursive(l3, l4));
     }
 
     @Test
@@ -284,36 +284,36 @@ public class LinkedListsTest {
         LinkedListNode l2 = new LinkedListNode(3);
         l2.next = new LinkedListNode(5);
         l2.next.next = new LinkedListNode(7);
-        prettyPrint(AppendList.appendList(l1, l2));
+        LinkedListNode.print(AppendList.appendList(l1, l2));
     }
 
     @Test
     public void FindDuplicates() {
         System.out.println("=========Find Duplicates Loops=========");
-        prettyPrint(node2);
+        LinkedListNode.print(node2);
         FindDuplicates.findDuplicatesLoops(node2);
         System.out.println("\n=========Find Duplicates Set=========");
-        prettyPrint(node2);
+        LinkedListNode.print(node2);
         FindDuplicates.findDuplicatesSet(node2);
         System.out.println("\n=========Find Duplicates Set=========");
-        prettyPrint(node2);
+        LinkedListNode.print(node2);
         FindDuplicates.findDuplicatesCount(node2);
     }
 
     @Test
     public void ReversePairs() {
         System.out.println("=========Reverse Pairs Iteratively=========");
-        prettyPrint(node2);
-        prettyPrint(ReversePairs.reversePairs(node2));
+        LinkedListNode.print(node2);
+        LinkedListNode.print(ReversePairs.reversePairs(node2));
         System.out.println("\n=========Reverse Pairs Recursively=========");
-        prettyPrint(node2);
-        prettyPrint(ReversePairs.reversePairsRecursive(node2));
+        LinkedListNode.print(node2);
+        LinkedListNode.print(ReversePairs.reversePairsRecursive(node2));
     }
 
     @Test
     public void ReversePrintList() {
         System.out.println("=========ReversePrintList=========");
-        prettyPrint(node);
+        LinkedListNode.print(node);
         ReversePrintList.reversePrintList(node);
     }
 
@@ -321,10 +321,10 @@ public class LinkedListsTest {
     public void Practice() {
         System.out.println("\n=========SumLists Recursive=========");
         // 6->7->8
-        prettyPrint(l1);
+        LinkedListNode.print(l1);
         // 4->3->2
-        prettyPrint(l2);
-        prettyPrint(sumLists(l1, l2, 0));
+        LinkedListNode.print(l2);
+        LinkedListNode.print(sumLists(l1, l2, 0));
     }
 
     private LinkedListNode sumLists(LinkedListNode l1, LinkedListNode l2, int carry) {
@@ -340,13 +340,5 @@ public class LinkedListsTest {
                 value >= 10 ? 1 : 0
         );
         return result;
-    }
-
-    private void prettyPrint(LinkedListNode node) {
-        while (node != null) {
-            System.out.print(node.data + " ");
-            node = node.next;
-        }
-        System.out.println();
     }
 }

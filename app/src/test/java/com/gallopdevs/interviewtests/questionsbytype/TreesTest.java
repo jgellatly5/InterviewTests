@@ -13,8 +13,8 @@ import com.gallopdevs.interviewtests.questionsbytype.trees.MinimalTreeFromArray;
 import com.gallopdevs.interviewtests.questionsbytype.trees.PostOrderTraversal;
 import com.gallopdevs.interviewtests.questionsbytype.trees.PreOrderTraversal;
 import com.gallopdevs.interviewtests.questionsbytype.trees.SpiralOrderTraversal;
-import com.gallopdevs.interviewtests.questionsbytype.trees.ValidateBstInOrderTraversal;
-import com.gallopdevs.interviewtests.questionsbytype.trees.ValidateBstMinMax;
+import com.gallopdevs.interviewtests.questionsbytype.trees.VerifyBST;
+import com.gallopdevs.interviewtests.questionsbytype.trees.VerifyBstInOrderTraversal;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -111,15 +111,16 @@ public class TreesTest {
     }
 
     @Test
-    public void ValidateBstInOrderTraversal() {
-        System.out.println("=========Test1 ValidateBstInOrderTraversal=========");
-        System.out.println(ValidateBstInOrderTraversal.validateBstIot(root));
+    public void VerifyBST() {
+        System.out.println("=========VerifyBST=========");
+        System.out.println(VerifyBST.verifyBST(root));
+        System.out.println(VerifyBST.verifyBST(node));
     }
 
     @Test
-    public void ValidateBstMinMax() {
-        System.out.println("=========Test1 ValidateBstMinMax=========");
-        System.out.println(ValidateBstMinMax.validateBstMinMax(root));
+    public void VerifyBstInOrderTraversal() {
+        System.out.println("=========VerifyBstInOrderTraversal=========");
+        System.out.println(VerifyBstInOrderTraversal.verifyBstIot(root));
     }
 
     @Test
@@ -193,6 +194,18 @@ public class TreesTest {
 
     @Test
     public void Practice() {
+        System.out.println("=========VerifyBST=========");
+        System.out.println(verifyBst(root));
+        System.out.println(verifyBst(node));
+    }
 
+    public boolean verifyBst(BinarySearchTree.TreeNode node) {
+        return verifyBst(node, Integer.MIN_VALUE, Integer.MAX_VALUE);
+    }
+
+    private boolean verifyBst(BinarySearchTree.TreeNode node, int min, int max) {
+        if (node == null) return true;
+        if (node.data < min || node.data > max) return false;
+        return verifyBst(node.left, min, node.data) && verifyBst(node.right, node.data + 1, max);
     }
 }

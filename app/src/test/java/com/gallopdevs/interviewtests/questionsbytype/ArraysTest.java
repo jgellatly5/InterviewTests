@@ -316,10 +316,13 @@ public class ArraysTest {
         System.out.println("=========CountPairsWithSum=========");
         int[] numbers = {2, 3, 6, 2, 8};
         System.out.println(CountPairsWithSum.countPairsWithSum(numbers, 8));
+        System.out.println(CountPairsWithSum.countPairsWithSumSet(numbers, 8));
         int[] numbers2 = {7, 15, 9, 10, 2, 1, 5, 2, 6, 11, 6};
         System.out.println(CountPairsWithSum.countPairsWithSum(numbers2, 12));
+        System.out.println(CountPairsWithSum.countPairsWithSumSet(numbers2, 12));
         int[] numbers3 = {2, 2, 2, 2, 2, 2};
         System.out.println(CountPairsWithSum.countPairsWithSum(numbers3, 4));
+        System.out.println(CountPairsWithSum.countPairsWithSumSet(numbers3, 4));
     }
 
     @Test

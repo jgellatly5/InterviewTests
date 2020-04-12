@@ -117,8 +117,8 @@ public class LinkedListNode {
     }
 
     // Time: O(n)
-    public void print() {
-        LinkedListNode current = head;
+    public static void print(LinkedListNode node) {
+        LinkedListNode current = node;
         while (current != null) {
             System.out.print(current.data + " ");
             current = current.next;

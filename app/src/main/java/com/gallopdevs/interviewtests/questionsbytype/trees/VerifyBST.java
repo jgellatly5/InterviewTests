@@ -1,4 +1,4 @@
-package com.gallopdevs.interviewtests.questionsbytype.recursive;
+package com.gallopdevs.interviewtests.questionsbytype.trees;
 
 import com.gallopdevs.interviewtests.datastructures.BinarySearchTree;
 

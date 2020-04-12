@@ -1,5 +1,7 @@
 package com.gallopdevs.interviewtests.questionsbytype;
 
+import com.gallopdevs.interviewtests.datastructures.BinarySearchTree;
+import com.gallopdevs.interviewtests.questionsbytype.recursive.SquareSubmatrix;
 import com.gallopdevs.interviewtests.questionsbytype.recursive.SumWithoutArithmetic;
 import com.gallopdevs.interviewtests.questionsbytype.recursive.codebat.AllStar;
 import com.gallopdevs.interviewtests.questionsbytype.recursive.codebat.Array11;
@@ -45,26 +47,26 @@ import java.util.Stack;
 
 public class RecursionTest {
 
-    private VerifyBST.Node node;
-    private VerifyBST.Node node2;
+    private BinarySearchTree.TreeNode node;
+    private BinarySearchTree.TreeNode node2;
 
     @Before
     public void Setup() {
-        node = new VerifyBST.Node(5);
-        node.left = new VerifyBST.Node(2);
-        node.right = new VerifyBST.Node(7);
-        node.left.left = new VerifyBST.Node(1);
-        node.left.right = new VerifyBST.Node(3);
-        node.right.left = new VerifyBST.Node(6);
-        node.right.right = new VerifyBST.Node(8);
+        node = new BinarySearchTree.TreeNode(5);
+        node.left = new BinarySearchTree.TreeNode(2);
+        node.right = new BinarySearchTree.TreeNode(7);
+        node.left.left = new BinarySearchTree.TreeNode(1);
+        node.left.right = new BinarySearchTree.TreeNode(3);
+        node.right.left = new BinarySearchTree.TreeNode(6);
+        node.right.right = new BinarySearchTree.TreeNode(8);
 
-        node2 = new VerifyBST.Node(5);
-        node2.left = new VerifyBST.Node(2);
-        node2.right = new VerifyBST.Node(7);
-        node2.left.left = new VerifyBST.Node(1);
-        node2.left.right = new VerifyBST.Node(3);
-        node2.right.left = new VerifyBST.Node(6);
-        node2.right.right = new VerifyBST.Node(4);
+        node2 = new BinarySearchTree.TreeNode(5);
+        node2.left = new BinarySearchTree.TreeNode(2);
+        node2.right = new BinarySearchTree.TreeNode(7);
+        node2.left.left = new BinarySearchTree.TreeNode(1);
+        node2.left.right = new BinarySearchTree.TreeNode(3);
+        node2.right.left = new BinarySearchTree.TreeNode(6);
+        node2.right.right = new BinarySearchTree.TreeNode(4);
     }
 
     @Test
@@ -78,9 +80,9 @@ public class RecursionTest {
     @Test
     public void VerifyBST() {
         System.out.println("=========Verify BST=========");
-        System.out.println(VerifyBST.isBST(node));
+        System.out.println(VerifyBST.verifyBST(node));
         System.out.println();
-        System.out.println(VerifyBST.isBST(node2));
+        System.out.println(VerifyBST.verifyBST(node2));
     }
 
     @Test
@@ -373,5 +375,15 @@ public class RecursionTest {
     public void SumWithoutArithmetic() {
         System.out.println(SumWithoutArithmetic.sumWithoutArithmetic(4, 5));
         System.out.println(SumWithoutArithmetic.sumWithoutArithmetic(6, 7));
+    }
+
+    @Test
+    public void SquareSubmatrix() {
+        boolean[][] test = {
+                {false, true, false, false},
+                {true, true, true, true},
+                {false, true, true, false}
+        };
+        System.out.println(SquareSubmatrix.squareSubmatrix(test));
     }
 }
