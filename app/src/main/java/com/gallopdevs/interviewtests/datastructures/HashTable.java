@@ -1,10 +1,6 @@
 package com.gallopdevs.interviewtests.datastructures;
 
 public class HashTable {
-
-    private int initialCapacity = 16;
-    private HashEntry[] data;
-
     private static class HashEntry {
         private String key;
         private String value;
@@ -16,6 +12,9 @@ public class HashTable {
             this.next = null;
         }
     }
+
+    private int initialCapacity = 16;
+    private HashEntry[] data;
 
     public HashTable() {
         data = new HashEntry[initialCapacity];

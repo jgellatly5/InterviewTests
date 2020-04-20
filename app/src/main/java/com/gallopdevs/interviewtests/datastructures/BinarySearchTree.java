@@ -1,7 +1,6 @@
 package com.gallopdevs.interviewtests.datastructures;
 
 public class BinarySearchTree {
-
     public static class TreeNode {
         public int data;
         public TreeNode left;

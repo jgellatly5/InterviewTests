@@ -20,12 +20,8 @@ public class QuickSort {
 
     private static int partition(int[] numbers, int lowIndex, int highIndex, int pivotValue) {
         while (lowIndex <= highIndex) {
-            while (numbers[lowIndex] < pivotValue) {
-                lowIndex++;
-            }
-            while (numbers[highIndex] > pivotValue) {
-                highIndex--;
-            }
+            while (numbers[lowIndex] < pivotValue) lowIndex++;
+            while (numbers[highIndex] > pivotValue) highIndex--;
             if (lowIndex <= highIndex) {
                 swapValues(numbers, lowIndex, highIndex);
                 lowIndex++;

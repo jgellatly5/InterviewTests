@@ -1,33 +1,27 @@
 package com.gallopdevs.interviewtests.questionsbytype;
 
+import org.junit.Test;
+
+import java.util.Arrays;
+
 public class ImplementationPractice {
 
-    // Binary Search Iterative
-    // Time: O(log(n))
-    public int binarySearchIterative(int[] numbers, int target) {
-        int lowIndex = 0;
-        int highIndex = numbers.length - 1;
-        int middleIndex;
-        while (lowIndex <= highIndex) {
-            middleIndex = (lowIndex + highIndex) / 2;
-            if (numbers[middleIndex] < target) lowIndex = middleIndex + 1;
-            else if (numbers[middleIndex] > target) highIndex = middleIndex - 1;
-            else return numbers[middleIndex];
-        }
-        throw new IllegalStateException();
+    @Test
+    public void Practice() {
+        int[] test = {7, 4, 9, 10, 3, 2};
+        bubbleSort(test);
     }
 
-    // Binary Search Recursive
-    // Time: O(log(n))
-    public int binarySearchRecursive(int[] numbers, int target, int lowIndex, int highIndex) {
-        if (lowIndex > highIndex) throw new IllegalStateException();
-        int middleIndex = (lowIndex + highIndex) / 2;
-        if (numbers[middleIndex] < target) {
-            return binarySearchRecursive(numbers, target, middleIndex + 1, highIndex);
+    public void bubbleSort(int[] numbers) {
+        for (int i = 0; i < numbers.length - 1; i++) {
+            for (int j = 0; j < numbers.length - 1 - i; j++) {
+                if (numbers[j] > numbers[j + 1]) {
+                    int temp = numbers[j];
+                    numbers[j] = numbers[j + 1];
+                    numbers[j + 1] = temp;
+                }
+            }
         }
-        if (numbers[middleIndex] > target) {
-            return binarySearchRecursive(numbers, target, lowIndex, middleIndex - 1);
-        }
-        return numbers[middleIndex];
+        System.out.println(Arrays.toString(numbers));
     }
 }

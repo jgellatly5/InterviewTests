@@ -5,9 +5,8 @@ public class BinarySearch {
     public static int binarySearchIterative(int[] numbers, int target) {
         int lowIndex = 0;
         int highIndex = numbers.length - 1;
-        int middleIndex;
         while (lowIndex <= highIndex) {
-            middleIndex = (lowIndex + highIndex) / 2;
+            int middleIndex = (lowIndex + highIndex) / 2;
             if (numbers[middleIndex] < target) lowIndex = middleIndex + 1;
             else if (numbers[middleIndex] > target) highIndex = middleIndex - 1;
             else return numbers[middleIndex];

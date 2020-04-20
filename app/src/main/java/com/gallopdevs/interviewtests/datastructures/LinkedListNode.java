@@ -21,6 +21,7 @@ public class LinkedListNode {
         LinkedListNode newNode = new LinkedListNode(data);
         if (head == null) {
             head = newNode;
+            size++;
             return;
         }
         newNode.next = head;
@@ -33,6 +34,7 @@ public class LinkedListNode {
         LinkedListNode newNode = new LinkedListNode(data);
         if (head == null) {
             head = newNode;
+            size++;
             return;
         }
         LinkedListNode current = head;

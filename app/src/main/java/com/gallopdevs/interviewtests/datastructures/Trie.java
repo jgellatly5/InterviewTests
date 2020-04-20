@@ -3,7 +3,6 @@ package com.gallopdevs.interviewtests.datastructures;
 import java.util.HashMap;
 
 public class Trie {
-
     private static class TrieNode {
         private char character;
         private boolean isWholeWord;

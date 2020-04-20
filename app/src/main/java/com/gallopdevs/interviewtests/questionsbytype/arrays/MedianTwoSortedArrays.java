@@ -6,23 +6,21 @@ public class MedianTwoSortedArrays {
     // Iterative
     // Time: O(n)
     // Space: O(n)
-    public static double medianTwoSortedArrays(int[] numbers1, int[] numbers2) {
-        int[] result = new int[numbers1.length + numbers2.length];
-        int index1 = 0;
-        int index2 = 0;
-        int resultIndex = 0;
-        while (index2 < numbers2.length && index1 < numbers1.length) {
-            if (numbers1[index1] < numbers2[index2]) {
-                result[resultIndex++] = numbers1[index1++];
+    public static double medianTwoSortedArrays(int[] a, int[] b) {
+        int[] result = new int[a.length + b.length];
+        int i = 0, j = 0, k = 0;
+        while (j < b.length && i < a.length) {
+            if (a[i] < b[j]) {
+                result[k++] = a[i++];
             } else {
-                result[resultIndex++] = numbers2[index2++];
+                result[k++] = b[j++];
             }
         }
-        while (index1 < numbers1.length) {
-            result[resultIndex++] = numbers1[index1++];
+        while (i < a.length) {
+            result[k++] = a[i++];
         }
-        while (index2 < numbers2.length) {
-            result[resultIndex++] = numbers2[index2++];
+        while (j < b.length) {
+            result[k++] = b[j++];
         }
         System.out.println(Arrays.toString(result));
         double median;

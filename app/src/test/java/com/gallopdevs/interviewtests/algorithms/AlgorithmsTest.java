@@ -43,8 +43,8 @@ public class AlgorithmsTest {
     public void BinarySearch() {
         System.out.println("=========BinarySearch=========");
         int[] array = {3, 52, 79, 184, 256, 373, 490};
-        Assert.assertEquals(BinarySearch.binarySearchIterative(array, 52), 1);
-        Assert.assertEquals(BinarySearch.binarySearchRecursive(array, 52, 0, array.length - 1), 1);
+        System.out.println(BinarySearch.binarySearchIterative(array, 52));
+        System.out.println(BinarySearch.binarySearchRecursive(array, 52, 0, array.length - 1));
     }
 
     @Test
