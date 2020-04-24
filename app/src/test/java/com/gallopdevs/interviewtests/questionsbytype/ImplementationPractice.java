@@ -2,26 +2,30 @@ package com.gallopdevs.interviewtests.questionsbytype;
 
 import org.junit.Test;
 
+import java.sql.Array;
 import java.util.Arrays;
+import java.util.HashSet;
 
 public class ImplementationPractice {
 
     @Test
     public void Practice() {
-        int[] test = {7, 4, 9, 10, 3, 2};
-        bubbleSort(test);
+        int[] test1 = {27, 1, 34, 9, 2};
+        Integer[] test2 = {4, 4, 4, 4};
+        System.out.println(findSecondLargest(test1));
     }
 
-    public void bubbleSort(int[] numbers) {
-        for (int i = 0; i < numbers.length - 1; i++) {
-            for (int j = 0; j < numbers.length - 1 - i; j++) {
-                if (numbers[j] > numbers[j + 1]) {
-                    int temp = numbers[j];
-                    numbers[j] = numbers[j + 1];
-                    numbers[j + 1] = temp;
-                }
+    private int findSecondLargest(int[] numbers) {
+        int max = Integer.MIN_VALUE;
+        int secondLargest = Integer.MIN_VALUE;
+        for (int num : numbers) {
+            if (num > max) {
+                secondLargest = max;
+                max = num;
+            } else if (num > secondLargest && max != num) {
+                secondLargest = num;
             }
         }
-        System.out.println(Arrays.toString(numbers));
+        return secondLargest;
     }
 }

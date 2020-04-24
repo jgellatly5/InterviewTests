@@ -1,8 +1,8 @@
 package com.gallopdevs.interviewtests.questionsbytype.arrays;
 
 public class ZeroMatrix {
-    // Time: O(n)
-    // Space: O(n)
+    // Time: O(m * n), m = # of rows, n = # of columns
+    // Space: O(m + n), m = # of rows, n = # of columns
     public static void zeroMatrix(int[][] matrix) {
         boolean[] row = new boolean[matrix.length];
         boolean[] column = new boolean[matrix[0].length];

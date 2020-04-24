@@ -776,11 +776,6 @@ public class ArraysTest {
         }
         System.out.println();
 
-        // 20. Find 2nd largest element
-        System.out.println("20.====================");
-        int[] secondLargest = {10, 20, 30, 40, 50};
-        findSecondLargest(secondLargest);
-
         // 21. Find 2nd smallest element
         System.out.println("21.====================");
         int[] secondSmallest = {10, 20, 30, 40, 50};
@@ -877,27 +872,6 @@ public class ArraysTest {
         System.arraycopy(a, 0, result, 0, a.length);
         System.arraycopy(b, 0, result, a.length, b.length);
         return result;
-    }
-
-    private void findSecondLargest(int[] numbers) {
-        if (numbers.length < 2) {
-            System.out.println("Invalid size");
-        }
-        int max = Integer.MIN_VALUE;
-        int secondLargest = Integer.MIN_VALUE;
-        for (int num : numbers) {
-            if (num > max) {
-                secondLargest = max;
-                max = num;
-            } else if (num > secondLargest && num != max) {
-                secondLargest = num;
-            }
-        }
-        if (secondLargest == Integer.MIN_VALUE) {
-            System.out.println("There is no second largest element");
-        } else {
-            System.out.println("Second largest element is: " + secondLargest);
-        }
     }
 
     private void findSecondSmallest(int[] numbers) {
