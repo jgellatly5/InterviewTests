@@ -1,17 +1,12 @@
 package com.gallopdevs.interviewtests.questionsbytype;
 
-import android.support.annotation.NonNull;
-
 import com.gallopdevs.interviewtests.questionsbytype.queues.ReverseQueue;
 
 import org.junit.Before;
 import org.junit.Test;
 
 import java.util.ArrayDeque;
-import java.util.Collection;
-import java.util.Iterator;
 import java.util.Queue;
-import java.util.Stack;
 
 public class QueueTest {
     // https://www.geeksforgeeks.org/queue-data-structure/
@@ -33,5 +28,11 @@ public class QueueTest {
     public void ReverseQueue() {
         System.out.println(queue);
         System.out.println(ReverseQueue.reverseQueue(queue));
+    }
+
+    @Test
+    public void ReverseQueueInPlace() {
+        System.out.println(queue);
+        System.out.println(ReverseQueue.reverseQueueInPlace(queue));
     }
 }

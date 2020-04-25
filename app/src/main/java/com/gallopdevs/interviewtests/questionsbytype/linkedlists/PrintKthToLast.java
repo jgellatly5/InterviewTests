@@ -42,6 +42,7 @@ public class PrintKthToLast {
 
     // Recursive
     // Time: O(n)
+    // Space: O(n)
     public static int printKthToLastRecursive(LinkedListNode head, int k) {
         if (head == null) return -1;
         int index = printKthToLastRecursive(head.next, k) + 1;

@@ -1,6 +1,7 @@
 package com.gallopdevs.interviewtests.questionsbytype.strings;
 
 public class OneEditAway {
+    // Time: O(n)
     public static boolean oneEditAway(String s1, String s2) {
         if (s1.length() == s2.length()) {
             return oneEditReplace(s1, s2);
@@ -35,6 +36,18 @@ public class OneEditAway {
                 index1++;
                 index2++;
             }
+        }
+        return true;
+    }
+
+    // Alternative
+    // Time: O(n)
+    private boolean oneEditAwayAlt(String s1, String s2) {
+        if (Math.abs(s1.length() - s2.length()) > 1) return false;
+        int count = 0;
+        for (int i = 0; i < s1.length() && i < s2.length(); i++) {
+            if (s1.charAt(i) != s2.charAt(i)) count++;
+            if (count > 1) return false;
         }
         return true;
     }

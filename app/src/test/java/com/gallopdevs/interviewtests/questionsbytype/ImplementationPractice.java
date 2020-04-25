@@ -2,30 +2,37 @@ package com.gallopdevs.interviewtests.questionsbytype;
 
 import org.junit.Test;
 
-import java.sql.Array;
-import java.util.Arrays;
-import java.util.HashSet;
+import java.util.Stack;
 
 public class ImplementationPractice {
 
     @Test
     public void Practice() {
-        int[] test1 = {27, 1, 34, 9, 2};
-        Integer[] test2 = {4, 4, 4, 4};
-        System.out.println(findSecondLargest(test1));
+        Stack<Integer> test1 = new Stack<>();
+        test1.push(4);
+        test1.push(3);
+        test1.push(2);
+        test1.push(1);
+        System.out.println(test1);
+        reverseStack(test1);
+        System.out.println(test1);
     }
 
-    private int findSecondLargest(int[] numbers) {
-        int max = Integer.MIN_VALUE;
-        int secondLargest = Integer.MIN_VALUE;
-        for (int num : numbers) {
-            if (num > max) {
-                secondLargest = max;
-                max = num;
-            } else if (num > secondLargest && max != num) {
-                secondLargest = num;
-            }
+    private Stack<Integer> reverseStack(Stack<Integer> stack) {
+        if (stack.isEmpty()) return stack;
+        int temp = stack.pop();
+        reverseStack(stack);
+        insertAtBottom(stack, temp);
+        return stack;
+    }
+
+    private void insertAtBottom(Stack<Integer> stack, int x) {
+        if (stack.isEmpty()) {
+            stack.push(x);
+            return;
         }
-        return secondLargest;
+        int temp = stack.pop();
+        insertAtBottom(stack, x);
+        stack.push(temp);
     }
 }
