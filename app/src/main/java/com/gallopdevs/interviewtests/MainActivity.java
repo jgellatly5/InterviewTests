@@ -119,6 +119,10 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                 minRange = 74;
                 maxRange = 80;
                 break;
+            case 7:
+                minRange = 81;
+                maxRange = 87;
+                break;
             default:
                 break;
         }

@@ -82,5 +82,12 @@
         <item name="q_78">Implement the mergesort algorithm</item>
         <item name="q_79">Implement the quicksort algorithm</item>
         <item name="q_80">Find all the prime numbers in an array</item>
+        <item name="q_81">Calculate the sum in a Fibonacci sequence</item>
+        <item name="q_82">Determine if a string is a palindrome (using recursion)</item>
+        <item name="q_83">Determine the number of coins to produce the correct change amount</item>
+        <item name="q_84">Produce all the permutations of a certain input</item>
+        <item name="q_85">Reverse a stack without using additional data structures</item>
+        <item name="q_86">Find the number of square sub-matrices within a larger matrix</item>
+        <item name="q_87">Verify a tree is a binary search tree</item>
     </string-array>
 </resources>
