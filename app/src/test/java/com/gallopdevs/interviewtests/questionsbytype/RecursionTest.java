@@ -347,13 +347,13 @@ public class RecursionTest {
 
     @Test
     public void Fibonacci() {
-        System.out.println(Fibonacci.fibonacciRecursive(1));
-        System.out.println(Fibonacci.fibonacciRecursive(2));
-        System.out.println(Fibonacci.fibonacciRecursive(3));
-        System.out.println(Fibonacci.fibonacciRecursive(4));
-        System.out.println(Fibonacci.fibonacciDynamic(10));
-        System.out.println(Fibonacci.fibonacciDynamic(20));
-        System.out.println(Fibonacci.fibonacciDynamic(30));
+        System.out.println(Fibonacci.fib(1));
+        System.out.println(Fibonacci.fib(2));
+        System.out.println(Fibonacci.fib(3));
+        System.out.println(Fibonacci.fib(4));
+        System.out.println(Fibonacci.fib(10));
+        System.out.println(Fibonacci.fib(20));
+        System.out.println(Fibonacci.fib(30));
     }
 
     @Test
