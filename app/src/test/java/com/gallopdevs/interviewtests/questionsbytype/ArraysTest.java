@@ -1,5 +1,6 @@
 package com.gallopdevs.interviewtests.questionsbytype;
 
+import com.gallopdevs.interviewtests.questionsbytype.arrays.ConcatenateTwoArrays;
 import com.gallopdevs.interviewtests.questionsbytype.arrays.ConsecutiveArray;
 import com.gallopdevs.interviewtests.questionsbytype.arrays.CountPairsWithSum;
 import com.gallopdevs.interviewtests.questionsbytype.arrays.FindDuplicatesCount;
@@ -532,10 +533,15 @@ public class ArraysTest {
         int[] test4 = {1, 0};
         int[] test5 = {1};
         System.out.println(StockPrices.maxProfit(test1));
+        System.out.println(StockPrices.findMaxProfit(test1));
         System.out.println(StockPrices.maxProfit(test2));
+        System.out.println(StockPrices.findMaxProfit(test2));
         System.out.println(StockPrices.maxProfit(test3));
+        System.out.println(StockPrices.findMaxProfit(test3));
         System.out.println(StockPrices.maxProfit(test4));
+        System.out.println(StockPrices.findMaxProfit(test4));
         System.out.println(StockPrices.maxProfit(test5));
+        System.out.println(StockPrices.findMaxProfit(test5));
     }
 
     @Test
@@ -612,21 +618,11 @@ public class ArraysTest {
         System.out.println(Arrays.toString(MaxEnd3.maxEndThree(test2)));
     }
 
-    public int findMaxProfit(int[] numbers) {
-        if (numbers.length <= 1) return 0;
-        int globalMax = 0;
-        int currentMax;
-        for (int i = 0; i < numbers.length - 1; i++) {
-            for (int j = i + 1; j < numbers.length; j++) {
-                if (numbers[j] > numbers[i]) {
-                    currentMax = numbers[j] - numbers[i];
-                } else {
-                    currentMax = 0;
-                }
-                globalMax = Math.max(currentMax, globalMax);
-            }
-        }
-        return globalMax;
+    @Test
+    public void ConcatenateTwoArrays() {
+        int[] a = {1, 2, 3, 4, 5};
+        int[] b = {6, 7, 8, 9, 10};
+        System.out.println(Arrays.toString(ConcatenateTwoArrays.concatenateTwoArrays(a, b)));
     }
 
     private static int[] getRandomArray(int length) {
@@ -648,7 +644,6 @@ public class ArraysTest {
 
     @Test
     public void ArrayOperationsTest() {
-
         // 1. Declare an array
         String[] stringArray = {"a", "b", "c", "d", "e"};
         int[] numbers = new int[]{1, 2, 3, 4, 5};
@@ -664,10 +659,7 @@ public class ArraysTest {
         // 4. Check if an array contains a certain value
         System.out.println(Arrays.asList(stringArray).contains("a"));
 
-        // 5. Concatenate two arrays
-        int[] a = {1, 2, 3, 4, 5};
-        int[] b = {6, 7, 8, 9, 10};
-        System.out.println(Arrays.toString(concatenateTwoArrays(a, b)));
+        // 5. Concatenate two arrays - see above
 
         // 6. Convert an ArrayList to an array
         String[] newArray = new String[arrayList.size()];
@@ -858,19 +850,6 @@ public class ArraysTest {
         for (int i = index + 1; i < result.length; i++) {
             result[i] = numbers[i - 1];
         }
-        return result;
-    }
-
-    private int[] concatenateTwoArrays(int[] a, int[] b) {
-        int length = a.length + b.length;
-        int[] result = new int[length];
-        // position 1 = source array
-        // position 2 = starting position of source array
-        // position 3 = destination array
-        // position 4 = starting position of destination array
-        // position 5 = number of elements to be copied
-        System.arraycopy(a, 0, result, 0, a.length);
-        System.arraycopy(b, 0, result, a.length, b.length);
         return result;
     }
 

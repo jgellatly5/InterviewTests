@@ -22,7 +22,6 @@ public class ConsecutiveArray {
     }
 
     // Time: O(n log n)
-    // Space: O(1)
     public static int consecutiveArraySort(int[] numbers) {
         Arrays.sort(numbers);
         int currentLength = 1;

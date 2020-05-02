@@ -26,7 +26,7 @@ public class BinarySearchTree {
     // Time: O(n)
     public int findValue(int data) {
         TreeNode node = findNode(root, data);
-        return node == null ? null : node.data;
+        return node != null ? node.data : null;
     }
 
     private TreeNode findNode(TreeNode node, int key) {
@@ -40,14 +40,14 @@ public class BinarySearchTree {
         root = insertNode(root, data);
     }
 
-    private TreeNode insertNode(TreeNode node, int data) {
-        TreeNode newNode = new TreeNode(data);
+    private TreeNode insertNode(TreeNode node, int key) {
+        TreeNode newNode = new TreeNode(key);
         if (node == null) {
             node = newNode;
             return node;
         }
-        if (data < node.data) node.left = insertNode(node.left, data);
-        else node.right = insertNode(node.right, data);
+        if (key < node.data) node.left = insertNode(node.left, key);
+        else node.right = insertNode(node.right, key);
         return node;
     }
 
@@ -60,10 +60,10 @@ public class BinarySearchTree {
         root = deleteNode(root, key);
     }
 
-    private TreeNode deleteNode(TreeNode node, int data) {
+    private TreeNode deleteNode(TreeNode node, int key) {
         if (node == null) return null;
-        else if (data < node.data) node.left = deleteNode(node.left, data);
-        else if (data > node.data) node.right = deleteNode(node.right, data);
+        if (key < node.data) node.left = deleteNode(node.left, key);
+        else if (key > node.data) node.right = deleteNode(node.right, key);
         else {
             if (node.left == null && node.right == null) node = null;
             else if (node.left == null) node = node.right;

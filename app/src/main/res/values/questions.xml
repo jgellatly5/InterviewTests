@@ -49,6 +49,7 @@
         <item name="q_45">How do you determine if a linked list is a palindrome</item>
         <item name="q_46">Create a new linked list from a partition around a specified element</item>
         <item name="q_47">Find the intersection of two linked lists</item>
+
         <item name="q_48">How to determine if all characters in a string are unique?</item>
         <item name="q_49">How to determine if a string Is a palindrome?</item>
         <item name="q_50">Take a given string and encode it as if it was entered into a url</item>
@@ -56,6 +57,7 @@
         <item name="q_52">Rotate a substring around a particular character</item>
         <item name="q_53">How do you determine if a string permutation is a palindrome?</item>
         <item name="q_54">Determine if two strings are one edit away from each other</item>
+
         <item name="q_55">Create the smallest minimal tree from a sorted array</item>
         <item name="q_56">Create a linked list of depths</item>
         <item name="q_57">Check if a given tree is balanced</item>
@@ -63,10 +65,12 @@
         <item name="q_59">In-order successor</item>
         <item name="q_60">Check if a given tree is a subtree or a larger tree</item>
         <item name="q_61">Paths with sum</item>
+
         <item name="q_62">First common ancestor</item>
         <item name="q_63">Starting from 1 write an algorithm that replaces each number divisible by 3 with Fizz and each number divisible by 5 with Buzz all the way to 100</item>
         <item name="q_64">Stock Prices</item>
         <item name="q_65">Write an algorithm to print the fibonacci sequence</item>
+
         <item name="q_66">Convex Polygon</item>
         <item name="q_67">Implement a Dynamic Array</item>
         <item name="q_68">Implement a LinkedList</item>
@@ -82,6 +86,7 @@
         <item name="q_78">Implement the mergesort algorithm</item>
         <item name="q_79">Implement the quicksort algorithm</item>
         <item name="q_80">Find all the prime numbers in an array</item>
+
         <item name="q_81">Calculate the sum in a Fibonacci sequence</item>
         <item name="q_82">Determine if a string is a palindrome (using recursion)</item>
         <item name="q_83">Determine the number of coins to produce the correct change amount</item>
