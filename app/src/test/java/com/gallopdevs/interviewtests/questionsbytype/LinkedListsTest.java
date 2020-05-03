@@ -1,19 +1,19 @@
 package com.gallopdevs.interviewtests.questionsbytype;
 
 import com.gallopdevs.interviewtests.datastructures.LinkedListNode;
-import com.gallopdevs.interviewtests.questionsbytype.linkedlists.AppendList;
-import com.gallopdevs.interviewtests.questionsbytype.linkedlists.DeleteMiddle;
+import com.gallopdevs.interviewtests.questionsbytype.linkedlists.operations.AppendList;
+import com.gallopdevs.interviewtests.questionsbytype.linkedlists.operations.DeleteMiddle;
 import com.gallopdevs.interviewtests.questionsbytype.linkedlists.FindDuplicates;
 import com.gallopdevs.interviewtests.questionsbytype.linkedlists.FindIntersection;
-import com.gallopdevs.interviewtests.questionsbytype.linkedlists.FindLength;
-import com.gallopdevs.interviewtests.questionsbytype.linkedlists.FindMiddle;
-import com.gallopdevs.interviewtests.questionsbytype.linkedlists.IsCyclic;
+import com.gallopdevs.interviewtests.questionsbytype.linkedlists.operations.FindLength;
+import com.gallopdevs.interviewtests.questionsbytype.linkedlists.operations.FindMiddle;
+import com.gallopdevs.interviewtests.questionsbytype.linkedlists.operations.IsCyclic;
 import com.gallopdevs.interviewtests.questionsbytype.linkedlists.IsPalindromeCloneAndReverse;
 import com.gallopdevs.interviewtests.questionsbytype.linkedlists.IsPalindromeStack;
 import com.gallopdevs.interviewtests.questionsbytype.linkedlists.Partition;
 import com.gallopdevs.interviewtests.questionsbytype.linkedlists.RemoveDuplicatesSorted;
 import com.gallopdevs.interviewtests.questionsbytype.linkedlists.RemoveDuplicatesUnsorted;
-import com.gallopdevs.interviewtests.questionsbytype.linkedlists.PrintKthToLast;
+import com.gallopdevs.interviewtests.questionsbytype.linkedlists.operations.PrintKthToLast;
 import com.gallopdevs.interviewtests.questionsbytype.linkedlists.ReverseList;
 import com.gallopdevs.interviewtests.questionsbytype.linkedlists.ReversePairs;
 import com.gallopdevs.interviewtests.questionsbytype.linkedlists.ReversePrintList;

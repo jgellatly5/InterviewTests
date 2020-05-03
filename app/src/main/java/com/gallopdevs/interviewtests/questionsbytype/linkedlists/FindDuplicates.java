@@ -12,9 +12,14 @@ public class FindDuplicates {
     // Fix
     public static void findDuplicatesLoops(LinkedListNode head) {
         LinkedListNode current = head;
-        while (current.next != null) {
-            if (current.data == current.next.data) {
-                System.out.print(current.data + " ");
+        LinkedListNode next = null;
+        while (current != null) {
+            next = current.next;
+            while (next != null) {
+                if (current.data == next.data) {
+                    System.out.print(current.data + " ");
+                }
+                next = next.next;
             }
             current = current.next;
         }

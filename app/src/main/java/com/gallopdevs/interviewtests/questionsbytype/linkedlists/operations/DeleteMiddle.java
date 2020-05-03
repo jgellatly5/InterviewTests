@@ -1,4 +1,4 @@
-package com.gallopdevs.interviewtests.questionsbytype.linkedlists;
+package com.gallopdevs.interviewtests.questionsbytype.linkedlists.operations;
 
 import com.gallopdevs.interviewtests.datastructures.LinkedListNode;
 

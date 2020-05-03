@@ -1,4 +1,4 @@
-package com.gallopdevs.interviewtests.questionsbytype.linkedlists;
+package com.gallopdevs.interviewtests.questionsbytype.linkedlists.operations;
 
 import com.gallopdevs.interviewtests.datastructures.LinkedListNode;
 
@@ -17,7 +17,8 @@ public class IsCyclic {
         return false;
     }
 
-    // O(n) time, O(n) space
+    // Time: O(n)
+    // Space: O(n)
     public static boolean isCyclicSet(LinkedListNode head) {
         HashSet<LinkedListNode> visited = new HashSet<>();
         for (LinkedListNode current = head; current != null; current = current.next) {
