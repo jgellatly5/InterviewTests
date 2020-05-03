@@ -1,4 +1,4 @@
-package com.gallopdevs.interviewtests.questionsbytype.arrays;
+package com.gallopdevs.interviewtests.questionsbytype.arrays.operations;
 
 public class FindLowHighIndex {
     // Time: O(n)

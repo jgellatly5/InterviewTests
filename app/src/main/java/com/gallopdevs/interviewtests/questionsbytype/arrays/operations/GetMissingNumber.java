@@ -1,4 +1,4 @@
-package com.gallopdevs.interviewtests.questionsbytype.arrays;
+package com.gallopdevs.interviewtests.questionsbytype.arrays.operations;
 
 public class GetMissingNumber {
     // Note: this cannot be used if more than one missing number or contains duplicates
