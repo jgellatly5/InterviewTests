@@ -1,4 +1,4 @@
-package com.gallopdevs.interviewtests.questionsbytype.arrays;
+package com.gallopdevs.interviewtests.questionsbytype.arrays.operations;
 
 import java.util.HashMap;
 import java.util.Map;

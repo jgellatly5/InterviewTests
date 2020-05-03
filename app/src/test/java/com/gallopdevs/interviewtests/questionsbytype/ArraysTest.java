@@ -1,11 +1,11 @@
 package com.gallopdevs.interviewtests.questionsbytype;
 
-import com.gallopdevs.interviewtests.questionsbytype.arrays.ConcatenateTwoArrays;
+import com.gallopdevs.interviewtests.questionsbytype.arrays.operations.ConcatenateTwoArrays;
 import com.gallopdevs.interviewtests.questionsbytype.arrays.ConsecutiveArray;
 import com.gallopdevs.interviewtests.questionsbytype.arrays.CountPairsWithSum;
-import com.gallopdevs.interviewtests.questionsbytype.arrays.FindDuplicatesCount;
-import com.gallopdevs.interviewtests.questionsbytype.arrays.FindDuplicatesLoop;
-import com.gallopdevs.interviewtests.questionsbytype.arrays.FindDuplicatesSet;
+import com.gallopdevs.interviewtests.questionsbytype.arrays.operations.FindDuplicatesCount;
+import com.gallopdevs.interviewtests.questionsbytype.arrays.operations.FindDuplicatesLoop;
+import com.gallopdevs.interviewtests.questionsbytype.arrays.operations.FindDuplicatesSet;
 import com.gallopdevs.interviewtests.questionsbytype.arrays.FindLowHighIndex;
 import com.gallopdevs.interviewtests.questionsbytype.arrays.GetMissingNumber;
 import com.gallopdevs.interviewtests.questionsbytype.arrays.MatrixProduct;

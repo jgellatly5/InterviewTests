@@ -7,16 +7,16 @@ public class ConsecutiveArray {
     // Time: O(n)
     // Space: O(n)
     public static int consecutiveArraySet(int[] numbers) {
-        HashSet<Integer> values = new HashSet<>();
+        HashSet<Integer> setValues = new HashSet<>();
         for (int num : numbers) {
-            values.add(num);
+            setValues.add(num);
         }
         int maxLength = 0;
-        for (int i : values) {
-            if (values.contains(i - 1)) continue;
-            int length = 0;
-            while (values.contains(i++)) length++;
-            maxLength = Math.max(maxLength, length);
+        for (int value : setValues) {
+            if (setValues.contains(value - 1)) continue;
+            int currentLength = 0;
+            while (setValues.contains(value++)) currentLength++;
+            maxLength = Math.max(maxLength, currentLength);
         }
         return maxLength;
     }

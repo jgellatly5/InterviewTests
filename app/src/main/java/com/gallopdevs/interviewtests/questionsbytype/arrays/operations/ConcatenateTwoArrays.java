@@ -1,4 +1,4 @@
-package com.gallopdevs.interviewtests.questionsbytype.arrays;
+package com.gallopdevs.interviewtests.questionsbytype.arrays.operations;
 
 public class ConcatenateTwoArrays {
     public static int[] concatenateTwoArrays(int[] a, int[] b) {
