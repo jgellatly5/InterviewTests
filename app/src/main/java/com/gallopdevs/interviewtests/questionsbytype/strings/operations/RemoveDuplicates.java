@@ -1,4 +1,4 @@
-package com.gallopdevs.interviewtests.questionsbytype.strings;
+package com.gallopdevs.interviewtests.questionsbytype.strings.operations;
 
 public class RemoveDuplicates {
     public static void removeDuplicates(String text) {

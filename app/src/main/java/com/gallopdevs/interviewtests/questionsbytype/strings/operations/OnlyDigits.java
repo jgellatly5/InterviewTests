@@ -1,4 +1,4 @@
-package com.gallopdevs.interviewtests.questionsbytype.strings;
+package com.gallopdevs.interviewtests.questionsbytype.strings.operations;
 
 import java.util.regex.Pattern;
 

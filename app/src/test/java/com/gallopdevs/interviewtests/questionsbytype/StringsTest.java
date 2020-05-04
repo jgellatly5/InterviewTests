@@ -1,11 +1,10 @@
 package com.gallopdevs.interviewtests.questionsbytype;
 
-import com.gallopdevs.interviewtests.questionsbytype.integers.IntegerToRoman;
-import com.gallopdevs.interviewtests.questionsbytype.strings.ReverseString;
+import com.gallopdevs.interviewtests.questionsbytype.strings.operations.ReverseString;
 import com.gallopdevs.interviewtests.questionsbytype.strings.codebat.CatDog;
 import com.gallopdevs.interviewtests.questionsbytype.strings.Compress;
 import com.gallopdevs.interviewtests.questionsbytype.strings.codebat.CountCode;
-import com.gallopdevs.interviewtests.questionsbytype.strings.IsPalindrome;
+import com.gallopdevs.interviewtests.questionsbytype.strings.operations.IsPalindrome;
 import com.gallopdevs.interviewtests.questionsbytype.strings.IsPermutationPalindrome;
 import com.gallopdevs.interviewtests.questionsbytype.strings.IsUnique;
 import com.gallopdevs.interviewtests.questionsbytype.strings.OneEditAway;

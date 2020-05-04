@@ -17,11 +17,4 @@ public class ReverseList {
         head = previous;
         return head;
     }
-    // Recursive
-    // Time: O(n)
-    public static void reverseListRecursive(LinkedListNode node) {
-        if (node == null) return;
-        reverseListRecursive(node.next);
-        System.out.print(node.data+ " ");
-    }
 }

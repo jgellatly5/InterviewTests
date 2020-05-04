@@ -21,7 +21,7 @@ public class ConsecutiveArray {
         return maxLength;
     }
 
-    // Time: O(n log(n))
+    // Time: O(n^2) Quicksort for primitive int[], Timsort fot Object[]
     public static int consecutiveArraySort(int[] numbers) {
         Arrays.sort(numbers);
         int currentLength = 1;
