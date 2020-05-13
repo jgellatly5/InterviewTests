@@ -1,20 +1,20 @@
 package com.gallopdevs.interviewtests.questionsbytype;
 
 import com.gallopdevs.interviewtests.datastructures.BinarySearchTree;
-import com.gallopdevs.interviewtests.questionsbytype.trees.AreIdentical;
-import com.gallopdevs.interviewtests.questionsbytype.trees.FindHeight;
-import com.gallopdevs.interviewtests.questionsbytype.trees.InOrderTraversal;
+import com.gallopdevs.interviewtests.questionsbytype.trees.AverageOfLevels;
+import com.gallopdevs.interviewtests.questionsbytype.trees.operations.AreEqual;
+import com.gallopdevs.interviewtests.questionsbytype.trees.operations.FindHeight;
+import com.gallopdevs.interviewtests.questionsbytype.trees.operations.InOrderTraversal;
 import com.gallopdevs.interviewtests.questionsbytype.trees.IsBalanced;
-import com.gallopdevs.interviewtests.questionsbytype.trees.LevelOrderTraversal;
+import com.gallopdevs.interviewtests.questionsbytype.trees.operations.LevelOrderTraversal;
 import com.gallopdevs.interviewtests.questionsbytype.trees.LinkedListBreadthFirst;
 import com.gallopdevs.interviewtests.questionsbytype.trees.LinkedListDepthFirst;
 import com.gallopdevs.interviewtests.questionsbytype.trees.LongestConsecutiveBranch;
 import com.gallopdevs.interviewtests.questionsbytype.trees.MinimalTreeFromArray;
-import com.gallopdevs.interviewtests.questionsbytype.trees.PostOrderTraversal;
-import com.gallopdevs.interviewtests.questionsbytype.trees.PreOrderTraversal;
+import com.gallopdevs.interviewtests.questionsbytype.trees.operations.PostOrderTraversal;
+import com.gallopdevs.interviewtests.questionsbytype.trees.operations.PreOrderTraversal;
 import com.gallopdevs.interviewtests.questionsbytype.trees.SpiralOrderTraversal;
 import com.gallopdevs.interviewtests.questionsbytype.trees.VerifyBST;
-import com.gallopdevs.interviewtests.questionsbytype.trees.VerifyBstInOrderTraversal;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -72,8 +72,11 @@ public class TreesTest {
         isBalancedNode.left = new BinarySearchTree.TreeNode(2);
         isBalancedNode.right = new BinarySearchTree.TreeNode(3);
         isBalancedNode.left.left = new BinarySearchTree.TreeNode(4);
+        isBalancedNode.left.right = new BinarySearchTree.TreeNode(5);
         isBalancedNode.right.left = new BinarySearchTree.TreeNode(6);
         isBalancedNode.right.right = new BinarySearchTree.TreeNode(7);
+        isBalancedNode.right.left.left = new BinarySearchTree.TreeNode(8);
+//        isBalancedNode.right.left.left.left = new BinarySearchTree.TreeNode(9);
     }
 
 
@@ -83,7 +86,17 @@ public class TreesTest {
         int[] minimalTreeArray = new int[]{2, 4, 6, 8, 12, 24, 35, 46};
         BinarySearchTree.TreeNode minimalTree = MinimalTreeFromArray.createMinimalBst(minimalTreeArray);
         System.out.println("Height of the tree is: " + FindHeight.findHeight(minimalTree));
-        LevelOrderTraversal.levelOrderTraversal(minimalTree);
+        PreOrderTraversal.preOrderTraversalRecursive(minimalTree);
+        System.out.println("\n=========Test2 MinimalTreeFromArray=========");
+        int[] minimalTreeArray2 = new int[]{1, 2, 3, 4, 5};
+        BinarySearchTree.TreeNode minimalTree2 = MinimalTreeFromArray.createMinimalBst(minimalTreeArray2);
+        System.out.println("Height of the tree is: " + FindHeight.findHeight(minimalTree2));
+        PreOrderTraversal.preOrderTraversalRecursive(minimalTree2);
+        System.out.println("\n=========Test3 MinimalTreeFromArray=========");
+        int[] minimalTreeArray3 = new int[]{1, 2, 3, 5, 7, 8, 9};
+        BinarySearchTree.TreeNode minimalTree3 = MinimalTreeFromArray.createMinimalBst(minimalTreeArray3);
+        System.out.println("Height of the tree is: " + FindHeight.findHeight(minimalTree3));
+        PreOrderTraversal.preOrderTraversalRecursive(minimalTree3);
     }
 
     @Test
@@ -118,12 +131,6 @@ public class TreesTest {
     }
 
     @Test
-    public void VerifyBstInOrderTraversal() {
-        System.out.println("=========VerifyBstInOrderTraversal=========");
-        System.out.println(VerifyBstInOrderTraversal.verifyBstIot(root));
-    }
-
-    @Test
     public void FindHeight() {
         System.out.println("=========FindHeight=========");
         System.out.println(FindHeight.findHeight(node));
@@ -147,7 +154,8 @@ public class TreesTest {
     @Test
     public void AreIdentical() {
         System.out.println("=========AreIdentical=========");
-        System.out.println(AreIdentical.areIdentical(node, node2));
+        System.out.println(AreEqual.areEqual(node, node2));
+        System.out.println(AreEqual.areEqual(node2, isBalancedNode));
     }
 
     @Test
@@ -190,6 +198,13 @@ public class TreesTest {
         SpiralOrderTraversal.spiralOrderTraversal(root);
         System.out.println();
         SpiralOrderTraversal.spiralOrderTraversalQueue(root);
+    }
+
+    @Test
+    public void AverageOfLevels() {
+        System.out.println("=========AverageOfLevels=========");
+        LevelOrderTraversal.levelOrderTraversal(root);
+        System.out.println(AverageOfLevels.averageOfLevelsDfs(root));
     }
 
     @Test

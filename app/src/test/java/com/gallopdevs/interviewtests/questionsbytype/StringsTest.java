@@ -1,5 +1,6 @@
 package com.gallopdevs.interviewtests.questionsbytype;
 
+import com.gallopdevs.interviewtests.questionsbytype.strings.FindPermutations;
 import com.gallopdevs.interviewtests.questionsbytype.strings.operations.ReverseString;
 import com.gallopdevs.interviewtests.questionsbytype.strings.codebat.CatDog;
 import com.gallopdevs.interviewtests.questionsbytype.strings.Compress;
@@ -138,6 +139,12 @@ public class StringsTest {
         System.out.println(XyzThere.xyzThere("abcxyz"));
         System.out.println(XyzThere.xyzThere("abc.xyz"));
         System.out.println(XyzThere.xyzThere("xyz.abc"));
+    }
+
+    @Test
+    public void FindPermutations() {
+        System.out.println("=========FindPermutations=========");
+        System.out.println(FindPermutations.findPermutations("abc"));
     }
 
     // https://stackabuse.com/common-string-operations-in-java/

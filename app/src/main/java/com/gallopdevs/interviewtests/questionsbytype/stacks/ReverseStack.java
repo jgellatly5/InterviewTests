@@ -13,6 +13,7 @@ public class ReverseStack {
     public static Stack<Integer> reverseStack(Stack<Integer> stack) {
         if (stack.isEmpty()) return stack;
         int temp = stack.pop();
+        System.out.println("reverseStack: pop temp: " + temp);
         reverseStack(stack);
         insertAtBottom(stack, temp);
         return stack;
@@ -21,10 +22,13 @@ public class ReverseStack {
     private static void insertAtBottom(Stack<Integer> stack, int x) {
         if (stack.isEmpty()) {
             stack.push(x);
+            System.out.println("insert at Bottom: push x(empty): " + x);
             return;
         }
         int temp = stack.pop();
+        System.out.println("insert at Bottom: pop temp: " + temp);
         insertAtBottom(stack, x);
+        System.out.println("insert at Bottom: push x: " + temp);
         stack.push(temp);
     }
 }

@@ -73,8 +73,10 @@ public class RecursionTest {
     public void MakingChange() {
         System.out.println("\n=========Making Change (Dynamic Programming)=========");
         // Coins = {10, 6, 1}
-        System.out.println(MakingChange.makeChange(100));
-        System.out.println(MakingChange.makeChange(105));
+//        System.out.println(MakingChange.makeChangeNaive(10));
+//        System.out.println(MakingChange.makeChangeNaive(11));
+//        System.out.println(MakingChange.makeChange(100));
+//        System.out.println(MakingChange.makeChange(105));
     }
 
     @Test

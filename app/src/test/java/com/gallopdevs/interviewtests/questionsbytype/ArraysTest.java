@@ -1,5 +1,6 @@
 package com.gallopdevs.interviewtests.questionsbytype;
 
+import com.gallopdevs.interviewtests.questionsbytype.arrays.FindPermutations;
 import com.gallopdevs.interviewtests.questionsbytype.arrays.operations.ConcatenateTwoArrays;
 import com.gallopdevs.interviewtests.questionsbytype.arrays.ConsecutiveArray;
 import com.gallopdevs.interviewtests.questionsbytype.arrays.CountPairsWithSum;
@@ -623,6 +624,15 @@ public class ArraysTest {
         int[] a = {1, 2, 3, 4, 5};
         int[] b = {6, 7, 8, 9, 10};
         System.out.println(Arrays.toString(ConcatenateTwoArrays.concatenateTwoArrays(a, b)));
+    }
+
+    @Test
+    public void FindPermutations() {
+        int[] test1 = {1, 2, 3};
+        ArrayList<int[]> results = FindPermutations.findPermutations(test1);
+        for (int[] element : results) {
+            System.out.println(Arrays.toString(element));
+        }
     }
 
     private static int[] getRandomArray(int length) {

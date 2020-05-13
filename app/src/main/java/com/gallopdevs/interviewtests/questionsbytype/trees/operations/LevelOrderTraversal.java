@@ -1,4 +1,4 @@
-package com.gallopdevs.interviewtests.questionsbytype.trees;
+package com.gallopdevs.interviewtests.questionsbytype.trees.operations;
 
 import com.gallopdevs.interviewtests.datastructures.BinarySearchTree;
 
@@ -14,14 +14,14 @@ public class LevelOrderTraversal {
         }
     }
 
-    private static boolean printGivenLevel(BinarySearchTree.TreeNode root, int level) {
-        if (root == null) return false;
+    private static boolean printGivenLevel(BinarySearchTree.TreeNode node, int level) {
+        if (node == null) return false;
         if (level == 1) {
-            System.out.print(root.data + " ");
+            System.out.print(node.data + " ");
             return true;
         }
-        boolean left = printGivenLevel(root.left, level - 1);
-        boolean right = printGivenLevel(root.right, level - 1);
+        boolean left = printGivenLevel(node.left, level - 1);
+        boolean right = printGivenLevel(node.right, level - 1);
         return left || right;
     }
 

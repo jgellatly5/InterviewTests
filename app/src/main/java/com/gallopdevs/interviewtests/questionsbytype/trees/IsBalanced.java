@@ -1,13 +1,23 @@
 package com.gallopdevs.interviewtests.questionsbytype.trees;
 
-import com.gallopdevs.interviewtests.datastructures.BinarySearchTree;
+import static com.gallopdevs.interviewtests.datastructures.BinarySearchTree.TreeNode;
 
 public class IsBalanced {
-    public static boolean isBalanced(BinarySearchTree.TreeNode node) {
-        return balancedHeight(node) > -1;
+
+    //         1
+    //     2       3
+    //   4   5   6   7
+    //          8
+    //         9
+    //
+    // isBalanced(1)
+    //  4
+
+    public static boolean isBalanced(TreeNode root) {
+        return balancedHeight(root) > -1;
     }
 
-    private static int balancedHeight(BinarySearchTree.TreeNode node) {
+    private static int balancedHeight(TreeNode node) {
         if (node == null) return 0;
         int h1 = balancedHeight(node.left);
         int h2 = balancedHeight(node.right);

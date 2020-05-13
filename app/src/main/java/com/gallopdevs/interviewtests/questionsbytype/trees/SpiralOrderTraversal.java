@@ -5,16 +5,18 @@ import com.gallopdevs.interviewtests.datastructures.BinarySearchTree;
 import java.util.ArrayDeque;
 import java.util.Deque;
 
+import static com.gallopdevs.interviewtests.datastructures.BinarySearchTree.*;
+
 public class SpiralOrderTraversal {
     // Time: O(n^2)
-    public static void spiralOrderTraversal(BinarySearchTree.TreeNode root) {
+    public static void spiralOrderTraversal(TreeNode root) {
         if (root == null) return;
         int level = 1;
         while (printLevelLeftToRight(root, level++)
                 && printLevelRightToLeft(root, level++));
     }
 
-    private static boolean printLevelLeftToRight(BinarySearchTree.TreeNode root, int level) {
+    private static boolean printLevelLeftToRight(TreeNode root, int level) {
         if (root == null) return false;
         if (level == 1) {
             System.out.print(root.data + " ");
@@ -25,7 +27,7 @@ public class SpiralOrderTraversal {
         return left || right;
     }
 
-    private static boolean printLevelRightToLeft(BinarySearchTree.TreeNode root, int level) {
+    private static boolean printLevelRightToLeft(TreeNode root, int level) {
         if (root == null) return false;
         if (level == 1) {
             System.out.print(root.data + " ");
@@ -38,16 +40,16 @@ public class SpiralOrderTraversal {
 
     // Time: O(n)
     // Space: O(n)
-    public static void spiralOrderTraversalQueue(BinarySearchTree.TreeNode root) {
+    public static void spiralOrderTraversalQueue(TreeNode root) {
         if (root == null) return;
-        Deque<BinarySearchTree.TreeNode> deque = new ArrayDeque<>();
+        Deque<TreeNode> deque = new ArrayDeque<>();
         deque.addFirst(root);
         boolean flag = false;
         while (!deque.isEmpty()) {
             int nodeCount = deque.size();
             if (flag) {
                 while (nodeCount > 0) {
-                    BinarySearchTree.TreeNode current = deque.pollFirst();
+                    TreeNode current = deque.pollFirst();
                     System.out.print(current.data + " ");
                     if (current.left != null) deque.addLast(current.left);
                     if (current.right != null) deque.addLast(current.right);
@@ -55,7 +57,7 @@ public class SpiralOrderTraversal {
                 }
             } else {
                 while (nodeCount > 0) {
-                    BinarySearchTree.TreeNode current = deque.pollLast();
+                    TreeNode current = deque.pollLast();
                     System.out.print(current.data + " ");
                     if (current.right != null) deque.addFirst(current.right);
                     if (current.left != null) deque.addFirst(current.left);

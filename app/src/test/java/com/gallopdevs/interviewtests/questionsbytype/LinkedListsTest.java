@@ -187,9 +187,6 @@ public class LinkedListsTest {
         System.out.println("=========ReverseList Iteratively=========");
         LinkedListNode.print(node);
         LinkedListNode.print(ReverseList.reverseListIterative(node));
-        System.out.println("\n=========ReverseList Recursively=========");
-        LinkedListNode.print(node2);
-        ReverseList.reverseListRecursive(node2);
     }
 
     @Test

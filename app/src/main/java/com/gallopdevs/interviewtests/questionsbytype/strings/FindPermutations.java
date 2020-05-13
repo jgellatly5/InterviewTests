@@ -1,17 +1,24 @@
 package com.gallopdevs.interviewtests.questionsbytype.strings;
 
-public class FindPermutations {
+import java.util.ArrayList;
 
-    public static void findPermutations(String str) {
-        permutations("", str);
+public class FindPermutations {
+    public static ArrayList<String> findPermutations(String s) {
+        ArrayList<String> results = new ArrayList<>();
+        permutations("", s, results);
+        return results;
     }
 
-    private static void permutations(String prefix, String str) {
-        int n = str.length();
-        if (n == 0) System.out.println(prefix);
-        for (int i = 0; i < str.length(); i++) {
-            permutations(prefix + str.charAt(i),
-                    str.substring(0, i) + str.substring(i + 1, n));
+    private static void permutations(String prefix, String suffix, ArrayList<String> results) {
+        if (suffix.length() == 0) results.add(prefix);
+        else {
+            for (int i = 0; i < suffix.length(); i++) {
+                permutations(
+                        prefix + suffix.charAt(i),
+                        suffix.substring(0, i) + suffix.substring(i + 1),
+                        results
+                );
+            }
         }
     }
 }

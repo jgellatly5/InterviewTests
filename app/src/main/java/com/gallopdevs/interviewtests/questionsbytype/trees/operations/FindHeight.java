@@ -1,4 +1,4 @@
-package com.gallopdevs.interviewtests.questionsbytype.trees;
+package com.gallopdevs.interviewtests.questionsbytype.trees.operations;
 
 import com.gallopdevs.interviewtests.datastructures.BinarySearchTree;
 

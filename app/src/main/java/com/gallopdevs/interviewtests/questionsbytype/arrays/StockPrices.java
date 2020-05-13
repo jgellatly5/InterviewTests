@@ -1,7 +1,10 @@
 package com.gallopdevs.interviewtests.questionsbytype.arrays;
 
 public class StockPrices {
+    // You have a list of stocks
+    // Example: [12, 2, 7, 20, 5] -> 13
     // Time: O(n^2)
+    // 0, 1, 2
     public static int findMaxProfit(int[] numbers) {
         if (numbers.length <= 1) return 0;
         int globalMax = 0;
@@ -29,4 +32,13 @@ public class StockPrices {
         }
         return maxProfit;
     }
+
+    // 1. Understand
+    // 2. Exmaple
+    // 3. Brute force solution
+    // variable currentProfit
+    // vairable maxProfit
+    // 4. Optimize
+    // 5. Approach
+    // 6. Coding
 }
