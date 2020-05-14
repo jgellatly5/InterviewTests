@@ -1,10 +1,6 @@
 package com.gallopdevs.interviewtests.leetcode;
 
-import com.gallopdevs.interviewtests.leetcode.IsValid;
-import com.gallopdevs.interviewtests.leetcode.LongestSubstring;
-import com.gallopdevs.interviewtests.leetcode.MaximumSubarray;
-import com.gallopdevs.interviewtests.leetcode.MedianTwoSortedArrays;
-import com.gallopdevs.interviewtests.leetcode.PalindromicSubstring;
+import com.gallopdevs.interviewtests.questionsbytype.stacks.IsValid;
 
 import org.junit.Test;
 

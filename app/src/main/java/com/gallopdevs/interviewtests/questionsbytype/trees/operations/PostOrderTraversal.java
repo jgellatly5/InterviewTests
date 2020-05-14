@@ -1,13 +1,13 @@
 package com.gallopdevs.interviewtests.questionsbytype.trees.operations;
 
-import com.gallopdevs.interviewtests.datastructures.BinarySearchTree;
-
 import java.util.Stack;
+
+import static com.gallopdevs.interviewtests.datastructures.BinarySearchTree.TreeNode;
 
 public class PostOrderTraversal {
     // Time: O(n)
     // Space: O(n)
-    public static void postOrderTraversalRecursive(BinarySearchTree.TreeNode node) {
+    public static void postOrderTraversalRecursive(TreeNode node) {
         if (node != null) {
             postOrderTraversalRecursive(node.left);
             postOrderTraversalRecursive(node.right);
@@ -17,20 +17,16 @@ public class PostOrderTraversal {
 
     // Time: O(n)
     // Space: O(n)
-    public static void postOrderTraversalIterative(BinarySearchTree.TreeNode root) {
+    public static void postOrderTraversalIterative(TreeNode root) {
         if (root == null) return;
-        Stack<BinarySearchTree.TreeNode> stack = new Stack<>();
+        Stack<TreeNode> stack = new Stack<>();
         stack.push(root);
         Stack<Integer> out = new Stack<>();
         while (!stack.isEmpty()) {
-            BinarySearchTree.TreeNode current = stack.pop();
+            TreeNode current = stack.pop();
             out.push(current.data);
-            if (current.left != null) {
-                stack.push(current.left);
-            }
-            if (current.right != null) {
-                stack.push(current.right);
-            }
+            if (current.left != null) stack.push(current.left);
+            if (current.right != null) stack.push(current.right);
         }
         while (!out.isEmpty()) {
             System.out.print(out.pop() + " ");

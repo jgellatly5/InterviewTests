@@ -1,13 +1,13 @@
 package com.gallopdevs.interviewtests.questionsbytype.trees.operations;
 
-import com.gallopdevs.interviewtests.datastructures.BinarySearchTree;
-
 import java.util.Stack;
+
+import static com.gallopdevs.interviewtests.datastructures.BinarySearchTree.TreeNode;
 
 public class InOrderTraversal {
     // Time: O(n)
     // Space: O(n)
-    public static void inOrderTraversalRecursive(BinarySearchTree.TreeNode node) {
+    public static void inOrderTraversalRecursive(TreeNode node) {
         if (node != null) {
             inOrderTraversalRecursive(node.left);
             System.out.print(node.data + " ");
@@ -17,9 +17,10 @@ public class InOrderTraversal {
 
     // Time: O(n)
     // Space: O(n)
-    public static void inOrderTraversalIterative(BinarySearchTree.TreeNode root) {
-        Stack<BinarySearchTree.TreeNode> stack = new Stack<>();
-        BinarySearchTree.TreeNode current = root;
+    public static void inOrderTraversalIterative(TreeNode root) {
+        if (root == null) return;
+        Stack<TreeNode> stack = new Stack<>();
+        TreeNode current = root;
         while (!stack.isEmpty() || current != null) {
             if (current != null) {
                 stack.push(current);

@@ -1,20 +1,20 @@
 package com.gallopdevs.interviewtests.questionsbytype.trees.operations;
 
-import com.gallopdevs.interviewtests.datastructures.BinarySearchTree;
-
 import java.util.ArrayDeque;
 import java.util.Queue;
 
+import static com.gallopdevs.interviewtests.datastructures.BinarySearchTree.TreeNode;
+
 public class LevelOrderTraversal {
     // Time: O(n^2)
-    public static void levelOrderTraversal(BinarySearchTree.TreeNode root) {
+    public static void levelOrderTraversal(TreeNode root) {
         int level = 1;
         while (printGivenLevel(root, level++)) {
             System.out.println();
         }
     }
 
-    private static boolean printGivenLevel(BinarySearchTree.TreeNode node, int level) {
+    private static boolean printGivenLevel(TreeNode node, int level) {
         if (node == null) return false;
         if (level == 1) {
             System.out.print(node.data + " ");
@@ -27,19 +27,15 @@ public class LevelOrderTraversal {
 
     // Time: O(n)
     // Space: O(n)
-    public static void levelOrderTraversalQueue(BinarySearchTree.TreeNode root) {
-        Queue<BinarySearchTree.TreeNode> queue = new ArrayDeque<>();
+    public static void levelOrderTraversalQueue(TreeNode root) {
+        Queue<TreeNode> queue = new ArrayDeque<>();
         queue.add(root);
-        BinarySearchTree.TreeNode current;
+        TreeNode current;
         while (!queue.isEmpty()) {
             current = queue.poll();
             System.out.print(current.data + " ");
-            if (current.left != null) {
-                queue.add(current.left);
-            }
-            if (current.right != null) {
-                queue.add(current.right);
-            }
+            if (current.left != null) queue.add(current.left);
+            if (current.right != null) queue.add(current.right);
         }
     }
 }

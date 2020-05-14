@@ -1,9 +1,11 @@
-package com.gallopdevs.interviewtests.leetcode;
+package com.gallopdevs.interviewtests.questionsbytype.stacks;
 
 import java.util.HashMap;
 import java.util.Stack;
 
 public class IsValid {
+    // Time: O(n)
+    // Space: O(n)
     public static boolean isValid(String s) {
         // Hash table that takes care of the mappings.
         HashMap<Character, Character> mappings = new HashMap<>();
