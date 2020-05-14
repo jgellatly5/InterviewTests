@@ -13,16 +13,16 @@ public class HashTable {
         }
     }
 
-    private int initialCapacity = 16;
+    private static final int INITIAL_CAPACITY = 16;
     private HashEntry[] data;
 
     public HashTable() {
-        data = new HashEntry[initialCapacity];
+        data = new HashEntry[INITIAL_CAPACITY];
     }
 
     private int getIndex(String key) {
         int hashCode = key.hashCode();
-        return (hashCode & 0x7fffffff) % initialCapacity;
+        return (hashCode & 0x7fffffff) % INITIAL_CAPACITY;
     }
 
     // Time: O(n)
@@ -58,14 +58,14 @@ public class HashTable {
         if (entries == null) return;
         if (entries.key.equals(key)) {
             data[index] = entries.next;
-            return;
-        }
-        while (entries.next != null) {
-            if (entries.next.key.equals(key)) {
-                entries.next = entries.next.next;
-                return;
+        } else {
+            while (entries.next != null) {
+                if (entries.next.key.equals(key)) {
+                    entries.next = entries.next.next;
+                    return;
+                }
+                entries = entries.next;
             }
-            entries = entries.next;
         }
     }
 }

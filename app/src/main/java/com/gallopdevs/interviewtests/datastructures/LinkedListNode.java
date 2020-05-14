@@ -21,11 +21,10 @@ public class LinkedListNode {
         LinkedListNode newNode = new LinkedListNode(data);
         if (head == null) {
             head = newNode;
-            size++;
-            return;
+        } else {
+            newNode.next = head;
+            head = newNode;
         }
-        newNode.next = head;
-        head = newNode;
         size++;
     }
 
@@ -34,14 +33,13 @@ public class LinkedListNode {
         LinkedListNode newNode = new LinkedListNode(data);
         if (head == null) {
             head = newNode;
-            size++;
-            return;
+        } else {
+            LinkedListNode current = head;
+            while (current.next != null) {
+                current = current.next;
+            }
+            current.next = newNode;
         }
-        LinkedListNode current = head;
-        while (current.next != null) {
-            current = current.next;
-        }
-        current.next = newNode;
         size++;
     }
 
@@ -100,17 +98,17 @@ public class LinkedListNode {
         if (head == null) return;
         if (head.data == data) {
             head = head.next;
-            return;
-        }
-        LinkedListNode current = head;
-        while (current.next != null) {
-            if (current.next.data == data) {
-                current.next = current.next.next;
-                size--;
-                return;
+        } else {
+            LinkedListNode current = head;
+            while (current.next != null) {
+                if (current.next.data == data) {
+                    current.next = current.next.next;
+                    break;
+                }
+                current = current.next;
             }
-            current = current.next;
         }
+        size--;
     }
 
     // Time: O(1)

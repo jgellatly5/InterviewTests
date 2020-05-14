@@ -33,16 +33,17 @@ public class CountPairsWithSum {
 
     // Time: O(n)
     // Space: O(n)
-    public static int countPairsWithSumSet(int[] numbers, int target) {
-        Set<Integer> set = new HashSet<>();
+    public static int countPairsWithSumSet(int[] numbers, int sum) {
+        Set<Integer> current = new HashSet<>();
         Set<Integer> seen = new HashSet<>();
         int count = 0;
         for (int num : numbers) {
-            if (set.contains(target - num) && !seen.contains(num)) {
+            int target = sum - num;
+            if (current.contains(target) && !seen.contains(num)) {
                 count++;
-                seen.add(target - num);
+                seen.add(target);
                 seen.add(num);
-            } else set.add(num);
+            } else current.add(num);
         }
         return count;
     }

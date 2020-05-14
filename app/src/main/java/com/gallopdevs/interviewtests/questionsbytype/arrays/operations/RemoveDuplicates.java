@@ -3,7 +3,7 @@ package com.gallopdevs.interviewtests.questionsbytype.arrays.operations;
 import java.util.Arrays;
 
 public class RemoveDuplicates {
-    // Time: O(n log n)
+    // Time: O(n log(n))
     // Space: O(n)
     public static int[] removeDuplicates(int[] numbers) {
         Arrays.sort(numbers);

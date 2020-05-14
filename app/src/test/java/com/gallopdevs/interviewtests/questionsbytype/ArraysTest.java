@@ -7,6 +7,7 @@ import com.gallopdevs.interviewtests.questionsbytype.arrays.CountPairsWithSum;
 import com.gallopdevs.interviewtests.questionsbytype.arrays.operations.FindDuplicatesCount;
 import com.gallopdevs.interviewtests.questionsbytype.arrays.operations.FindDuplicatesLoop;
 import com.gallopdevs.interviewtests.questionsbytype.arrays.operations.FindDuplicatesSet;
+import com.gallopdevs.interviewtests.questionsbytype.arrays.operations.FindEvenAndOdd;
 import com.gallopdevs.interviewtests.questionsbytype.arrays.operations.FindLowHighIndex;
 import com.gallopdevs.interviewtests.questionsbytype.arrays.operations.GetMissingNumber;
 import com.gallopdevs.interviewtests.questionsbytype.arrays.MatrixProduct;
@@ -17,6 +18,7 @@ import com.gallopdevs.interviewtests.questionsbytype.arrays.operations.MinMaxArr
 import com.gallopdevs.interviewtests.questionsbytype.arrays.operations.PrintMissingNumbers;
 import com.gallopdevs.interviewtests.questionsbytype.arrays.operations.PrintPairsSumLoop;
 import com.gallopdevs.interviewtests.questionsbytype.arrays.operations.PrintPairsSumSet;
+import com.gallopdevs.interviewtests.questionsbytype.arrays.operations.PushZerosToRight;
 import com.gallopdevs.interviewtests.questionsbytype.arrays.operations.RemoveDuplicates;
 import com.gallopdevs.interviewtests.questionsbytype.arrays.operations.ReverseArray;
 import com.gallopdevs.interviewtests.questionsbytype.arrays.operations.RotateLeft;
@@ -635,6 +637,18 @@ public class ArraysTest {
         }
     }
 
+    @Test
+    public void FindEvenAndOdd() {
+        int[] problem24 = {1, 2, 3, 4, 5};
+        FindEvenAndOdd.findEvenAndOdd(problem24);
+    }
+
+    @Test
+    public void PushZerosToRight() {
+        int[] test1 = {1, 0, 2, 0, 3, 0, 4, 5, 0};
+        PushZerosToRight.pushZerosToEnd(test1);
+    }
+
     private static int[] getRandomArray(int length) {
         int[] randomNums = new int[length];
         for (int i = 0; i < length; i++) {
@@ -778,11 +792,6 @@ public class ArraysTest {
         }
         System.out.println();
 
-        // 21. Find 2nd smallest element
-        System.out.println("21.====================");
-        int[] secondSmallest = {10, 20, 30, 40, 50};
-        findSecondSmallest(secondSmallest);
-
         // 22. Add two matrices of the same size
         System.out.println("22.====================");
         int[][] matrixA = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
@@ -794,61 +803,11 @@ public class ArraysTest {
             }
         }
         printMatrix(sumMatrix);
-
-        // 23. Move all 0's to the end of an array
-        System.out.println("23.====================");
-        int[] problem23 = {12, 0, 4, 0, 35, 0, 0, 1};
-        pushZerosToEnd(problem23);
-
-        // 24. Find the number of even & odd integers
-        System.out.println("24.====================");
-        int[] problem24 = {1, 2, 3, 4, 5};
-        findEvenAndOdd(problem24);
     }
 
     @Test
     public void Practice() {
-        System.out.println("=========ZeroMatrix=========");
-        int[][] matrix = {
-                {0, 2, 3, 4},
-                {5, 6, 7, 8},
-                {9, 10, 11, 12},
-                {13, 14, 15, 16}
-        };
-        zeroMatrix(matrix);
-        printMatrix(matrix);
-    }
 
-    private void zeroMatrix(int[][] matrix) {
-        boolean[] row = new boolean[matrix.length];
-        boolean[] column = new boolean[matrix[0].length];
-        for (int i = 0; i < matrix.length; i++) {
-            for (int j = 0; j < matrix[0].length; j++) {
-                if (matrix[i][j] == 0) {
-                    row[i] = true;
-                    column[j] = true;
-                }
-            }
-        }
-        for (int i = 0; i < row.length; i++) {
-            if (row[i]) nullifyRow(matrix, i);
-        }
-        for (int j = 0; j < column.length; j++) {
-            if (column[j]) nullifyColumn(matrix, j);
-        }
-        // print;
-    }
-
-    private void nullifyRow(int[][] matrix, int row) {
-        for (int j = 0; j < matrix[0].length; j++) {
-            matrix[row][j] = 0;
-        }
-    }
-
-    private void nullifyColumn(int[][] matrix, int column) {
-        for (int i = 0; i < matrix.length; i++) {
-            matrix[i][column] = 0;
-        }
     }
 
     private int[] insert(int[] numbers, int index, int value) {
@@ -861,52 +820,5 @@ public class ArraysTest {
             result[i] = numbers[i - 1];
         }
         return result;
-    }
-
-    private void findSecondSmallest(int[] numbers) {
-        if (numbers.length < 2) {
-            System.out.println("Invalid size");
-        }
-        int min = Integer.MAX_VALUE;
-        int secondSmallest = Integer.MAX_VALUE;
-        for (int num : numbers) {
-            if (num < min) {
-                secondSmallest = min;
-                min = num;
-            } else if (num < secondSmallest && num != min) {
-                secondSmallest = num;
-            }
-        }
-        if (secondSmallest == Integer.MAX_VALUE) {
-            System.out.println("There is no second smallest element");
-        } else {
-            System.out.println("Second smallest element is: " + secondSmallest);
-        }
-    }
-
-    private void pushZerosToEnd(int[] numbers) {
-        int count = 0;
-        for (int num : numbers) {
-            if (num != 0) {
-                numbers[count++] = num;
-            }
-        }
-        while (count < numbers.length) {
-            numbers[count++] = 0;
-        }
-        System.out.println(Arrays.toString(numbers));
-    }
-
-    private void findEvenAndOdd(int[] numbers) {
-        int odd = 0;
-        int even = 0;
-        for (int number : numbers) {
-            if (number % 2 == 0) {
-                even++;
-            } else if (number % 2 == 1) {
-                odd++;
-            }
-        }
-        System.out.println("Even count: " + even + ", odd count: " + odd);
     }
 }

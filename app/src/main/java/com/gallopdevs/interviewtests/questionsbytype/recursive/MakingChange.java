@@ -2,7 +2,7 @@ package com.gallopdevs.interviewtests.questionsbytype.recursive;
 
 public class MakingChange {
     private static int[] coins = {10, 6, 1};
-    // Time: O(c^n) where c = height of recursive tree, n = number of coin variations
+    // Time: O(c^n) where c = number of coin variations, n = depth of recursive tree
 //    public static int makeChangeNaive(int c) {
 //        if (c == 0) return 0;
 //        int minCoins = Integer.MAX_VALUE;
@@ -17,13 +17,13 @@ public class MakingChange {
 
     public static int makeChange(int c) {
         int[] cache = new int[c + 1];
-        for (int i = 1; i < c + 1; i++) {
+        for (int i = 1; i <= c; i++) {
             cache[i] = -1;
         }
         return makeChange(c, cache);
     }
 
-    private  static int makeChange(int c, int[] cache) {
+    private static int makeChange(int c, int[] cache) {
         if (cache[c] >= 0) return cache[c];
         int minCoins = Integer.MAX_VALUE;
         for (int coin : coins) {
@@ -38,7 +38,7 @@ public class MakingChange {
 
     // Time: O(c * n)
     // Space: O(c)
-    // where c = height of recursive tree, n = number of coin variations
+    // where c = number of coin variations, n = depth of recursive tree
 //    public static int makeChange(int c) {
 //        int[] cache = new int[c + 1];
 //        for (int i = 1; i <= c; i++) {

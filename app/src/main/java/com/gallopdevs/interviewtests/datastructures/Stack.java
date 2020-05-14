@@ -19,11 +19,10 @@ public class Stack {
         Node newNode = new Node(data);
         if (head == null) {
             head = newNode;
-            size++;
-            return;
+        } else {
+            newNode.next = head;
+            head = newNode;
         }
-        newNode.next = head;
-        head = newNode;
         size++;
     }
 
