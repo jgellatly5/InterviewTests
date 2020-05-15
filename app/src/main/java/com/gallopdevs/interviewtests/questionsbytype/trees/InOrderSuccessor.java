@@ -1,23 +1,23 @@
 package com.gallopdevs.interviewtests.questionsbytype.trees;
 
-import com.gallopdevs.interviewtests.datastructures.BinarySearchTree;
+import static com.gallopdevs.interviewtests.datastructures.BinarySearchTree.TreeNode;
 
 public class InOrderSuccessor {
-    public static BinarySearchTree.TreeNode inOrderSuccessor(BinarySearchTree.TreeNode node) {
+    public static TreeNode inOrderSuccessor(TreeNode node) {
         if (node == null) return null;
-        if (node.right == null) return leftMostChild(node.right);
+        if (node.right != null) return leftMostChild(node.right);
         else {
-            BinarySearchTree.TreeNode q = node;
-            BinarySearchTree.TreeNode x = q.parent;
-            while (x != null && x.left != q) {
-                q = x;
-                x = x.parent;
+            TreeNode current = node;
+            TreeNode parent = current.parent;
+            while (parent != null && parent.left != current) {
+                current = parent;
+                parent = parent.parent;
             }
-            return x;
+            return parent;
         }
     }
 
-    private static BinarySearchTree.TreeNode leftMostChild(BinarySearchTree.TreeNode node) {
+    private static TreeNode leftMostChild(TreeNode node) {
         if (node == null) return null;
         while (node.left != null) {
             node = node.left;
