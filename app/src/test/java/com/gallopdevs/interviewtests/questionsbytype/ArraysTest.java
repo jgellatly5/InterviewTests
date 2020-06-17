@@ -1,27 +1,11 @@
 package com.gallopdevs.interviewtests.questionsbytype;
 
-import com.gallopdevs.interviewtests.questionsbytype.arrays.FindPermutations;
-import com.gallopdevs.interviewtests.questionsbytype.arrays.operations.ConcatenateTwoArrays;
 import com.gallopdevs.interviewtests.questionsbytype.arrays.ConsecutiveArray;
 import com.gallopdevs.interviewtests.questionsbytype.arrays.CountPairsWithSum;
-import com.gallopdevs.interviewtests.questionsbytype.arrays.operations.FindDuplicatesCount;
-import com.gallopdevs.interviewtests.questionsbytype.arrays.operations.FindDuplicatesLoop;
-import com.gallopdevs.interviewtests.questionsbytype.arrays.operations.FindDuplicatesSet;
-import com.gallopdevs.interviewtests.questionsbytype.arrays.operations.FindEvenAndOdd;
-import com.gallopdevs.interviewtests.questionsbytype.arrays.operations.FindLowHighIndex;
-import com.gallopdevs.interviewtests.questionsbytype.arrays.operations.GetMissingNumber;
+import com.gallopdevs.interviewtests.questionsbytype.arrays.FindPermutations;
 import com.gallopdevs.interviewtests.questionsbytype.arrays.MatrixProduct;
 import com.gallopdevs.interviewtests.questionsbytype.arrays.MedianTwoSortedArrays;
-import com.gallopdevs.interviewtests.questionsbytype.arrays.operations.MergeOverlaps;
 import com.gallopdevs.interviewtests.questionsbytype.arrays.MergeSortedArray;
-import com.gallopdevs.interviewtests.questionsbytype.arrays.operations.MinMaxArray;
-import com.gallopdevs.interviewtests.questionsbytype.arrays.operations.PrintMissingNumbers;
-import com.gallopdevs.interviewtests.questionsbytype.arrays.operations.PrintPairsSumLoop;
-import com.gallopdevs.interviewtests.questionsbytype.arrays.operations.PrintPairsSumSet;
-import com.gallopdevs.interviewtests.questionsbytype.arrays.operations.PushZerosToRight;
-import com.gallopdevs.interviewtests.questionsbytype.arrays.operations.RemoveDuplicates;
-import com.gallopdevs.interviewtests.questionsbytype.arrays.operations.ReverseArray;
-import com.gallopdevs.interviewtests.questionsbytype.arrays.operations.RotateLeft;
 import com.gallopdevs.interviewtests.questionsbytype.arrays.RotateMatrixClockwise;
 import com.gallopdevs.interviewtests.questionsbytype.arrays.RotateMatrixCounterClockwise;
 import com.gallopdevs.interviewtests.questionsbytype.arrays.StockPrices;
@@ -53,6 +37,25 @@ import com.gallopdevs.interviewtests.questionsbytype.arrays.codebat.TwoTwo;
 import com.gallopdevs.interviewtests.questionsbytype.arrays.codebat.Unlucky1;
 import com.gallopdevs.interviewtests.questionsbytype.arrays.codebat.Without10;
 import com.gallopdevs.interviewtests.questionsbytype.arrays.codebat.ZeroFront;
+import com.gallopdevs.interviewtests.questionsbytype.arrays.operations.ConcatenateTwoArrays;
+import com.gallopdevs.interviewtests.questionsbytype.arrays.operations.FindDuplicatesCount;
+import com.gallopdevs.interviewtests.questionsbytype.arrays.operations.FindDuplicatesLoop;
+import com.gallopdevs.interviewtests.questionsbytype.arrays.operations.FindDuplicatesSet;
+import com.gallopdevs.interviewtests.questionsbytype.arrays.operations.FindEvenAndOdd;
+import com.gallopdevs.interviewtests.questionsbytype.arrays.operations.FindLowHighIndex;
+import com.gallopdevs.interviewtests.questionsbytype.arrays.operations.FirstNonRepeating;
+import com.gallopdevs.interviewtests.questionsbytype.arrays.operations.GetMissingNumber;
+import com.gallopdevs.interviewtests.questionsbytype.arrays.operations.InsertAtIndex;
+import com.gallopdevs.interviewtests.questionsbytype.arrays.operations.MergeOverlaps;
+import com.gallopdevs.interviewtests.questionsbytype.arrays.operations.MinMaxArray;
+import com.gallopdevs.interviewtests.questionsbytype.arrays.operations.PrintMissingNumbers;
+import com.gallopdevs.interviewtests.questionsbytype.arrays.operations.PrintPairsSumLoop;
+import com.gallopdevs.interviewtests.questionsbytype.arrays.operations.PrintPairsSumSet;
+import com.gallopdevs.interviewtests.questionsbytype.arrays.operations.PushZerosToRight;
+import com.gallopdevs.interviewtests.questionsbytype.arrays.operations.RearrangeNumbers;
+import com.gallopdevs.interviewtests.questionsbytype.arrays.operations.RemoveDuplicates;
+import com.gallopdevs.interviewtests.questionsbytype.arrays.operations.ReverseArray;
+import com.gallopdevs.interviewtests.questionsbytype.arrays.operations.RotateLeft;
 
 import org.junit.Test;
 
@@ -63,10 +66,6 @@ import java.util.List;
 import java.util.Random;
 
 public class ArraysTest {
-
-    // first non-repeating integers in an array
-    // merge two sorted arrays
-    // rearrange positive and negative values in an array
 
     @Test
     public void SingleMissingNumber() {
@@ -649,6 +648,24 @@ public class ArraysTest {
         PushZerosToRight.pushZerosToEnd(test1);
     }
 
+    @Test
+    public void FirstNotRepeating() {
+        int[] test1 = {1, 1, 1, 4, 4, 5};
+        int[] test2 = {1, 1, 7, 3, 4, 5};
+        int[] test3 = {1, 1, 1, 1, 1, 1};
+        FirstNonRepeating.firstNonRepeat(test1);
+        FirstNonRepeating.firstNonRepeat(test2);
+        FirstNonRepeating.firstNonRepeat(test3);
+    }
+
+    @Test
+    public void RearrangeNumbers() {
+        int[] test1 = {-9, 5, 6, 7, -2, -3, -4, 10, 11, 12};
+        int[] test2 = {5, 6, 7, -7, -9, -4, 12};
+        System.out.println(Arrays.toString(RearrangeNumbers.rearrangeNumbers(test1)));
+        System.out.println(Arrays.toString(RearrangeNumbers.rearrangeNumbers(test2)));
+    }
+
     private static int[] getRandomArray(int length) {
         int[] randomNums = new int[length];
         for (int i = 0; i < length; i++) {
@@ -775,7 +792,7 @@ public class ArraysTest {
 
         // 18. Insert at a specific index
         int[] example18 = new int[]{8, 28, 1, 56, 909};
-        int[] insertAtIndex = insert(example18, 1, 202);
+        int[] insertAtIndex = InsertAtIndex.insert(example18, 1, 202);
         System.out.println(Arrays.toString(example18));
         System.out.println(Arrays.toString(insertAtIndex));
 
@@ -808,17 +825,5 @@ public class ArraysTest {
     @Test
     public void Practice() {
 
-    }
-
-    private int[] insert(int[] numbers, int index, int value) {
-        int[] result = new int[numbers.length + 1];
-        for (int i = 0; i < index; i++) {
-            result[i] = numbers[i];
-        }
-        result[index] = value;
-        for (int i = index + 1; i < result.length; i++) {
-            result[i] = numbers[i - 1];
-        }
-        return result;
     }
 }
