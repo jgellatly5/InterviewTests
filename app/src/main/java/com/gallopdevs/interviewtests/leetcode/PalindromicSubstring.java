@@ -3,10 +3,12 @@ package com.gallopdevs.interviewtests.leetcode;
 public class PalindromicSubstring {
     public static String palindromicSubstring(String s) {
         String answer = "";
-        for (int i = 0; i < s.length(); i++) {
+        for (int i = 0; i < s.length() - 1; i++) {
             for (int j = s.length() - 1; j >= 0; j--) {
                 if (isPalindrome(s) && answer.length() < s.length()) answer = s;
-                s = s.substring(0, s.length() - 1);
+                s = s.substring(i, j);
+                System.out.println("s: " + s);
+                System.out.println("answer: " + answer);
             }
         }
         return answer;

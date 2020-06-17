@@ -1,6 +1,7 @@
 package com.gallopdevs.interviewtests.questionsbytype;
 
 import com.gallopdevs.interviewtests.questionsbytype.strings.FindPermutations;
+import com.gallopdevs.interviewtests.questionsbytype.strings.LongestPalindromicSubstring;
 import com.gallopdevs.interviewtests.questionsbytype.strings.operations.ReverseString;
 import com.gallopdevs.interviewtests.questionsbytype.strings.codebat.CatDog;
 import com.gallopdevs.interviewtests.questionsbytype.strings.Compress;
@@ -145,6 +146,12 @@ public class StringsTest {
     public void FindPermutations() {
         System.out.println("=========FindPermutations=========");
         System.out.println(FindPermutations.findPermutations("abc"));
+    }
+
+    @Test
+    public void LongestPalindromicSubstring() {
+        System.out.println(LongestPalindromicSubstring.longestPalindrome("babad"));
+        System.out.println(LongestPalindromicSubstring.longestPalindrome("cbbd"));
     }
 
     // https://stackabuse.com/common-string-operations-in-java/

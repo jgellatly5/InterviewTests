@@ -6,15 +6,13 @@ public class InOrderSuccessor {
     public static TreeNode inOrderSuccessor(TreeNode node) {
         if (node == null) return null;
         if (node.right != null) return leftMostChild(node.right);
-        else {
-            TreeNode current = node;
-            TreeNode parent = current.parent;
-            while (parent != null && parent.left != current) {
-                current = parent;
-                parent = parent.parent;
-            }
-            return parent;
+        TreeNode current = node;
+        TreeNode parent = current.parent;
+        while (parent != null && parent.left != current) {
+            current = parent;
+            parent = parent.parent;
         }
+        return parent;
     }
 
     private static TreeNode leftMostChild(TreeNode node) {
