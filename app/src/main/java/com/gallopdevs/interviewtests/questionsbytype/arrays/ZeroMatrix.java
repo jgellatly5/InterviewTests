@@ -34,7 +34,7 @@ public class ZeroMatrix {
         }
     }
 
-    // Time: O(n)
+    // Time: O(m * n)
     public void zeroMatrix(boolean[][] matrix) {
         // Verify the input array is nonzero
         if (matrix.length == 0 || matrix[0].length == 0) return;

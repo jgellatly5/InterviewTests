@@ -61,7 +61,9 @@ import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.BitSet;
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Random;
 
@@ -824,6 +826,29 @@ public class ArraysTest {
 
     @Test
     public void Practice() {
+        int[] b = {1, 3, 5};
+        int[] a = {2, 4, 6, 8};
+        System.out.println(Arrays.toString(mergeSortedArray(a, b)));
+    }
 
+    private int[] mergeSortedArray(int[] a, int[] b) {
+        int[] result = new int[a.length + b.length];
+        int i = 0;
+        int j = 0;
+        int k = 0;
+        while (i < a.length && j < b.length) {
+            if (a[i] < b[j]) {
+                result[k++] = a[i++];
+            } else {
+                result[k++] = b[j++];
+            }
+        }
+        while (i < a.length) {
+            result[k] = a[i++];
+        }
+        while (j < b.length) {
+            result[k++] = b[j++];
+        }
+        return result;
     }
 }
