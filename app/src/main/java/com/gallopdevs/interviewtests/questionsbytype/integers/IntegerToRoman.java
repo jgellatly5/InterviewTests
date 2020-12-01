@@ -17,9 +17,8 @@ public class IntegerToRoman {
             if (value - values[i] >= 0) {
                 numeral.append(numerals[i]);
                 value -= values[i];
-            } else {
-                i++;
             }
+            i++;
         }
         return numeral.toString();
     }

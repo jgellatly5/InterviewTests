@@ -1,11 +1,9 @@
 package com.gallopdevs.interviewtests.questionsbytype.trees;
 
-import com.gallopdevs.interviewtests.datastructures.BinarySearchTree;
-
 import java.util.ArrayDeque;
 import java.util.Deque;
 
-import static com.gallopdevs.interviewtests.datastructures.BinarySearchTree.*;
+import static com.gallopdevs.interviewtests.datastructures.BinarySearchTree.TreeNode;
 
 public class SpiralOrderTraversal {
     // Time: O(n^2)
@@ -13,7 +11,7 @@ public class SpiralOrderTraversal {
         if (root == null) return;
         int level = 1;
         while (printLevelLeftToRight(root, level++)
-                && printLevelRightToLeft(root, level++));
+                && printLevelRightToLeft(root, level++)) ;
     }
 
     private static boolean printLevelLeftToRight(TreeNode root, int level) {

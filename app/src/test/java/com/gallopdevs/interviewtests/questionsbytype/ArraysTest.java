@@ -62,6 +62,9 @@ import org.junit.Test;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.BitSet;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
@@ -826,29 +829,17 @@ public class ArraysTest {
 
     @Test
     public void Practice() {
-        int[] b = {1, 3, 5};
-        int[] a = {2, 4, 6, 8};
-        System.out.println(Arrays.toString(mergeSortedArray(a, b)));
+        int[] numbers = {1, 1, 2, 3, 4, 4, 5, 5, 5, 5, 6};
+        findDuplicates(numbers);
     }
 
-    private int[] mergeSortedArray(int[] a, int[] b) {
-        int[] result = new int[a.length + b.length];
-        int i = 0;
-        int j = 0;
-        int k = 0;
-        while (i < a.length && j < b.length) {
-            if (a[i] < b[j]) {
-                result[k++] = a[i++];
-            } else {
-                result[k++] = b[j++];
+    private void findDuplicates(int[] numbers) {
+        HashSet<Integer> hashSet = new HashSet<>();
+        for (int num : numbers) {
+            if (!hashSet.add(num)) {
+                System.out.print(num + " ");
             }
         }
-        while (i < a.length) {
-            result[k] = a[i++];
-        }
-        while (j < b.length) {
-            result[k++] = b[j++];
-        }
-        return result;
+        System.out.println();
     }
 }

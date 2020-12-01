@@ -21,9 +21,11 @@ public class IsCyclic {
     // Space: O(n)
     public static boolean isCyclicSet(LinkedListNode head) {
         HashSet<LinkedListNode> visited = new HashSet<>();
-        for (LinkedListNode current = head; current != null; current = current.next) {
+        LinkedListNode current = head;
+        while (current != null) {
             if (visited.contains(current)) return true;
             visited.add(current);
+            current = current.next;
         }
         return false;
     }

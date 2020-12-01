@@ -1,10 +1,14 @@
 package com.gallopdevs.interviewtests.questionsbytype;
 
+import android.net.http.SslCertificate;
+
 import com.gallopdevs.interviewtests.datastructures.LinkedListNode;
 import com.gallopdevs.interviewtests.questionsbytype.integers.ClockAngle;
 import com.gallopdevs.interviewtests.questionsbytype.integers.GrayCode;
 import com.gallopdevs.interviewtests.questionsbytype.integers.IntegerToRoman;
+import com.gallopdevs.interviewtests.questionsbytype.integers.IsPalindrome;
 import com.gallopdevs.interviewtests.questionsbytype.integers.LineIntersection;
+import com.gallopdevs.interviewtests.questionsbytype.integers.ReverseInt;
 import com.gallopdevs.interviewtests.questionsbytype.integers.RotateBits;
 import com.gallopdevs.interviewtests.questionsbytype.integers.SwapWithoutTemp;
 
@@ -62,6 +66,18 @@ public class IntegersTest {
         System.out.println(Integer.toHexString(i));
         int j = RotateBits.rotateCounterClockwise(0xFFFF0000, 8);
         System.out.println(Integer.toHexString(j));
+    }
+
+    @Test
+    public void ReverseInt() {
+        System.out.println(ReverseInt.reverseInt(-123));
+    }
+
+    @Test
+    public void IsPalindrome() {
+        System.out.println(IsPalindrome.isPalindrome(123));
+        System.out.println(IsPalindrome.isPalindrome(121));
+        System.out.println(IsPalindrome.isPalindrome(-121));
     }
 
     @Test

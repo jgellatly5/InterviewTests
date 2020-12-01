@@ -19,21 +19,16 @@ public class LinkedListNode {
     // Time: O(1)
     public void addFront(int data) {
         LinkedListNode newNode = new LinkedListNode(data);
-        if (head == null) {
-            head = newNode;
-        } else {
-            newNode.next = head;
-            head = newNode;
-        }
+        if (head != null) newNode.next = head;
+        head = newNode;
         size++;
     }
 
     // Time: O(n)
     public void addBack(int data) {
         LinkedListNode newNode = new LinkedListNode(data);
-        if (head == null) {
-            head = newNode;
-        } else {
+        if (head == null) head = newNode;
+        else {
             LinkedListNode current = head;
             while (current.next != null) {
                 current = current.next;
@@ -96,9 +91,8 @@ public class LinkedListNode {
     // Time: O(n)
     public void delete(int data) {
         if (head == null) return;
-        if (head.data == data) {
-            head = head.next;
-        } else {
+        if (head.data == data) head = head.next;
+        else {
             LinkedListNode current = head;
             while (current.next != null) {
                 if (current.next.data == data) {

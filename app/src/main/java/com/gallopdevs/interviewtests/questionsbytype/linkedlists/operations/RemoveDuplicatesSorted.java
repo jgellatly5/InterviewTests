@@ -19,7 +19,7 @@ public class RemoveDuplicatesSorted {
     }
 
     // Recursive
-    // Time: ?
+    // Time: O(n)
     public static void removeDuplicatesRecursive(LinkedListNode node) {
         if (node == null || node.next == null) return;
         if (node.data == node.next.data) {

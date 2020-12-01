@@ -1,22 +1,28 @@
 package com.gallopdevs.interviewtests.questionsbytype;
 
-import com.gallopdevs.interviewtests.questionsbytype.strings.FindPermutations;
-import com.gallopdevs.interviewtests.questionsbytype.strings.LongestPalindromicSubstring;
-import com.gallopdevs.interviewtests.questionsbytype.strings.operations.ReverseString;
-import com.gallopdevs.interviewtests.questionsbytype.strings.codebat.CatDog;
 import com.gallopdevs.interviewtests.questionsbytype.strings.Compress;
-import com.gallopdevs.interviewtests.questionsbytype.strings.codebat.CountCode;
-import com.gallopdevs.interviewtests.questionsbytype.strings.operations.IsPalindrome;
+import com.gallopdevs.interviewtests.questionsbytype.strings.FindPermutations;
 import com.gallopdevs.interviewtests.questionsbytype.strings.IsPermutationPalindrome;
 import com.gallopdevs.interviewtests.questionsbytype.strings.IsUnique;
+import com.gallopdevs.interviewtests.questionsbytype.strings.LongestCommonPrefix;
+import com.gallopdevs.interviewtests.questionsbytype.strings.LongestPalindromicSubstring;
 import com.gallopdevs.interviewtests.questionsbytype.strings.OneEditAway;
 import com.gallopdevs.interviewtests.questionsbytype.strings.Rotation;
 import com.gallopdevs.interviewtests.questionsbytype.strings.Urlify;
+import com.gallopdevs.interviewtests.questionsbytype.strings.codebat.CatDog;
+import com.gallopdevs.interviewtests.questionsbytype.strings.codebat.CountCode;
 import com.gallopdevs.interviewtests.questionsbytype.strings.codebat.EndOther;
 import com.gallopdevs.interviewtests.questionsbytype.strings.codebat.XyzThere;
+import com.gallopdevs.interviewtests.questionsbytype.strings.operations.IsPalindrome;
+import com.gallopdevs.interviewtests.questionsbytype.strings.operations.ReverseString;
 
 import org.junit.Before;
 import org.junit.Test;
+
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 public class StringsTest {
 
@@ -154,6 +160,12 @@ public class StringsTest {
         System.out.println(LongestPalindromicSubstring.longestPalindrome("cbbd"));
     }
 
+    @Test
+    public void LongestCommonPrefix() {
+        String[] strings = {"leet", "leetcode", "leets", "leed"};
+        System.out.println(LongestCommonPrefix.longestCommonPrefix(strings));
+    }
+
     // https://stackabuse.com/common-string-operations-in-java/
 
     //1. Determine String Length
@@ -217,22 +229,59 @@ public class StringsTest {
 
     @Test
     public void Practice() {
-        System.out.println(compress("aabbccdd"));
-        System.out.println(compress("aaaaaa"));
-        System.out.println(compress("abcd"));
+        String test1 = "awaglk";
+        System.out.println(subStringsLessKDist(test1, 4));
+        String test2 = "democracy";
+        System.out.println(subStringsLessKDist(test2, 5));
+        String test3 = "wawaglknagagwunagkwkwagl";
+        System.out.println(subStringsLessKDist(test3, 4));
+        String test4 = "";
+        System.out.println(subStringsLessKDist(test4, 4));
+        String test5 = "abcd";
+        System.out.println(subStringsLessKDist(test5, 2));
+        System.out.println(subStringsLessKDist(test5, 5));
+        String test6 = "$%#$";
+        System.out.println(subStringsLessKDist(test6, 4));
+        String test7 = "aaa";
+        System.out.println(subStringsLessKDist(test7, 2));
     }
 
-    public String compress(String s) {
+    private String runLengthEncoding(String inputString) {
         StringBuilder result = new StringBuilder();
         int count = 0;
-        for (int i = 0; i < s.length(); i++) {
+        for (int i = 0; i < inputString.length(); i++) {
             count++;
-            if (i + 1 >= s.length() || s.charAt(i) != s.charAt(i + 1)) {
-                result.append(s.charAt(i));
+            if (i + 1 >= inputString.length() || inputString.charAt(i) != inputString.charAt(i + 1)) {
                 result.append(count);
+                result.append(inputString.charAt(i));
                 count = 0;
             }
         }
-        return result.length() < s.length() ? result.toString() : s;
+        return result.toString();
+    }
+
+    private List<String> subStringsLessKDist(String inputString, int num) {
+        Set<String> result = new HashSet<>();
+        if (num <= 0 || num >= 26 || !inputString.matches("[a-zA-Z]+")) return new ArrayList<>();
+        for (int i = 0; i <= inputString.length() - num; i++) {
+            String current = inputString.substring(i, num + i);
+            if (matchesPattern(current)) {
+                result.add(current);
+            }
+        }
+        return new ArrayList<>(result);
+    }
+
+    private boolean matchesPattern(String text) {
+        char[] characters = text.toCharArray();
+        boolean foundRepeating = false;
+        Set<Character> values = new HashSet<>();
+        for (Character character : characters) {
+            if (!values.add(character)) {
+                if (foundRepeating) return false;
+                foundRepeating = true;
+            }
+        }
+        return foundRepeating;
     }
 }

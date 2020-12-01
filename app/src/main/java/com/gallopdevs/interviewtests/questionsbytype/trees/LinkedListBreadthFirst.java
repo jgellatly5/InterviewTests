@@ -1,11 +1,9 @@
 package com.gallopdevs.interviewtests.questionsbytype.trees;
 
-import com.gallopdevs.interviewtests.datastructures.BinarySearchTree;
-
 import java.util.ArrayList;
 import java.util.LinkedList;
 
-import static com.gallopdevs.interviewtests.datastructures.BinarySearchTree.*;
+import static com.gallopdevs.interviewtests.datastructures.BinarySearchTree.TreeNode;
 
 public class LinkedListBreadthFirst {
     public static ArrayList<LinkedList<TreeNode>> createListsBfs(TreeNode root) {

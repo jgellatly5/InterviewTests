@@ -9,7 +9,7 @@ import java.util.Set;
 
 public class FindDuplicates {
     // Loops
-    // Fix
+    // Time: O(n^2)
     public static void findDuplicatesLoops(LinkedListNode head) {
         LinkedListNode current = head;
         LinkedListNode next = null;

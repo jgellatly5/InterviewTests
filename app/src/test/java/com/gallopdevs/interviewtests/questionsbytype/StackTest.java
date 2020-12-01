@@ -7,6 +7,7 @@ import com.gallopdevs.interviewtests.questionsbytype.stacks.SortStackUsingTempSt
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.HashMap;
 import java.util.Stack;
 
 public class StackTest {
@@ -70,21 +71,15 @@ public class StackTest {
 
     }
 
-    private Stack<Integer> reverseStack(Stack<Integer> stack) {
-        if (stack.isEmpty()) return stack;
-        int temp = stack.pop();
-        reverseStack(stack);
-        insertAtBottom(stack, temp);
-        return stack;
-    }
-
-    private void insertAtBottom(Stack<Integer> stack, int x) {
-        if (stack.isEmpty()) {
-            stack.push(x);
-            return;
-        }
-        int temp = stack.pop();
-        insertAtBottom(stack, x);
-        stack.push(temp);
-    }
+//    private boolean isValid(String s) {
+//        HashMap<String, String> mappings = new HashMap<>();
+//        mappings.put("{", "}");
+//        mappings.put("[", "]");
+//        mappings.put("(", ")");
+//        Stack<Character> stack = new Stack<>();
+//        for (int i = 0; i < s.length(); i++) {
+//            if (stack.isEmpty()) stack.push(s.charAt(i));
+//            else
+//        }
+//    }
 }

@@ -1,30 +1,29 @@
 package com.gallopdevs.interviewtests.questionsbytype;
 
-import com.gallopdevs.interviewtests.algorithms.BinarySearch;
-import com.gallopdevs.interviewtests.datastructures.BinarySearchTree;
 import com.gallopdevs.interviewtests.datastructures.BinarySearchTree.TreeNode;
 import com.gallopdevs.interviewtests.questionsbytype.trees.AverageOfLevels;
 import com.gallopdevs.interviewtests.questionsbytype.trees.BinaryTreePaths;
 import com.gallopdevs.interviewtests.questionsbytype.trees.InOrderSuccessor;
-import com.gallopdevs.interviewtests.questionsbytype.trees.operations.AreEqual;
-import com.gallopdevs.interviewtests.questionsbytype.trees.operations.FindHeight;
-import com.gallopdevs.interviewtests.questionsbytype.trees.operations.InOrderTraversal;
 import com.gallopdevs.interviewtests.questionsbytype.trees.IsBalanced;
-import com.gallopdevs.interviewtests.questionsbytype.trees.operations.LevelOrderTraversal;
 import com.gallopdevs.interviewtests.questionsbytype.trees.LinkedListBreadthFirst;
 import com.gallopdevs.interviewtests.questionsbytype.trees.LinkedListDepthFirst;
 import com.gallopdevs.interviewtests.questionsbytype.trees.LongestConsecutiveBranch;
 import com.gallopdevs.interviewtests.questionsbytype.trees.MinimalTreeFromArray;
-import com.gallopdevs.interviewtests.questionsbytype.trees.operations.PostOrderTraversal;
-import com.gallopdevs.interviewtests.questionsbytype.trees.operations.PreOrderTraversal;
 import com.gallopdevs.interviewtests.questionsbytype.trees.SpiralOrderTraversal;
 import com.gallopdevs.interviewtests.questionsbytype.trees.VerifyBST;
+import com.gallopdevs.interviewtests.questionsbytype.trees.operations.AreEqual;
+import com.gallopdevs.interviewtests.questionsbytype.trees.operations.FindHeight;
+import com.gallopdevs.interviewtests.questionsbytype.trees.operations.InOrderTraversal;
+import com.gallopdevs.interviewtests.questionsbytype.trees.operations.LevelOrderTraversal;
+import com.gallopdevs.interviewtests.questionsbytype.trees.operations.PostOrderTraversal;
+import com.gallopdevs.interviewtests.questionsbytype.trees.operations.PreOrderTraversal;
 
 import org.junit.Before;
 import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
+import java.util.List;
 
 public class TreesTest {
 
@@ -237,18 +236,57 @@ public class TreesTest {
 
     @Test
     public void Practice() {
-        System.out.println("=========VerifyBST=========");
-        System.out.println(verifyBst(root));
-        System.out.println(verifyBst(node));
+        List<Integer> values = new ArrayList<>();
+        values.add(5);
+        values.add(6);
+        values.add(3);
+        values.add(1);
+        values.add(2);
+        values.add(4);
+//        TreeNode test1 = createMinimalBst(values);
+        System.out.println(bstDistance(6, values, 2, 4));
     }
 
-    public boolean verifyBst(TreeNode node) {
-        return verifyBst(node, Integer.MIN_VALUE, Integer.MAX_VALUE);
+    public int bstDistance(int num, List<Integer> values, int node1, int node2) {
+        TreeNode bst = new TreeNode(values.get(0));
+
+//        if (bst == null) return -1;
+        TreeNode lca = lowestCommonAncestor(bst, node1, node2);
+        return getDistance(lca, node1) + getDistance(lca, node2);
     }
 
-    private boolean verifyBst(TreeNode node, int min, int max) {
-        if (node == null) return true;
-        if (node.data < min || node.data > max) return false;
-        return verifyBst(node.left, min, node.data) && verifyBst(node.right, node.data + 1, max);
+    public static TreeNode createMinimalBst(List<Integer> values) {
+        return createMinimalBst(values, 0, values.size() - 1);
+    }
+
+    private static TreeNode createMinimalBst(List<Integer> values, int start, int end) {
+        if (end < start) return null;
+        int index = 0;
+        TreeNode node = new TreeNode(values.get(index));
+        node.left = createMinimalBst(values, start, middle - 1);
+        node.right = createMinimalBst(values, middle + 1, end);
+        return node;
+    }
+
+    private int getDistance(TreeNode lca, int destination) {
+        if (lca.data == destination) return 0;
+        TreeNode node = lca.left;
+        if (lca.data < destination) {
+            node = lca.right;
+        }
+        return 1 + getDistance(node, destination);
+    }
+
+    private TreeNode lowestCommonAncestor(TreeNode root, int node1, int node2) {
+        while (true) {
+            if (root.data > node1 && root.data > node2) {
+                root = root.left;
+            } else if (root.data < node1 && root.data < node2) {
+                root = root.right;
+            } else {
+                System.out.println("root: " + root.data);
+                return root;
+            }
+        }
     }
 }
