@@ -1,38 +1,41 @@
 package com.gallopdevs.interviewtests.questionsbytype;
 
+import com.gallopdevs.interviewtests.datastructures.LinkedListNode;
+
 import org.junit.Test;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.ListIterator;
-import java.util.stream.StreamSupport;
 
 public class ImplementationPractice {
 
     @Test
-    public void Leet() {
-//        System.out.println(restoreString("codeleet", new int[] {4, 5, 6, 7, 0, 2, 1, 3}));
-        System.out.println(2 / 10);
+    public void LeetCode() {
+        LinkedListNode node = new LinkedListNode(1);
+        node.next = new LinkedListNode(0);
+        node.next.next = new LinkedListNode(1);
+
+        System.out.println(getDecimalValue(node));
     }
 
-    private static String restoreString(String s, int[] indices) {
-        char[] result = new char[s.length()];
-        char[] characters = s.toCharArray();
-        int k = 0;
-        for (int i : indices) {
-            System.out.println("index: " + i + ", char: " + characters[i]);
-            result[i] = characters[k++];
+    private int getDecimalValue(LinkedListNode head) {
+        int sum = 0;
+        int length = 0;
+        LinkedListNode current = head;
+        while (current != null) {
+            length++;
+            current = current.next;
         }
-        return new String(result);
+        current = head;
+        while (current != null) {
+            sum += Math.pow(current.data * 2, --length);
+            current = current.next;
+        }
+        return sum;
     }
-
-    // 4 5 6 7 0 2 1 3
-    // c o d e l e e t
-
-    // l _ _ _ c o d e
 
     @Test
     public void ArrayList() {
