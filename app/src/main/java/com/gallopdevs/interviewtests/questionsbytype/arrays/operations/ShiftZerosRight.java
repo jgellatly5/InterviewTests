@@ -2,8 +2,8 @@ package com.gallopdevs.interviewtests.questionsbytype.arrays.operations;
 
 import java.util.Arrays;
 
-public class PushZerosToRight {
-    public static void pushZerosToEnd(int[] numbers) {
+public class ShiftZerosRight {
+    public static void shiftZerosRight(int[] numbers) {
         int count = 0;
         for (int i = 0; i < numbers.length; i++) {
             if (numbers[i] != 0) {

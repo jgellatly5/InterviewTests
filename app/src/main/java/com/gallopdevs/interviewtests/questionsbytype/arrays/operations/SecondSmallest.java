@@ -2,7 +2,7 @@ package com.gallopdevs.interviewtests.questionsbytype.arrays.operations;
 
 public class SecondSmallest {
     // Time: O(n)
-    private static void findSecondSmallest(int[] numbers) {
+    public static void findSecondSmallest(int[] numbers) {
         if (numbers.length < 2) System.out.println("Invalid size");
         int min = Integer.MAX_VALUE;
         int secondSmallest = Integer.MAX_VALUE;

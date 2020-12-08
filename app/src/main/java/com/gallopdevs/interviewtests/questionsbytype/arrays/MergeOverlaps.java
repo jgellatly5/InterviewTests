@@ -1,4 +1,4 @@
-package com.gallopdevs.interviewtests.questionsbytype.arrays.operations;
+package com.gallopdevs.interviewtests.questionsbytype.arrays;
 
 import java.util.ArrayList;
 import java.util.List;
