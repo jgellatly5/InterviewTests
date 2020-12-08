@@ -1,28 +1,29 @@
 package com.gallopdevs.interviewtests.questionsbytype.arrays.operations;
 
-import java.util.LinkedHashMap;
-import java.util.Map;
-import java.util.Set;
-
 public class FirstNonRepeating {
-    public static void firstNonRepeat(int[] numbers) {
-        LinkedHashMap<Integer, Integer> linkedHashMap = new LinkedHashMap<>();
-        int count = 1;
-        for (int i = 1; i < numbers.length; i++) {
-            if (numbers[i - 1] == numbers[i]) {
-                linkedHashMap.put(numbers[i - 1], ++count);
-            } else {
-                linkedHashMap.put(numbers[i], 1);
-                count = 1;
+    public static int firstNonRepeating(int[] nums) {
+        boolean repeating = false;
+        for (int i = 0; i < nums.length; i++) {
+            if (i == nums.length - 1 && nums[i] != nums[i - 1]) return nums[i];
+            int j = i + 1;
+            while (j < nums.length) {
+                if (nums[i] != nums[j] && !repeating) {
+                    return nums[i];
+                }
+                if (nums[i] == nums[j]) {
+                    repeating = true;
+                    j++;
+                } else {
+                    repeating = false;
+                    break;
+                }
             }
+            i = j - 1;
         }
-        Set<Map.Entry<Integer, Integer>> entrySet = linkedHashMap.entrySet();
-        for (Map.Entry<Integer, Integer> entry : entrySet) {
-            if (entry.getValue() == 1) {
-                System.out.println(entry.getKey());
-                return;
-            }
-        }
-        System.out.println("All repeating.");
+        return -1;
     }
+    // repeating = false
+    // nums = [1, 1, 3, 3, 5]
+    //                     i
+    //                     j
 }

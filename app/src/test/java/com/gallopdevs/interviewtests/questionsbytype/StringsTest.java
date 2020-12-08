@@ -20,6 +20,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -180,18 +181,16 @@ public class StringsTest {
     //3. Comparing Strings
     // compareTo()
     // compareToIgnoreCase()
+    // equals()
+    // equalsIgnoreCase()
 
     //4. Extracting Substrings
     // substring()
 
-    //5. Changing String Case
+    //5. Formatting Strings
     // toLowerCase()
     // toUpperCase()
-
-    //6. Removing Whitespace
     // trim()
-
-    //7. Formatting Strings
     // format()
     // %d - integral types
     // %s - Strings
@@ -200,88 +199,41 @@ public class StringsTest {
     // %g - depends on precision value after rounding
     // %b - boolean values
 
-    //8. Regex and Checking for Substrings
+    //6. Regex and Checking for Substrings
     // contains()
     // startsWith()
     // endsWith()
     // matches()
 
-    //9. Replacing Characters and Substrings
+    //7. Replacing Characters and Substrings
     // replace(char)
     // replace(String)
     // replaceAll()
     // replaceFirst()
 
-    //10. Splitting and Joining Strings
+    //8. Splitting and Joining Strings
     // split()
     // join()
 
-    //11. Creating Character Arrays
+    //9. Creating Character Arrays
     // toCharArray()
 
-    //12. String Equality
-    // equals()
-
-    //13. String Concatenation
+    //10. String Concatenation
     // + operator
     // StringBuilder & append method
     // concat()
 
+    //11. String valueOf()
+    // String.valueOf(boolean)
+    // String.valueOf(char)
+    // String.valueOf(double)
+    // String.valueOf(float)
+    // String.valueOf(int)
+
     @Test
     public void Practice() {
-        String test1 = "awaglk";
-        System.out.println(subStringsLessKDist(test1, 4));
-        String test2 = "democracy";
-        System.out.println(subStringsLessKDist(test2, 5));
-        String test3 = "wawaglknagagwunagkwkwagl";
-        System.out.println(subStringsLessKDist(test3, 4));
-        String test4 = "";
-        System.out.println(subStringsLessKDist(test4, 4));
-        String test5 = "abcd";
-        System.out.println(subStringsLessKDist(test5, 2));
-        System.out.println(subStringsLessKDist(test5, 5));
-        String test6 = "$%#$";
-        System.out.println(subStringsLessKDist(test6, 4));
-        String test7 = "aaa";
-        System.out.println(subStringsLessKDist(test7, 2));
-    }
-
-    private String runLengthEncoding(String inputString) {
-        StringBuilder result = new StringBuilder();
-        int count = 0;
-        for (int i = 0; i < inputString.length(); i++) {
-            count++;
-            if (i + 1 >= inputString.length() || inputString.charAt(i) != inputString.charAt(i + 1)) {
-                result.append(count);
-                result.append(inputString.charAt(i));
-                count = 0;
-            }
-        }
-        return result.toString();
-    }
-
-    private List<String> subStringsLessKDist(String inputString, int num) {
-        Set<String> result = new HashSet<>();
-        if (num <= 0 || num >= 26 || !inputString.matches("[a-zA-Z]+")) return new ArrayList<>();
-        for (int i = 0; i <= inputString.length() - num; i++) {
-            String current = inputString.substring(i, num + i);
-            if (matchesPattern(current)) {
-                result.add(current);
-            }
-        }
-        return new ArrayList<>(result);
-    }
-
-    private boolean matchesPattern(String text) {
-        char[] characters = text.toCharArray();
-        boolean foundRepeating = false;
-        Set<Character> values = new HashSet<>();
-        for (Character character : characters) {
-            if (!values.add(character)) {
-                if (foundRepeating) return false;
-                foundRepeating = true;
-            }
-        }
-        return foundRepeating;
+        String test1 = String.valueOf(0b11000);
+        String test2 = "     yellow";
+        System.out.println(test1);
     }
 }

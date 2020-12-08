@@ -8,13 +8,17 @@ public class ReverseList {
     public static LinkedListNode reverseListIterative(LinkedListNode head) {
         LinkedListNode previous = null;
         LinkedListNode current = head;
+        LinkedListNode next = null;
         while (current != null) {
-            LinkedListNode next = current.next;
+            next = current.next;
             current.next = previous;
             previous = current;
             current = next;
         }
-        head = previous;
-        return head;
+        return previous;
     }
 }
+
+//                                           p            c
+// null <- [] [1]    <- [] [2]  <-[][3]   <- []    [4]    [5]  [] -> null
+//                                                        n

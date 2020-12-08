@@ -79,7 +79,8 @@ public class TreesTest {
         isBalancedNode.right.left = new TreeNode(6);
         isBalancedNode.right.right = new TreeNode(7);
         isBalancedNode.right.left.left = new TreeNode(8);
-//        isBalancedNode.right.left.left.left = new BinarySearchTree.TreeNode(9);
+
+
     }
 
 
@@ -236,36 +237,20 @@ public class TreesTest {
 
     @Test
     public void Practice() {
-        List<Integer> values = new ArrayList<>();
-        values.add(5);
-        values.add(6);
-        values.add(3);
-        values.add(1);
-        values.add(2);
-        values.add(4);
-//        TreeNode test1 = createMinimalBst(values);
-        System.out.println(bstDistance(6, values, 2, 4));
+        System.out.println(areEqual(node, node2));
+        System.out.println(areEqual(node, root));
+    }
+
+    private boolean areEqual(TreeNode t1, TreeNode t2) {
+        if (t1 == null && t2 == null) return true;
+        return (t1.data == t2.data) && (t1 != null && t2 != null) && areEqual(t1.left, t2.left) && areEqual(t1.right, t2.right);
     }
 
     public int bstDistance(int num, List<Integer> values, int node1, int node2) {
         TreeNode bst = new TreeNode(values.get(0));
-
 //        if (bst == null) return -1;
         TreeNode lca = lowestCommonAncestor(bst, node1, node2);
         return getDistance(lca, node1) + getDistance(lca, node2);
-    }
-
-    public static TreeNode createMinimalBst(List<Integer> values) {
-        return createMinimalBst(values, 0, values.size() - 1);
-    }
-
-    private static TreeNode createMinimalBst(List<Integer> values, int start, int end) {
-        if (end < start) return null;
-        int index = 0;
-        TreeNode node = new TreeNode(values.get(index));
-        node.left = createMinimalBst(values, start, middle - 1);
-        node.right = createMinimalBst(values, middle + 1, end);
-        return node;
     }
 
     private int getDistance(TreeNode lca, int destination) {

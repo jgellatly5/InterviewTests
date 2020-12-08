@@ -1,5 +1,6 @@
 package com.gallopdevs.interviewtests.questionsbytype;
 
+import com.gallopdevs.interviewtests.datastructures.LinkedListNode;
 import com.gallopdevs.interviewtests.questionsbytype.arrays.ConsecutiveArray;
 import com.gallopdevs.interviewtests.questionsbytype.arrays.CountPairsWithSum;
 import com.gallopdevs.interviewtests.questionsbytype.arrays.FindPermutations;
@@ -44,6 +45,7 @@ import com.gallopdevs.interviewtests.questionsbytype.arrays.operations.FindDupli
 import com.gallopdevs.interviewtests.questionsbytype.arrays.operations.FindEvenAndOdd;
 import com.gallopdevs.interviewtests.questionsbytype.arrays.operations.FindLowHighIndex;
 import com.gallopdevs.interviewtests.questionsbytype.arrays.operations.FirstNonRepeating;
+import com.gallopdevs.interviewtests.questionsbytype.arrays.operations.FirstNonRepeatingLinkedHashMap;
 import com.gallopdevs.interviewtests.questionsbytype.arrays.operations.GetMissingNumber;
 import com.gallopdevs.interviewtests.questionsbytype.arrays.operations.InsertAtIndex;
 import com.gallopdevs.interviewtests.questionsbytype.arrays.operations.MergeOverlaps;
@@ -61,12 +63,7 @@ import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.BitSet;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.HashMap;
 import java.util.HashSet;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Random;
 
@@ -654,13 +651,25 @@ public class ArraysTest {
     }
 
     @Test
-    public void FirstNotRepeating() {
+    public void FirstNotRepeatingLinkedHashMap() {
         int[] test1 = {1, 1, 1, 4, 4, 5};
         int[] test2 = {1, 1, 7, 3, 4, 5};
         int[] test3 = {1, 1, 1, 1, 1, 1};
-        FirstNonRepeating.firstNonRepeat(test1);
-        FirstNonRepeating.firstNonRepeat(test2);
-        FirstNonRepeating.firstNonRepeat(test3);
+        FirstNonRepeatingLinkedHashMap.firstNonRepeat(test1);
+        FirstNonRepeatingLinkedHashMap.firstNonRepeat(test2);
+        FirstNonRepeatingLinkedHashMap.firstNonRepeat(test3);
+    }
+
+    @Test
+    public void FirstNonRepeating() {
+        int[] test1 = {1, 1, 1, 4, 4, 5};
+        int[] test2 = {1, 1, 7, 3, 4, 5};
+        int[] test3 = {1, 1, 1, 1, 1, 1};
+        int[] test4 = {1, 4, 4};
+        System.out.println(FirstNonRepeating.firstNonRepeating(test1));
+        System.out.println(FirstNonRepeating.firstNonRepeating(test2));
+        System.out.println(FirstNonRepeating.firstNonRepeating(test3));
+        System.out.println(FirstNonRepeating.firstNonRepeating(test4));
     }
 
     @Test
@@ -829,17 +838,41 @@ public class ArraysTest {
 
     @Test
     public void Practice() {
-        int[] numbers = {1, 1, 2, 3, 4, 4, 5, 5, 5, 5, 6};
-        findDuplicates(numbers);
+        LinkedListNode node = new LinkedListNode(1);
+        node.next = new LinkedListNode(0);
+        node.next.next = new LinkedListNode(1);
+
+        System.out.println(getDecimalValue(node));
     }
 
-    private void findDuplicates(int[] numbers) {
-        HashSet<Integer> hashSet = new HashSet<>();
-        for (int num : numbers) {
-            if (!hashSet.add(num)) {
-                System.out.print(num + " ");
-            }
+    private int getDecimalValue(LinkedListNode head) {
+        int sum = 0;
+        int length = 0;
+        LinkedListNode current = head;
+        while (current != null) {
+            length++;
+            current = current.next;
         }
-        System.out.println();
+        current = head;
+        while (current != null) {
+            sum += Math.pow(current.data * 2, --length);
+            current = current.next;
+        }
+        return sum;
+    }
+
+    private int[] createTargetArray(int[] nums, int[] index) {
+        int[] result = new int[nums.length];
+        for (int i = 0; i < nums.length; i++) {
+            insert(result, index[i], nums[i]);
+        }
+        return result;
+    }
+
+    private void insert(int[] nums, int index, int value) {
+        for (int i = nums.length - 1; i > index; i--) {
+            nums[i] = nums[i - 1];
+        }
+        nums[index] = value;
     }
 }
