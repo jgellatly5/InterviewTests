@@ -18,7 +18,3 @@ public class ReverseList {
         return previous;
     }
 }
-
-//                                           p            c
-// null <- [] [1]    <- [] [2]  <-[][3]   <- []    [4]    [5]  [] -> null
-//                                                        n
